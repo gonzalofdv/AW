@@ -1,7 +1,7 @@
 body {
 	background-color: #14B76E;
 }
-//Gonzalo mihelmano llevas razon
+
 div#contenedor {
 	width: 1134px;
 	margin: auto;
@@ -78,7 +78,7 @@ div#sidebar-left a:hover {
 div#sidebar-right {
 	padding: 10px;
 	float: right;
-	width: 420px;
+	width: 350px;
 	height: 600px;
 	background-color: #dddddd;
 }
@@ -87,7 +87,7 @@ div#contenido {
 	padding: 10px;
 	float: left;
 	min-height: 600px;
-	width: 1200px;
+	width: 1100px;
 	background-color: white;
 }
 
