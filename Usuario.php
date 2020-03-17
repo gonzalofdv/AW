@@ -1,6 +1,5 @@
 <?php
  class Usuario {
- private $nombreUsuario = "";
  private $nom="";
 private $apellidos="";
 private $sexo="";
@@ -10,20 +9,12 @@ private $anio"";
 private $equipo="";
 private $usu="";
 private $contrasena="";
-private $rContrasena="";
 private $mail ="";
 private $condi="";
 . . .
  //constructor
 public Usuario(){}
 
-public function getNombreUsuario(){
-		return $this->nombreUsuario;
-	}
-
-	public function setNombreUsuario($nombreUsuario){
-		$this->nombreUsuario = $nombreUsuario;
-	}
 
 	public function getNom(){
 		return $this->nom;
@@ -95,14 +86,6 @@ public function getNombreUsuario(){
 
 	public function setContrasena($contrasena){
 		$this->contrasena = $contrasena;
-	}
-
-	public function getRContrasena(){
-		return $this->rContrasena;
-	}
-
-	public function setRContrasena($rContrasena){
-		$this->rContrasena = $rContrasena;
 	}
 
 	public function getMail(){
