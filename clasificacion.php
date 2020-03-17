@@ -15,37 +15,8 @@
 <body>
 	<?php 
 		require ("cabecera.php");
-    ?>
-	<div id="contenido">
-		
-		<h1>Clasificación Bundesliga</h1>
-        <p><table>
-        <tr>
-            <td>Equipo</td>
-            <td>PT</td>
-            <td>PJ</td>
-            <td>PG</td>
-            <td>PE</td>
-            <td>PP</td>
-            <td>GF</td>
-            <td>GC</td>
-        </tr>
-        <?php foreach($data as $element): ?>
-        <tr>
-            <td><?= $element['Equipo']?></td>
-            <td><?= $element['PT']?></td>
-            <td><?= $element['PJ']?></td>
-            <td><?= $element['PG']?></td>
-            <td><?= $element['PE']?></td>
-            <td><?= $element['PP']?></td>
-            <td><?= $element['GF']?></td>
-            <td><?= $element['GC']?></td>
-        </tr>
-        <?php endforeach;?>
 
-        <?php
-
-        	$data = array(
+		$data = array(
             '1' => array(
                 'Equipo' => 'Bayern Munich',
                 'PT' => '49',
@@ -147,10 +118,37 @@
                 'GC' => '35'
             ),
         );
-        ?>
-        
+
+    ?>
+	<div id="contenido">
+		
+		<h1>Clasificación Bundesliga</h1>
+        <p><table>
+        <tr>
+            <td>Equipo</td>
+            <td>PT</td>
+            <td>PJ</td>
+            <td>PG</td>
+            <td>PE</td>
+            <td>PP</td>
+            <td>GF</td>
+            <td>GC</td>
+        </tr>
+        <?php foreach($data as $element): ?>
+        <tr>
+            <td><?= $element['Equipo']?></td>
+            <td><?= $element['PT']?></td>
+            <td><?= $element['PJ']?></td>
+            <td><?= $element['PG']?></td>
+            <td><?= $element['PE']?></td>
+            <td><?= $element['PP']?></td>
+            <td><?= $element['GF']?></td>
+            <td><?= $element['GC']?></td>
+        </tr>
+        <?php endforeach;?>
+    		</table>
+		</p>
 	</div>
-    </p>
 
 	<?php 
 		require ("sidebarDer.php");
