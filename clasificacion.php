@@ -125,14 +125,14 @@
 		<h1>Clasificación Bundesliga</h1>
         <p><table>
         <tr>
-            <td>Equipo</td>
-            <td>PT</td>
-            <td>PJ</td>
-            <td>PG</td>
-            <td>PE</td>
-            <td>PP</td>
-            <td>GF</td>
-            <td>GC</td>
+            <th>Equipo</th>
+            <th>PT</th>
+            <th>PJ</th>
+            <th>PG</th>
+            <th>PE</th>
+            <th>PP</th>
+            <th>GF</th>
+            <th>GC</th>
         </tr>
         <?php foreach($data as $element): ?>
         <tr>
