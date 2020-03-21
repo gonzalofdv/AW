@@ -1,5 +1,5 @@
 <?php
- class Usuario {
+ class UsuarioTransfer {
 private $nom="";
 private $apellido1="";
 private $apellido2="";
