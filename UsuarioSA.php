@@ -10,8 +10,8 @@ class UsuarioSA {
 		if(!$this->usuarioDAO){
 			$this->usuarioDAO = new UsuarioDAO();
 		}
-		if(usuarioDAO->comprobarUsuario($usuario)){
-			return usuarioDAO->insertarUsuario($usuario);
+		if($usuarioDAO->comprobarUsuario($usuario)){
+			return $usuarioDAO->insertarUsuario($usuario);
 		}
 		else{
 			return false;
@@ -22,14 +22,14 @@ class UsuarioSA {
 		if(!$this->usuarioDAO){
 			$this->usuarioDAO = new UsuarioDAO();
 		}
-		usuarioDAO->update($usuario);
+		$usuarioDAO->update($usuario);
 	}
 	
 	public function deleteUsuario(){
 		if(!$this->usuarioDAO){
 			$this->usuarioDAO = new UsuarioDAO();
 		}
-		usuarioDAO->delete($usuario);
+		$usuarioDAO->delete($usuario);
 	}
 	
 }
