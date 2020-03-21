@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-03-2020 a las 19:26:49
+-- Tiempo de generación: 21-03-2020 a las 20:12:01
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -116,8 +116,8 @@ CREATE TABLE `usuarios` (
   `FechaNacimiento` date NOT NULL,
   `EquipoFavorito` varchar(50) CHARACTER SET utf8 NOT NULL,
   `NombreUsuario` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `Contraseña` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `E-Mail` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `Contrasena` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `Email` varchar(100) CHARACTER SET utf8 NOT NULL,
   `Administrador` tinyint(1) NOT NULL,
   `SomosFamilia` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
