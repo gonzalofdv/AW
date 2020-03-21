@@ -8,10 +8,9 @@ class noticiaTransfer{
 	private $codLiga;
 	
 	//Constructor
-	public function __construct( $idNoticia, $codUsuario, $codLiga, $titular, $texto) {
+	public function __construct($codUsuario, $codLiga, $titular, $texto) {
         $this->titular = $titular;
         $this->texto = $texto;
-        $this->idNoticia = $idNoticia;
         $this->codUsuario = $codUsuario;
         $this->codLiga = $codLiga;
     }

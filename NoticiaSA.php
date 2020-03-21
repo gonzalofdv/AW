@@ -13,14 +13,14 @@ class NoticiaSA {
 		noticiaDAO->insert($noticia);
 	}
 	
-	public function updateNoticia(){
+	public function updateNoticia(NoticiaTransfer $noticia){
 		if(!$this->noticiaDAO){
 			$this->noticiaDAO = new NoticiaDAO();
 		}
 		noticiaDAO->update($noticia);
 	}
 	
-	public function deleteNoticia(){
+	public function deleteNoticia(NoticiaTransfer $noticia){
 		if(!$this->noticiaDAO){
 			$this->noticiaDAO = new NoticiaDAO();
 		}
