@@ -9,32 +9,11 @@
 	<fieldset>
 		<legend>Registro Usuario</legend>
 			Nombre:<br> <input type="text" name="nom"><br>
-			Apellidos:<br> <input type="text" name="apellidos"><br>
+			Apellido1:<br> <input type="text" name="apellidos"><br>
+			Apellido2:<br> <input type="text" name="apellidos"><br>
 			Sexo:<br/>
 			<input type="radio" name="sexo" value="hombre" checked/> Hombre
 			<input type="radio" name="sexo" value="mujer" /> Mujer<br>
-			Fecha de nacimiento: <br>
-			Día: <select name=dia>
-			<?php
-				for($i=1; $i<=31; $i++) {
-        		 echo "<option value=$i>$i</option>";
-        		}  
-         	?>
-            </select>
-             Mes: <select name=mes>
-            <?php
-			    for($i=1; $i<=12; $i++) {
-			     echo "<option value=$i>$i</option>";
-			    }
-     		?>
-		    </select>
-			 Año: <select name=anio>
-			 <?php
-			    for($i=1960; $i<=2020; $i++) {
-			     echo "<option value=$i>$i</option>";
-			    }
-		    ?>
-            </select><br>
 			Equipo favorito: <br> <input type="text" name="equipo"><br>
 			Nombre de usuario:<br> <input type="text" name="usu"><br>	
 			Contraseña:<br/>
