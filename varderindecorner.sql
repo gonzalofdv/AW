@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-03-2020 a las 18:48:10
+-- Tiempo de generación: 20-03-2020 a las 19:26:49
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `equipos` (
-  `IdEquipo` varchar(6) NOT NULL,
-  `CodLiga` varchar(6) NOT NULL,
+  `IdEquipo` int(6) NOT NULL,
+  `CodLiga` int(6) NOT NULL,
   `Puntos` int(3) NOT NULL,
   `GolesAFavor` int(3) NOT NULL,
   `GolesEnContra` int(3) NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE `equipos` (
 
 CREATE TABLE `jugadores` (
   `IdJugador` varchar(6) NOT NULL,
-  `CodEquipo` varchar(6) NOT NULL,
+  `CodEquipo` int(6) NOT NULL,
   `Nombre` varchar(20) NOT NULL,
   `Apellido` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -57,7 +57,7 @@ CREATE TABLE `jugadores` (
 --
 
 CREATE TABLE `ligas` (
-  `IdLiga` varchar(6) NOT NULL,
+  `IdLiga` int(6) NOT NULL,
   `Nombre` varchar(40) NOT NULL,
   `Pais` varchar(20) NOT NULL,
   `NºEquipos` int(2) NOT NULL
@@ -66,11 +66,25 @@ CREATE TABLE `ligas` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `noticias`
+--
+
+CREATE TABLE `noticias` (
+  `IdNoticia` int(11) NOT NULL,
+  `CodUsuario` int(6) NOT NULL,
+  `CodLiga` int(6) NOT NULL,
+  `Texto` text CHARACTER SET utf8 NOT NULL,
+  `Titular` varchar(100) CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `preguntas`
 --
 
 CREATE TABLE `preguntas` (
-  `IdPregunta` varchar(3) NOT NULL,
+  `IdPregunta` int(3) NOT NULL,
   `Pregunta` varchar(300) NOT NULL,
   `CodLiga` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -82,28 +96,30 @@ CREATE TABLE `preguntas` (
 --
 
 CREATE TABLE `respuestas` (
-  `IdRespuesta` varchar(3) NOT NULL,
-  `IdPregunta` varchar(3) NOT NULL,
+  `IdRespuesta` int(3) NOT NULL,
+  `IdPregunta` int(3) NOT NULL,
   `Correcta` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE `usuario` (
+CREATE TABLE `usuarios` (
   `IdUsuario` int(10) NOT NULL,
-  `Nombre` varchar(30) NOT NULL,
-  `Apellido1` varchar(30) NOT NULL,
-  `Apellido2` varchar(30) NOT NULL,
-  `Sexo` varchar(10) NOT NULL,
+  `Nombre` varchar(30) CHARACTER SET utf8 NOT NULL,
+  `Apellido1` varchar(30) CHARACTER SET utf8 NOT NULL,
+  `Apellido2` varchar(30) CHARACTER SET utf8 NOT NULL,
+  `Sexo` varchar(10) CHARACTER SET utf8 NOT NULL,
   `FechaNacimiento` date NOT NULL,
-  `EquipoFavorito` varchar(50) NOT NULL,
-  `NombreUsuario` varchar(50) NOT NULL,
-  `Contraseña` varchar(100) NOT NULL,
-  `E-Mail` varchar(100) NOT NULL
+  `EquipoFavorito` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `NombreUsuario` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `Contraseña` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `E-Mail` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `Administrador` tinyint(1) NOT NULL,
+  `SomosFamilia` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -131,6 +147,14 @@ ALTER TABLE `ligas`
   ADD PRIMARY KEY (`IdLiga`);
 
 --
+-- Indices de la tabla `noticias`
+--
+ALTER TABLE `noticias`
+  ADD PRIMARY KEY (`IdNoticia`),
+  ADD KEY `CodUsuario` (`CodUsuario`),
+  ADD KEY `CodLiga` (`CodLiga`);
+
+--
 -- Indices de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
@@ -145,9 +169,9 @@ ALTER TABLE `respuestas`
   ADD KEY `IdPregunta` (`IdPregunta`);
 
 --
--- Indices de la tabla `usuario`
+-- Indices de la tabla `usuarios`
 --
-ALTER TABLE `usuario`
+ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`IdUsuario`);
 
 --
@@ -155,9 +179,39 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de la tabla `usuario`
+-- AUTO_INCREMENT de la tabla `equipos`
 --
-ALTER TABLE `usuario`
+ALTER TABLE `equipos`
+  MODIFY `IdEquipo` int(6) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `ligas`
+--
+ALTER TABLE `ligas`
+  MODIFY `IdLiga` int(6) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `noticias`
+--
+ALTER TABLE `noticias`
+  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `preguntas`
+--
+ALTER TABLE `preguntas`
+  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `respuestas`
+--
+ALTER TABLE `respuestas`
+  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
   MODIFY `IdUsuario` int(10) NOT NULL AUTO_INCREMENT;
 
 --
@@ -175,6 +229,13 @@ ALTER TABLE `equipos`
 --
 ALTER TABLE `jugadores`
   ADD CONSTRAINT `jugadores_ibfk_1` FOREIGN KEY (`CodEquipo`) REFERENCES `equipos` (`IdEquipo`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `noticias`
+--
+ALTER TABLE `noticias`
+  ADD CONSTRAINT `noticias_ibfk_1` FOREIGN KEY (`CodUsuario`) REFERENCES `usuarios` (`IdUsuario`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `noticias_ibfk_2` FOREIGN KEY (`CodLiga`) REFERENCES `ligas` (`IdLiga`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `respuestas`
