@@ -16,6 +16,7 @@
 		require("cabecera.php");
 	?>
 	<div id="contenido">
+	<br>
 	<form action="procesoRegistro.php" method="post">
 	<fieldset>
 		<legend>Registro Usuario</legend>
