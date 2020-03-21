@@ -24,4 +24,5 @@ class DAO {
             echo "fail";
         }
     }
+}
 ?>
