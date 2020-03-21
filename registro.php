@@ -5,6 +5,10 @@
 	<title>Registro</title>
 </head>
 <body>
+	<?php
+		require("cabecera.php");
+	?>
+	<div id="contenido">
 	<form action="procesoRegistro.php" method="post">
 	<fieldset>
 		<legend>Registro Usuario</legend>
@@ -25,5 +29,10 @@
 			<input type="submit" name="aceptar">	
 	</fieldset>
 	</form>
+	</div>
+	<?php
+		require("sidebarDer.php");
+		require("pie.php");
+	?>
 </body>
 </html>
