@@ -3,18 +3,15 @@
  private $nom="";
 private $apellidos="";
 private $sexo="";
-private $dia="";
-private $mes="";
-private $anio"";
 private $equipo="";
 private $usu="";
 private $contrasena="";
 private $mail ="";
-private $condi="";
-. . .
- //constructor
-public Usuario(){}
 
+ //constructor
+
+    public Usuario(){}
+    
 
 	public function getNom(){
 		return $this->nom;
