@@ -1,5 +1,6 @@
 <?php
 require_once('UsuarioDAO.php');
+require_once('UsuarioTransfer.php')
 
 class UsuarioSA {
 
