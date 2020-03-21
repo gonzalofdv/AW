@@ -1,4 +1,5 @@
 <?php
+<?php session_start(); 
 require_once('UsuarioSA.php');
 require_once('UsuarioTransfer.php');
 
