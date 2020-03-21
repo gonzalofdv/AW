@@ -7,7 +7,7 @@ class DAO {
  	public function __construct(){
         if (!$this->db)
         {
-            $this->db = new mysqli('localhost', 'beer', 'admin', 'beer');
+            $this->db = new mysqli('localhost', 'userLocal', 'Ua8smYv6GzqsNnsy', 'varderindecorner');
             if ($this->db->connect_errno) {
                 echo "Fallo al conectar a MySQL: (" . $this->db->connect_errno . ") " . $this->db->connect_error ;
             }
