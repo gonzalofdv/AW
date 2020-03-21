@@ -13,7 +13,7 @@ private $esFamilia="";
 
  //constructor
 
-    public Usuario(){}
+    public function __construct(){}
     
 
 	public function getNom(){
