@@ -1,7 +1,8 @@
 <?php
  class Usuario {
  private $nom="";
-private $apellidos="";
+private $apellido1="";
+private $apellido2="";
 private $sexo="";
 private $equipo="";
 private $usu="";
@@ -21,12 +22,19 @@ private $mail ="";
 		$this->nom = $nom;
 	}
 
-	public function getApellidos(){
-		return $this->apellidos;
+	public function getApellido1(){
+		return $this->apellido1;
 	}
 
-	public function setApellidos($apellidos){
-		$this->apellidos = $apellidos;
+	public function setApellido1($apellido1){
+		$this->apellidos = $apellido1;
+	}
+	public function getApellido2(){
+		return $this->apellido2;
+	}
+
+	public function setApellido2($apellido2){
+		$this->apellidos = $apellido2;
 	}
 
 	public function getSexo(){
