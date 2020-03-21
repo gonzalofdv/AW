@@ -1,8 +1,9 @@
 <?php
 require_once('NoticiaTransfer.php');
 
-//Metodos
+class NoticiaDAO {
 
+	//Metodos
 	public Noticia getNoticia($idNoticia) {
 		$noticiaArray =  SelectArray("SELECT * from Noticias where id = '$id'"); 
 		
@@ -28,5 +29,7 @@ require_once('NoticiaTransfer.php');
 	public delete(NoticiaTransfer $n){
 		$query("DELETE Noticias where id = '$n->id'"); 
 	}
+	
+}
 	
 ?>
