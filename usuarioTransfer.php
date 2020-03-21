@@ -9,7 +9,7 @@ private $usu="";
 private $contrasena="";
 private $mail ="";
 private $esAdmin="";
-private $esfamilia="";
+private $esFamilia="";
 
  //constructor
 
