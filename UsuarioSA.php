@@ -10,7 +10,12 @@ class UsuarioSA {
 		if(!$this->usuarioDAO){
 			$this->usuarioDAO = new UsuarioDAO();
 		}
-		usuarioDAO->insert($usuario);
+		if(usuarioDAO->comprobarUsuario($usuario)){
+			return usuarioDAO->insertarUsuario($usuario);
+		}
+		else{
+			return false;
+		}
 	}
 	
 	public function updateUsuario(){
