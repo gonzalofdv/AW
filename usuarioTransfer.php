@@ -13,7 +13,18 @@ private $esFamilia="";
 
  //constructor
 
-    public function __construct(){}
+    public function __construct($nom,$apellido1,$apellido2,$sexo,$equipo,$usu,$contrasena,$mail,$esAdmin,$esFamilia){
+    	 $this->nom = $nom;
+    	 $this->apellido1 = $apellido1;
+    	 $this->apellido2 = $apellido2;
+    	 $this->sexo = $sexo;
+    	 $this->equipo = $equipo;
+    	 $this->usu= $usu;
+    	 $this->contrasena = $contrasena;
+    	 $this->mail = $mail;
+    	 $this->esAdmin = $esAdmin;
+    	 $this->esFamilia = $esFamilia;
+    }
     
 
 	public function getNom(){
