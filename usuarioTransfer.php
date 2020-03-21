@@ -37,29 +37,6 @@ private $mail ="";
 		$this->sexo = $sexo;
 	}
 
-	public function getDia(){
-		return $this->dia;
-	}
-
-	public function setDia($dia){
-		$this->dia = $dia;
-	}
-
-	public function getMes(){
-		return $this->mes;
-	}
-
-	public function setMes($mes){
-		$this->mes = $mes;
-	}
-
-	public function getAnio(){
-		return $this->anio;
-	}
-
-	public function setAnio($anio){
-		$this->anio = $anio;
-	}
 
 	public function getEquipo(){
 		return $this->equipo;
@@ -93,12 +70,5 @@ private $mail ="";
 		$this->mail = $mail;
 	}
 
-	public function getCondi(){
-		return $this->condi;
-	}
-
-	public function setCondi($condi){
-		$this->condi = $condi;
-	}
  }
 ?>
