@@ -8,6 +8,8 @@ private $equipo="";
 private $usu="";
 private $contrasena="";
 private $mail ="";
+private $esAdmin="";
+private $esfamilia="";
 
  //constructor
 
@@ -76,6 +78,20 @@ private $mail ="";
 
 	public function setMail($mail){
 		$this->mail = $mail;
+	}
+	public function getEsAdmin(){
+		return $this->esAdmin;
+	}
+
+	public function setEsAdmin($esAdmin){
+		$this->esAdmin = $esAdmin;
+	}
+	public function getEsFamilia(){
+		return $this->esFamilia;
+	}
+
+	public function setEsFamilia($esFamilia){
+		$this->esFamilia = $esFamilia;
 	}
 
  }
