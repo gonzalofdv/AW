@@ -9,8 +9,8 @@
 	<fieldset>
 		<legend>Registro Usuario</legend>
 			Nombre:<br> <input type="text" name="nom"><br>
-			Apellido1:<br> <input type="text" name="apellidos"><br>
-			Apellido2:<br> <input type="text" name="apellidos"><br>
+			Apellido1:<br> <input type="text" name="apellido1"><br>
+			Apellido2:<br> <input type="text" name="apellido2"><br>
 			Sexo:<br/>
 			<input type="radio" name="sexo" value="hombre" checked/> Hombre
 			<input type="radio" name="sexo" value="mujer" /> Mujer<br>
