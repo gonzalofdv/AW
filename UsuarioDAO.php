@@ -30,7 +30,7 @@ class UsuarioDAO extends DAO{
 		$equipo = $usuario->getEquipo();
 		$usu = $usuario->getUsu();
 		$pass = $usuario->getContrasena();
-		$email = $usuario->getEmail();
+		$email = $usuario->getMail();
 		$esAdmin = $usuario->getEsAdmin();
 		$familia = $usuario->getEsFamilia();
 
