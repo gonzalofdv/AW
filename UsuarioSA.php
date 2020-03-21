@@ -1,6 +1,6 @@
 <?php
 require_once('UsuarioDAO.php');
-require_once('UsuarioTransfer.php')
+require_once('UsuarioTransfer.php');
 
 class UsuarioSA {
 
@@ -8,11 +8,12 @@ class UsuarioSA {
     protected $usuarioDAO;
 	
 	public function newUsuario(UsuarioTransfer $usuario){
-		if(!$this->$usuarioDAO){
-			$this->$usuarioDAO = new UsuarioDAO();
+		if(!$this->usuarioDAO){
+			$this->usuarioDAO = new UsuarioDAO();
 		}
-		if($usuarioDAO->comprobarUsuario($usuario)){
-			return $usuarioDAO->insertarUsuario($usuario);
+		$aux = $this->usuarioDAO;
+		if($aux->comprobarUsuario($usuario)){
+			return $aux->insertarUsuario($usuario);
 		}
 		else{
 			return false;
