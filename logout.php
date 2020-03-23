@@ -30,7 +30,7 @@
 		<p>Redireccionando en 3 segundos..</p>
 		<?php
 		header("refresh:3; url=index.php");
-		<?
+		?>
 
 
 	</div>
