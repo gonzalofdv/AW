@@ -20,7 +20,7 @@ class UsuarioSA {
 		}
 	}
 
-	public function checkUusario(UsuarioTransfer $usuario){
+	public function checkUsario(UsuarioTransfer $usuario){
 		if(!$this->usuarioDAO){
 			$this->usuarioDAO = new UsuarioDAO();
 		}
