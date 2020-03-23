@@ -15,6 +15,7 @@ if((!empty($usu)) && (!empty($pass))){
 		if(!$check){
 			$_SESSION['login']=True;
 			$_SESSION['nombre'] = $usu;
+			echo"Uusario correcto" . "<br>" . "Redireccionando en 3 segundos..";
 			header("refresh:3; url=index.php");
 		}
 		else{
