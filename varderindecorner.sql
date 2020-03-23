@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-03-2020 a las 14:36:15
+-- Tiempo de generación: 23-03-2020 a las 19:05:07
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -62,6 +62,18 @@ CREATE TABLE `ligas` (
   `Pais` varchar(20) NOT NULL,
   `NEquipos` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `ligas`
+--
+
+INSERT INTO `ligas` (`IdLiga`, `Nombre`, `Pais`, `NEquipos`) VALUES
+(1, 'Liga Santander', 'España', 20),
+(3, 'Liga Smartbank', 'España', 22),
+(4, 'Premier League', 'Inglaterra', 20),
+(5, 'Bundesliga', 'Alemania', 18),
+(6, 'Ligue 1', 'Francia', 20),
+(7, 'Serie A', 'Italia', 20);
 
 -- --------------------------------------------------------
 
@@ -188,7 +200,7 @@ ALTER TABLE `equipos`
 -- AUTO_INCREMENT de la tabla `ligas`
 --
 ALTER TABLE `ligas`
-  MODIFY `IdLiga` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdLiga` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `noticias`
