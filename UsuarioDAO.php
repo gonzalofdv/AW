@@ -12,13 +12,29 @@ class UsuarioDAO extends DAO{
 		$consulta = mysqli_query($db, $sql);
 		$info = $consulta->fetch_object();
 		if(!$info){
-			//si no existe usuario con ese nombre
+			//si no existe usuario con ese nombre ya
 			return true;
 		}
 		else{ //si ya existe ese usuario
 			return false;
 		}
 	}
+
+	public function esAdmin($usu){
+		$db=$this->db;
+		$sql = "SELECT Administrador FROM usuarios WHERE NombreUsuario LIKE '$usu'";
+		$consulta = mysqli_query($db, $sql);
+		$res = mysqli_fetch_array($consulta);
+		if($res[0]==0){
+			//No es admin
+			return false;
+		}
+		else{ //es admin
+			return true;
+		}
+	}
+
+
 
 	public function insertarUsuario(UsuarioTransfer $usuario){
 		$db=$this->db;

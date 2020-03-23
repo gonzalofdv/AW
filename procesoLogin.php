@@ -15,12 +15,19 @@ if((!empty($usu)) && (!empty($pass))){
 		if(!$check){
 			$_SESSION['login']=True;
 			$_SESSION['nombre'] = $usu;
-			echo "Usario correcto" . "<br>" . "Redireccionando en 3 segundos..";
+			$checkAd=$usuarioSA -> checkAdmin($usu);
+			if($checkAd){
+				$_SESSION['esAdmin']=true;
+			}
+			else{
+				$_SESSION['esAdmin']=false;
+			}
+			echo"Usuario correcto" . "<br>" . "Redireccionando en 3 segundos..";
 			header("refresh:3; url=index.php");
 		}
 		else{
 			echo"El usuario introducio no existe" . "<br>" . "Redireccionando en 3 segundos..";
-			header("refresh:3; url=registro.php");
+			header("refresh:3; url=login.php");
 		}
 }
 else{
