@@ -21,20 +21,20 @@ $condi=$_POST['condi'];
 			$anadido=$usuarioSA ->newUsuario($p);
 				if($anadido){
 					echo"Usuario registrado correctamente." . "<br>" . "Redireccionando en 3 segundos..";
-					header("refresh:3; url=http://localhost/elvarderindecorner/index.php/");
+					header("refresh:3; url=index.php");
 				}
 				else{
 					echo"El usuario introducido ya existe" . "<br>" . "Redireccionando en 3 segundos..";
-					header("refresh:3; url=http://localhost/elvarderindecorner/registro.php/");
+					header("refresh:3; url=registro.php");
 				}
 		}
 	    else{
 				echo"La contraseña no es correcta" . "<br>" . "Redireccionando en 3 segundos..";
-				header("refresh:3; url=http://localhost/elvarderindecorner/registro.php/");
+				header("refresh:3; url=registro.php");
 		}
     }
 	else{
 		echo"Por favor, rellene todos los campos y acepte las condiciones del servicio." . "<br>" . "Redireccionando en 3 segundos..";
-		header("refresh:3; url=http://localhost/elvarderindecorner/registro.php/");
+		header("refresh:3; url=registro.php");
 	}
 ?>
