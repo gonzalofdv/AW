@@ -9,17 +9,16 @@ $pass=$_POST['password'];
 
 
 if((!empty($usu)) && (!empty($pass))){
-		
 	$p = new UsuarioTransfer("", "", "", "", "", $usu,$pass,"", 0, 0); //Constructora UsuarioTransfer, pasándole solo estosatributos se inicia sesión
 	$usuarioSA = new UsuarioSA();
-	$check=$usuarioSA ->checkUsuario($p);
-		if($check){
+	$check= $usuarioSA ->checkUsuario($p);
+		if(!$check){
 			$_SESSION['login']=True;
 			$_SESSION['nombre'] = $usu;
 		}
 		else{
-				echo"El usuario introducio no existe" . "<br>" . "Redireccionando en 3 segundos..";
-				header("refresh:3; url=registro.php");
+			echo"El usuario introducio no existe" . "<br>" . "Redireccionando en 3 segundos..";
+			header("refresh:3; url=registro.php");
 		}
 }
 else{
