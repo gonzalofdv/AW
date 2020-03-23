@@ -13,7 +13,7 @@ if((!empty($usu)) && (!empty($pass))){
 	$p = new UsuarioTransfer("", "", "", "", "", $usu,$pass,"", 0, 0); //Constructora UsuarioTransfer, pasándole solo estosatributos se inicia sesión
 	$usuarioSA = new UsuarioSA();
 	$check=$usuarioSA ->checkUsuario($p);
-		if($check){
+		if(!$check){
 			$_SESSION['login'] = true;
 			$_SESSION['nombre'] = $usu;
 		}

@@ -12,7 +12,7 @@ class UsuarioDAO extends DAO{
 		$consulta = mysqli_query($db, $sql);
 		$info = $consulta->fetch_object();
 		if(!$info){
-			//si no existe usuario con ese nombre ya
+			//si no existe usuario con ese nombre
 			return true;
 		}
 		else{ //si ya existe ese usuario
