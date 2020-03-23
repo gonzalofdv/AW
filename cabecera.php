@@ -4,7 +4,7 @@
 				echo "Hola {$_SESSION['nombre']} <a href='logout.php'>(Cerrar sesión)</a>";
 			}
 			else {
-				echo "<a hrfef='registro.php'>Registrate!</a>" . "<a href='login.php'>Login</a>";
+				echo "<a href='registro.php'>Registrate! </a>" . "<a href='login.php'>Login</a>";
 			}
 		?>
 		<a class="boton_personalizado" href="login.php">Accede</a>
