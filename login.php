@@ -20,7 +20,7 @@
 	?>
 
 	<div id="contenido">
-		<form action="login.php" method="post">
+		<form action="procesoLogin.php" method="post">
             <input type="text" name="e-mail" placeholder="Introduzca su e-mail: ">
             <input type="password" name="password" placeholder="Contraseña: ">
             <input type="submit" value="Enviar">
