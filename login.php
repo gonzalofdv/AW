@@ -21,7 +21,7 @@
 
 	<div id="contenido">
 		<form action="procesoLogin.php" method="post">
-            <input type="text" name="e-mail" placeholder="Introduzca su e-mail: ">
+            <input type="text" name="usuario" placeholder="Introduzca su usuario: ">
             <input type="password" name="password" placeholder="Contraseña: ">
             <input type="submit" value="Enviar">
         </form>
