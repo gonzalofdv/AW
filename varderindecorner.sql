@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-03-2020 a las 20:46:55
+-- Tiempo de generación: 23-03-2020 a las 13:24:26
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -97,7 +97,8 @@ CREATE TABLE `preguntas` (
 
 CREATE TABLE `respuestas` (
   `IdRespuesta` int(3) NOT NULL,
-  `IdPregunta` int(3) NOT NULL,
+  `CodPregunta` int(3) NOT NULL,
+  `Respuesta` varchar(100) NOT NULL,
   `Correcta` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -113,6 +114,7 @@ CREATE TABLE `usuarios` (
   `Apellido1` varchar(30) CHARACTER SET utf8 NOT NULL,
   `Apellido2` varchar(30) CHARACTER SET utf8 NOT NULL,
   `Sexo` varchar(10) CHARACTER SET utf8 NOT NULL,
+  `FechaNacimiento` date NOT NULL,
   `EquipoFavorito` varchar(50) CHARACTER SET utf8 NOT NULL,
   `NombreUsuario` varchar(50) CHARACTER SET utf8 NOT NULL,
   `Contrasena` varchar(100) CHARACTER SET utf8 NOT NULL,
@@ -165,7 +167,7 @@ ALTER TABLE `preguntas`
 --
 ALTER TABLE `respuestas`
   ADD PRIMARY KEY (`IdRespuesta`),
-  ADD KEY `IdPregunta` (`IdPregunta`);
+  ADD KEY `IdPregunta` (`CodPregunta`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -240,7 +242,7 @@ ALTER TABLE `noticias`
 -- Filtros para la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  ADD CONSTRAINT `respuestas_ibfk_1` FOREIGN KEY (`IdPregunta`) REFERENCES `preguntas` (`IdPregunta`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `respuestas_ibfk_1` FOREIGN KEY (`codPregunta`) REFERENCES `preguntas` (`IdPregunta`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
