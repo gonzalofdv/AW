@@ -19,6 +19,20 @@ class UsuarioSA {
 			return false;
 		}
 	}
+
+	public function checkUusario(UsuarioTransfer $usuario){
+		if(!$this->usuarioDAO){
+			$this->usuarioDAO = new UsuarioDAO();
+		}
+		$aux = $this->usuarioDAO;
+		if($aux->comprobarUsuario($usuario)){
+			return true;
+		}
+		else{
+			return false;
+		}
+
+	}
 	
 	public function updateUsuario(){
 		if(!$this->usuarioDAO){
