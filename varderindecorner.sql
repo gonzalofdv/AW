@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-03-2020 a las 13:28:53
+-- Tiempo de generación: 23-03-2020 a las 14:36:15
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -60,7 +60,7 @@ CREATE TABLE `ligas` (
   `IdLiga` int(6) NOT NULL,
   `Nombre` varchar(40) NOT NULL,
   `Pais` varchar(20) NOT NULL,
-  `NºEquipos` int(2) NOT NULL
+  `NEquipos` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -241,7 +241,7 @@ ALTER TABLE `noticias`
 -- Filtros para la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  ADD CONSTRAINT `respuestas_ibfk_1` FOREIGN KEY (`codPregunta`) REFERENCES `preguntas` (`IdPregunta`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `respuestas_ibfk_1` FOREIGN KEY (`CodPregunta`) REFERENCES `preguntas` (`IdPregunta`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
