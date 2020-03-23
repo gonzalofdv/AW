@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-03-2020 a las 19:05:07
+-- Tiempo de generación: 23-03-2020 a las 19:08:56
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -69,11 +69,11 @@ CREATE TABLE `ligas` (
 
 INSERT INTO `ligas` (`IdLiga`, `Nombre`, `Pais`, `NEquipos`) VALUES
 (1, 'Liga Santander', 'España', 20),
-(3, 'Liga Smartbank', 'España', 22),
-(4, 'Premier League', 'Inglaterra', 20),
-(5, 'Bundesliga', 'Alemania', 18),
-(6, 'Ligue 1', 'Francia', 20),
-(7, 'Serie A', 'Italia', 20);
+(2, 'Liga Smartbank', 'España', 22),
+(3, 'Premier League', 'Inglaterra', 20),
+(4, 'Bundesliga', 'Alemania', 18),
+(5, 'Ligue 1', 'Francia', 20),
+(6, 'Serie A', 'Italia', 20);
 
 -- --------------------------------------------------------
 
