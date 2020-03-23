@@ -1,0 +1,263 @@
+.perfil-div{
+	display: flex;
+	background-color: white;
+}
+.perfil-div .derecha{
+	flex-grow: 1;
+	padding-left: 15px;
+	border-left: 1px solid gray;
+	font-size: 20px;
+	width: 30%;
+}
+.derecha a{
+	display: block;
+    /* flex-direction: column; */
+    margin: 10px 0;
+    padding-left: 10px;
+    color: gray;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .3s;
+}
+.derecha a:hover{
+	border-left: 8px solid #FCF282;
+	/*text-decoration: underline;
+	text-decoration-color: #FCF282; */
+
+}
+.verOpts{
+	display: none;
+	background-color: #F9F9F9FF;
+    margin-top: 0px;
+    padding-top: 0px;
+    overflow: hidden;
+    box-shadow: lightgrey 0px 1px 6px 0px inset;
+}
+.ver i{
+	margin-left: 5px;
+}
+.ver .up{
+	margin-top:4px;
+}
+.ver .down{
+	margin-bottom: 3px;
+}
+.activePerfil{
+	border-left: 8px solid #FCF282;
+}
+.perfil-div .izquierda{
+	flex-grow: 3;
+	padding: 10px 20px;
+	width: 70%;
+}
+.izquierda h2{
+	margin-top: 0;
+	padding-bottom: 5px;
+	
+}
+.izquierda .subrayado{
+	border-bottom: 1px solid gray;
+}
+.visitante{
+	display: flex;
+}
+.visitante .imagen{
+	flex-grow: 1;
+	margin-left: 150px;
+}
+
+.visitante .imagen img{
+	background-color: white;
+	height: 250px;
+	width: 250px;
+	border-radius: 50%;
+}
+.visitante .imagen .conectado img{
+	border: 5px solid green;
+}
+.visitante .imagen .desconectado img{
+	border: 5px solid #bfbdbd;
+}
+.visitante .details{
+	flex-grow: 1;
+}
+.visitante input[type="radio"] {
+  display: none;
+}
+
+.visitante label {
+  color: grey;
+}
+
+.visitante .clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  
+}
+.visitante .valoracion form{
+	display: inline;
+    font-size: 26px;
+}
+
+.visitante input[type="radio"]:checked ~ label {
+  color: orange;
+}
+
+.visitante .valorar{
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+.visitante li{
+  margin-bottom: 10px;
+}
+
+
+
+/*
+* Nuevo producto
+*/
+.numis,
+.rdla,
+.fil,
+.fig,
+.cromos,
+.vini,
+.libros,
+.trastero{
+	display: none;
+}
+
+
+.newProd .imagen {
+	/*position : relative;*/
+	/*margin-left: 15px;
+	margin-top: 0px;*/
+	/*height : 100%;*/
+	/*width : 30%;*/
+	flex-grow: 1;
+	overflow: auto;
+	background-color: white;
+	max-height: 750px;
+	max-width: 450px;
+}
+.newProd .imagen h5{
+	color:blue;
+	font-size: 19px;
+}
+
+.poducto .imagen:hover{
+	background:blue;
+	color: white;
+}
+.newProd img.left{
+	height: auto;
+	width: 100%;
+}
+
+.newProd .info{
+	margin-left: 20px;
+	flex-grow: 1;
+}
+
+.newProd .info h5{
+	color: black;
+	font-size: 19px;
+}
+.newProd .info input{
+	width: 90%;
+	border: 1px solid white;
+	outline: none;
+    border-bottom: 2px solid gray;
+    font-size: 18px;
+    transition: all .2s;
+}
+.newProd .info input:focus{
+	border-bottom: 3px solid #FCF282;
+}
+.newProd .info textarea{
+	width: 90%;
+	height: 200px;
+	outline: none;
+    border: 2px solid gray;
+    font-size: 18px;
+    transition: all .2s;
+    border-radius: 4px;
+}
+.newProd .info textarea:focus{
+	border: 3px solid #FCF282;
+}
+
+.newProd .info select{
+	width: 50%;
+	outline:none;
+	border: 2px solid gray;
+	font-size: 18px;
+	transition: all .2s;
+	border-radius: 4px;
+}
+.newProd .info select:focus{
+	border: 3px solid #FCF282;
+}
+.newProd .info .numis{
+	margin-top:20px;
+}
+.newProd .info .numis input{
+	/*margin-top: 7px;*/
+	width: 100%;
+}
+.newProd button{
+	padding: 8px 12px;
+	border:5px solid #FCF282;
+	border-radius: 4px;
+	color:black;
+	transition:all .3s;
+	font-size: 20px;
+	background:none;
+}
+.newProd button:hover{
+	background: lightgray;
+	border-color:lightgray;
+	color: black;
+}
+.newProd .crear{
+	margin-top: 10px;
+}
+
+
+.usuario{
+	display: flex;
+	align-items: center;
+}
+.usuario .imagen{
+	height: 350px;
+	width: 350px;
+	flex-grow: 1;
+	overflow: visible;
+}
+.usuario .imagen img{
+	height: 350px;
+	width: 350px;
+	border-radius: 50%;
+	border: 5px solid green;
+	
+}
+.usuario .details{
+	flex-grow: 1;
+	margin-left: 20px;
+}
+.usuario .seemore p{
+	float: right;
+	color: black;
+	margin-top: 0;
+	border:2px solid black;
+	padding: 5px 30px;
+	border-radius: 4px;
+	font-size: 20px;
+	font-weight: bold;
+}
+.usuario .seemore p:hover, .arrow:hover{
+	background-color: black;
+	color: white;
+}
