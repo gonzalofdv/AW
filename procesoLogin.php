@@ -14,11 +14,11 @@ if((!empty($usu)) && (!empty($pass))){
 	$usuarioSA = new UsuarioSA();
 	$check=$usuarioSA ->checkUsuario($p);
 		if($check){
-			$_SESSION['login']=True;
+			$_SESSION['login'] = true;
 			$_SESSION['nombre'] = $usu;
 		}
 		else{
-				echo"El usuario introducio no existe" . "<br>" . "Redireccionando en 3 segundos..";
+				echo"El usuario introducido no existe" . "<br>" . "Redireccionando en 3 segundos..";
 				header("refresh:3; url=registro.php");
 		}
 }
