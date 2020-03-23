@@ -26,7 +26,12 @@
 
 	<div id="contenido">
 
-		<h1>Has cerrado sesion</h1>
+		<p>Usuario correcto</p><br> 
+		<p>Redireccionando en 3 segundos..</p>
+		<?php
+		header("refresh:3; url=index.php");
+		<?
+
 
 	</div>
 
