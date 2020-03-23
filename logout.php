@@ -26,7 +26,7 @@
 
 	<div id="contenido">
 
-		<p>Usuario correcto</p><br> 
+		<p>Gracias, ¡Vuelva pronto!</p><br> 
 		<p>Redireccionando en 3 segundos..</p>
 		<?php
 		header("refresh:3; url=index.php");
