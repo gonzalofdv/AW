@@ -1,6 +1,7 @@
 <?php
 
 class PreguntaTransfer {
+	private $idPregunta;
 	private $pregunta="";
 	private $codLiga="";
 
@@ -21,11 +22,11 @@ class PreguntaTransfer {
 		$this->pregunta = $pregunta;
 	}
 
-	public function getcodLiga(){
+	public function getCodLiga(){
 		return $this->codLiga;
 	}
 
-	public function setcodLiga($codLiga){
+	public function setCodLiga($codLiga){
 		$this->codLiga = $codLiga
 	}
 }
