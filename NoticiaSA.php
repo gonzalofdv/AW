@@ -6,25 +6,28 @@ class NoticiaSA {
 	// Atributos
     protected $noticiaDAO;
 	
-	public function newNoticia(NoticiaTransfer $noticia){
+	public function insertNoticia(NoticiaTransfer $noticia){
 		if(!$this->noticiaDAO){
 			$this->noticiaDAO = new NoticiaDAO();
 		}
-		noticiaDAO->insert($noticia);
+		$aux = $this->noticiaDAO;
+		$aux->insert($noticia);
 	}
 	
 	public function updateNoticia(NoticiaTransfer $noticia){
 		if(!$this->noticiaDAO){
 			$this->noticiaDAO = new NoticiaDAO();
 		}
-		noticiaDAO->update($noticia);
+		$aux = $this->noticiaDAO;
+		$aux->update($noticia);
 	}
 	
 	public function deleteNoticia(NoticiaTransfer $noticia){
 		if(!$this->noticiaDAO){
 			$this->noticiaDAO = new NoticiaDAO();
 		}
-		noticiaDAO->delete($noticia);
+		$aux = $this->noticiaDAO;
+		$aux->delete($noticia);
 	}
 	
 }
