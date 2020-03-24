@@ -3,7 +3,6 @@ class noticiaTransfer{
 	//Atributos de la clase Noticia
 	private $titular;
 	private $texto;
-	private $idNoticia;
 	private $codUsuario;
 	private $codLiga;
 	
