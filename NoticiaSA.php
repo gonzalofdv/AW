@@ -1,5 +1,6 @@
 <?php
 require_once('NoticiaDAO.php');
+require_once('NoticiaTransfer.php');
 
 class NoticiaSA {
 
