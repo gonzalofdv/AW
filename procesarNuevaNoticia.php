@@ -8,20 +8,20 @@ $titular = $_POST['titular'];
 $cuerpo = $_POST['cuerpo'];
 $condi = $_POST['condi'];
 $codLiga = $_POST['liga'];
-$nombreUsu = $_SESSION['nombre'];
+//$nombreUsu = $_SESSION['nombre']; // ESTO FALLA
 
-if(!empty($titular)) && (!empty($cuerpo) && (!empty($condi)){
+if((!empty($titular)) && (!empty($cuerpo)) && (!empty($condi))){
 	if($codLiga != 0){ //por defecto el formulario tiene valor 0 así que si no se ha seleccionado ninguna liga, el codLiga sera 0 y dara error, si se ha seleccionado una, codLiga tendrá el valor del ID de la liga correspondiente.
-		$usuarioSA = new UsuarioSA();
-		$codUsuario = $usuarioSA->obtenerId($nombreUsu); // Este método nos devuelve el IdUsuario a partir de un nombre de usuario. Esto se hace para poder llamar al constructor correctamente.
+		//$usuarioSA = new UsuarioSA();
+		//$codUsuario = $usuarioSA->obtenerId($nombreUsu); // NO FUNCIONA Este método nos devuelve el IdUsuario a partir de un nombre de usuario. Esto se hace para poder llamar al constructor correctamente.
 		
-		$n = new NoticiaTransfer($codUsuario, $codLiga, $titular, $cuerpo);
+		$n = new NoticiaTransfer('0887', $codLiga, $titular, $cuerpo);
 		
 		$noticiaSA = new NoticiaSA();
 		$noticiaSA->insertNoticia($n);
 		
 		echo "Nueva noticia insertada a la BBDD correctamente, gracias por colaborar<br> Redireccionando en 3 segundos...";
-		header("refresh:3; url=index.php")
+		header("refresh:3; url=index.php");
 	
 	}
 	
