@@ -24,6 +24,8 @@
 			Selecciona la liga a la que pertenece:<br>
 			<select name="liga">
 				<option value="0">Ligas:</option>
+
+				<!-- ESTA PARTE ESTÁ MAL, NO SE PUEDE CONECTAR CON LA BASE DE DATOS AQUI NI REALIZAR CONSULTAS PERO LO HE PUESTO PARA IR PROBANDOLO, LO CORRECTO SERÍA CREAR UN ligasSA Y LLAMAR A UN METODO QUE CON EL DAO HAGA LA CONSULTA QUE SE REFLEJA AQUI Y LA DEVUELVA Y TAL -->
 				<?php
 					$db=@mysqli_connect('localhost', 'userLocal', 'Ua8smYv6GzqsNnsy', 'varderindecorner');
 					$q = mysqli_query($db, "SELECT * FROM ligas");
@@ -36,7 +38,7 @@
 
 			Respuesta correcta:<br> <input type="text" name="v"><br>
 			Respuesta falsa 1:<br> <input type="text" name="f1"><br>
-			Respuesta falsa 2: <br> <input type="text" name="equipo"><br>
+			Respuesta falsa 2: <br> <input type="text" name="f2"><br>
 			
 			<input type="checkbox" name="condi" value="ok">Confirmar enviar pregunta.<br>
 			<input type="submit" name="aceptar">	
