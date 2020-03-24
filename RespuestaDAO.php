@@ -22,19 +22,19 @@ class RespuestaDAO extends DAO{
             %obj = $consulta->fetch_object();
         }
 
-        $r = new RespuestaTransfer($obj->$CodPregunta, $obj->Respuesta, $obj->Correcta);
+        $r = new RespuestaTransfer($obj->CodPregunta, $obj->Respuesta, $obj->Correcta);
 
         return $r;
     }
     
     public insert(RespuestaTransfer $r){
-        $CodPregunta = r->getCodPregunta();
-        $Respuesta = r->getRespuesta();
-        $Correcta = r->getCorrecta();
+        $codPregunta = r->getCodPregunta();
+        $respuesta = r->getRespuesta();
+        $correcta = r->getCorrecta();
 
 
         $sql = "INSERT into Respuestas (CodPregunta, Respuesta, Correcta)
-        VALUES ('$CodRespuesta','$Respuesta','$Correcta')";
+        VALUES ('$codPregunta','$respuesta','$correcta')";
 
         $consulta = mysqli_query($this->db, $sql);
     }

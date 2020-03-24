@@ -1,5 +1,5 @@
 <?php
-class respuestaTransfer{
+class RespuestaTransfer{
     private $codPregunta;
     private $respuesta;
     private $correcta;
