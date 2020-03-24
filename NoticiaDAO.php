@@ -5,9 +5,9 @@ require_once('DAO.php');
 
 class NoticiaDAO extends DAO{
 
-	public function __construct(){
+	/*public function __construct(){
 		parent::__construct();
-	}
+	}*/
 
 	//Metodos
 	public function getNoticia($idNoticia) {
@@ -29,8 +29,14 @@ class NoticiaDAO extends DAO{
 		$texto = $n->getTexto();
 		$titular = $n->getTitular();
 		
-		$sql = "INSERT into noticias (CodUsuario, CodLiga, Texto, Titular) values ('$codUsuario', '$codLiga', '$texto', '$titular')";
+		$sql = "INSERT INTO noticias (CodUsuario, CodLiga, Texto, Titular) VALUES ('$codUsuario', '$codLiga', '$texto', '$titular')";
 		$consulta = mysqli_query($db, $sql);
+		if($consulta){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	
 	public function update(NoticiaTransfer $n){

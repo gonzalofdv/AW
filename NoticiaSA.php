@@ -12,7 +12,7 @@ class NoticiaSA {
 			$this->noticiaDAO = new NoticiaDAO();
 		}
 		$aux = $this->noticiaDAO;
-		$aux->insert($noticia);
+		return $aux->insert($noticia);
 	}
 	
 	public function updateNoticia(NoticiaTransfer $noticia){

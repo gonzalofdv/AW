@@ -19,14 +19,14 @@ $condi=$_POST['condi'];
 			$p = new UsuarioTransfer($nom, $ape1, $ape2, $sex, $equipo, $usu, $pass, $mail, 0, 0);
 			$usuarioSA = new UsuarioSA();
 			$anadido=$usuarioSA ->newUsuario($p);
-				if($anadido){
-					echo"Usuario registrado correctamente." . "<br>" . "Redireccionando en 3 segundos..";
-					header("refresh:3; url=index.php");
-				}
-				else{
-					echo"El usuario introducido ya existe" . "<br>" . "Redireccionando en 3 segundos..";
-					header("refresh:3; url=registro.php");
-				}
+			if($anadido){
+				echo"Usuario registrado correctamente." . "<br>" . "Redireccionando en 3 segundos..";
+				header("refresh:3; url=index.php");
+			}
+			else{
+				echo"El usuario introducido ya existe" . "<br>" . "Redireccionando en 3 segundos..";
+				header("refresh:3; url=registro.php");
+			}
 		}
 	    else{
 				echo"La contraseña no es correcta" . "<br>" . "Redireccionando en 3 segundos..";

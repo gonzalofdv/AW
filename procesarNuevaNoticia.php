@@ -3,6 +3,7 @@
 require_once('NoticiaTransfer.php');
 require_once('NoticiaSA.php');
 require_once('UsuarioSA.php');
+require_once('UsuarioTransfer.php');
 
 $titular = $_POST['titular'];
 $cuerpo = $_POST['cuerpo'];
@@ -15,13 +16,18 @@ if((!empty($titular)) && (!empty($cuerpo)) && (!empty($condi))){
 		//$usuarioSA = new UsuarioSA();
 		//$codUsuario = $usuarioSA->obtenerId($nombreUsu); // NO FUNCIONA Este método nos devuelve el IdUsuario a partir de un nombre de usuario. Esto se hace para poder llamar al constructor correctamente.
 		
-		$n = new NoticiaTransfer('0887', $codLiga, $titular, $cuerpo);
+		$n = new NoticiaTransfer('1', '1', $titular, $cuerpo);
 		
 		$noticiaSA = new NoticiaSA();
-		$noticiaSA->insertNoticia($n);
-		
-		echo "Nueva noticia insertada a la BBDD correctamente, gracias por colaborar<br> Redireccionando en 3 segundos...";
-		header("refresh:3; url=index.php");
+		$anadido = $noticiaSA->insertNoticia($n);
+
+		if($anadido){
+			echo "Nueva noticia insertada a la BBDD correctamente, gracias por colaborar<br> Redireccionando en 3 segundos...";
+			header("refresh:3; url=index.php");
+		}
+		else{
+			echo "Algo ha fallado por aqui";
+		}
 	
 	}
 	

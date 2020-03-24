@@ -8,10 +8,10 @@ class noticiaTransfer{
 	
 	//Constructor
 	public function __construct($codUsuario, $codLiga, $titular, $texto) {
-        $this->titular = $titular;
-        $this->texto = $texto;
         $this->codUsuario = $codUsuario;
         $this->codLiga = $codLiga;
+        $this->texto = $texto;
+        $this->titular = $titular;
     }
 	
 	//Getters y Setters
