@@ -64,7 +64,9 @@ class UsuarioDAO extends DAO{
 		$consulta = mysqli_query($db, $sql);
 		$res = mysqli_fetch_array($consulta);
 		
-		return $res[0];
+		$aux = res[0];
+		
+		return $aux;
 	}
 }
 
