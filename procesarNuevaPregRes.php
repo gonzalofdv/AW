@@ -13,9 +13,11 @@ $f2 = $_POST['f2'];
 $condi = $_POST['condi'];
 
 if(!empty($preg)) && (!empty($codLiga)) && (!empty($v)) && (!empty($f1)) && (!empty($f2)) && (!empty($condi))){
-	if($codLiga != 0){
+	if($codLiga != 0){ //por defecto el formulario tiene valor 0 así que si no se ha seleccionado ninguna liga, el codLiga sera 0 y dara error, si se ha seleccionado una, codLiga tendrá el valor del ID de la liga correspondiente.
+		//creamos la pregunta 
 		$p = new PreguntaTransfer($preg, $codLiga);
 		$preguntaSA = new PreguntaSA();
+		//la insertamos en la base de datos
 		$anadido = $preguntaSA->newPregunta($p);
 
 		if($anadido){
