@@ -34,8 +34,6 @@ class UsuarioDAO extends DAO{
 		}
 	}
 
-
-
 	public function insertarUsuario(UsuarioTransfer $usuario){
 		$db=$this->db;
 
@@ -58,6 +56,15 @@ class UsuarioDAO extends DAO{
 		else{
 			return false;
 		}
+	}
+	
+	public function obtenerId($usu){
+		$db=$this->db;
+		$sql = "SELECT IdUsuario FROM usuarios WHERE NombreUsuario = '$usu'";
+		$consulta = mysqli_query($db, $sql);
+		$res = mysqli_fetch_array($consulta);
+		
+		return $res[0];
 	}
 }
 
