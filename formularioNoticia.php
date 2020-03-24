@@ -21,7 +21,7 @@
 			<fieldset>
 				<legend>Nueva Noticia</legend>
 					Titular:<br> <input type="text" name="titular"><br>
-					<textarea name="cuerpo" rows="15" cols="50">Escribe aquí el cuerpo de la noticia</textarea>
+					<textarea name="cuerpo" rows="10" cols="40">Escribe aquí el cuerpo de la noticia</textarea>
 					<select name="liga">
 						<option value="0">Ligas:</option>
 
