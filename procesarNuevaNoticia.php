@@ -16,7 +16,7 @@ if((!empty($titular)) && (!empty($cuerpo)) && (!empty($condi))){
 		//$usuarioSA = new UsuarioSA();
 		//$codUsuario = $usuarioSA->obtenerId($nombreUsu); // NO FUNCIONA Este método nos devuelve el IdUsuario a partir de un nombre de usuario. Esto se hace para poder llamar al constructor correctamente.
 		
-		$n = new NoticiaTransfer('1', '1', $titular, $cuerpo);
+		$n = new NoticiaTransfer(1, 1, $titular, $cuerpo);
 		
 		$noticiaSA = new NoticiaSA();
 		$anadido = $noticiaSA->insertNoticia($n);
