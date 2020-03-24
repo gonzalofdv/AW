@@ -62,6 +62,16 @@ class UsuarioSA {
 		$usuarioDAO->delete($usuario);
 	}
 	
+	public function obtenerId($usu){
+		if(!$this->usuarioDAO){
+			$this->usuarioDAO = new UsuarioDAO();
+		}
+		$aux = $this->usuarioDAO;
+		$res = $aux->obtenerId($usu);
+		
+		return $res;
+	}
+	
 }
 	
 ?>
