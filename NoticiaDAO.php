@@ -29,7 +29,7 @@ class NoticiaDAO extends DAO{
 		$texto = $n->getTexto();
 		$titular = $n->getTitular();
 		
-		$sql = "INSERT INTO noticias (CodUsuario, CodLiga, Texto, Titular) VALUES ('$codUsuario', '$codLiga', '$texto', '$titular')";
+		$sql = "INSERT INTO noticias (CodUsuario, CodLiga, Texto, Titular) VALUES ('$codUsuario', '$codLiga', '$titular', '$texto')";
 		$consulta = mysqli_query($db, $sql);
 		if($consulta){
 			return true;
