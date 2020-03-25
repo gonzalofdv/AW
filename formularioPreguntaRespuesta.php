@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start(); 
+require('LigaSA.php')?>
 
 <!DOCTYPE html>
 <html>
@@ -9,7 +10,7 @@
 	<meta http-equiv="Last-Modified" content="0">
 	<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
 	<meta http-equiv="Pragma" content="no-cache">
-	<title>Registro</title>
+	<title>Registro Pregunta</title>
 </head>
 <body>
 	<?php
@@ -23,13 +24,11 @@
 			Pregunta:<br> <input type="text" name="preg"><br>
 			Selecciona la liga a la que pertenece:<br>
 			<select name="liga">
-				<option value="0">Ligas:</option>
-
-				<!-- ESTA PARTE ESTÁ MAL, NO SE PUEDE CONECTAR CON LA BASE DE DATOS AQUI NI REALIZAR CONSULTAS PERO LO HE PUESTO PARA IR PROBANDOLO, LO CORRECTO SERÍA CREAR UN ligasSA Y LLAMAR A UN METODO QUE CON EL DAO HAGA LA CONSULTA QUE SE REFLEJA AQUI Y LA DEVUELVA Y TAL -->
+				<option value="0">Ligas:</option>			
 				<?php
-					$db=@mysqli_connect('localhost', 'userLocal', 'Ua8smYv6GzqsNnsy', 'varderindecorner');
-					$q = mysqli_query($db, "SELECT * FROM ligas");
-					while($valores = mysqli_fetch_array($q)){
+					$ligasa=new LigaSA();
+                    $res=$ligasa->devuelveLigaSA();
+					while($valores = mysqli_fetch_array($res)){
 						echo '<option value="' . $valores[0] . '"> ' . $valores[1] . '</option>';
 					}
 				?>
