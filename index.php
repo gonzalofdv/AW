@@ -27,7 +27,7 @@ require('NoticiaSA.php')?>
 			$res = $noticiaSA->devuelveNoticias();
 			$it = 1;
 			while($valores = mysqli_fetch_array($res)){
-				echo $it . '<a href="mostrarNoticia.php?idN='.$valores[0].'&&codUsu='.$valores[1].'&&codLiga='.$valores[2].'&&texto='.$valores[3].'&&titulo='.$valores[4].'">' . $valores[4] . '</a>';
+				echo $it . '<a href="mostrarNoticia.php?idN='.$valores[0].'&&codUsu='.$valores[1].'&&codLiga='.$valores[2].'&&texto='.urlencode($valores[3]).'&&titulo='.$valores[4].'">' . $valores[4] . '</a>';
 
 				echo '<br><br>';
 
