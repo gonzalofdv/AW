@@ -52,6 +52,13 @@ class NoticiaDAO extends DAO{
 		mysqli_query($this->db, $sql);
 		$consulta = mysqli_query($db, $sql);
 	}
+
+	public function devuelveNoticias(){
+		$db = $this->db;
+		$sql = "SELECT * FROM noticias";
+		$res = mysqli_query($db, $sql);
+		return $res;
+	}
 	
 }
 	

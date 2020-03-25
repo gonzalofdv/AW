@@ -71,6 +71,16 @@ class UsuarioSA {
 		
 		return $res;
 	}
+
+	public function obtenerNombreUsu($idUsu){
+		if(!$this->usuarioDAO){
+			$this->usuarioDAO = new UsuarioDAO();
+		}
+		$aux = $this->usuarioDAO;
+		$res = $aux->obtenerNombreUsu($idUsu);
+		
+		return $res;
+	}
 	
 }
 	

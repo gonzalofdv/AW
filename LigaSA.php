@@ -39,6 +39,16 @@ class LigaSA {
 
 		return $res;
 	}
+
+	public function getNombreLiga($idLiga){
+		if(!$this->ligaDAO){
+			$this->ligaDAO = new LigaDAO();
+		}
+		$aux = $this->ligaDAO;
+		$res = $aux->getNombreLiga($idLiga);
+
+		return $res;
+	}
 	
 }
 

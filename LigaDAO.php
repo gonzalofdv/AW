@@ -11,18 +11,18 @@ class LigaDAO extends DAO{
 
 	//Metodos
 	public function getLiga($idLiga) {
-		$sql = "SELECT * from Ligas where IdLiga = '$idLiga'";
+		$sql = "SELECT * from ligas where IdLiga = '$idLiga'";
 		$consulta = mysqli_query($this->db, $sql);
         if($consulta){
             $obj = $consulta->fetch_object();
         }
 		
-		$l = new EquipoTransfer($obj->Nombre, $obj->Pais, $obj->NEquipos);
+		$l = new LigaTransfer($obj->Nombre, $obj->Pais, $obj->NEquipos);
 		
 		return $l;
 	}
 	
-	public function insert(EquipoTransfer $l){
+	public function insert(LigaTransfer $l){
 		
 		$nombre = $l->getNombre();
 		$pais = $l->getPais();
@@ -32,13 +32,13 @@ class LigaDAO extends DAO{
 		$consulta = mysqli_query($this->db, $sql);
 	}
 	
-	public function update(EquipoTransfer $l){
+	public function update(LigaTransfer $l){
 		$sql = "UPDATE Ligas SET Nombre = '$l->getNombre()', Pais = '$l->getPais()', NEquipos = '$l->getNEquipos()' 
 		WHERE IdLiga LIKE '$l->getIdLiga()'"; 
 		$consulta = mysqli_query($this->db, $sql);
 	}
 	
-	public function delete(EquipoTransfer $l){
+	public function delete(LigaTransfer $l){
 		$sql = "DELETE Ligas where IdLiga= '$l->getIdLiga()'"; 
 		mysqli_query($this->db, $sql);
 		$consulta = mysqli_query($this->db, $sql);
@@ -49,6 +49,13 @@ class LigaDAO extends DAO{
 		$sql = "SELECT * FROM ligas";
 		$res = mysqli_query($db, $sql);
 		return $res;
+	}
+
+	public function getNombreLiga($idLiga){
+		$sql = "SELECT Nombre from ligas where IdLiga = '$idLiga'";
+		$consulta = mysqli_query($this->db, $sql);
+        
+        return $obj = $consulta->fetch_object();
 	}
 }
 

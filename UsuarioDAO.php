@@ -68,6 +68,14 @@ class UsuarioDAO extends DAO{
 		
 		return $aux;
 	}
+
+	public function obtenerNombreUsu($idUsu){
+		$db = $this->db;
+		$sql = "SELECT NombreUsuario FROM usuarios WHERE IdUsuario = '$idUsu'";
+		$consulta = mysqli_query($db, $sql);
+
+		return $obj = $consulta->fetch_object();
+	}
 }
 
 ?>

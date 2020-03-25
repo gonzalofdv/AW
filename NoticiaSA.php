@@ -30,7 +30,17 @@ class NoticiaSA {
 		$aux = $this->noticiaDAO;
 		$aux->delete($noticia);
 	}
+
+	public function devuelveNoticias(){
+		if(!$this->noticiaDAO){
+			$this->noticiaDAO = new NoticiaDAO();
+		}
+		$aux = $this->noticiaDAO;
+		$res = $aux->devuelveNoticias();
+
+		return $res;
+	}
 	
 }
-	
+
 ?>

@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start(); 
+require('NoticiaSA.php')?>
 
 <!DOCTYPE html>
 <html>
@@ -20,7 +21,19 @@
 
 	<div id="contenido">
 		<h1>Página principal</h1>
-		<p> Aquí está el contenido público, visible para todos los usuarios. </p>
+		<h2> Aquí vamos a mostrar todos los titulares de noticias, pincha en el título de una de ellas para verla entera.</h2>
+		<?php
+			$noticiaSA = new NoticiaSA();
+			$res = $noticiaSA->devuelveNoticias();
+			$it = 1;
+			while($valores = mysqli_fetch_array($res)){
+				echo $it . '<a href="mostrarNoticia.php?idN='.$valores[0].'&&codUsu='.$valores[1].'&&codLiga='.$valores[2].'&&texto='.$valores[3].'&&titulo='.$valores[4].'">' . $valores[4] . '</a>';
+
+				echo '<br><br>';
+
+				$it++;
+			}
+		?>
 	</div>
 
 	<?php
