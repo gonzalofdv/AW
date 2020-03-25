@@ -26,7 +26,8 @@ if((!empty($preg)) && (!empty($codLiga)) && (!empty($v)) && (!empty($f1)) && (!e
 			//y con ese id podemos completar la informacion de las respuestas
 
 			//obtenemos el id
-			$idP = $preguntaSA->obtenerId($p);
+			$aux = $preguntaSA->getIdPregunta($p);
+			$idP = $aux->IdPregunta;
 			
 			//hemos obtenido el id
 			//ahora creamos los 3 transfer respuestas
