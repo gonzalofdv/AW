@@ -10,7 +10,7 @@ class EquipoDAO extends DAO{
 	}
 
 	//Metodos
-	public EquipoTransfer getEquipo($idEquipo) {
+	public function getEquipo($idEquipo) {
 		$sql = "SELECT * from Equipos where IdEquipo = '$idEquipo'";
 		$consulta = mysqli_query($this->db, $sql);
         if($consulta){
@@ -22,25 +22,25 @@ class EquipoDAO extends DAO{
 		return $e;
 	}
 	
-	public insert(EquipoTransfer $e){
+	public function insert(EquipoTransfer $e){
 		
-		$codLiga = e->getCodLiga();
-		$puntos = e->getPuntos();
-		$golesAFavor = e->getGolesAFavor();
-		$golesEnContra = e->getGolesEnContra();
-		$escudo = e->getEscudo();
+		$codLiga = $e->getCodLiga();
+		$puntos = $e->getPuntos();
+		$golesAFavor = $e->getGolesAFavor();
+		$golesEnContra = $e->getGolesEnContra();
+		$escudo = $e->getEscudo();
 		
 		$sql = "INSERT into Equipos (CodLiga, Puntos, GolesAFavor, GolesEnContra, Escudo) values ('$codLiga', '$puntos', '$golesAFavor', '$golesEnContra', '$escudo')";
 		$consulta = mysqli_query($this->db, $sql);
 	}
 	
-	public update(EquipoTransfer $e){
+	public function update(EquipoTransfer $e){
 		$sql = "UPDATE Equipos SET CodLiga = '$e->getCodLiga()', Puntos = '$e->getPuntos()', GolesAFavor = '$e->golesAFavor()', GolesEnContra = '$e->getGolesEnContra()',
 		Escudo = '$e->getEscudo()' WHERE IdEquipo LIKE '$e->getIdEquipo()'"; 
 		$consulta = mysqli_query($this->db, $sql);
 	}
 	
-	public delete(EquipoTransfer $e){
+	public function delete(EquipoTransfer $e){
 		$sql = "DELETE Equipos where IdEquipo = '$e->getIdEquipo()'"; 
 		mysqli_query($this->db, $sql);
 		$consulta = mysqli_query($this->db, $sql);
