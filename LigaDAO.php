@@ -47,8 +47,7 @@ class LigaDAO extends DAO{
 	public function devuelveLigaDAO(){
 		$db = $this->db;
 		$sql = "SELECT * FROM ligas";
-		$consulta = mysqli_query($db, $sql);
-		$res = mysqli_fetch_array($consulta);
+		$res = mysqli_query($db, $sql);
 		return $res;
 	}
 }

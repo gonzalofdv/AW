@@ -34,7 +34,7 @@ class LigaSA {
 		if(!$this->ligaDAO){
 			$this->ligaDAO = new LigaDAO();
 		}
-		$aux = $this->LigaDAO;
+		$aux = $this->ligaDAO;
 		$res = $aux->devuelveLigaDAO();
 
 		return $res;
