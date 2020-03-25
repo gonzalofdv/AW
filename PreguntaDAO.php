@@ -10,7 +10,7 @@ class PreguntaDAO extends DAO{
 	}
 	
 	//Metodos
-	public Pregunta getPregunta($idPregunta) {
+	public function getPregunta($idPregunta) {
 		$sql = "SELECT * from Noticias where IdPregunta = '$idPregunta'";
 		$consulta = mysqli_query($this->db, $sql);
         if($consulta){
@@ -22,7 +22,7 @@ class PreguntaDAO extends DAO{
 		return $n;
 	}
 	
-	public insert(PreguntaTransfer $n){
+	public function insert(PreguntaTransfer $n){
 		
 		$codLiga = n->getCodLiga();
 		$pregunta = n->getPregunta();
@@ -31,12 +31,12 @@ class PreguntaDAO extends DAO{
 		$consulta = mysqli_query($this->db, $sql);
 	}
 	
-	public update(PreguntaTransfer $n){
+	public function update(PreguntaTransfer $n){
 		$sql = "UPDATE Preguntas SET Pregunta = '$n->getPregunta()', CodLiga = '$n->getCodLiga()' WHERE IdPregunta LIKE '$n->getIdPregunta()'"; 
 		$consulta = mysqli_query($this->db, $sql);
 	}
 	
-	public delete(PreguntaTransfer $n){
+	public function delete(PreguntaTransfer $n){
 		$sql = "DELETE Preguntas where IdPregunta = '$n->getIdPregunta()'"; 
 		mysqli_query($this->db, $sql);
 		$consulta = mysqli_query($this->db, $sql);
