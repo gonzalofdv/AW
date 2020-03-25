@@ -1,6 +1,6 @@
 <?php
 
-require_once('PrgeuntaTransfer.php');
+require_once('PreguntaTransfer.php');
 require_once('DAO.php');
 
 class PreguntaDAO extends DAO{
@@ -24,11 +24,18 @@ class PreguntaDAO extends DAO{
 	
 	public function insert(PreguntaTransfer $n){
 		
-		$codLiga = n->getCodLiga();
-		$pregunta = n->getPregunta();
+		$codLiga = $n->getCodLiga();
+		$pregunta = $n->getPregunta();
 		
-		$sql = "INSERT into Preguntas (Pregunta, CodLiga) values ('$pregunta', '$codLiga')";
+		$sql = "INSERT into preguntas (Pregunta, CodLiga) values ('$pregunta', '$codLiga')";
 		$consulta = mysqli_query($this->db, $sql);
+		
+		if($consulta){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	
 	public function update(PreguntaTransfer $n){
@@ -42,7 +49,15 @@ class PreguntaDAO extends DAO{
 		$consulta = mysqli_query($this->db, $sql);
 	}
 	
-	
+	public function obtenerId(PreguntaTransfer $n){
+		$db=$this->db;
+		$sql = "SELECT IdPregunta FROM preguntas WHERE Pregunta = '$n->getPregunta()'"; 
+		$consulta = mysqli_query($db, $sql);
+		$res = mysqli_fetch_array($consulta);
+		
+		$aux = res[0];
+		return $aux;
+	}
 }
 
 ?>
