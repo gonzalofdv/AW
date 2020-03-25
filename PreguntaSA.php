@@ -20,7 +20,7 @@ class PreguntaSA {
 			$this->preguntaDAO = new PreguntaDAO();
 		}
 		$aux = $this->preguntaDAO;
-		$res = $aux->getIdPregunta($preg);
+		$res = $aux->obtenerId($preg);
 		
 		return $res;
 	}
