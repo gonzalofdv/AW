@@ -28,6 +28,7 @@ if((!empty($preg)) && (!empty($codLiga)) && (!empty($v)) && (!empty($f1)) && (!e
 			//obtenemos el id
 			$aux = $preguntaSA->getIdPregunta($p);
 			$idP = $aux->IdPregunta;
+
 			//hemos obtenido el id
 			//ahora creamos los 3 transfer respuestas
 			$r1 = new RespuestaTransfer($idP, $v, '1'); //1=correcta

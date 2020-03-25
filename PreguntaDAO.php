@@ -54,7 +54,6 @@ class PreguntaDAO extends DAO{
 		$idP = $n->getPregunta(); 
 		$sql = "SELECT IdPregunta FROM preguntas WHERE Pregunta = '$idP'"; 
 		$consulta = mysqli_query($db, $sql);
-		$res = mysqli_fetch_array($consulta);
 		
 		return $obj = $consulta->fetch_object();
 	}
