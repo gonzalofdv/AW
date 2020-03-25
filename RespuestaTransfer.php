@@ -1,14 +1,14 @@
 <?php
 class RespuestaTransfer{
-    private $codPregunta;
-    private $respuesta;
-    private $correcta;
-    private $idRespuesta;
+    private $codPregunta="";
+    private $respuesta="";
+    private $correcta="";
+    private $idRespuesta="";
 
 
     //Constructor
 
-    public function __contruct($codPregunta, $respuesta, $correcta){
+    public function __construct($codPregunta, $respuesta, $correcta){
         $this->codPregunta = $codPregunta;
         $this->respuesta = $respuesta;
         $this->correcta = $correcta;
