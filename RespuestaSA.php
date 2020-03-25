@@ -1,6 +1,9 @@
 <?php
 require_once('RespuestaDAO.php');
+require_once('RespuestaTransfer.php');
+
 class RespuestaSa{
+
     protected $respuestaDAO;
 
     public function insertRespuesta(RespuestaTransfer $respuesta){

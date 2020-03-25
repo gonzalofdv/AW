@@ -30,9 +30,9 @@ if((!empty($preg)) && (!empty($codLiga)) && (!empty($v)) && (!empty($f1)) && (!e
 			
 			//hemos obtenido el id
 			//ahora creamos los 3 transfer respuestas
-			$r1 = new RespuestaTransfer($idP, $v, '1'); //1=correcta
-			$r2 = new RespuestaTransfer($idP, $f1, '0'); //0=falsa
-			$r3 = new RespuestaTransfer($idP, $f2, '0');
+			$r1 = new RespuestaTransfer(9, $v, 1); //1=correcta
+			$r2 = new RespuestaTransfer(9, $f1, 0); //0=falsa
+			$r3 = new RespuestaTransfer(9, $f2, 0);
 
 			//ahora insertamos las 3 respuestas
 			$respuestaSA = new RespuestaSA();
