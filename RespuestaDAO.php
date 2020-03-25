@@ -28,12 +28,12 @@ class RespuestaDAO extends DAO{
     }
     
     public function insert(RespuestaTransfer $r){
-        $codPregunta = r->getCodPregunta();
-        $respuesta = r->getRespuesta();
-        $correcta = r->getCorrecta();
+        $codPregunta = $r->getCodPregunta();
+        $respuesta = $r->getRespuesta();
+        $correcta = $r->getCorrecta();
 
 
-        $sql = "INSERT into Respuestas (CodPregunta, Respuesta, Correcta)
+        $sql = "INSERT into respuestas (CodPregunta, Respuesta, Correcta)
         VALUES ('$codPregunta','$respuesta','$correcta')";
 
         $consulta = mysqli_query($this->db, $sql);
@@ -53,13 +53,6 @@ class RespuestaDAO extends DAO{
         mysqli_query($this->db, $sql);
 		$consulta = mysqli_query($this->db, $sql);
     }
-	
-
-	public function delete(NoticiaTransfer $n){
-		$sql = "DELETE Noticias where IdNoticia = '$n->getIdNoticia()'"; 
-		mysqli_query($this->db, $sql);
-		$consulta = mysqli_query($this->db, $sql);
-	}
 
 }
 
