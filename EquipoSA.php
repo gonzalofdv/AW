@@ -2,7 +2,6 @@
 require_once('EquipoDAO.php');
 
 class EquipoSA {
-	
 	// Atributos
     protected $equipoDAO;
 	

@@ -54,11 +54,6 @@ class RespuestaDAO extends DAO{
 		$consulta = mysqli_query($this->db, $sql);
     }
 	
-	public delete(NoticiaTransfer $n){
-		$sql = "DELETE Noticias where IdNoticia = '$n->getIdNoticia()'"; 
-		mysqli_query($this->db, $sql);
-		$consulta = mysqli_query($this->db, $sql);
-	}
 
 
 }
