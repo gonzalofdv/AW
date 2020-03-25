@@ -10,7 +10,7 @@ class RespuestaDAO extends DAO{
 	}
 
 
-    public Respuesta getRespuesta($idRespuesta){
+    public function getRespuesta($idRespuesta){
         
         //no se si es Respuestas el nom en bbdd
         //IdRespuesta es el id generado en bbdd? 
@@ -19,7 +19,7 @@ class RespuestaDAO extends DAO{
         $consulta = mysqli_query($this->db, $sql);
 
         if($consulta){
-            %obj = $consulta->fetch_object();
+            $obj = $consulta->fetch_object();
         }
 
         $r = new RespuestaTransfer($obj->CodPregunta, $obj->Respuesta, $obj->Correcta);
@@ -27,7 +27,7 @@ class RespuestaDAO extends DAO{
         return $r;
     }
     
-    public insert(RespuestaTransfer $r){
+    public function insert(RespuestaTransfer $r){
         $codPregunta = r->getCodPregunta();
         $respuesta = r->getRespuesta();
         $correcta = r->getCorrecta();
@@ -39,7 +39,7 @@ class RespuestaDAO extends DAO{
         $consulta = mysqli_query($this->db, $sql);
     }
 
-    public update(RespuestaTransfer $r){
+    public function update(RespuestaTransfer $r){
         
         $sql = "UPDATE Respuestas SET CodPregunta = '$r->getCodPregunta()', Respuesta = '$r->getRespuesta()', Correcta = '$r->getCorrecta()'
         WHERE IdRespuesta LIKE '$r->getIdRespuesta()'";
@@ -47,14 +47,14 @@ class RespuestaDAO extends DAO{
         $consulta = mysqli_query($this->db, $sql);
     }
 
-    public delete(RespuestaTransfer $r){
+    public function delete(RespuestaTransfer $r){
 
         $sql = "DELETE Respuestas where IdRespuesta = '$r->getIdRespuesta()'";
         mysqli_query($this->db, $sql);
 		$consulta = mysqli_query($this->db, $sql);
     }
 	
-	public delete(NoticiaTransfer $n){
+	public function delete(NoticiaTransfer $n){
 		$sql = "DELETE Noticias where IdNoticia = '$n->getIdNoticia()'"; 
 		mysqli_query($this->db, $sql);
 		$consulta = mysqli_query($this->db, $sql);
