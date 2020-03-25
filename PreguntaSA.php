@@ -15,12 +15,14 @@ class PreguntaSA {
 		return $aux->insert($preg);
 	}
 	
-	public function obtenerId(PreguntaTransfer $preg){
+	public function getIdPregunta(PreguntaTransfer $preg){
 		if(!$this->preguntaDAO){
 			$this->preguntaDAO = new PreguntaDAO();
 		}
 		$aux = $this->preguntaDAO;
-		return $aux->obtenerId($preg);
+		$res = $aux->getIdPregunta($preg);
+		
+		return $res;
 	}
 }
 
