@@ -1,14 +1,12 @@
 <?php
 require_once('RespuestaDAO.php');
 class RespuestaSa{
-    proteted $respuestaDAO;
+    protected $respuestaDAO;
 
-    public function newRespuesta(RespuestaTransfer $respuesta){
+    public function insertRespuesta(RespuestaTransfer $respuesta){
         if(!$this->respuestaDAO){
             $this->respuestaDAO = new RespuestaDAO();
         }
-
-       // respuestaDAO->insert($respuesta);
         $aux = $this->respuestaDAO;
 		return $aux->insert($respuesta);
     }
@@ -17,9 +15,7 @@ class RespuestaSa{
         if(!$this->respuestaDAO){
             $this->respuestaDAO = new RespuestaDAO();
         }
-
-       // respuestaDAO->update($respuesta);
-         $aux = $this->respuestaDAO;
+        $aux = $this->respuestaDAO;
 		return $aux->update($respuesta);
        
     }
@@ -28,9 +24,7 @@ class RespuestaSa{
         if(!$this->respuestaDAO){
             $this->respuestaDAO = new RespuestaDAO();
         } 
-
-       // respuestaDAO->deleta($respuesta);
-         $aux = $this->respuestaDAO;
+        $aux = $this->respuestaDAO;
 		return $aux->delete($respuesta);
     }
 
