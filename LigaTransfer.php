@@ -8,9 +8,9 @@ class LigaTransfer{
 	
 	//Constructor
 	public function __construct($nombre, $pais, $nEquipos) {
-		this->nombre = $nombre;
-		this->pais = $pais;
-		this->nEquipos = $nEquipos;
+		$this->nombre = $nombre;
+		$this->pais = $pais;
+		$this->nEquipos = $nEquipos;
 	}
 	
 	public function getIdLiga(){
