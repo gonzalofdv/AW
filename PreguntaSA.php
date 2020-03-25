@@ -7,12 +7,20 @@ class PreguntaSA {
 
 	protected $preguntaDAO;
 
-	public function newPregunta(PreguntaTransfer $preg){
+	public function insertPregunta(PreguntaTransfer $preg){
 		if(!$this->preguntaDAO){
 			$this->preguntaDAO = new PreguntaDAO();
 		}
 		$aux = $this->preguntaDAO;
 		return $aux->insert($preg);
+	}
+	
+	public function obtenerId(PreguntaTransfer $preg){
+		if(!$this->preguntaDAO){
+			$this->preguntaDAO = new PreguntaDAO();
+		}
+		$aux = $this->preguntaDAO;
+		return $aux->obtenerId($preg);
 	}
 }
 
