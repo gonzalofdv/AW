@@ -12,13 +12,13 @@ $f1 = $_POST['f1'];
 $f2 = $_POST['f2'];
 $condi = $_POST['condi'];
 
-if(!empty($preg)) && (!empty($codLiga)) && (!empty($v)) && (!empty($f1)) && (!empty($f2)) && (!empty($condi))){
+if((!empty($preg)) && (!empty($codLiga)) && (!empty($v)) && (!empty($f1)) && (!empty($f2)) && (!empty($condi))){
 	if($codLiga != 0){ //por defecto el formulario tiene valor 0 así que si no se ha seleccionado ninguna liga, el codLiga sera 0 y dara error, si se ha seleccionado una, codLiga tendrá el valor del ID de la liga correspondiente.
 		//creamos la pregunta 
 		$p = new PreguntaTransfer($preg, $codLiga);
 		$preguntaSA = new PreguntaSA();
 		//la insertamos en la base de datos
-		$anadido = $preguntaSA->newPregunta($p);
+		$anadido = $preguntaSA->insertPregunta($p);
 
 		if($anadido){
 			//ahora tocaria cargar las respuestas
@@ -26,7 +26,8 @@ if(!empty($preg)) && (!empty($codLiga)) && (!empty($v)) && (!empty($f1)) && (!em
 			//y con ese id podemos completar la informacion de las respuestas
 
 			//obtenemos el id
-			$idP = $preguntaSA->obtenerID($p);
+			$idP = $preguntaSA->obtenerId($p);
+			
 			//hemos obtenido el id
 			//ahora creamos los 3 transfer respuestas
 			$r1 = new RespuestaTransfer($idP, $v, '1'); //1=correcta
@@ -41,11 +42,12 @@ if(!empty($preg)) && (!empty($codLiga)) && (!empty($v)) && (!empty($f1)) && (!em
 
 			//ya hemos insertado todo, ahora mostramos mensaje y volvemos al a pagina
 			echo "Nueva pregunta insertada a la BBDD correctamente, gracias por colaborar<br> Redireccionando en 3 segundos...";
-			header("refresh:3; url=index.php")
+			header("refresh:3; url=index.php");
 
 		}
 		else{
 			//Error de algun fallo introduciendo la pregunta
+			echo "Puta mierda";
 		}
 	}
 	else{
@@ -61,3 +63,5 @@ else{
 	echo "Redireccionando...";
 	header("refresh:3; url=formularioPreguntaRespuesta.php");
 }
+
+?>
