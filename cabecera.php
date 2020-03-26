@@ -1,6 +1,6 @@
 <div id="cabecera">
 		<?php
-			if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)) {
+			if (isset($_SESSION["login"]) && ($_SESSION["login"]==true)) {
 				echo "Hola {$_SESSION['nombre']} <a href='logout.php'>(Cerrar sesión)</a>";
 			}
 			else {
