@@ -33,7 +33,7 @@ else{
 	//Mandar error de que faltan campos por rellenar
 	echo "Faltan campos por rellenar! <br>";
 	echo "Redireccionando...";
-	header("refresh:3; url=formularioNoticia.php");
+	header("refresh:3; url=formularioComentario.php");
 }
 
 ?>
