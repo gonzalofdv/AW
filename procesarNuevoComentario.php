@@ -6,16 +6,17 @@ require_once('UsuarioSA.php');
 require_once('UsuarioTransfer.php');
 
 //$codUsuario = $_POST[''];
+$idNoticia = $_GET['idN']
 $comentario = nl2br($_POST['cuerpo']);
 $condi = $_POST['condi'];
-//$nombreUsu = $_SESSION['nombre']; // ESTO FALLA
+$nombreUsu = $_SESSION['nombre']; // ESTO FALLA
 // TENEMOS QUE HACER ALGO PARA OBTENER EL IDNOTICIA.
 
 if((!empty($comentario)) && (!empty($condi))){
-	//$usuarioSA = new UsuarioSA();
-	//$codUsuario = $usuarioSA->obtenerId($nombreUsu); // NO FUNCIONA Este método nos devuelve el IdUsuario a partir de un nombre de usuario. Esto se hace para poder llamar al constructor correctamente.
+	$usuarioSA = new UsuarioSA();
+	$codUsuario = $usuarioSA->obtenerId($nombreUsu); // NO FUNCIONA Este método nos devuelve el IdUsuario a partir de un nombre de usuario. Esto se hace para poder llamar al constructor correctamente.
 		
-	$n = new ComentarioTransfer(1, 1, $comentario);
+	$n = new ComentarioTransfer($idNoticia, $codUsuario, $comentario);
 		
 	$comentarioSA = new ComentarioSA();
 	$anadido = $comentarioSA->insertComentario($n);
