@@ -17,6 +17,7 @@ $idNoticia = $_GET['idN'];?>
 		require("cabecera.php");
 	?>
 	<div id="contenido">
+	<?php if (isset($_SESSION["login"]) && ($_SESSION["login"]==true)) {?>
 	<br>
 		<form action="procesarNuevoComentario.php?idN=$idNoticia" method="post">
 			<fieldset>
@@ -26,6 +27,11 @@ $idNoticia = $_GET['idN'];?>
 					<input type="submit" name="aceptar">	
 			</fieldset>
 		</form>
+	<?php }
+		else{
+			echo "Debes estar registrado para poder comentar las noticias.";
+			header("refresh:3; url=index.php");
+	}?>
 	</div>
 	<?php
 		require("sidebarDer.php");
