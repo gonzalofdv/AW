@@ -1,6 +1,6 @@
 <?php session_start();
 $idNoticia = $_GET['idN'];
-echo$idNoticia;?>
+?>
 
 
 <!DOCTYPE html>
