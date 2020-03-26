@@ -14,8 +14,8 @@ $nombreUsu = $_SESSION['nombre']; // ESTO FALLA
 
 if((!empty($comentario)) && (!empty($condi))){
 	$usuarioSA = new UsuarioSA();
-	$codUsuario = $usuarioSA->obtenerId($nombreUsu); // NO FUNCIONA Este método nos devuelve el IdUsuario a partir de un nombre de usuario. Esto se hace para poder llamar al constructor correctamente.
-		
+	$consulta = $usuarioSA->obtenerId($nombreUsu); // NO FUNCIONA Este método nos devuelve el IdUsuario a partir de un nombre de usuario. Esto se hace para poder llamar al constructor correctamente.
+	$codUsuario=$consulta->IdUsuario;
 	$n = new ComentarioTransfer($idNoticia, $codUsuario, $comentario);
 		
 	$comentarioSA = new ComentarioSA();
