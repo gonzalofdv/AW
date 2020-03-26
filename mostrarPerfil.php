@@ -1,5 +1,6 @@
 <?php session_start(); 
 $usuario=$_SESSION['nombre'];
+require_once('UsuarioSA.php');
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +13,6 @@ $usuario=$_SESSION['nombre'];
 
 <body>
 
-<div id="contenedor">
 
 
 	<?php
@@ -22,19 +22,19 @@ $usuario=$_SESSION['nombre'];
 	<div id="contenido">
 		<h1>Perfil de Usuario</h1>
 		<?php
-			$usuarioSa = new UsuarioSA();
+			$usuarioSA = new UsuarioSA();
 			$perfil = $usuarioSA->getUsuario($usuario);
-			echo "<b>Usuario: </b>" . $perfil->nom . "<br>";
-			echo "<b>Nombre: </b>" . $perfil->apellido1 . $perfil->apellido2 . "<br>";
-			echo "<b>Sexo: </b>" . $perfil->sexo . "<br>";
-			echo "<b>Tu equipo: </b>" . $perfil->equipo . "<br>";
-			echo "<b>Mail: </b>" . $perfil->mail . "<br>";
-			if($perfil->esFamilia){
-				echo"<b>Usuario SomosFamilia: SI </b><br>";
+			echo "<b>Usuario: </b>" . $perfil->Nombre . "<br>";
+			echo "<b>Nombre: </b>" . $perfil->Apellido1 ." ". $perfil->Apellido2 . "<br>";
+			echo "<b>Sexo: </b>" . $perfil->Sexo . "<br>";
+			echo "<b>Tu equipo: </b>" . $perfil->EquipoFavorito . "<br>";
+			echo "<b>Mail: </b>" . $perfil->Email . "<br>";
+			if($perfil->SomosFamilia){
+				echo"<b>Usuario SomosFamilia: </b> SI <br>";
 			}else{
-				echo"<b>Usuario SomosFamilia: NO </b><br>";
+				echo"<b>Usuario SomosFamilia: </b> NO <br>";
 			}  
-			echo "<b>Puntos conseguidos: </b>" . $perfil->puntos . "<br>";
+			echo "<b>Puntos conseguidos: </b>" . $perfil->Puntos . "<br>";
 		?>
 		
 
@@ -45,7 +45,6 @@ $usuario=$_SESSION['nombre'];
 		require("pie.php");
 	?>
 
-</div>
 
 </body>
 </html>
