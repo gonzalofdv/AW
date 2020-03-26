@@ -6,9 +6,9 @@ class ComentarioTransfer{
 	private $comentario;
 	
 	public function __construct($codNoticia, $codUsuario, $comentario) {
-		this->codNoticia = $codNoticia;
-		this->codUsuario = $codUsuario;
-		this->comentario = $comentario;
+		$this->codNoticia = $codNoticia;
+		$this->codUsuario = $codUsuario;
+		$this->comentario = $comentario;
     }
 	
 	public function getCodNoticia(){
