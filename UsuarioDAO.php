@@ -85,9 +85,8 @@ class UsuarioDAO extends DAO{
 		$sql = "SELECT * from usuarios where NombreUsuario = '$nombre'";
 		$consulta = mysqli_query($db, $sql);
 		
-		if($consulta){
-            $obj = $consulta->fetch_object();
-        }
+        return  $obj = $consulta->fetch_object();
+        
 }
 
 ?>
