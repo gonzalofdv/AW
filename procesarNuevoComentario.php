@@ -6,7 +6,7 @@ require_once('UsuarioSA.php');
 require_once('UsuarioTransfer.php');
 
 //$codUsuario = $_POST[''];
-$idNoticia = $_GET['idN']
+$idNoticia = $_GET['idN'];
 $comentario = nl2br($_POST['cuerpo']);
 $condi = $_POST['condi'];
 $nombreUsu = $_SESSION['nombre']; // ESTO FALLA
