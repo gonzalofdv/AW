@@ -1,4 +1,5 @@
-<?php session_start();?>
+<?php session_start();
+$idNoticia = $_GET['idN'];?>
 
 <!DOCTYPE html>
 <html>
@@ -17,7 +18,7 @@
 	?>
 	<div id="contenido">
 	<br>
-		<form action="procesarNuevoComentario.php" method="post">
+		<form action="procesarNuevoComentario.php?idN=$idNoticia" method="post">
 			<fieldset>
 				<legend>Nuevo Comentario</legend>
 					<textarea name="cuerpo" rows="5" cols="10">Escribe aquí el comentario</textarea>
