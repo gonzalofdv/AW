@@ -47,8 +47,9 @@ class UsuarioDAO extends DAO{
 		$email = $usuario->getMail();
 		$esAdmin = $usuario->getEsAdmin();
 		$familia = $usuario->getEsFamilia();
+		$puntos = $usuario->getPuntos();
 
-		$sql = "INSERT INTO usuarios (Nombre, Apellido1, Apellido2, Sexo, EquipoFavorito, NombreUsuario, Contrasena, Email, Administrador, SomosFamilia) VALUES ('$nombre', '$ap1', '$ap2', '$sexo', '$equipo', '$usu', '$pass', '$email', '$esAdmin', '$familia')";
+		$sql = "INSERT INTO usuarios (Nombre, Apellido1, Apellido2, Sexo, EquipoFavorito, NombreUsuario, Contrasena, Email, Administrador, SomosFamilia, Puntos) VALUES ('$nombre', '$ap1', '$ap2', '$sexo', '$equipo', '$usu', '$pass', '$email', '$esAdmin', '$familia', '$puntos')";
 		$consulta = mysqli_query($db, $sql);
 		if($consulta){
 			return true;
@@ -76,6 +77,17 @@ class UsuarioDAO extends DAO{
 
 		return $obj = $consulta->fetch_object();
 	}
+
+	//funcion para llamar al user y obtener sus datos
+	public function getUsuario($nombre) {
+		
+		$db = $this->db;
+		$sql = "SELECT * from usuarios where NombreUsuario = '$nombre'";
+		$consulta = mysqli_query($db, $sql);
+		
+		if($consulta){
+            $obj = $consulta->fetch_object();
+        }
 }
 
 ?>

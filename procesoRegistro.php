@@ -16,7 +16,7 @@ $condi=$_POST['condi'];
 
 	if((!empty($nom)) && (!empty($ape1)) && (!empty($ape2)) && (!empty($sex)) && (!empty($equipo)) && (!empty($usu)) && (!empty($pass)) && (!empty($rpass)) && (!empty($mail)) && (!empty($condi))){
 		if($pass==$rpass){
-			$p = new UsuarioTransfer($nom, $ape1, $ape2, $sex, $equipo, $usu, $pass, $mail, 0, 0);
+			$p = new UsuarioTransfer($nom, $ape1, $ape2, $sex, $equipo, $usu, $pass, $mail, 0, 0, 0);
 			$usuarioSA = new UsuarioSA();
 			$anadido=$usuarioSA ->newUsuario($p);
 			if($anadido){

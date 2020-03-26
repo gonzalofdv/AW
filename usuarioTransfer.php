@@ -10,10 +10,11 @@ private $contrasena="";
 private $mail ="";
 private $esAdmin="";
 private $esFamilia="";
+private $puntos="";
 
  //constructor
 
-    public function __construct($nom,$apellido1,$apellido2,$sexo,$equipo,$usu,$contrasena,$mail,$esAdmin,$esFamilia){
+    public function __construct($nom,$apellido1,$apellido2,$sexo,$equipo,$usu,$contrasena,$mail,$esAdmin,$esFamilia,$puntos){
     	 $this->nom = $nom;
     	 $this->apellido1 = $apellido1;
     	 $this->apellido2 = $apellido2;
@@ -24,6 +25,7 @@ private $esFamilia="";
     	 $this->mail = $mail;
     	 $this->esAdmin = $esAdmin;
     	 $this->esFamilia = $esFamilia;
+    	 $this->puntos = $puntos;
     }
     
 
@@ -103,6 +105,13 @@ private $esFamilia="";
 
 	public function setEsFamilia($esFamilia){
 		$this->esFamilia = $esFamilia;
+	}
+	public function getPuntos(){
+		return $this->puntos;
+	}
+
+	public function setPuntos($puntos){
+		$this->esFamilia = $puntos;
 	}
 
  }
