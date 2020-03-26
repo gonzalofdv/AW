@@ -9,7 +9,7 @@ $pass=$_POST['password'];
 
 
 if((!empty($usu)) && (!empty($pass))){
-	$p = new UsuarioTransfer("", "", "", "", "", $usu,$pass,"", 0, 0); //Constructora UsuarioTransfer, pasándole solo estosatributos se inicia sesión
+	$p = new UsuarioTransfer("", "", "", "", "", $usu,$pass,"", 0, 0, 0); //Constructora UsuarioTransfer, pasándole solo estosatributos se inicia sesión
 	$usuarioSA = new UsuarioSA();
 	$check= $usuarioSA ->checkUsuario($p);
 		if(!$check){
