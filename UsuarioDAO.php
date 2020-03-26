@@ -47,8 +47,9 @@ class UsuarioDAO extends DAO{
 		$email = $usuario->getMail();
 		$esAdmin = $usuario->getEsAdmin();
 		$familia = $usuario->getEsFamilia();
+		$puntos = $usuario->getPuntos();
 
-		$sql = "INSERT INTO usuarios (Nombre, Apellido1, Apellido2, Sexo, EquipoFavorito, NombreUsuario, Contrasena, Email, Administrador, SomosFamilia) VALUES ('$nombre', '$ap1', '$ap2', '$sexo', '$equipo', '$usu', '$pass', '$email', '$esAdmin', '$familia')";
+		$sql = "INSERT INTO usuarios (Nombre, Apellido1, Apellido2, Sexo, EquipoFavorito, NombreUsuario, Contrasena, Email, Administrador, SomosFamilia, Puntos) VALUES ('$nombre', '$ap1', '$ap2', '$sexo', '$equipo', '$usu', '$pass', '$email', '$esAdmin', '$familia', '$puntos')";
 		$consulta = mysqli_query($db, $sql);
 		if($consulta){
 			return true;
