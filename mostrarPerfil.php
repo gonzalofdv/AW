@@ -24,8 +24,8 @@ require_once('UsuarioSA.php');
 		<?php
 			$usuarioSA = new UsuarioSA();
 			$perfil = $usuarioSA->getUsuario($usuario);
-			echo "<b>Usuario: </b>" . $perfil->Nombre . "<br>";
-			echo "<b>Nombre: </b>" . $perfil->Apellido1 ." ". $perfil->Apellido2 . "<br>";
+			echo "<b>Usuario: </b>" . $perfil->NombreUsuario . "<br>";
+			echo "<b>Nombre: </b>" .$perfil->Nombre ." ".$perfil->Apellido1 ." ". $perfil->Apellido2 . "<br>";
 			echo "<b>Sexo: </b>" . $perfil->Sexo . "<br>";
 			echo "<b>Tu equipo: </b>" . $perfil->EquipoFavorito . "<br>";
 			echo "<b>Mail: </b>" . $perfil->Email . "<br>";
