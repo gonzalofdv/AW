@@ -9,14 +9,14 @@ $titular = $_POST['titular'];
 $cuerpo = nl2br($_POST['cuerpo']);
 $condi = $_POST['condi'];
 $codLiga = $_POST['liga'];
-//$nombreUsu = $_SESSION['nombre']; // ESTO FALLA
+$nombreUsu = $_SESSION['nombre']; 
 
 if((!empty($titular)) && (!empty($cuerpo)) && (!empty($condi))){
 	if($codLiga != 0){ //por defecto el formulario tiene valor 0 así que si no se ha seleccionado ninguna liga, el codLiga sera 0 y dara error, si se ha seleccionado una, codLiga tendrá el valor del ID de la liga correspondiente.
-		//$usuarioSA = new UsuarioSA();
-		//$codUsuario = $usuarioSA->obtenerId($nombreUsu); // NO FUNCIONA Este método nos devuelve el IdUsuario a partir de un nombre de usuario. Esto se hace para poder llamar al constructor correctamente.
-		
-		$n = new NoticiaTransfer(1, $codLiga, $cuerpo, $titular);
+		$usuarioSA = new UsuarioSA();
+		$consulta = $usuarioSA->obtenerId($nombreUsu); 	
+		$codUsuario = $consulta->IdUsuario;
+		$n = new NoticiaTransfer($codUsuario, $codLiga, $cuerpo, $titular);
 		
 		$noticiaSA = new NoticiaSA();
 		$anadido = $noticiaSA->insertNoticia($n);
