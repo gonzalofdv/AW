@@ -29,7 +29,11 @@ $usuario=$_SESSION['nombre'];
 			echo "<b>Sexo: </b>" . $perfil->sexo . "<br>";
 			echo "<b>Tu equipo: </b>" . $perfil->equipo . "<br>";
 			echo "<b>Mail: </b>" . $perfil->mail . "<br>";
-			echo "<b>Usuario SomosFamilia: </b>" . if($perfil->esFamilia){echo"SI";}else{echo"NO";} . "<br>";
+			if($perfil->esFamilia){
+				echo"<b>Usuario SomosFamilia: SI </b><br>";
+			}else{
+				echo"<b>Usuario SomosFamilia: NO </b><br>";
+			}  
 			echo "<b>Puntos conseguidos: </b>" . $perfil->puntos . "<br>";
 		?>
 		
