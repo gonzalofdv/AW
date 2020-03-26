@@ -10,7 +10,8 @@
 		<a class="boton_personalizado" href="login.php">Accede</a>
 </div>
 <div id="menu">
-		<button type="button" href="index.php">Inicio</button>
-		<button type="button">Quiz</button>
-		<button type="button" href="clasificacion.php">Clasificación</button>
+
+		<button onclick="location.href='index.php'">Inicio</button>
+		<button onclick="location.href='quiz.php'">Quiz</button>
+		<button onclick="location.href='clasificacion.php'">Clasificacion</button>
 </div>
