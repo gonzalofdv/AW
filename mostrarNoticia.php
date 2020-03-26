@@ -42,7 +42,8 @@ $idNoticia = $_GET['idN'];
 		<h2>Noticia perteneciente a la liga <?php echo $liga->Nombre;  ?></h2>
 		<p><?php echo $cuerpo; ?></p>
 		<p>Noticia escrita por el usuario <?php echo $usuario->NombreUsuario; ?></p>
-		<button onclick="location.href='formularioComentario.php?idN=$idNoticia'">Agregar comentario</button>
+		<?php echo '<button onclick=location.href="formularioComentario.php?idN='.$idNoticia.'">Agregar comentario</button>';
+		?>
 
 	</div>
 

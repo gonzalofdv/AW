@@ -11,11 +11,13 @@ $comentario = nl2br($_POST['cuerpo']);
 $condi = $_POST['condi'];
 $nombreUsu = $_SESSION['nombre']; // ESTO FALLA
 // TENEMOS QUE HACER ALGO PARA OBTENER EL IDNOTICIA.
+echo $idNoticia;
 
 if((!empty($comentario)) && (!empty($condi))){
 	$usuarioSA = new UsuarioSA();
 	$consulta = $usuarioSA->obtenerId($nombreUsu); // NO FUNCIONA Este método nos devuelve el IdUsuario a partir de un nombre de usuario. Esto se hace para poder llamar al constructor correctamente.
 	$codUsuario=$consulta->IdUsuario;
+	echo $idNoticia;
 	$n = new ComentarioTransfer($idNoticia, $codUsuario, $comentario);
 		
 	$comentarioSA = new ComentarioSA();

@@ -1,5 +1,7 @@
 <?php session_start();
-$idNoticia = $_GET['idN'];?>
+$idNoticia = $_GET['idN'];
+echo$idNoticia;?>
+
 
 <!DOCTYPE html>
 <html>
@@ -19,7 +21,7 @@ $idNoticia = $_GET['idN'];?>
 	<div id="contenido">
 	<?php if (isset($_SESSION["login"]) && ($_SESSION["login"]==true)) {?>
 	<br>
-		<form action="procesarNuevoComentario.php?idN=$idNoticia" method="post">
+		<?php echo'<form action="procesarNuevoComentario.php?idN='.$idNoticia.'" method=post>';?>
 			<fieldset>
 				<legend>Nuevo Comentario</legend>
 					<textarea name="cuerpo" rows="5" cols="10">Escribe aquí el comentario</textarea>
