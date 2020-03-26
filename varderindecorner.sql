@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-03-2020 a las 19:08:56
+-- Tiempo de generación: 26-03-2020 a las 19:40:17
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -21,6 +21,19 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `varderindecorner`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentarios`
+--
+
+CREATE TABLE `comentarios` (
+  `IdComentario` int(6) NOT NULL,
+  `CodNoticia` int(6) NOT NULL,
+  `CodUsuario` int(6) NOT NULL,
+  `Comentario` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -86,7 +99,8 @@ CREATE TABLE `noticias` (
   `CodUsuario` int(6) NOT NULL,
   `CodLiga` int(6) NOT NULL,
   `Texto` text CHARACTER SET utf8 NOT NULL,
-  `Titular` varchar(100) CHARACTER SET utf8 NOT NULL
+  `Titular` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `Foto` varchar(1000) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -131,12 +145,22 @@ CREATE TABLE `usuarios` (
   `Contrasena` varchar(100) CHARACTER SET utf8 NOT NULL,
   `Email` varchar(100) CHARACTER SET utf8 NOT NULL,
   `Administrador` tinyint(1) NOT NULL,
-  `SomosFamilia` tinyint(1) NOT NULL
+  `SomosFamilia` tinyint(1) NOT NULL,
+  `Puntos` int(10) NOT NULL,
+  `Foto` varchar(1000) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`IdComentario`),
+  ADD KEY `index` (`CodNoticia`,`CodUsuario`),
+  ADD KEY `CodUsuario` (`CodUsuario`);
 
 --
 -- Indices de la tabla `equipos`
@@ -191,6 +215,12 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  MODIFY `IdComentario` int(6) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `equipos`
 --
 ALTER TABLE `equipos`
@@ -229,6 +259,13 @@ ALTER TABLE `usuarios`
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`CodUsuario`) REFERENCES `usuarios` (`IdUsuario`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `comentarios_ibfk_2` FOREIGN KEY (`CodNoticia`) REFERENCES `noticias` (`IdNoticia`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `equipos`
