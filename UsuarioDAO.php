@@ -77,6 +77,17 @@ class UsuarioDAO extends DAO{
 
 		return $obj = $consulta->fetch_object();
 	}
+
+	//funcion para llamar al user y obtener sus datos
+	public function getUsuario($nombre) {
+		
+		$db = $this->db;
+		$sql = "SELECT * from usuarios where NombreUsuario = '$nombre'";
+		$consulta = mysqli_query($db, $sql);
+		
+		if($consulta){
+            $obj = $consulta->fetch_object();
+        }
 }
 
 ?>
