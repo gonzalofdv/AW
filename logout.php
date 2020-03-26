@@ -17,30 +17,10 @@
 </head>
 
 <body>
-
-<div id="contenedor">
-
-	<?php 
-		require("cabecera.php"); 
-	?>
-
-	<div id="contenido">
-
 		<p>Gracias, ¡Vuelva pronto!</p><br> 
 		<p>Redireccionando en 3 segundos..</p>
 		<?php
 		header("refresh:3; url=index.php");
 		?>
-
-
-	</div>
-
-	<?php 
-		include("sidebarDer.php"); 
-		include("pie.php"); 
-	?>
-
-</div> 
-
 </body>
 </html>
