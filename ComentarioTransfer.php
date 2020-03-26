@@ -1,9 +1,9 @@
 <?php
 class ComentarioTransfer{
 	//Atributos de la clase Comentario
-	private codNoticia;
-	private codUsuario;
-	private comentario;
+	private $codNoticia;
+	private $codUsuario;
+	private $comentario;
 	
 	public function __construct($codNoticia, $codUsuario, $comentario) {
 		this->codNoticia = $codNoticia;
