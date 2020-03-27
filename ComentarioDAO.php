@@ -24,9 +24,9 @@ class ComentarioDAO extends DAO{
 		}
 	}
 
-	public function devuelveComentarios(){
+	public function devuelveComentarios($idNoticia){
 		$db = $this->db;
-		$sql = "SELECT * FROM comentarios";
+		$sql = "SELECT * FROM comentarios WHERE CodNoticia LIKE '$idNoticia'";
 		$consulta = mysqli_query($db, $sql);
 		return $consulta;
 	}

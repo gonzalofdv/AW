@@ -31,7 +31,7 @@ class ComentarioSA {
 		$aux->delete($comentario);
 	}
 
-	public function devuelveComentarios(){
+	public function devuelveComentarios($idNoticia){
 		if(!$this->comentarioDAO){
 			$this->comentarioDAO = new ComentarioDAO();
 		}

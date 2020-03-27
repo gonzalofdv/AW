@@ -46,7 +46,7 @@ $idNoticia = $_GET['idN'];
 		<?php echo '<button onclick=location.href="formularioComentario.php?idN='.$idNoticia.'">Agregar comentario</button>';
 		      echo "<br><br>";
 		      $comentarioSA=new ComentarioSA();
-		      $comentarios=$comentarioSA->devuelveComentarios();?>
+		      $comentarios=$comentarioSA->devuelveComentarios($idNoticia);?>
 		       <table border="2">
 					<tr>
 						<td><b>Usuario</b></td>
