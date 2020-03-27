@@ -34,6 +34,20 @@ class UsuarioDAO extends DAO{
 		}
 	}
 
+	public function esFamilia($usu){
+		$db=$this->db;
+		$sql = "SELECT SomosFamilia FROM usuarios WHERE NombreUsuario LIKE '$usu'";
+		$consulta = mysqli_query($db, $sql);
+		$res = mysqli_fetch_array($consulta);
+		if($res[0]==0){
+			//No es familia
+			return false;
+		}
+		else{ //es familia
+			return true;
+		}
+	}
+
 	public function insertarUsuario(UsuarioTransfer $usuario){
 		$db=$this->db;
 
