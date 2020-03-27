@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-03-2020 a las 19:40:17
+-- Tiempo de generación: 27-03-2020 a las 13:02:58
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -146,8 +146,7 @@ CREATE TABLE `usuarios` (
   `Email` varchar(100) CHARACTER SET utf8 NOT NULL,
   `Administrador` tinyint(1) NOT NULL,
   `SomosFamilia` tinyint(1) NOT NULL,
-  `Puntos` int(10) NOT NULL,
-  `Foto` varchar(1000) CHARACTER SET utf8 NOT NULL
+  `Puntos` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -218,7 +217,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `IdComentario` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdComentario` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `equipos`
@@ -236,7 +235,7 @@ ALTER TABLE `ligas`
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `preguntas`
@@ -254,7 +253,7 @@ ALTER TABLE `respuestas`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `IdUsuario` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdUsuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
