@@ -2,6 +2,7 @@
 
 require_once('LigaSA.php');
 require_once('UsuarioSA.php');
+require_once('ComentarioSA.php');
 
 $titular = $_GET['titulo'];
 $cuerpo = $_GET['texto'];
