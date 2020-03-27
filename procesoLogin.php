@@ -22,11 +22,19 @@ if((!empty($usu)) && (!empty($pass))){
 			else{
 				$_SESSION['esAdmin']=false;
 			}
+			$checkFam=$usuarioSA->checkFamilia($usu);
+			if($checkFam){
+				$_SESSION['esFamilia']=true;
+			}
+			else{
+				$_SESSION['esFamilia']=false;
+			}
+			
 			echo"Usuario correcto" . "<br>" . "Redireccionando en 3 segundos..";
 			header("refresh:3; url=index.php");
 		}
 		else{
-			echo"El usuario introducio no existe" . "<br>" . "Redireccionando en 3 segundos..";
+			echo"El usuario introducido no existe" . "<br>" . "Redireccionando en 3 segundos..";
 			header("refresh:3; url=login.php");
 		}
 }

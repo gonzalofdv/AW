@@ -33,6 +33,8 @@ require('NoticiaSA.php')?>
 
 				$it++;
 			}
+
+			echo '<button onclick=location.href="formularioNoticia.php">Agregar nueva noticia</button>';
 		?>
 	</div>
 

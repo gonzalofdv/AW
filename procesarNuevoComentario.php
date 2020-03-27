@@ -20,6 +20,8 @@ if((!empty($comentario)) && (!empty($condi))){
 	$comentarioSA = new ComentarioSA();
 	$anadido = $comentarioSA->insertComentario($n);
 
+	//aqui sumar puntos al usuario por haber comentado, ¿?y mostrar mensaje de que se han sumado¿?
+
 	if($anadido){
 		echo "Nuevo comentario insertada a la BBDD correctamente, gracias por colaborar<br> Redireccionando en 3 segundos...";
 		header("refresh:3; url=index.php");

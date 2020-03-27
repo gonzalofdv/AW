@@ -45,7 +45,19 @@ class UsuarioSA {
 		else{
 			return false;
 		}
-		
+	}
+
+	public function checkFamilia($usu){
+		if(!$this->usuarioDAO){
+			$this->usuarioDAO = new UsuarioDAO();
+		}
+		$aux = $this->usuarioDAO;
+		if($aux->esFamilia($usu)){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 
 	public function updateUsuario(){
