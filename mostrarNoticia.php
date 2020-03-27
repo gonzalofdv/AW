@@ -43,7 +43,26 @@ $idNoticia = $_GET['idN'];
 		<p><?php echo $cuerpo; ?></p>
 		<p>Noticia escrita por el usuario <?php echo $usuario->NombreUsuario; ?></p>
 		<?php echo '<button onclick=location.href="formularioComentario.php?idN='.$idNoticia.'">Agregar comentario</button>';
+		      echo "<br><br>";
+		      $comentarioSA=new ComentarioSA();
+		      $comentarios=$comentarioSA->devuelveComentarios();?>
+		       <table border="2">
+					<tr>
+						<td><b>Usuario</b></td>
+						<td><b>Comenatrio</b></td>
+					</tr>
+		<?php 
+		    while($mostrar=mysqli_fetch_object($comentarios)){
+	    ?>
+					<tr>
+						<td><?php echo $mostrar->CodUsuario ?></td>
+						<td><?php echo $mostrar->Comentario ?></td>
+ 					</tr>
+		<?php
+		    }
 		?>
+				</table>
+				
 
 	</div>
 

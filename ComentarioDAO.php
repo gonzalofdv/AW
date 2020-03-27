@@ -16,7 +16,6 @@ class ComentarioDAO extends DAO{
 		
 		$sql = "INSERT INTO comentarios (CodNoticia, CodUsuario, Comentario) VALUES ('$codNoticia', '$codUsuario', '$comentario')";
 		$consulta = mysqli_query($db, $sql);
-		
 		if($consulta){
 			return true;
 		}
@@ -28,7 +27,7 @@ class ComentarioDAO extends DAO{
 	public function devuelveComentarios(){
 		$db = $this->db;
 		$sql = "SELECT * FROM comentarios";
-		$res = mysqli_query($db, $sql);
+		$consulta = mysqli_query($db, $sql);
 		return $res;
 	}
 	
