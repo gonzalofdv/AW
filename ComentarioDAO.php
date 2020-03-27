@@ -28,7 +28,7 @@ class ComentarioDAO extends DAO{
 		$db = $this->db;
 		$sql = "SELECT * FROM comentarios";
 		$consulta = mysqli_query($db, $sql);
-		return $res;
+		return $consulta;
 	}
 	
 }
