@@ -50,13 +50,16 @@ $idNoticia = $_GET['idN'];
 		       <table border="2">
 					<tr>
 						<td><b>Usuario</b></td>
-						<td><b>Comenatrio</b></td>
+						<td><b>Comentario</b></td>
 					</tr>
 		<?php 
 		    while($mostrar=mysqli_fetch_object($comentarios)){
-	    ?>
+	   				$usuarioSA=new UsuarioSA();
+	   				$usuario=$usuarioSA->obtenerNombreUsu($mostrar->CodUsuario);
+	   				$usu=$usuario->NombreUsuario;
+	   				?>
 					<tr>
-						<td><?php echo $mostrar->CodUsuario ?></td>
+						<td><?php echo $usu ?></td>
 						<td><?php echo $mostrar->Comentario ?></td>
  					</tr>
 		<?php
