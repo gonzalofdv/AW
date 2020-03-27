@@ -104,6 +104,25 @@ class UsuarioDAO extends DAO{
 		$sql = "UPDATE usuarios SET Puntos= Puntos +'$puntos' where IdUsuario = '$idUsu'";
 		$consulta = mysqli_query($db, $sql);
     }
+
+    public function canjearFamilia($nombreUsu){
+    	$db = $this->db;
+    	$sql = "SELECT Puntos FROM  usuarios WHERE NombreUsuario = '$nombreUsu'";
+    	$consulta = mysqli_query($db, $sql);
+    	$obj = $consulta->fetch_object();
+    	if($obj->Puntos >= 200){
+    		$sql2 = "UPDATE usuarios SET Puntos = Puntos - 200 WHERE NombreUsuario = '$nombreUsu'";
+    		mysqli_query($db, $sql2);
+    		
+    		$sql3 = "UPDATE usuarios SET SomosFamilia = 1 WHERE NombreUsuario = '$nombreUsu'";
+    		mysqli_query($db, $sql3);
+
+    		return true;
+    	}
+    	else{
+    		return false;
+    	}
+    }
         
 }
 

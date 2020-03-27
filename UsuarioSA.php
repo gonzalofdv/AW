@@ -113,6 +113,14 @@ class UsuarioSA {
 		$aux->sumarPuntos($idUsu,$puntos);
 	}
 	
+	public function canjearFamilia($nombreUsu){
+		if(!$this->usuarioDAO){
+			$this->usuarioDAO = new UsuarioDAO();
+		}
+		$aux = $this->usuarioDAO;
+		return $aux->canjearFamilia($nombreUsu);		
+	}
+
 }
 	
 ?>
