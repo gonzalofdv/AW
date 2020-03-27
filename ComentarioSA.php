@@ -36,7 +36,7 @@ class ComentarioSA {
 			$this->comentarioDAO = new ComentarioDAO();
 		}
 		$aux = $this->comentarioDAO;
-		$res = $aux->devuelveComentarios($idNoticia);
+		$res = $aux->devuelveComentarios();
 
 		return $res;
 	}
