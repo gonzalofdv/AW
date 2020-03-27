@@ -98,6 +98,12 @@ class UsuarioDAO extends DAO{
 		
         return  $obj = $consulta->fetch_object();
     }
+
+    public function sumarPuntos($idUsu,$puntos){
+		$db = $this->db;
+		$sql = "UPDATE usuarios SET Puntos= Puntos +'$puntos' where IdUsuario = '$idUsu'";
+		$consulta = mysqli_query($db, $sql);
+    }
         
 }
 

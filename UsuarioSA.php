@@ -103,7 +103,14 @@ class UsuarioSA {
 		$res = $aux->getUsuario($nombre);
 
 		return $res;
+	}
 
+	public function sumarPuntos($idUsu,$puntos){
+		if(!$this->usuarioDAO){
+			$this->usuarioDAO = new UsuarioDAO();
+		}
+		$aux = $this->usuarioDAO;
+		$aux->sumarPuntos($idUsu,$puntos);
 	}
 	
 }

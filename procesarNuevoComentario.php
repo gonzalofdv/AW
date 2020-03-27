@@ -23,6 +23,7 @@ if((!empty($comentario)) && (!empty($condi))){
 	//aqui sumar puntos al usuario por haber comentado, ¿?y mostrar mensaje de que se han sumado¿?
 
 	if($anadido){
+		$usuarioSA->sumarPuntos($codUsuario,3);
 		echo "Nuevo comentario insertada a la BBDD correctamente, gracias por colaborar<br> Redireccionando en 3 segundos...";
 		header("refresh:3; url=index.php");
 	}
