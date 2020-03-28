@@ -29,7 +29,7 @@ require('NoticiaSA.php')?>
 			while($valores = mysqli_fetch_array($res)){
 				echo $it . '<a href="mostrarNoticia.php?idN='.$valores[0].'&&codUsu='.$valores[1].'&&codLiga='.$valores[2].'&&texto='.urlencode($valores[3]).'&&titulo='.$valores[4].'">' . $valores[4] . '</a>';
 				echo '<br>';
-				echo substr($valores[3],1,10);
+				echo substr($valores[3],0,30);
 
 				echo '<br><br>';
 
