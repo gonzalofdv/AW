@@ -30,17 +30,15 @@ if((!empty($usu)) && (!empty($pass))){
 				$_SESSION['esFamilia']=false;
 			}
 			
-			echo"Usuario correcto" . "<br>" . "Redireccionando en 3 segundos..";
-			header("refresh:3; url=index.php");
+			header('Location: mostrarAlertas.php?codAlerta=17');
+
 		}
 		else{
-			echo"El usuario introducido no existe" . "<br>" . "Redireccionando en 3 segundos..";
-			header("refresh:3; url=login.php");
+			header('Location: mostrarAlertas.php?codAlerta=23');
 		}
 }
 else{
-	echo"Por favor, rellene todos los campos y acepte las condiciones del servicio." . "<br>" . "Redireccionando en 3 segundos..";
-	header("refresh:3; url=registro.php");
+	header('Location: mostrarAlertas.php?codAlerta=11');
 }
 
 ?>

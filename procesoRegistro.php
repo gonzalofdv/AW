@@ -20,21 +20,17 @@ $condi=$_POST['condi'];
 			$usuarioSA = new UsuarioSA();
 			$anadido=$usuarioSA ->newUsuario($p);
 			if($anadido){
-				echo"Usuario registrado correctamente." . "<br>" . "Redireccionando en 3 segundos..";
-				header("refresh:3; url=index.php");
+				header('Location: mostrarAlertas.php?codAlerta=8');
 			}
 			else{
-				echo"El usuario introducido ya existe" . "<br>" . "Redireccionando en 3 segundos..";
-				header("refresh:3; url=registro.php");
+				header('Location: mostrarAlertas.php?codAlerta=9');
 			}
 		}
 	    else{
-				echo"La contraseña no es correcta" . "<br>" . "Redireccionando en 3 segundos..";
-				header("refresh:3; url=registro.php");
+			header('Location: mostrarAlertas.php?codAlerta=10');
 		}
     }
 	else{
-		echo"Por favor, rellene todos los campos y acepte las condiciones del servicio." . "<br>" . "Redireccionando en 3 segundos..";
-		header("refresh:3; url=registro.php");
+		header('Location: mostrarAlertas.php?codAlerta=11');
 	}
 ?>
