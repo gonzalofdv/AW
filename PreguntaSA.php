@@ -24,6 +24,26 @@ class PreguntaSA {
 		
 		return $res;
 	}
+
+	public function getNumPreguntas(){
+		if(!$this->preguntaDAO){
+			$this->preguntaDAO = new PreguntaDAO();
+		}
+		$aux = $this->preguntaDAO;
+		$res = $aux->getNumPreguntas();
+		
+		return $res;
+	}
+
+	public function getPregunta($rand){
+		if(!$this->preguntaDAO){
+			$this->preguntaDAO = new PreguntaDAO();
+		}
+		$aux = $this->preguntaDAO;
+		$res = $aux->getPregunta($rand);
+		
+		return $res;
+	}
 }
 
 ?>

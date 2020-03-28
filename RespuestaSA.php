@@ -31,5 +31,15 @@ class RespuestaSa{
 		return $aux->delete($respuesta);
     }
 
+     public function getRespuestas($idPregunta){
+        if(!$this->respuestaDAO){
+            $this->respuestaDAO = new RespuestaDAO();
+        } 
+        $aux = $this->respuestaDAO;
+        return $aux->getRespuestas($idPregunta);
+    }
+
+
+
 }
 ?>

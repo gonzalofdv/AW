@@ -10,16 +10,11 @@ class PreguntaDAO extends DAO{
 	}
 	
 	//Metodos
-	public function getPregunta($idPregunta) {
-		$sql = "SELECT * from Noticias where IdPregunta = '$idPregunta'";
+	public function getPregunta($rand) {
+		$sql = "SELECT Pregunta from preguntas where IdPregunta = '$rand'";
 		$consulta = mysqli_query($this->db, $sql);
-        if($consulta){
-            $obj = $consulta->fetch_object();
-        }
-		
-		$n = new PreguntaTransfer($obj->pregunta, $obj->codLiga);
-		
-		return $n;
+		$res=$consulta->fetch_object();
+		return $res;
 	}
 	
 	public function insert(PreguntaTransfer $n){
@@ -56,6 +51,15 @@ class PreguntaDAO extends DAO{
 		$consulta = mysqli_query($db, $sql);
 		
 		return $obj = $consulta->fetch_object();
+	}
+
+	public function getNumPreguntas(){
+		$db=$this->db;
+		$sql = "SELECT count(*) FROM preguntas"; 
+		$consulta=mysqli_query($db,$sql);
+		$result = $consulta->fetch_array();
+		$res = intval($result[0]);
+		return $res;
 	}
 }
 

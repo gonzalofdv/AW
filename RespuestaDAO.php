@@ -10,21 +10,10 @@ class RespuestaDAO extends DAO{
 	}
 
 
-    public function getRespuesta($idRespuesta){
-        
-        //no se si es Respuestas el nom en bbdd
-        //IdRespuesta es el id generado en bbdd? 
-
-        $sql = "SELECT * from Respuestas where IdRespuesta = '$idRespuesta'";
+    public function getRespuestas($idPregunta){
+        $sql = "SELECT * from respuestas where CodPregunta = '$idPregunta'";
         $consulta = mysqli_query($this->db, $sql);
-
-        if($consulta){
-            $obj = $consulta->fetch_object();
-        }
-
-        $r = new RespuestaTransfer($obj->CodPregunta, $obj->Respuesta, $obj->Correcta);
-
-        return $r;
+        return $consulta;
     }
     
     public function insert(RespuestaTransfer $r){
