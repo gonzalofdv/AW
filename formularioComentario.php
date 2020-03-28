@@ -12,7 +12,7 @@ $idNoticia = $_GET['idN'];
 	<meta http-equiv="Last-Modified" content="0">
 	<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
 	<meta http-equiv="Pragma" content="no-cache">
-	<title>Registro</title>
+	<title>Registro comentario</title>
 </head>
 <body>
 	<?php
@@ -31,8 +31,8 @@ $idNoticia = $_GET['idN'];
 		</form>
 	<?php }
 		else{
-			echo "Debes estar registrado para poder comentar las noticias.";
-			header("refresh:3; url=index.php");
+			header('Location: mostrarAlertas.php?codAlerta=7');
+
 	}?>
 	</div>
 	<?php

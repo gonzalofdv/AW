@@ -10,7 +10,7 @@ require('LigaSA.php')?>
 	<meta http-equiv="Last-Modified" content="0">
 	<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
 	<meta http-equiv="Pragma" content="no-cache">
-	<title>Registro</title>
+	<title>Registro noticia</title>
 </head>
 <body>
 	<?php
@@ -20,17 +20,11 @@ require('LigaSA.php')?>
 	<br>
 		<?php
 			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false) {
-				echo "<h1>Acceso denegado!</h1>";
-				echo "<p>Para entrar a esta página es necesario que hayas iniciado sesión, si no tienes cuenta, ¡regístrate!.</p>";
-				echo "<p>Te redireccionamos a la página de inicio.</p>";
-				header("refresh:5; url=index.php");
+				header('Location: mostrarAlertas.php?codAlerta=1');
 			}
 			else {
 				if($_SESSION["esAdmin"] == false && $_SESSION["esFamilia"] == false){
-					echo "<h1>Permisos insuficientes</h1>";
-					echo "<p>Para poder escribir una noticia en nuestra web, necesitas ser un Administrador o tener los privilegios de usuario Somos Familia que podrás conseguir colaborando en nuestra página. Infórmate más en la sección Somos Familia.</p>";
-					echo "<p>Te redireccionamos a la página de inicio.</p>";
-					header("refresh:5; url=index.php");
+					header('Location: mostrarAlertas.php?codAlerta=6');
 				}
 				else{
 		?>
