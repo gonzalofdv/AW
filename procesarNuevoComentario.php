@@ -24,19 +24,15 @@ if((!empty($comentario)) && (!empty($condi))){
 
 	if($anadido){
 		$usuarioSA->sumarPuntos($codUsuario,3);
-		echo "Nuevo comentario insertada a la BBDD correctamente, gracias por colaborar<br> Redireccionando en 3 segundos...";
-		header("refresh:3; url=index.php");
+		header('Location: mostrarAlertas.php?codAlerta=16');
 	}
 	else{
-		echo "Algo ha fallado por aqui";
-		header("refresh:3; url=index.php");
+		header('Location: mostrarAlertas.php?codAlerta=13');
 	}
 }
 else{
 	//Mandar error de que faltan campos por rellenar
-	echo "Faltan campos por rellenar! <br>";
-	echo "Redireccionando...";
-	header("refresh:3; url=formularioComentario.php");
+	header('Location: mostrarAlertas.php?codAlerta=14');
 }
 
 ?>

@@ -22,11 +22,10 @@ if((!empty($titular)) && (!empty($cuerpo)) && (!empty($condi))){
 		$anadido = $noticiaSA->insertNoticia($n);
 
 		if($anadido){
-			echo "Nueva noticia insertada a la BBDD correctamente, gracias por colaborar<br> Redireccionando en 3 segundos...";
-			header("refresh:3; url=index.php");
+			header('Location: mostrarAlertas.php?codAlerta=12');
 		}
 		else{
-			echo "Algo ha fallado por aqui";
+			header('Location: mostrarAlertas.php?codAlerta=13');
 		}
 	
 	}
@@ -34,9 +33,7 @@ if((!empty($titular)) && (!empty($cuerpo)) && (!empty($condi))){
 }
 else{
 	//Mandar error de que faltan campos por rellenar
-	echo "Faltan campos por rellenar! <br>";
-	echo "Redireccionando...";
-	header("refresh:3; url=formularioNoticia.php");
+	header('Location: mostrarAlertas.php?codAlerta=14');
 }
 
 ?>

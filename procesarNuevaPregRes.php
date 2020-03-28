@@ -41,27 +41,21 @@ if((!empty($preg)) && (!empty($codLiga)) && (!empty($v)) && (!empty($f1)) && (!e
 			$respuestaSA->insertRespuesta($r3);
 
 			//ya hemos insertado todo, ahora mostramos mensaje y volvemos al a pagina
-			echo "Nueva pregunta insertada a la BBDD correctamente, gracias por colaborar<br> Redireccionando en 3 segundos...";
-			header("refresh:3; url=index.php");
-
+			header('Location: mostrarAlertas.php?codAlerta=19');
 		}
 		else{
 			//Error de algun fallo introduciendo la pregunta
-			echo "Puta mierda";
+			header('Location: mostrarAlertas.php?codAlerta=20');
 		}
 	}
 	else{
 		//Mandar error de que hay que seleccionar una liga
-		echo "Debes seleccionar una liga! <br>";
-		echo "Redireccionando...";
-		header("refresh:3; url=formularioPreguntaRespuesta.php");
+		header('Location: mostrarAlertas.php?codAlerta=21');
 	}
 }
 else{
 	//Mandar error de que faltan campos por rellenar
-	echo "Faltan campos por rellenar! <br>";
-	echo "Redireccionando...";
-	header("refresh:3; url=formularioPreguntaRespuesta.php");
+	header('Location: mostrarAlertas.php?codAlerta=22');
 }
 
 ?>
