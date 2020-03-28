@@ -25,11 +25,13 @@ require('NoticiaSA.php')?>
 		<?php
 			$noticiaSA = new NoticiaSA();
 			$res = $noticiaSA->devuelveNoticias();
+			$it = 1;
 			while($valores = mysqli_fetch_array($res)){
-				echo '<h2><a href="mostrarNoticia.php?idN='.$valores[0].'&&codUsu='.$valores[1].'&&codLiga='.$valores[2].'&&texto='.urlencode($valores[3]).'&&titulo='.$valores[4].'">' . $valores[4] . '</a></h2>';
-				echo '<h3>'.substr($valores[3],0,40) . "...".'</h3>';
+				echo $it . '<a href="mostrarNoticia.php?idN='.$valores[0].'&&codUsu='.$valores[1].'&&codLiga='.$valores[2].'&&texto='.urlencode($valores[3]).'&&titulo='.$valores[4].'">' . $valores[4] . '</a>';
 
-				echo '<br>';
+				echo '<br><br>';
+
+				$it++;
 			}
 
 			echo '<button onclick=location.href="formularioNoticia.php">Agregar nueva noticia</button>';
