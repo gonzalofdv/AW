@@ -1,3 +1,3 @@
 	<div id="pie">
-		Pie de página
+		© Marzo 2020 Unidad Editorial Información Deportiva, S.L.U. Todos los derechos reservados.
 	</div>
