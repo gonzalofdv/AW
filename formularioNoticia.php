@@ -43,6 +43,9 @@ require('LigaSA.php')?>
 									}
 								?>
 							</select>
+							<br>
+							<input type="file" name="foto" /><br>
+							<!--<input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"> -->
 							<input type="checkbox" name="condi" value="ok">Confirmar enviar noticia.<br>
 							<input type="submit" name="aceptar">	
 					</fieldset>

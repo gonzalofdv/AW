@@ -9,6 +9,7 @@ $cuerpo = $_GET['texto'];
 $codLiga = $_GET['codLiga'];
 $codUsu = $_GET['codUsu'];
 $idNoticia = $_GET['idN'];
+$foto = $_GET['foto'];
 
 ?>
 
@@ -40,7 +41,16 @@ $idNoticia = $_GET['idN'];
 			$usuario = $usuarioSA->obtenerNombreUsu($codUsu);
 		?>
 		<h1><?php echo $titular; ?></h1>
-		<h2>Noticia perteneciente a la liga <?php echo $liga->Nombre;  ?></h2>
+		
+		<?php
+			echo $foto;
+			$folder_path = './img/noticias/';
+			$file_path = $folder_path.$foto;
+		?>
+			<img src="<?php echo $file_path; ?>" alt="Imagen noticia" width="350">
+		
+		
+		<h3>Noticia perteneciente a la liga: <?php echo $liga->Nombre;  ?></h3>
 		<p><?php echo $cuerpo; ?></p>
 		<p>Noticia escrita por el usuario <?php echo $usuario->NombreUsuario; ?></p>
 		<?php echo '<button onclick=location.href="formularioComentario.php?idN='.$idNoticia.'">Agregar comentario</button>';

@@ -18,7 +18,7 @@ class NoticiaDAO extends DAO{
             $obj = $consulta->fetch_object();
         }
 		
-		$n = new NoticiaTransfer($obj->CodUsuario, $obj->CodLiga, $obj->Titular, $obj->Texto);
+		$n = new NoticiaTransfer($obj->CodUsuario, $obj->CodLiga, $obj->Titular, $obj->Texto, $obj->Foto);
 	}
 	
 	public function insert(NoticiaTransfer $n){
@@ -28,8 +28,9 @@ class NoticiaDAO extends DAO{
 		$codLiga = $n->getCodLiga();
 		$texto = $n->getTexto();
 		$titular = $n->getTitular();
-		
-		$sql = "INSERT INTO noticias (CodUsuario, CodLiga, Texto, Titular) VALUES ('$codUsuario', '$codLiga', '$titular', '$texto')";
+		$foto = $n->getFoto();
+
+		$sql = "INSERT INTO noticias (CodUsuario, CodLiga, Texto, Titular, Foto) VALUES ('$codUsuario', '$codLiga', '$titular', '$texto', '$foto')";
 		$consulta = mysqli_query($db, $sql);
 		if($consulta){
 			return true;
@@ -41,7 +42,7 @@ class NoticiaDAO extends DAO{
 	
 	public function update(NoticiaTransfer $n){
 		$db = $this->db;
-		$sql = "UPDATE Noticias SET CodUsuario = '$n->getCodUsuario()', CodLiga = '$n->getCodLiga()', Texto = '$n->getTexto()', Titular = '$n->getTitular()'
+		$sql = "UPDATE Noticias SET CodUsuario = '$n->getCodUsuario()', CodLiga = '$n->getCodLiga()', Texto = '$n->getTexto()', Titular = '$n->getTitular()', Foto = '$n->getFoto()'
 		WHERE IdNoticia LIKE '$n->getIdNoticia()'"; 
 		$consulta = mysqli_query($db, $sql);
 	}

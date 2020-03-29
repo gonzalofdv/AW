@@ -5,13 +5,15 @@ class noticiaTransfer{
 	private $texto;
 	private $codUsuario;
 	private $codLiga;
-	
+	private $foto;
+
 	//Constructor
-	public function __construct($codUsuario, $codLiga, $titular, $texto) {
+	public function __construct($codUsuario, $codLiga, $titular, $texto, $foto) {
         $this->codUsuario = $codUsuario;
         $this->codLiga = $codLiga;
         $this->texto = $texto;
-        $this->titular = $titular;
+		$this->titular = $titular;
+		$this->foto = $foto;
     }
 	
 	//Getters y Setters
@@ -55,5 +57,12 @@ class noticiaTransfer{
 		$this->codLiga = $codLiga;
 	}
 	
+	public function getFoto(){
+		return $this->foto;
+	}
+
+	public function setFoto($foto){
+		$this->foto = $foto;
+	}
 }
 ?>
