@@ -9,18 +9,19 @@ $titular = $_POST['titular'];
 $cuerpo = nl2br($_POST['cuerpo']);
 $condi = $_POST['condi'];
 $codLiga = $_POST['liga'];
-$nombreUsu = $_SESSION['nombre']; 
+$nombreUsu = $_SESSION['nombre'];
+$foto = $_POST['foto'];
 
-if((!empty($titular)) && (!empty($cuerpo)) && (!empty($condi))){
+if((!empty($titular)) && (!empty($cuerpo)) && (!empty($condi)) && (!empty($foto))){
 	if($codLiga != 0){ //por defecto el formulario tiene valor 0 así que si no se ha seleccionado ninguna liga, el codLiga sera 0 y dara error, si se ha seleccionado una, codLiga tendrá el valor del ID de la liga correspondiente.
 		$usuarioSA = new UsuarioSA();
 		$consulta = $usuarioSA->obtenerId($nombreUsu); 	
 		$codUsuario = $consulta->IdUsuario;
-		$n = new NoticiaTransfer($codUsuario, $codLiga, $cuerpo, $titular);
+		$n = new NoticiaTransfer($codUsuario, $codLiga, $cuerpo, $titular, $foto);
 		
 		$noticiaSA = new NoticiaSA();
 		$anadido = $noticiaSA->insertNoticia($n);
-
+		
 		if($anadido){
 			header('Location: mostrarAlertas.php?codAlerta=12');
 		}
