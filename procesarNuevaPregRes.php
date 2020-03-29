@@ -36,9 +36,19 @@ if((!empty($preg)) && (!empty($codLiga)) && (!empty($v)) && (!empty($f1)) && (!e
 			$r3 = new RespuestaTransfer($idP, $f2, '0');
 			//ahora insertamos las 3 respuestas
 			$respuestaSA = new RespuestaSA();
-			$respuestaSA->insertRespuesta($r1);
-			$respuestaSA->insertRespuesta($r2);
-			$respuestaSA->insertRespuesta($r3);
+
+
+			//en este proceso, insertamos las respuestas en orden aleatorio
+			$i = 0;
+			$valores = array();
+			while($i < 3){
+				$rand = rand(1, 3);
+				if(!in_array($rand, $valores)){
+					array_push($valores, $rand);
+					$respuestaSA->insertRespuesta(${"r".$rand});
+					$i++;
+				}
+			}
 
 			//ya hemos insertado todo, ahora mostramos mensaje y volvemos al a pagina
 			header('Location: mostrarAlertas.php?codAlerta=19');
