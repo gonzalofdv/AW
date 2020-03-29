@@ -90,7 +90,7 @@ $codigo = $_GET['codAlerta'];
 					echo"El usuario introducido no existe" . "<br>";
 					break;
 				case 19:
-					echo "Nueva pregunta insertada a la BBDD correctamente, gracias por colaborar<br>"
+					echo "Nueva pregunta insertada a la BBDD correctamente, gracias por colaborar<br>";
 					break;
 				case 20:
 					echo "Se ha producido un fallo al introducir la pregunta";
