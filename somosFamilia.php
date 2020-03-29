@@ -91,7 +91,7 @@
 		<p>Si tienes puntos por canjear, pulsa aquí para sumarlos a tu casillero: </p>
 		
 		<?php
-			echo '<button onclick=location.href="canjearFamilia.php">Canjea tus puntos!</button>';
+			echo '<button onclick=location.href="procesarCanjearFamilia.php">Canjea tus puntos!</button>';
 		?>
 	</div>
 
