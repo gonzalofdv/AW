@@ -24,19 +24,9 @@ require_once('RespuestaSA.php');
 
 		<?php
 			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false) {
-				echo "<h1>Acceso denegado!</h1>";
-				echo "<p>Para entrar a esta página es necesario que hayas iniciado sesión, si no tienes cuenta, ¡regístrate!.</p>";
-				echo "<p>Te redireccionamos a la página de inicio.</p>";
-				header("refresh:5; url=index.php");
+				header('Location: mostrarAlertas.php?codAlerta=1');
 			}
 			else {
-				if($_SESSION["esAdmin"] == false && $_SESSION["esFamilia"] == false){
-					echo "<h1>Permisos insuficientes</h1>";
-					echo "<p>Para poder introducir una nueva pregunta para el Quiz necesitas ser un Administrador o tener los privilegios de usuario Somos Familia que podrás conseguir colaborando en nuestra página. Infórmate más en la sección Somos Familia.</p>";
-					echo "<p>Te redireccionamos a la página de inicio.</p>";
-					header("refresh:5; url=index.php");
-				}
-				else{
 		?>
 
 			<form action="procesarQuiz.php" method="post">
@@ -54,7 +44,7 @@ require_once('RespuestaSA.php');
 							array_push($valores,$rand);
 							$pregunta=$preguntaSA->getPregunta($rand);
 							$respuestas=$respuestaSA->getRespuestas($rand);
-							echo $pregunta->Pregunta . "<br>";
+							echo "<b>".$pregunta->Pregunta . "<b><br>";
 							while($res=mysqli_fetch_array($respuestas)){
 								echo '<input type=radio name=res'.$i.' value='.$res[3].' />'.$res[2]. '<br>';
 								echo "<br>";
