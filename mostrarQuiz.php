@@ -46,18 +46,21 @@ require_once('RespuestaSA.php');
 					$preguntaSA=new PreguntaSA();
 					$respuestaSA=new RespuestaSA();
 					$num=$preguntaSA->getNumPreguntas();
+					$valores=array();
 					$i=0;
 					while($i<10){
 						$rand =rand(1,$num);
-						$pregunta=$preguntaSA->getPregunta($rand);
-						$respuestas=$respuestaSA->getRespuestas($rand);
-						echo $pregunta->Pregunta . "<br>";
-						while($res=mysqli_fetch_array($respuestas)){
-						echo '<input type=radio name=res'.$i.' value='.$res[3].' />'.$res[2]. '<br>';
-						echo "<br>";
-					}
-						$i++;
-
+						if(!in_array($rand,$valores)){
+							array_push($valores,$rand);
+							$pregunta=$preguntaSA->getPregunta($rand);
+							$respuestas=$respuestaSA->getRespuestas($rand);
+							echo $pregunta->Pregunta . "<br>";
+							while($res=mysqli_fetch_array($respuestas)){
+								echo '<input type=radio name=res'.$i.' value='.$res[3].' />'.$res[2]. '<br>';
+								echo "<br>";
+							}
+							$i++;	
+						}
 					}
 				?>
 					<input type="submit" name="aceptar">	
