@@ -43,7 +43,6 @@ $foto = $_GET['foto'];
 		<h1><?php echo $titular; ?></h1>
 		
 		<?php
-			echo $foto;
 			$folder_path = './img/noticias/';
 			$file_path = $folder_path.$foto;
 		?>
