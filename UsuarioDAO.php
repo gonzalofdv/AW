@@ -110,10 +110,7 @@ class UsuarioDAO extends DAO{
     	$sql = "SELECT Puntos FROM  usuarios WHERE NombreUsuario = '$nombreUsu'";
     	$consulta = mysqli_query($db, $sql);
     	$obj = $consulta->fetch_object();
-    	if($obj->Puntos >= 200){
-    		$sql2 = "UPDATE usuarios SET Puntos = Puntos - 200 WHERE NombreUsuario = '$nombreUsu'";
-    		mysqli_query($db, $sql2);
-    		
+    	if($obj->Puntos >= 200){    		
     		$sql3 = "UPDATE usuarios SET SomosFamilia = 1 WHERE NombreUsuario = '$nombreUsu'";
     		mysqli_query($db, $sql3);
 
