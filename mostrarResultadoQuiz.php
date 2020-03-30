@@ -33,7 +33,7 @@ $aciertos = $_GET['aciertos'];?>
 		echo "<h2>Lo sentimos, no has conseguido responder correctamente a ninguna pregunta, ¡Sigue intentándolo!</h2>";
 	}
 
-	echo '<button onclick="location.href=index.php">Volver al inicio</button>';
+	echo '<button onclick=location.href="index.php">Volver al inicio</button>';
 	?>
 
 	</div>
