@@ -24,13 +24,13 @@ $aciertos = $_GET['aciertos'];?>
 	<div id="contenido">		
 	<?php
 	if($aciertos==10){
-		echo "<h2>¡Enhorabuena!, has conseguido acertar todas las preguntas del Quiz. Sumarás 20 puntos a tu registro</h2>";
+		echo "<h2>¡Enhorabuena ".$_SESSION['nombre']."!, has conseguido acertar todas las preguntas del Quiz. Sumarás 20 puntos a tu registro</h2>";
 	}
 	else if($aciertos > 0 && $aciertos < 10){
-		echo "<h2>¡Enhorabuena!, has conseguido acertar".$aciertos."pregunta/s del Quiz. Sumarás".$aciertos."punto/s a tu registro</h2>";
+		echo "<h2>¡Enhorabuena ".$_SESSION['nombre']."!, has conseguido acertar ".$aciertos." pregunta/s del Quiz. Sumarás ".$aciertos." punto/s a tu registro</h2>";
 	}
 	else{
-		echo "<h2>Lo sentimos, no has conseguido responder correctamente a ninguna pregunta, ¡Sigue intentándolo!</h2>";
+		echo "<h2>Lo sentimos ".$_SESSION['nombre'].", no has conseguido responder correctamente a ninguna pregunta, ¡Sigue intentándolo!</h2>";
 	}
 
 	echo '<button onclick=location.href="index.php">Volver al inicio</button>';
