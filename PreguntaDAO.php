@@ -46,8 +46,10 @@ class PreguntaDAO extends DAO{
 	
 	public function obtenerId(PreguntaTransfer $n){
 		$db=$this->db;
-		$idP = $n->getPregunta(); 
-		$sql = "SELECT IdPregunta FROM preguntas WHERE Pregunta = '$idP'"; 
+		$preg = $n->getPregunta();
+		$codLiga = $n->getCodLiga();
+
+		$sql = "SELECT IdPregunta FROM preguntas WHERE Pregunta = '$preg' AND CodLiga = '$codLiga'"; 
 		$consulta = mysqli_query($db, $sql);
 		
 		return $obj = $consulta->fetch_object();
