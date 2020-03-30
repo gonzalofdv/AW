@@ -21,10 +21,32 @@
 		?>
 		
 		<div id="contenido">
+			<center>
+				<h1>¡Bienvenido al QUIZ!</h1>
+				<img src="./img/quiz.jpg" alt="quiz" width="400">
+			</center>
+			
+			<p>
+				Esta es nuestra sección favorita y probablemente la tuya también. Participa en nuestra sección estrella y pon a prueba tus conocimientos 
+				futbolísticos de las seis mejores ligas de Europa, respondiendo 10 preguntas en las que debes seleccionar una respuesta correcta de tres 
+				posibles. ¡No te dejes engañar y demuestra lo que sabes! Podrás intentarlo las veces que quieras, y por cada intento se sigue el siguiente 
+				sistema de puntuación:
+				
+				<ul>
+					<li>Cada pregunta vale un punto, para formar un total de 10 puntos.</li>
+					<li>Por cada pregunta acertada se sumará un punto a tu marcador.</li>
+					<li>Si aciertas las 10 preguntas, además de obtener los 10 puntos ganarás 10 puntos extra por haber hecho pleno de aciertos.</li>
+					<li>Al finalizar el Quiz, tu suma de puntos obtenida se sumará a tu puntuación total en tu carrera por conseguir el usuario Somos Familia.</li>
+				</ul>
+				
+				Fácil, sencillo y para todos. Además, esta es la mejor manera y más divertida de ganar los 200 puntos necesarios para convertirte en 
+				un nuevo usuario Somos Familia de El VARderín de córner.<br>
+				¡Anima a tus amigos y familiares a participar para ponerles a prueba y demostrar quién sabe más de fútbol! ¡Suerte!<br>
+			</p>
 			
 			
-			<p> pulsa el boton</p>
-			<!--<button onclick="location.href='mostrarQuiz.php'">¡Empezar Quiz!</button>-->
+			<p>¿Estás preparado? ¡Adelante!</p>
+			<button onclick="location.href='mostrarQuiz.php'">¡Empezar Quiz!</button>
 			
 		</div>
 		
