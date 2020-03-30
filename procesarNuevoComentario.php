@@ -20,8 +20,6 @@ if((!empty($comentario)) && (!empty($condi))){
 	$comentarioSA = new ComentarioSA();
 	$anadido = $comentarioSA->insertComentario($n);
 
-	//aqui sumar puntos al usuario por haber comentado, ¿?y mostrar mensaje de que se han sumado¿?
-
 	if($anadido){
 		$usuarioSA->sumarPuntos($codUsuario,3);
 		header('Location: mostrarAlertas.php?codAlerta=16');
