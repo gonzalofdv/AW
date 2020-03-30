@@ -13,7 +13,7 @@ require_once('RespuestaSA.php');
 	<meta http-equiv="Last-Modified" content="0">
 	<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
 	<meta http-equiv="Pragma" content="no-cache">
-	<title>Quiz</title>
+	<title>Registro Pregunta</title>
 </head>
 <body>
 	<?php
