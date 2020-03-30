@@ -123,6 +123,13 @@ class UsuarioDAO extends DAO{
     		return false;
     	}
     }
+
+    public function devuelveRanking(){
+    	$db = $this->db;
+    	$sql = "SELECT NombreUsuario, Puntos FROM usuarios ORDER BY Puntos DESC";
+    	$consulta = mysqli_query($db, $sql);
+    	return $consulta;
+    }
         
 }
 

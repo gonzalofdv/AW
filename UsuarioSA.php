@@ -121,6 +121,14 @@ class UsuarioSA {
 		return $aux->canjearFamilia($nombreUsu);		
 	}
 
+	public function devuelveRanking(){
+		if(!$this->usuarioDAO){
+			$this->usuarioDAO = new UsuarioDAO();
+		}
+		$aux = $this->usuarioDAO;
+		return $aux->devuelveRanking();
+	}
+
 }
 	
 ?>
