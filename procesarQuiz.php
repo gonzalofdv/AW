@@ -30,6 +30,6 @@ if($puntos==10){
 
 $usuarioSA=new UsuarioSA();
 $usuarioSA->sumarPuntos($_SESSION['nombre'],$puntos);
-header('Location:mostrarResultadoQuiz.php?aciertos="'.$aciertos.'"');
+header('Location:mostrarResultadoQuiz.php?aciertos='.$aciertos.'');
 
 ?>
