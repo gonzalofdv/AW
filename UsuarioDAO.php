@@ -126,7 +126,9 @@ class UsuarioDAO extends DAO{
 
     public function devuelveRanking(){
     	$db = $this->db;
-    	$sql = "SELECT NombreUsuario, Puntos FROM usuarios ORDER BY Puntos DESC";
+    	//ordena por puntos y a igualdad de puntos, en orden alfabético
+    	//y solo los 10 primeros
+    	$sql = "SELECT NombreUsuario, Puntos FROM usuarios ORDER BY Puntos DESC, NombreUsuario ASC LIMIT 10";
     	$consulta = mysqli_query($db, $sql);
     	return $consulta;
     }
