@@ -10,7 +10,7 @@
 	<meta http-equiv="Last-Modified" content="0">
 	<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
 	<meta http-equiv="Pragma" content="no-cache">
-	<title>Portada</title>
+	<title>Somos Familia</title>
 </head>
 
 <body>
@@ -88,11 +88,19 @@
 			</ul>
 		</p>
 		
-		<p>Si tienes puntos por canjear, pulsa aquí para sumarlos a tu casillero: </p>
-		
+		<p>Si tienes puntos por canjear, pulsa aquí para sumarlos a tu casillero (será necesario que hayas iniciado sesión para ver activo el botón): </p>
+
 		<?php
-			echo '<button onclick=location.href="procesarCanjearFamilia.php">Canjea tus puntos!</button>';
+
+			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
+				echo '<button onclick=location.href="procesarCanjearFamilia.php" disabled>Canjea tus puntos!</button>';
+			}
+			else{
+				echo '<button onclick=location.href="procesarCanjearFamilia.php">Canjea tus puntos!</button>';
+			}
+
 		?>
+
 	</div>
 
 	<?php
