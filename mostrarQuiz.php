@@ -58,7 +58,7 @@ require_once('RespuestaSA.php');
 			</form>
 			<?php
 
-				}
+				
 			}
 
 			?>
