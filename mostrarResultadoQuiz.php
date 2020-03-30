@@ -26,7 +26,7 @@ $aciertos = $_GET['aciertos'];?>
 	if($aciertos==10){
 		echo "<h2>¡Enhorabuena!, has conseguido acertar todas las preguntas del Quiz. Sumarás 20 puntos a tu registro</h2>";
 	}
-	else if($aciertos > 0 $$ $aciertos < 10){
+	else if($aciertos > 0 && $aciertos < 10){
 		echo "<h2>¡Enhorabuena!, has conseguido acertar".$aciertos."pregunta/s del Quiz. Sumarás".$aciertos."punto/s a tu registro</h2>";
 	}
 	else{
