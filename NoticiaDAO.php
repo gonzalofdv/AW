@@ -5,10 +5,6 @@ require_once('DAO.php');
 
 class NoticiaDAO extends DAO{
 
-	/*public function __construct(){
-		parent::__construct();
-	}*/
-
 	//Metodos
 	public function getNoticia($idNoticia) {
 		$db = $this->db;
@@ -47,11 +43,16 @@ class NoticiaDAO extends DAO{
 		$consulta = mysqli_query($db, $sql);
 	}
 	
-	public function delete(NoticiaTransfer $n){
+	public function delete($idNoticia){
 		$db = $this->db;
-		$sql = "DELETE Noticias where IdNoticia = '$n->getIdNoticia()'"; 
-		mysqli_query($this->db, $sql);
+		$sql = "DELETE FROM noticias where IdNoticia = '$idNoticia'"; 
 		$consulta = mysqli_query($db, $sql);
+		if($consulta){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 
 	public function devuelveNoticias(){

@@ -52,10 +52,28 @@ $foto = $_GET['foto'];
 		<h3>Noticia perteneciente a la liga: <?php echo $liga->Nombre;  ?></h3>
 		<p><?php echo $cuerpo; ?></p>
 		<p>Noticia escrita por el usuario <?php echo $usuario->NombreUsuario; ?></p>
-		<?php echo '<button onclick=location.href="formularioComentario.php?idN='.$idNoticia.'">Agregar comentario</button>';
-		      echo "<br><br>";
-		      $comentarioSA=new ComentarioSA();
-		      $comentarios=$comentarioSA->devuelveComentarios($idNoticia);?>
+		<?php
+			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
+				echo '<button onclick=location.href="formularioComentario.php?idN='.$idNoticia.'" disabled>Agregar comentario</button>';
+			}
+			else{
+				echo '<button onclick=location.href="formularioComentario.php?idN='.$idNoticia.'">Agregar comentario</button>';
+			}
+		
+		    $comentarioSA=new ComentarioSA();
+		    $comentarios=$comentarioSA->devuelveComentarios($idNoticia);
+		?>
+			  
+		<?php 
+			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false || ($_SESSION["esAdmin"] == false)){
+				echo '<button onclick=location.href="procesarBorrarNoticia.php?idN='.$idNoticia.'" disabled>Eliminar noticia</button>';
+			}
+			else{
+				echo '<button onclick=location.href="procesarBorrarNoticia.php?idN='.$idNoticia.'">Eliminar noticia</button>';
+			}
+		
+			echo "<br><br>";
+		?>
 		       <table border="2">
 					<tr>
 						<td><b>Usuario</b></td>

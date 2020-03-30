@@ -18,18 +18,8 @@ require('LigaSA.php')?>
 	?>
 	<div id="contenido">
 	<br>
-		<?php
-			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false) {
-				header('Location: mostrarAlertas.php?codAlerta=1');
-			}
-			else {
-				if($_SESSION["esAdmin"] == false && $_SESSION["esFamilia"] == false){
-					header('Location: mostrarAlertas.php?codAlerta=6');
-				}
-				else{
-		?>
-				<form action="procesarNuevaNoticia.php" method="post">
-					<fieldset>
+		<form action="procesarNuevaNoticia.php" method="post">
+			<fieldset>
 						<legend>Nueva Noticia</legend>
 							Titular:<br> <input type="text" name="titular"><br>
 							<textarea name="cuerpo" rows="10" cols="40">Escribe aquí el cuerpo de la noticia</textarea>
@@ -45,18 +35,11 @@ require('LigaSA.php')?>
 							</select>
 							<br>
 							<input type="file" name="foto" /><br>
-							<!--<input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"> -->
 							<input type="checkbox" name="condi" value="ok">Confirmar enviar noticia.<br>
 							<input type="submit" name="aceptar">	
-					</fieldset>
-				</form>
+			</fieldset>
+		</form>
 
-		<?php
-
-				}
-			}
-
-		?>
 
 	</div>
 	<?php

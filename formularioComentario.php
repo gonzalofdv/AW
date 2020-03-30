@@ -19,7 +19,6 @@ $idNoticia = $_GET['idN'];
 		require("cabecera.php");
 	?>
 	<div id="contenido">
-	<?php if (isset($_SESSION["login"]) && ($_SESSION["login"]==true)) {?>
 	<br>
 		<?php echo'<form action="procesarNuevoComentario.php?idN='.$idNoticia.'" method=post>';?>
 			<fieldset>
@@ -29,11 +28,6 @@ $idNoticia = $_GET['idN'];
 					<input type="submit" name="aceptar">	
 			</fieldset>
 		</form>
-	<?php }
-		else{
-			header('Location: mostrarAlertas.php?codAlerta=7');
-
-	}?>
 	</div>
 	<?php
 		require("sidebarDer.php");

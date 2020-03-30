@@ -31,8 +31,13 @@ require('NoticiaSA.php')?>
 
 				echo '<br>';
 			}
-
-			echo '<button onclick=location.href="formularioNoticia.php">Agregar nueva noticia</button>';
+				
+			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false || ($_SESSION["esAdmin"] == false && $_SESSION["esFamilia"] == false)){
+				echo '<button onclick=location.href="formularioNoticia.php" disabled>Agregar nueva noticia</button>';
+			}
+			else{
+				echo '<button onclick=location.href="formularioNoticia.php">Agregar nueva noticia</button>';
+			}
 		?>
 	</div>
 

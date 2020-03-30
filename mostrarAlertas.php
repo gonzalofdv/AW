@@ -113,10 +113,13 @@ $codigo = $_GET['codAlerta'];
 					echo "<h1>Permisos insuficientes</h1>";
 					echo "<p>Para poder introducir una nueva pregunta para el Quiz necesitas ser un Administrador o tener los privilegios de usuario Somos Familia que podrás conseguir colaborando en nuestra página. Infórmate más en la sección Somos Familia.</p>";
 					break;
+				case 25:
+					echo "<h1>Noticia eliminada con éxito</h1>";
+					break;
 			}
 
 			echo "<p>Te redireccionamos a la página de inicio.</p>";
-			header("refresh:5; url=index.php");
+			header("refresh:3; url=index.php");
 
 		?>
 
