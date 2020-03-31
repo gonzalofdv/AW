@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-03-2020 a las 20:25:49
+-- Tiempo de generación: 31-03-2020 a las 22:06:11
 -- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.3
+-- Versión de PHP: 7.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -149,7 +149,17 @@ INSERT INTO `preguntas` (`IdPregunta`, `Pregunta`, `CodLiga`) VALUES
 (27, '¿Cuál de los siguientes equipos no ha ganado ninguna liga desde que cambió su nombre a Premier League en 1992?', '3'),
 (28, '¿A qué equipo de la Premier League se le conoce con el apodo de \"Los Toffees\"?', '3'),
 (29, '¿En cuál de los siguientes equipos no ha jugado nunca Kevin De Bruyne?', '3'),
-(30, '¿Qué tres jugadores formaron una de las mejores delanteras de la historia del fútbol a finales de los años 70, conocida como la \"United Trinity\"?', '3');
+(30, '¿Qué tres jugadores formaron una de las mejores delanteras de la historia del fútbol a finales de los años 70, conocida como la \"United Trinity\"?', '3'),
+(31, '¿Cual de estos equipos gano el campeonato el mismo año que su centenario?', '6'),
+(32, '¿Cuál era el antiguo nombre de la liga italiana?', '6'),
+(33, '¿Cuantas plazas de clasificación a la Champions League tiene la Serie A?', '6'),
+(34, '¿Qué equipos fueron los involucrados en el escándalo llamado \"Calciopoli\"?', '6'),
+(35, '¿Cuál es el equipo mas antiguo de la liga Serie A?', '6'),
+(36, '¿Qué día se disputó \"la final\" de la 1º liga italiana contando con que el primer equipo se fundó en 1893?', '6'),
+(37, '¿Cuál es el estadio con mayor capacidad de espectadores de la liga italiana?', '6'),
+(38, '¿Quién es el mayor goleador en la historia de la liga italiana?', '6'),
+(39, '¿Cuál es el equipo que más veces ha ganado el campeonato Serie A?', '6'),
+(40, '¿Qué equipo no ha descendido nunca a segunda división de la Serie A?', '6');
 
 -- --------------------------------------------------------
 
@@ -258,7 +268,37 @@ INSERT INTO `respuestas` (`IdRespuesta`, `CodPregunta`, `Respuesta`, `Correcta`)
 (87, 29, 'Manchester City', 0),
 (88, 30, 'Cristiano Ronaldo, Wayne Rooney y Carlos Tévez', 0),
 (89, 30, 'George Best, Bobby Charlton y Denis Law', 1),
-(90, 30, 'Mark Hughes, Brian McClair y Éric Cantona', 0);
+(90, 30, 'Mark Hughes, Brian McClair y Éric Cantona', 0),
+(91, 31, 'Juventus FC', 0),
+(92, 31, 'AC Milan', 0),
+(93, 31, 'Lazio', 1),
+(94, 32, 'Serie B', 0),
+(95, 32, 'Lega Italiana', 0),
+(96, 32, 'Lega Calcio', 1),
+(97, 33, '3 plazas ', 0),
+(98, 33, '2 plazas y media', 1),
+(99, 33, '3 plazas y media', 0),
+(100, 34, 'Juventus FC, AC Milan, Fiorentina, Lazio, Siena y Reggina', 1),
+(101, 34, 'Inter,Juventus FC, Cesena, Hellas verona y Napoli', 0),
+(102, 34, 'Fiorentina, AC Milan, Roma, Livorno y Genoa', 0),
+(103, 35, 'Napoli', 0),
+(104, 35, 'Genoa CFC', 1),
+(105, 35, 'Internazionale de Milano', 0),
+(106, 36, '29 de junio de 1899', 0),
+(107, 36, '8 de mayo de 1898', 1),
+(108, 36, '11 de mayo de 1900', 0),
+(109, 37, 'Estadio San Polo', 0),
+(110, 37, 'Estadio Guiseppe Meazza', 1),
+(111, 37, 'Estadio Olimpico de Roma', 0),
+(112, 38, 'Cristiano Ronaldo', 0),
+(113, 38, 'Silvio Piola', 1),
+(114, 38, 'Zinedine Zidane', 0),
+(115, 39, 'Juventus FC', 1),
+(116, 39, 'Inter', 0),
+(117, 39, 'AC Milan', 0),
+(118, 40, 'Palermo', 0),
+(119, 40, 'Juventus FC', 0),
+(120, 40, 'Inter', 1);
 
 -- --------------------------------------------------------
 
@@ -292,7 +332,7 @@ INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`,
 (4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '123', 'fernag08@ucm.es', 0, 1, 250),
 (5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '123', 'jorborja@ucm.es', 0, 1, 285),
 (6, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '123', 'jurosado@ucm.es', 0, 1, 278),
-(7, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '123', 'amouhib@ucm.es', 0, 1, 232),
+(7, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '123', 'amouhib@ucm.es', 0, 1, 233),
 (8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '123', 'usu@ucm.es', 0, 0, 201);
 
 --
@@ -393,13 +433,13 @@ ALTER TABLE `noticias`
 -- AUTO_INCREMENT de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
-  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
