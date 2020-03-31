@@ -23,6 +23,7 @@ if((!empty($titular)) && (!empty($cuerpo)) && (!empty($condi)) && (!empty($foto)
 		$anadido = $noticiaSA->insertNoticia($n);
 		
 		if($anadido){
+			$usuarioSA->sumarPuntos($codUsuario,5);
 			header('Location: mostrarAlertas.php?codAlerta=12');
 		}
 		else{
