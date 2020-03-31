@@ -3,13 +3,15 @@
 require_once('LigaSA.php');
 require_once('UsuarioSA.php');
 require_once('ComentarioSA.php');
+require_once('NoticiaSA.php');
+require_once('NoticiaTransfer.php');
 
-$titular = $_GET['titulo'];
-$cuerpo = $_GET['texto'];
-$codLiga = $_GET['codLiga'];
-$codUsu = $_GET['codUsu'];
+//$titular = $_GET['titulo'];
+//$cuerpo = $_GET['texto'];
+//$codLiga = $_GET['codLiga'];
+//$codUsu = $_GET['codUsu'];
 $idNoticia = $_GET['idN'];
-$foto = $_GET['foto'];
+//$foto = $_GET['foto'];
 
 ?>
 
@@ -33,6 +35,15 @@ $foto = $_GET['foto'];
 
 	<div id="contenido">
 		<?php
+			//extraemos toda la información de las noticias
+			$noticiaSA = new NoticiaSA();
+			$noticia = $noticiaSA->getNoticia($idNoticia);
+
+			$titular = $noticia->getTitular();
+			$cuerpo = $noticia->getTexto();
+			$codLiga = $noticia->getCodLiga();
+			$codUsu = $noticia->getCodUsuario();
+			$foto = $noticia->getFoto();
 			//consultas para extraer nombre de usuario y nombre de liga
 			$ligaSA = new LigaSA();
 			$liga = $ligaSA->getNombreLiga($codLiga);
@@ -67,9 +78,13 @@ $foto = $_GET['foto'];
 		<?php 
 			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false || ($_SESSION["esAdmin"] == false)){
 				echo '<button onclick=location.href="procesarBorrarNoticia.php?idN='.$idNoticia.'" disabled>Eliminar noticia</button>';
+				echo '	';
+				echo '<button onclick=location.href="formularioEditarNoticia.php?idN='.$idNoticia.'" disabled>Editar noticia</button>';
 			}
 			else{
 				echo '<button onclick=location.href="procesarBorrarNoticia.php?idN='.$idNoticia.'">Eliminar noticia</button>';
+				echo '	';
+				echo '<button onclick=location.href="formularioEditarNoticia.php?idN='.$idNoticia.'">Editar noticia</button>';
 			}
 		
 			echo "<br><br>";
