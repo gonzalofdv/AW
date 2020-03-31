@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-03-2020 a las 13:02:58
+-- Tiempo de generación: 31-03-2020 a las 13:15:29
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -57,7 +57,7 @@ CREATE TABLE `equipos` (
 --
 
 CREATE TABLE `jugadores` (
-  `IdJugador` varchar(6) NOT NULL,
+  `IdJugador` int(6) NOT NULL,
   `CodEquipo` int(6) NOT NULL,
   `Nombre` varchar(20) NOT NULL,
   `Apellido` varchar(20) NOT NULL
@@ -115,6 +115,32 @@ CREATE TABLE `preguntas` (
   `CodLiga` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `preguntas`
+--
+
+INSERT INTO `preguntas` (`IdPregunta`, `Pregunta`, `CodLiga`) VALUES
+(1, '¿Qué club ha jugado todas las ediciones de liga Santander?', '1'),
+(2, '¿Quién fue el máximo goleador de la liga Santander en la temporada 18/19 ?', '1'),
+(3, '¿Cuál es el estadio con mas aforo de la liga Santander? ', '1'),
+(4, '¿Qué equipo ganó la Copa del Rey en la temporada 18/19?', '1'),
+(5, '¿Cuál fue el ultimo equipo de la liga Santander que ganó una Europa League?', '1'),
+(6, '¿Cuál es el fichaje más caro de la liga Santander en la historia?', '1'),
+(7, '¿Cual ha sido la mayor goleada en la historia de la liga Santander?', '1'),
+(8, '¿Quién fue el ganador del trofeo Zamora en la temporada 18/19?', '1'),
+(9, '¿Cuál es el record de puntos en la liga Santander?', '1'),
+(10, '¿Cuál es el estadio activo más antiguo de la liga Santander?', '1'),
+(11, '¿Quién es el máximo goleador de la historia de la Bundesliga?', '4'),
+(12, '¿En qué equipo de la Bundesliga no jugó el histórico jugador Franz Beckenbauer?', '4'),
+(13, '¿Qué jugador ostenta el récord de velocidad punta en la Bundesliga?', '4'),
+(14, '¿Qué histórico jugador del Bayern de Múnich posee el récord de ser el único jugador en alcanzar 4 semifinales consecutivas de la Copa Mundial de Fútbol?', '4'),
+(15, '¿Quién fue el jugador que ostenta el récord de marcar el gol más rápido de la historia de la Bundesliga?', '4'),
+(16, '¿Qué jugador fue traspasado al Bayer 04 Leverkusen en el año 2012-13 procedente del Real Madrid Castilla?', '4'),
+(17, '¿Por qué club de la Bundesliga no ha pasado el actual jugador del Real Madrid, Toni Kroos?', '4'),
+(18, 'De los siguientes clubes, ¿cuál tiene un solo título de Campeón de la Bundesliga?', '4'),
+(19, '¿Quién es el jugador con la mayor cantidad de partidos disputados?', '4'),
+(20, '¿Qué jugador de la Bundesliga ganó el premio a Futbolista alemán del año 2001?', '4');
+
 -- --------------------------------------------------------
 
 --
@@ -127,6 +153,72 @@ CREATE TABLE `respuestas` (
   `Respuesta` varchar(100) NOT NULL,
   `Correcta` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `respuestas`
+--
+
+INSERT INTO `respuestas` (`IdRespuesta`, `CodPregunta`, `Respuesta`, `Correcta`) VALUES
+(1, 1, 'Atletico de Madrid', 0),
+(2, 1, 'Athletic Bilbao', 1),
+(3, 1, 'Real Betis', 0),
+(4, 2, 'Karim Benzema', 0),
+(5, 2, 'Luis Suárez', 0),
+(6, 2, 'Leo Messi', 1),
+(7, 3, 'Camp Nou', 1),
+(8, 3, 'Santiago Bernabéu', 0),
+(9, 3, 'Wanda Metropolitano', 0),
+(10, 4, 'Real Madrid', 0),
+(11, 4, 'Sevilla FC', 0),
+(12, 4, 'Valencia CF', 1),
+(13, 5, 'Sevilla FC', 0),
+(14, 5, 'Atletico de Madrid', 1),
+(15, 5, 'Getafe CF', 0),
+(16, 6, 'Coutinho', 0),
+(17, 6, 'Neymar', 1),
+(18, 6, 'Cristiano Ronaldo', 0),
+(19, 7, '10-0', 0),
+(20, 7, '12-1', 1),
+(21, 7, '11-1', 0),
+(22, 8, 'Jan Oblak', 1),
+(23, 8, 'Thibaut Courtois', 0),
+(24, 8, 'Marc Ter Stegen', 0),
+(25, 9, '90', 0),
+(26, 9, '102', 0),
+(27, 9, '100', 1),
+(28, 10, 'Santiago Bernabéu', 0),
+(29, 10, 'El Madrigal (Estadio de la Cerámica)', 1),
+(30, 10, 'San Mamés', 0),
+(31, 11, 'Robert Lewandowski', 0),
+(32, 11, 'Gerd Müller', 1),
+(33, 11, 'Klaus Fischer', 0),
+(34, 12, 'Bayern de Munich', 0),
+(35, 12, 'Hamburgo SV', 0),
+(36, 12, 'Borussia Mönchengladbach', 1),
+(37, 13, 'Kingsley Ehizibue', 0),
+(38, 13, 'Achraf Hakimi', 1),
+(39, 13, 'Kingsley Coman', 0),
+(40, 14, 'Miroslav Josef Klose', 1),
+(41, 14, 'Lothar Matthäus', 0),
+(42, 14, 'Manuel Peter Neuer', 0),
+(43, 15, 'Karim Bellarabi', 1),
+(44, 15, 'Marc Bartra', 0),
+(45, 15, 'Giovane Élber', 0),
+(46, 16, 'Antonio Adán', 0),
+(47, 16, 'Pablo Sarabia', 0),
+(48, 16, 'Daniel Carvajal', 1),
+(49, 17, 'Schalke 04', 1),
+(50, 17, 'Bayern Munich', 0),
+(51, 17, 'Bayer 04 Leverkusen', 0),
+(52, 18, '1. FC Nürnberg', 1),
+(53, 18, 'FC Kaiserslautern', 0),
+(54, 18, 'FC Köln', 0),
+(55, 19, 'Oliver Kahn', 0),
+(56, 19, 'Karl-Heinz Körbel', 1),
+(57, 19, 'Ulrich Stielike', 0),
+(58, 20, 'Oliver Neuville', 0),
+(59, 20, 'Miroslav Josef Klose', 0),
+(60, 20, 'Oliver Kahn', 1);
 
 -- --------------------------------------------------------
 
@@ -148,6 +240,20 @@ CREATE TABLE `usuarios` (
   `SomosFamilia` tinyint(1) NOT NULL,
   `Puntos` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`, `EquipoFavorito`, `NombreUsuario`, `Contrasena`, `Email`, `Administrador`, `SomosFamilia`, `Puntos`) VALUES
+(1, 'Administrador', 'Ad', 'Min', 'hombre', 'Atletico de Madrid', 'admin', '123', 'admin@ucm.es', 1, 0, 205),
+(2, 'Gonzalo', 'Figueroa', 'del Val', 'hombre', 'Real Madrid', 'gfigue01', '123', 'gfigue01@ucm.es', 0, 1, 265),
+(3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 'Real Madrid', 'acernuda', '123', 'acernuda@ucm.es', 0, 1, 248),
+(4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '123', 'fernag08@ucm.es', 0, 1, 250),
+(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '123', 'jorborja@ucm.es', 0, 1, 284),
+(6, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '123', 'jurosado@ucm.es', 0, 1, 278),
+(7, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '123', 'amouhib@ucm.es', 0, 1, 232),
+(8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '123', 'usu@ucm.es', 0, 0, 201);
 
 --
 -- Índices para tablas volcadas
@@ -217,7 +323,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `IdComentario` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IdComentario` int(6) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `equipos`
@@ -226,34 +332,40 @@ ALTER TABLE `equipos`
   MODIFY `IdEquipo` int(6) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `jugadores`
+--
+ALTER TABLE `jugadores`
+  MODIFY `IdJugador` int(6) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `ligas`
 --
 ALTER TABLE `ligas`
-  MODIFY `IdLiga` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `IdLiga` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
-  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `IdUsuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IdUsuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas
