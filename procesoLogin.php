@@ -29,6 +29,9 @@ if((!empty($usu)) && (!empty($pass))){
 			else{
 				$_SESSION['esFamilia']=false;
 			}
+			$consulta = $usuarioSA->obtenerId($usu);
+			$idUsuario = $consulta->IdUsuario;
+			$usuarioSA->sumarPuntos($idUsuario,1);
 			
 			header('Location: mostrarAlertas.php?codAlerta=17');
 
