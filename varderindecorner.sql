@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-03-2020 a las 12:40:42
+-- Tiempo de generación: 31-03-2020 a las 13:15:29
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -129,7 +129,17 @@ INSERT INTO `preguntas` (`IdPregunta`, `Pregunta`, `CodLiga`) VALUES
 (7, '¿Cual ha sido la mayor goleada en la historia de la liga Santander?', '1'),
 (8, '¿Quién fue el ganador del trofeo Zamora en la temporada 18/19?', '1'),
 (9, '¿Cuál es el record de puntos en la liga Santander?', '1'),
-(10, '¿Cuál es el estadio activo más antiguo de la liga Santander?', '1');
+(10, '¿Cuál es el estadio activo más antiguo de la liga Santander?', '1'),
+(11, '¿Quién es el máximo goleador de la historia de la Bundesliga?', '4'),
+(12, '¿En qué equipo de la Bundesliga no jugó el histórico jugador Franz Beckenbauer?', '4'),
+(13, '¿Qué jugador ostenta el récord de velocidad punta en la Bundesliga?', '4'),
+(14, '¿Qué histórico jugador del Bayern de Múnich posee el récord de ser el único jugador en alcanzar 4 semifinales consecutivas de la Copa Mundial de Fútbol?', '4'),
+(15, '¿Quién fue el jugador que ostenta el récord de marcar el gol más rápido de la historia de la Bundesliga?', '4'),
+(16, '¿Qué jugador fue traspasado al Bayer 04 Leverkusen en el año 2012-13 procedente del Real Madrid Castilla?', '4'),
+(17, '¿Por qué club de la Bundesliga no ha pasado el actual jugador del Real Madrid, Toni Kroos?', '4'),
+(18, 'De los siguientes clubes, ¿cuál tiene un solo título de Campeón de la Bundesliga?', '4'),
+(19, '¿Quién es el jugador con la mayor cantidad de partidos disputados?', '4'),
+(20, '¿Qué jugador de la Bundesliga ganó el premio a Futbolista alemán del año 2001?', '4');
 
 -- --------------------------------------------------------
 
@@ -178,7 +188,37 @@ INSERT INTO `respuestas` (`IdRespuesta`, `CodPregunta`, `Respuesta`, `Correcta`)
 (27, 9, '100', 1),
 (28, 10, 'Santiago Bernabéu', 0),
 (29, 10, 'El Madrigal (Estadio de la Cerámica)', 1),
-(30, 10, 'San Mamés', 0);
+(30, 10, 'San Mamés', 0),
+(31, 11, 'Robert Lewandowski', 0),
+(32, 11, 'Gerd Müller', 1),
+(33, 11, 'Klaus Fischer', 0),
+(34, 12, 'Bayern de Munich', 0),
+(35, 12, 'Hamburgo SV', 0),
+(36, 12, 'Borussia Mönchengladbach', 1),
+(37, 13, 'Kingsley Ehizibue', 0),
+(38, 13, 'Achraf Hakimi', 1),
+(39, 13, 'Kingsley Coman', 0),
+(40, 14, 'Miroslav Josef Klose', 1),
+(41, 14, 'Lothar Matthäus', 0),
+(42, 14, 'Manuel Peter Neuer', 0),
+(43, 15, 'Karim Bellarabi', 1),
+(44, 15, 'Marc Bartra', 0),
+(45, 15, 'Giovane Élber', 0),
+(46, 16, 'Antonio Adán', 0),
+(47, 16, 'Pablo Sarabia', 0),
+(48, 16, 'Daniel Carvajal', 1),
+(49, 17, 'Schalke 04', 1),
+(50, 17, 'Bayern Munich', 0),
+(51, 17, 'Bayer 04 Leverkusen', 0),
+(52, 18, '1. FC Nürnberg', 1),
+(53, 18, 'FC Kaiserslautern', 0),
+(54, 18, 'FC Köln', 0),
+(55, 19, 'Oliver Kahn', 0),
+(56, 19, 'Karl-Heinz Körbel', 1),
+(57, 19, 'Ulrich Stielike', 0),
+(58, 20, 'Oliver Neuville', 0),
+(59, 20, 'Miroslav Josef Klose', 0),
+(60, 20, 'Oliver Kahn', 1);
 
 -- --------------------------------------------------------
 
@@ -313,13 +353,13 @@ ALTER TABLE `noticias`
 -- AUTO_INCREMENT de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
-  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
