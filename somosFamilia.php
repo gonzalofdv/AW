@@ -31,16 +31,20 @@
 		<h3>Sistema de puntos:</h3>
 		<table>
 		  <tr>
-			<td>- Cada día nuevo que inicies sesión:</td>
-			<td>1 Punto</td> 
+			<td>- Cada vez que inicies sesión:</td>
+			<td>1 Punto</td>
 		  </tr>
 		  <tr>
-			<td>- Al valorar una noticia:</td>
-			<td>1 Punto</td>
+			<td>- Al añadir una nueva noticia:</td>
+			<td>5 Puntos</td>
 		  </tr>
 		  <tr>
 			<td>- Al comentar una noticia con un mínimo de 90 caracteres:</td>
 			<td>3 Puntos</td>
+		  </tr>
+		  <tr>
+			<td>- Al valorar una noticia:</td>
+			<td>1 Punto</td>
 		  </tr>
 		  <tr>
 			<td>- Al participar en nuestro Quiz de 10 preguntas:</td>
