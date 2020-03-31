@@ -7,6 +7,14 @@ class NoticiaSA {
 	// Atributos
     protected $noticiaDAO;
 	
+    public function getNoticia($idNoticia){
+		if(!$this->noticiaDAO){
+			$this->noticiaDAO = new NoticiaDAO();
+		}
+		$aux = $this->noticiaDAO;
+		return $aux->getNoticia($idNoticia);    	
+    }
+
 	public function insertNoticia(NoticiaTransfer $noticia){
 		if(!$this->noticiaDAO){
 			$this->noticiaDAO = new NoticiaDAO();

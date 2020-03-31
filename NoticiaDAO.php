@@ -15,6 +15,7 @@ class NoticiaDAO extends DAO{
         }
 		
 		$n = new NoticiaTransfer($obj->CodUsuario, $obj->CodLiga, $obj->Titular, $obj->Texto, $obj->Foto);
+		return $n;
 	}
 	
 	public function insert(NoticiaTransfer $n){
