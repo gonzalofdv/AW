@@ -116,6 +116,9 @@ $codigo = $_GET['codAlerta'];
 				case 25:
 					echo "<h1>Noticia eliminada con éxito</h1>";
 					break;
+				case 26:
+					echo "<h1>Noticia actualizada correctamente</h1>";
+					break;
 			}
 
 			echo "<p>Te redireccionamos a la página de inicio.</p>";

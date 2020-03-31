@@ -23,12 +23,12 @@ class NoticiaSA {
 		return $aux->insert($noticia);
 	}
 	
-	public function updateNoticia(NoticiaTransfer $noticia){
+	public function updateNoticia($idNoticia, $titular, $cuerpo, $codLiga){
 		if(!$this->noticiaDAO){
 			$this->noticiaDAO = new NoticiaDAO();
 		}
 		$aux = $this->noticiaDAO;
-		$aux->update($noticia);
+		$aux->update($idNoticia, $titular, $cuerpo, $codLiga);
 	}
 	
 	public function deleteNoticia($idNoticia){

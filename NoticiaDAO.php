@@ -37,10 +37,9 @@ class NoticiaDAO extends DAO{
 		}
 	}
 	
-	public function update(NoticiaTransfer $n){
+	public function update($idNoticia, $titular, $cuerpo, $codLiga){
 		$db = $this->db;
-		$sql = "UPDATE Noticias SET CodUsuario = '$n->getCodUsuario()', CodLiga = '$n->getCodLiga()', Texto = '$n->getTexto()', Titular = '$n->getTitular()', Foto = '$n->getFoto()'
-		WHERE IdNoticia LIKE '$n->getIdNoticia()'"; 
+		$sql = "UPDATE noticias SET CodLiga = '$codLiga', Texto = '$cuerpo', Titular = '$titular' WHERE IdNoticia LIKE '$idNoticia'"; 
 		$consulta = mysqli_query($db, $sql);
 	}
 	
