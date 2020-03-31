@@ -78,9 +78,13 @@ $idNoticia = $_GET['idN'];
 		<?php 
 			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false || ($_SESSION["esAdmin"] == false)){
 				echo '<button onclick=location.href="procesarBorrarNoticia.php?idN='.$idNoticia.'" disabled>Eliminar noticia</button>';
+				echo '	';
+				echo '<button onclick=location.href="formularioEditarNoticia.php?idN='.$idNoticia.'" disabled>Editar noticia</button>';
 			}
 			else{
 				echo '<button onclick=location.href="procesarBorrarNoticia.php?idN='.$idNoticia.'">Eliminar noticia</button>';
+				echo '	';
+				echo '<button onclick=location.href="formularioEditarNoticia.php?idN='.$idNoticia.'">Editar noticia</button>';
 			}
 		
 			echo "<br><br>";
