@@ -23,7 +23,7 @@
 		<div id="contenido">
 			<center>
 				<h1>¡Bienvenido al QUIZ!</h1>
-				<img src="./img/quiz.jpg" alt="quiz" width="400">
+				<img src="./img/modifquiz.jpg" alt="quiz" width="400">
 			</center>
 			
 			<p>
