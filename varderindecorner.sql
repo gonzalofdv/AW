@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-03-2020 a las 13:15:29
+-- Tiempo de generación: 31-03-2020 a las 20:25:49
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -139,7 +139,17 @@ INSERT INTO `preguntas` (`IdPregunta`, `Pregunta`, `CodLiga`) VALUES
 (17, '¿Por qué club de la Bundesliga no ha pasado el actual jugador del Real Madrid, Toni Kroos?', '4'),
 (18, 'De los siguientes clubes, ¿cuál tiene un solo título de Campeón de la Bundesliga?', '4'),
 (19, '¿Quién es el jugador con la mayor cantidad de partidos disputados?', '4'),
-(20, '¿Qué jugador de la Bundesliga ganó el premio a Futbolista alemán del año 2001?', '4');
+(20, '¿Qué jugador de la Bundesliga ganó el premio a Futbolista alemán del año 2001?', '4'),
+(21, '¿Quién fue el máximo goleador de la Premier League 17/18?', '3'),
+(22, '¿Qué jugador de la Premier League ha sido fichado por una mayor cantidad?', '3'),
+(23, '¿Quién es el máximo asistente histórico de la Premier League?', '3'),
+(24, '¿En qué temporada el Arsenal ganó la Premier League sin perder ningún partido?', '3'),
+(25, 'En la temporada 17/18 el Manchester City batió el récord de goles en una temporada en la Premier League. ¿Con qué cifra?', '3'),
+(26, '¿Qué equipo de la Premier League ha ganado más Champions League?', '3'),
+(27, '¿Cuál de los siguientes equipos no ha ganado ninguna liga desde que cambió su nombre a Premier League en 1992?', '3'),
+(28, '¿A qué equipo de la Premier League se le conoce con el apodo de \"Los Toffees\"?', '3'),
+(29, '¿En cuál de los siguientes equipos no ha jugado nunca Kevin De Bruyne?', '3'),
+(30, '¿Qué tres jugadores formaron una de las mejores delanteras de la historia del fútbol a finales de los años 70, conocida como la \"United Trinity\"?', '3');
 
 -- --------------------------------------------------------
 
@@ -218,7 +228,37 @@ INSERT INTO `respuestas` (`IdRespuesta`, `CodPregunta`, `Respuesta`, `Correcta`)
 (57, 19, 'Ulrich Stielike', 0),
 (58, 20, 'Oliver Neuville', 0),
 (59, 20, 'Miroslav Josef Klose', 0),
-(60, 20, 'Oliver Kahn', 1);
+(60, 20, 'Oliver Kahn', 1),
+(61, 21, 'Mohamed Salah', 1),
+(62, 21, 'Sergio Agüero', 0),
+(63, 21, 'Harry Kane', 0),
+(64, 22, 'Harry Maguire', 0),
+(65, 22, 'Romelu Lukaku', 0),
+(66, 22, 'Paul Pogba', 1),
+(67, 23, 'Cesc Fàbregas', 0),
+(68, 23, 'Ryan Giggs', 1),
+(69, 23, 'Wayne Rooney', 0),
+(70, 24, '2004/2005', 0),
+(71, 24, '2003/2004', 1),
+(72, 24, '2005/2006', 0),
+(73, 25, '100 goles', 0),
+(74, 25, '103 goles', 0),
+(75, 25, '106 goles', 1),
+(76, 26, 'Manchester United', 0),
+(77, 26, 'Chelsea', 0),
+(78, 26, 'Liverpool', 1),
+(79, 27, 'Southampton', 1),
+(80, 27, 'Leicester City', 0),
+(81, 27, 'Blackburn Rovers', 0),
+(82, 28, 'Watford', 0),
+(83, 28, 'Everton', 1),
+(84, 28, 'Crystal Palace', 0),
+(85, 29, 'Chelsea', 0),
+(86, 29, 'Tottenham', 1),
+(87, 29, 'Manchester City', 0),
+(88, 30, 'Cristiano Ronaldo, Wayne Rooney y Carlos Tévez', 0),
+(89, 30, 'George Best, Bobby Charlton y Denis Law', 1),
+(90, 30, 'Mark Hughes, Brian McClair y Éric Cantona', 0);
 
 -- --------------------------------------------------------
 
@@ -250,7 +290,7 @@ INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`,
 (2, 'Gonzalo', 'Figueroa', 'del Val', 'hombre', 'Real Madrid', 'gfigue01', '123', 'gfigue01@ucm.es', 0, 1, 265),
 (3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 'Real Madrid', 'acernuda', '123', 'acernuda@ucm.es', 0, 1, 248),
 (4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '123', 'fernag08@ucm.es', 0, 1, 250),
-(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '123', 'jorborja@ucm.es', 0, 1, 284),
+(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '123', 'jorborja@ucm.es', 0, 1, 285),
 (6, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '123', 'jurosado@ucm.es', 0, 1, 278),
 (7, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '123', 'amouhib@ucm.es', 0, 1, 232),
 (8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '123', 'usu@ucm.es', 0, 0, 201);
@@ -353,13 +393,13 @@ ALTER TABLE `noticias`
 -- AUTO_INCREMENT de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
-  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
