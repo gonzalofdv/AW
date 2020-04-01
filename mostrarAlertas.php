@@ -118,6 +118,8 @@ $codigo = $_GET['codAlerta'];
 					break;
 				case 19:
 					echo "Nueva pregunta insertada a la BBDD correctamente, gracias por colaborar<br>";
+					echo "<p>Te redireccionamos a la página de inicio.</p>";
+					header("refresh:5; url=index.php");
 					break;
 				case 20:
 					echo "Se ha producido un fallo al introducir la pregunta";
