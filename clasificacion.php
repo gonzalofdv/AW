@@ -13,7 +13,6 @@
 </head>
 
 <body>
-	<p>En proceso, próximamente en la entrega 3. Tendrá otro formato completamente distinto, pero lo hemos dejado así para que no interfiera en ninguna otra funcionalidad. </p>
 	<?php 
 		require ("cabecera.php");
 
@@ -122,6 +121,7 @@
 
     ?>
 	<div id="contenido">
+		<p>En proceso, próximamente en la entrega 3. Tendrá otro formato completamente distinto, pero lo hemos dejado así para que no interfiera en ninguna otra funcionalidad. </p>
 		
 		<h1>Clasificación Bundesliga</h1>
         <p><table>
