@@ -23,12 +23,12 @@ class ComentarioSA {
 		$aux->update($comentario);
 	}
 	
-	public function deleteComentario($idNoticia){
+	public function deleteComentario($idComentario){
 		if(!$this->comentarioDAO){
 			$this->comentarioDAO = new ComentarioDAO();
 		}
 		$aux = $this->comentarioDAO;
-		$aux->delete($idNoticia);
+		$aux->delete($idComentario);
 	}
 
 	public function devuelveComentarios($idNoticia){

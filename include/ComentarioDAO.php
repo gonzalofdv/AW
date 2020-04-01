@@ -24,16 +24,10 @@ class ComentarioDAO extends DAO{
 		}
 	}
 	
-	public function delete($idNoticia){
+	public function delete($idComentario){
 		$db = $this->db;
-		$sql = "DELETE FROM comentarios WHERE CodNoticia = '$idNoticia'"; 
+		$sql = "DELETE FROM comentarios WHERE IdComentario = '$idComentario'"; 
 		$consulta = mysqli_query($db, $sql);
-		if($consulta){
-			return true;
-		}
-		else{
-			return false;
-		}
 	}
 
 	public function devuelveComentarios($idNoticia){
