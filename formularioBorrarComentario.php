@@ -22,9 +22,8 @@ $idNoticia = $_GET['idN'];
 		require("cabecera.php");
 	?>
 	<div id="contenido">
-	<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
 	<br>
-		<?php echo '<form action="procesarBorrarComentario.php?idC='.$idComenario.'" method="post">'; ?>
+		<?php echo '<form action="procesarBorrarComentario.php method="post">'; ?>
 			<fieldset>
 						<legend>¿Qué comentario quieres borrar?</legend>
 						<?php
