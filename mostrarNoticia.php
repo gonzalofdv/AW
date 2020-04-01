@@ -84,6 +84,10 @@ $idNoticia = $_GET['idN'];
 				echo '<button onclick=location.href="formularioBorrarComentario.php?idN='.$idNoticia.'">Eliminar comentario</button>';
 				echo '	';
 				}
+				else{
+					echo '<button onclick=location.href="formularioBorrarComentario.php?idN='.$idNoticia.'" disabled>Eliminar comentario</button>';
+					echo '	';
+				}
 				echo '<button onclick=location.href="procesarBorrarNoticia.php?idN='.$idNoticia.'">Eliminar noticia</button>';
 				echo '	';
 				echo '<button onclick=location.href="formularioEditarNoticia.php?idN='.$idNoticia.'">Editar noticia</button>';
