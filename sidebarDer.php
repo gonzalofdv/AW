@@ -12,7 +12,7 @@
 
 			<?php
 
-				require_once('UsuarioSA.php');
+				require_once('include/UsuarioSA.php');
 
 				$usuarioSA = new UsuarioSA();
 				$lista = $usuarioSA->devuelveRanking();
