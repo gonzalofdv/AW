@@ -23,7 +23,7 @@ $idNoticia = $_GET['idN'];
 	?>
 	<div id="contenido">
 	<br>
-		<?php echo '<form action="procesarBorrarComentario.php method="post">'; ?>
+		<?php echo '<form action="procesarBorrarComentario.php" method="post">'; ?>
 			<fieldset>
 						<legend>¿Qué comentario quieres borrar?</legend>
 						<?php
