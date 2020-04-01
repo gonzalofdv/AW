@@ -1,6 +1,6 @@
 <?php session_start(); 
-require_once('LigaSA.php');
-require_once('NoticiaSA.php');
+require_once('include/LigaSA.php');
+require_once('include/NoticiaSA.php');
 
 
 $idNoticia = $_GET['idN'];

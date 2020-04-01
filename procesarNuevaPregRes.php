@@ -1,9 +1,9 @@
 <?php
 
-require_once('PreguntaTransfer.php');
-require_once('PreguntaSA.php');
-require_once('RespuestaTransfer.php');
-require_once('RespuestaSA.php');
+require_once('include/PreguntaTransfer.php');
+require_once('include/PreguntaSA.php');
+require_once('include/RespuestaTransfer.php');
+require_once('include/RespuestaSA.php');
 
 $preg = $_POST['preg'];
 $codLiga = $_POST['liga'];

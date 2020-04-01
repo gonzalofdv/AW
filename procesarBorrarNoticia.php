@@ -1,9 +1,9 @@
 <?php session_start();
 
-require_once('NoticiaTransfer.php');
-require_once('NoticiaSA.php');
-require_once('ComentarioSA.php');
-require_once('ComentarioTransfer.php');
+require_once('include/NoticiaTransfer.php');
+require_once('include/NoticiaSA.php');
+require_once('include/ComentarioSA.php');
+require_once('include/ComentarioTransfer.php');
 
 $idNoticia = $_GET['idN'];
 

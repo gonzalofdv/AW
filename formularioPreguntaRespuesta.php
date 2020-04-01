@@ -1,5 +1,5 @@
 <?php session_start(); 
-require('LigaSA.php')?>
+require('include/LigaSA.php')?>
 
 <!DOCTYPE html>
 <html>

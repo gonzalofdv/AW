@@ -1,6 +1,6 @@
 <?php session_start(); 
 $usuario=$_SESSION['nombre'];
-require_once('UsuarioSA.php');
+require_once('include/UsuarioSA.php');
 ?>
 
 <!DOCTYPE html>

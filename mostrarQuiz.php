@@ -1,7 +1,7 @@
 <?php session_start(); 
 
-require_once('PreguntaSA.php');
-require_once('RespuestaSA.php');
+require_once('include/PreguntaSA.php');
+require_once('include/RespuestaSA.php');
 ?>
 
 <!DOCTYPE html>

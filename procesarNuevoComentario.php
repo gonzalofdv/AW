@@ -1,9 +1,9 @@
 <?php session_start();
 
-require_once('ComentarioTransfer.php');
-require_once('ComentarioSA.php');
-require_once('UsuarioSA.php');
-require_once('UsuarioTransfer.php');
+require_once('include/ComentarioTransfer.php');
+require_once('include/ComentarioSA.php');
+require_once('include/UsuarioSA.php');
+require_once('include/UsuarioTransfer.php');
 
 $idNoticia = $_GET['idN'];
 $comentario = nl2br($_POST['cuerpo']);

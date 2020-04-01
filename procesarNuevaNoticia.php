@@ -1,9 +1,9 @@
 <?php session_start();
 
-require_once('NoticiaTransfer.php');
-require_once('NoticiaSA.php');
-require_once('UsuarioSA.php');
-require_once('UsuarioTransfer.php');
+require_once('include/NoticiaTransfer.php');
+require_once('include/NoticiaSA.php');
+require_once('include/UsuarioSA.php');
+require_once('include/UsuarioTransfer.php');
 
 $titular = $_POST['titular'];
 $cuerpo = nl2br($_POST['cuerpo']);
