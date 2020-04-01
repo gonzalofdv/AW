@@ -11,6 +11,7 @@ class UsuarioDAO extends DAO{
 		$sql = "SELECT * FROM usuarios WHERE NombreUsuario LIKE '$usu'";
 		$consulta = mysqli_query($db, $sql);
 		$info = $consulta->fetch_object();
+
 		if(!$info){
 			//si no existe usuario con ese nombre ya
 			return true;
@@ -22,9 +23,11 @@ class UsuarioDAO extends DAO{
 
 	public function esAdmin($usu){
 		$db=$this->db;
+
 		$sql = "SELECT Administrador FROM usuarios WHERE NombreUsuario LIKE '$usu'";
 		$consulta = mysqli_query($db, $sql);
 		$res = mysqli_fetch_array($consulta);
+
 		if($res[0]==0){
 			//No es admin
 			return false;
@@ -36,9 +39,11 @@ class UsuarioDAO extends DAO{
 
 	public function esFamilia($usu){
 		$db=$this->db;
+
 		$sql = "SELECT SomosFamilia FROM usuarios WHERE NombreUsuario LIKE '$usu'";
 		$consulta = mysqli_query($db, $sql);
 		$res = mysqli_fetch_array($consulta);
+
 		if($res[0]==0){
 			//No es familia
 			return false;
@@ -65,6 +70,7 @@ class UsuarioDAO extends DAO{
 
 		$sql = "INSERT INTO usuarios (Nombre, Apellido1, Apellido2, Sexo, EquipoFavorito, NombreUsuario, Contrasena, Email, Administrador, SomosFamilia, Puntos) VALUES ('$nombre', '$ap1', '$ap2', '$sexo', '$equipo', '$usu', '$pass', '$email', '$esAdmin', '$familia', '$puntos')";
 		$consulta = mysqli_query($db, $sql);
+
 		if($consulta){
 			return true;
 		} 
@@ -75,6 +81,7 @@ class UsuarioDAO extends DAO{
 	
 	public function obtenerId($usu){
 		$db=$this->db;
+
 		$sql = "SELECT IdUsuario FROM usuarios WHERE NombreUsuario = '$usu'";
 		$consulta = mysqli_query($db, $sql);
 		
@@ -83,6 +90,7 @@ class UsuarioDAO extends DAO{
 
 	public function obtenerNombreUsu($idUsu){
 		$db = $this->db;
+
 		$sql = "SELECT NombreUsuario FROM usuarios WHERE IdUsuario = '$idUsu'";
 		$consulta = mysqli_query($db, $sql);
 
@@ -91,8 +99,8 @@ class UsuarioDAO extends DAO{
 
 	//funcion para llamar al user y obtener sus datos
 	public function getUsuario($nombre) {
-		
 		$db = $this->db;
+
 		$sql = "SELECT * from usuarios where NombreUsuario = '$nombre'";
 		$consulta = mysqli_query($db, $sql);
 		
@@ -101,15 +109,18 @@ class UsuarioDAO extends DAO{
 
     public function sumarPuntos($idUsu,$puntos){
 		$db = $this->db;
+
 		$sql = "UPDATE usuarios SET Puntos= Puntos +'$puntos' where IdUsuario = '$idUsu'";
 		$consulta = mysqli_query($db, $sql);
     }
 
     public function canjearFamilia($nombreUsu){
     	$db = $this->db;
+
     	$sql = "SELECT Puntos FROM  usuarios WHERE NombreUsuario = '$nombreUsu'";
     	$consulta = mysqli_query($db, $sql);
     	$obj = $consulta->fetch_object();
+    	
     	if($obj->Puntos >= 200){    		
     		$sql3 = "UPDATE usuarios SET SomosFamilia = 1 WHERE NombreUsuario = '$nombreUsu'";
     		mysqli_query($db, $sql3);
