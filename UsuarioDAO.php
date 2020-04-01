@@ -120,7 +120,7 @@ class UsuarioDAO extends DAO{
     	$sql = "SELECT Puntos FROM  usuarios WHERE NombreUsuario = '$nombreUsu'";
     	$consulta = mysqli_query($db, $sql);
     	$obj = $consulta->fetch_object();
-    	
+
     	if($obj->Puntos >= 200){    		
     		$sql3 = "UPDATE usuarios SET SomosFamilia = 1 WHERE NombreUsuario = '$nombreUsu'";
     		mysqli_query($db, $sql3);
@@ -136,7 +136,7 @@ class UsuarioDAO extends DAO{
     	$db = $this->db;
     	//ordena por puntos y a igualdad de puntos, en orden alfabético
     	//y solo los 10 primeros
-    	$sql = "SELECT NombreUsuario, Puntos FROM usuarios ORDER BY Puntos DESC, NombreUsuario ASC LIMIT 10";
+    	$sql = "SELECT NombreUsuario, Puntos FROM usuarios WHERE Administrador = 0 ORDER BY Puntos DESC, NombreUsuario ASC LIMIT 10";
     	$consulta = mysqli_query($db, $sql);
     	return $consulta;
     }
