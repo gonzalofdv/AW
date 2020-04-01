@@ -32,8 +32,8 @@ $idNoticia = $_GET['idN'];
 		   					 $comentarios=$comentarioSA->devuelveComentarios($idNoticia);
 		   					 $i=0;
 							while($res=mysqli_fetch_array($comentarios)){
-								$usuarioSA->obtenerNombreUsu($res[2]);
-								$usuario= $usuarioSA->NombreUsuario;
+								$usu=$usuarioSA->obtenerNombreUsu($res[2]);
+								$usuario= $usu->NombreUsuario;
 								echo '<input type=radio name=com'.$i.' value='.$res[0].' />'.$usuario.' - '.$res[3].'<br>';
 								echo "<br>";
 								$i++;
