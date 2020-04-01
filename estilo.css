@@ -79,7 +79,7 @@ div#sidebar-right {
 	padding: 10px;
 	float: right;
 	width: 350px;
-	height: 600px;
+	min-height: 600px;
 	background-color: #dddddd;
 }
 

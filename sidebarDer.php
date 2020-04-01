@@ -46,8 +46,7 @@
 		</div>
 		
 		<div id="anuncios">
-			<!--<img src="./img/insparya.jpg" alt="clinica capilar cr7" width="350">
-			-->
+			<img src="./img/insparya.jpg" alt="clinica capilar cr7" width="350">
 			<img src="./img/kaliseParaTodos.png" alt="kalise para todos" width="350">
 			<!--<img src="./img/oreo.jpg" alt="galletas oreo" width="350">-->
 			
