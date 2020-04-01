@@ -72,7 +72,7 @@ $idNoticia = $_GET['idN'];
 			  
 		<?php 
 			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false || ($_SESSION["esAdmin"] == false)){
-				if($comenarioSA->existenComentarios($idNoticia)){
+				if($comentarioSA->existenComentarios($idNoticia)){
 				echo '<button onclick=location.href="formularioBorrarComentario.php?idN='.$idNoticia.'" disabled>Eliminar comentario</button>';
 				echo '	';
 				}
