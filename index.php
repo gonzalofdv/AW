@@ -20,7 +20,7 @@ require('NoticiaSA.php')?>
 	?>
 
 	<div id="contenido">
-		<h1><b>EL VARDERÍN DE CORNER<b></h1>
+		<h1><b>EL VARDERÍN DE CORNER</b></h1>
 		<?php
 			$noticiaSA = new NoticiaSA();
 			$res = $noticiaSA->devuelveNoticias();
