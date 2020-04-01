@@ -44,7 +44,7 @@ require_once('RespuestaSA.php');
 							array_push($valores,$rand);
 							$pregunta=$preguntaSA->getPregunta($rand);
 							$respuestas=$respuestaSA->getRespuestas($rand);
-							echo "<b>".$pregunta->Pregunta . "</b><br>";
+							echo "<b>".$pregunta->Pregunta . "</b><br><br>";
 							while($res=mysqli_fetch_array($respuestas)){
 								echo '<input type=radio name=res'.$i.' value='.$res[3].' />'.$res[2]. '<br>';
 								echo "<br>";
