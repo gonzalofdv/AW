@@ -39,12 +39,8 @@
 			<td>5 Puntos</td>
 		  </tr>
 		  <tr>
-			<td>- Al comentar una noticia con un mínimo de 90 caracteres:</td>
+			<td>- Al comentar una noticia:</td>
 			<td>3 Puntos</td>
-		  </tr>
-		  <tr>
-			<td>- Al valorar una noticia:</td>
-			<td>1 Punto</td>
 		  </tr>
 		  <tr>
 			<td>- Al participar en nuestro Quiz de 10 preguntas:</td>
@@ -82,9 +78,9 @@
 					Somos Familia.
 				</li>
 				<li>
-					También contarán con otras ventajas que añadiremos próximamente como moderar los comentarios de las noticias, sugerir nuevas propuestas que amplíen
+					También contarán con otras ventajas que añadiremos próximamente sugerir nuevas propuestas que amplíen
 					nuestro contenido de ligas, o participar en la creación de un nuevo juego que se pondrá en marcha en unas semanas.
-				</li>
+				</li><!-- En proceso, proximamente en la entrega 3 -->
 				<li>
 					Por último, si un usuario Somos Familia continúa obteniendo puntos hasta llegar a los 1000 puntos, será considerado como un usuario VIP de El VARderín
 					de córner y tendrá la oportunidad de conocer a los administradores en persona y una visita guiada de las instalaciones de nuestra web.
