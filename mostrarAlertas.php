@@ -61,7 +61,7 @@ $codigo = $_GET['codAlerta'];
 					header("refresh:5; url=index.php");
 					break;
 				case 7:
-					echo "Por favor, rellene todos los campos y acepte las condiciones del servicio.";
+					echo "Por favor, rellene todos los campos.";
 					header("refresh:3; url=login.php");
 					break;
 				case 8:
