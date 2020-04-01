@@ -42,6 +42,18 @@ class ComentarioDAO extends DAO{
 		$consulta = mysqli_query($db, $sql);
 		return $consulta;
 	}
+
+	public function existenComentarios($idNoticia){
+		$db = $this->db;
+		$sql = "SELECT * FROM comentarios WHERE CodNoticia LIKE '$idNoticia'";
+		$consulta = mysqli_query($db, $sql);
+		if($consulta){
+			return true;
+		}
+		else{
+			return false;
+		}	
+	}
 	
 }
 	

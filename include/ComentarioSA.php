@@ -40,6 +40,15 @@ class ComentarioSA {
 
 		return $res;
 	}
+
+	public function existenComentarios($idNoticia){
+		if(!$this->comentarioDAO){
+			$this->comentarioDAO = new ComentarioDAO();
+		}
+		$aux = $this->comentarioDAO;
+		$res= $aux->existenComentarios($idNoticia);
+		return $res;
+	}
 	
 }
 
