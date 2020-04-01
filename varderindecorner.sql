@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-04-2020 a las 12:30:43
--- Versión del servidor: 10.4.6-MariaDB
--- Versión de PHP: 7.3.9
+-- Tiempo de generación: 01-04-2020 a las 13:22:12
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -102,6 +102,14 @@ CREATE TABLE `noticias` (
   `Titular` varchar(100) CHARACTER SET utf8 NOT NULL,
   `Foto` varchar(1000) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `noticias`
+--
+
+INSERT INTO `noticias` (`IdNoticia`, `CodUsuario`, `CodLiga`, `Texto`, `Titular`, `Foto`) VALUES
+(1, 6, 1, '¿Le venderá el Atlético? ¿Le aguantará un año más? Esta temporada ha estado parado tres meses por una operación de hernia discal cervical. De ahí sus números, sólo comparables a los que tuvo en el Sporting de sus inicios, temporada 2006-07 (un gol): dos en 19 partidos, dos en 1.192 minutos.<br />\r\n<br />\r\nAdemás de en Italia, sigue teniendo mercado en Brasil y en Qatar. Flamengo. Al-Rayyan. Su nombre sobre la mesa del despacho de Andrea Berta, director deportivo rojiblanco, este verano. El 7 de octubre cumple 32 años. Mientras Simeone le elogia y no para de comentar en público que es un futbolista que aporta algo diferente, otros entienden que su ciclo en el Atlético ha terminado.', 'La encrucijada de Diego Costa', 'noticia_diego_costa.jpg'),
+(2, 6, 1, 'Leo Messi no para de batir récords y cada temporada que pasa nos asombra con un sinfín de genialidades a la altura de los mejores futbolistas de la historia. A causa del coronavirus, no ha acabado el curso y ya es el máximo goleador y asistente de la Liga Santander con 19 tantos y 12 pases de gol.<br />\r\nPero si tenemos en cuenta a las cinco grandes ligas europeas, encontramos un dato sorprendente: ha marcado más goles desde fuera del área esta temporada que 86 equipos (contabilizando a todos los jugadores del mismo) de los 98 que forman las cinco grandes ligas, según indica el portal WhoScored.<br />\r\nEl argentino ha anotado ocho goles desde fuera del área, por lo que supera a equipos de la talla del Chelsea (7), Manchester United (7), Liverpool (6), Real Madrid (6), Tottenham (5), Juventus (5), PSG (4), Atlético de Madrid (3) o Arsenal (3).', 'Messi,más goles fuera del área que 86 equipos', 'noticia_messi.jpg');
 
 -- --------------------------------------------------------
 
@@ -371,7 +379,7 @@ INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`,
 (3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 'Real Madrid', 'acernuda', '123', 'acernuda@ucm.es', 0, 1, 248),
 (4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '123', 'fernag08@ucm.es', 0, 1, 250),
 (5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '123', 'jorborja@ucm.es', 0, 1, 285),
-(6, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '123', 'jurosado@ucm.es', 0, 1, 278),
+(6, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '123', 'jurosado@ucm.es', 0, 1, 288),
 (7, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '123', 'amouhib@ucm.es', 0, 1, 233),
 (8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '123', 'usu@ucm.es', 0, 0, 201);
 
@@ -467,7 +475,7 @@ ALTER TABLE `ligas`
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `preguntas`
