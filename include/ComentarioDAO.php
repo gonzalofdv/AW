@@ -54,6 +54,12 @@ class ComentarioDAO extends DAO{
 			return false;
 		}	
 	}
+
+	public function borrarComentarioConcreto($idComentario){
+		$db = $this->db;
+		$sql = "DELETE FROM comentarios WHERE IdComentario = '$idComentario'"; 
+		$consulta = mysqli_query($db, $sql);
+	}
 	
 }
 	

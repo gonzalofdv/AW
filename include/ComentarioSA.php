@@ -23,7 +23,7 @@ class ComentarioSA {
 		$aux->update($comentario);
 	}
 	
-	public function deleteComentario($idNoticia){
+	public function deleteComentario($idNoticia){ //borra todos los comentarios de una noticia
 		if(!$this->comentarioDAO){
 			$this->comentarioDAO = new ComentarioDAO();
 		}
@@ -48,6 +48,14 @@ class ComentarioSA {
 		$aux = $this->comentarioDAO;
 		$res= $aux->existenComentarios($idNoticia);
 		return $res;
+	}
+
+	public function borrarComentarioConcreto($idComentario){ //borra uno solo
+		if(!$this->comentarioDAO){
+			$this->comentarioDAO = new ComentarioDAO();
+		}
+		$aux = $this->comentarioDAO;
+		$res= $aux->borrarComentarioConcreto($idComentario);
 	}
 	
 }
