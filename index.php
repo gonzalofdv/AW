@@ -20,15 +20,13 @@ require('NoticiaSA.php')?>
 	?>
 
 	<div id="contenido">
-		<h1>Página principal</h1>
-		<h2> Aquí vamos a mostrar todos los titulares de noticias, pincha en el título de una de ellas para verla entera.</h2>
+		<h1><b>EL VARDERÍN DE CORNER<b></h1>
 		<?php
 			$noticiaSA = new NoticiaSA();
 			$res = $noticiaSA->devuelveNoticias();
 			while($valores = mysqli_fetch_array($res)){
 				echo '<img src="'.'./img/noticias/'.$valores[5].'" alt="Imagen noticia" width="350">';
 				echo '<h2><a href="mostrarNoticia.php?idN='.$valores[0].'">' . $valores[4] . '</a></h2>';
-				/*echo '<h2><a href="mostrarNoticia.php?idN='.$valores[0].'&&codUsu='.$valores[1].'&&codLiga='.$valores[2].'&&texto='.urlencode($valores[3]).'&&titulo='.$valores[4].'&&foto='.$valores[5].'">' . $valores[4] . '</a></h2>';*/
 				echo '<h3>'.substr($valores[3],0,40) . "...".'</h3>';
 
 				echo '<br>';
