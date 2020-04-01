@@ -9,7 +9,6 @@ class PreguntaDAO extends DAO{
 		parent::__construct();
 	}
 	
-	//Metodos
 	public function getPregunta($rand) {
 		$sql = "SELECT Pregunta from preguntas where IdPregunta = '$rand'";
 		$consulta = mysqli_query($this->db, $sql);

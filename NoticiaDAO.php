@@ -5,7 +5,6 @@ require_once('DAO.php');
 
 class NoticiaDAO extends DAO{
 
-	//Metodos
 	public function getNoticia($idNoticia) {
 		$db = $this->db;
 		$sql = "SELECT * from Noticias where IdNoticia = '$idNoticia'";

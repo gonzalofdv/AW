@@ -13,7 +13,8 @@ $nombreUsu = $_SESSION['nombre'];
 $foto = $_POST['foto'];
 
 if((!empty($titular)) && (!empty($cuerpo)) && (!empty($condi)) && (!empty($foto))){
-	if($codLiga != 0){ //por defecto el formulario tiene valor 0 así que si no se ha seleccionado ninguna liga, el codLiga sera 0 y dara error, si se ha seleccionado una, codLiga tendrá el valor del ID de la liga correspondiente.
+	if($codLiga != 0){
+		
 		$usuarioSA = new UsuarioSA();
 		$consulta = $usuarioSA->obtenerId($nombreUsu); 	
 		$codUsuario = $consulta->IdUsuario;

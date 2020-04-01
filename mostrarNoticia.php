@@ -6,12 +6,7 @@ require_once('ComentarioSA.php');
 require_once('NoticiaSA.php');
 require_once('NoticiaTransfer.php');
 
-//$titular = $_GET['titulo'];
-//$cuerpo = $_GET['texto'];
-//$codLiga = $_GET['codLiga'];
-//$codUsu = $_GET['codUsu'];
 $idNoticia = $_GET['idN'];
-//$foto = $_GET['foto'];
 
 ?>
 
@@ -35,7 +30,7 @@ $idNoticia = $_GET['idN'];
 
 	<div id="contenido">
 		<?php
-			//extraemos toda la información de las noticias
+
 			$noticiaSA = new NoticiaSA();
 			$noticia = $noticiaSA->getNoticia($idNoticia);
 
@@ -44,7 +39,7 @@ $idNoticia = $_GET['idN'];
 			$codLiga = $noticia->getCodLiga();
 			$codUsu = $noticia->getCodUsuario();
 			$foto = $noticia->getFoto();
-			//consultas para extraer nombre de usuario y nombre de liga
+
 			$ligaSA = new LigaSA();
 			$liga = $ligaSA->getNombreLiga($codLiga);
 

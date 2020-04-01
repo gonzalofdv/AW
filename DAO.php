@@ -2,7 +2,7 @@
 
 class DAO {
     
-	protected $db; // Tenemos un atributo público que será la BBDD
+	protected $db;
 	
  	public function __construct(){
         if (!$this->db)

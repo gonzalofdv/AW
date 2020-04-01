@@ -13,32 +13,24 @@ $f2 = $_POST['f2'];
 $condi = $_POST['condi'];
 
 if((!empty($preg)) && (!empty($codLiga)) && (!empty($v)) && (!empty($f1)) && (!empty($f2)) && (!empty($condi))){
-	if($codLiga != 0){ //por defecto el formulario tiene valor 0 así que si no se ha seleccionado ninguna liga, el codLiga sera 0 y dara error, si se ha seleccionado una, codLiga tendrá el valor del ID de la liga correspondiente.
-		//creamos la pregunta 
+	if($codLiga != 0){
+
 		$p = new PreguntaTransfer($preg, $codLiga);
 		$preguntaSA = new PreguntaSA();
-		//la insertamos en la base de datos
+
 		$anadido = $preguntaSA->insertPregunta($p);
 
 		if($anadido){
-			//ahora tocaria cargar las respuestas
-			//primero obtenemos el id de la pregunta que acabamos de añadir
-			//y con ese id podemos completar la informacion de las respuestas
 
-			//obtenemos el id
 			$aux = $preguntaSA->getIdPregunta($p);
 			$idP = $aux->IdPregunta;
 
-			//hemos obtenido el id
-			//ahora creamos los 3 transfer respuestas
-			$r1 = new RespuestaTransfer($idP, $v, '1'); //1=correcta
-			$r2 = new RespuestaTransfer($idP, $f1, '0'); //0=falsa
+			$r1 = new RespuestaTransfer($idP, $v, '1');
+			$r2 = new RespuestaTransfer($idP, $f1, '0');
 			$r3 = new RespuestaTransfer($idP, $f2, '0');
-			//ahora insertamos las 3 respuestas
+
 			$respuestaSA = new RespuestaSA();
 
-
-			//en este proceso, insertamos las respuestas en orden aleatorio
 			$i = 0;
 			$valores = array();
 			while($i < 3){

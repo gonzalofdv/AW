@@ -4,7 +4,6 @@ require_once('NoticiaTransfer.php');
 
 class NoticiaSA {
 
-	// Atributos
     protected $noticiaDAO;
 	
     public function getNoticia($idNoticia){

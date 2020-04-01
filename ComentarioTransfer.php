@@ -1,6 +1,6 @@
 <?php
 class ComentarioTransfer{
-	//Atributos de la clase Comentario
+
 	private $codNoticia;
 	private $codUsuario;
 	private $comentario;

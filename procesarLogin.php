@@ -3,13 +3,13 @@ require_once('UsuarioSA.php');
 require_once('UsuarioTransfer.php');
 
 
-$usu=$_POST['usuario']; //El post es el que pillas de login
+$usu=$_POST['usuario'];
 $pass=$_POST['password'];
 
 
 
 if((!empty($usu)) && (!empty($pass))){
-	$p = new UsuarioTransfer("", "", "", "", "", $usu,$pass,"", 0, 0, 0); //Constructora UsuarioTransfer, pasándole solo estosatributos se inicia sesión
+	$p = new UsuarioTransfer("", "", "", "", "", $usu,$pass,"", 0, 0, 0);
 	$usuarioSA = new UsuarioSA();
 	$check= $usuarioSA ->checkUsuario($p);
 		if(!$check){

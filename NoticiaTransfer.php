@@ -1,13 +1,12 @@
 <?php
 class noticiaTransfer{
-	//Atributos de la clase Noticia
+
 	private $titular;
 	private $texto;
 	private $codUsuario;
 	private $codLiga;
 	private $foto;
 
-	//Constructor
 	public function __construct($codUsuario, $codLiga, $titular, $texto, $foto) {
         $this->codUsuario = $codUsuario;
         $this->codLiga = $codLiga;
@@ -16,7 +15,6 @@ class noticiaTransfer{
 		$this->foto = $foto;
     }
 	
-	//Getters y Setters
 	public function getTitular(){
 		return $this->titular;
 	}

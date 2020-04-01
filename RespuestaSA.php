@@ -38,8 +38,5 @@ class RespuestaSa{
         $aux = $this->respuestaDAO;
         return $aux->getRespuestas($idPregunta);
     }
-
-
-
 }
 ?>

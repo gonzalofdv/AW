@@ -22,8 +22,7 @@
 	<div id="contenido">
 		<h1>Somos Familia</h1>
 		<h2> ¿Aún no eres usuario Somos Familia? Aquí te explicamos todo.</h2>
-		<p>
-			El usuario Somos Familia es el más privilegiado de nuestra web, con numerosas ventajas que te permitirán crear y añadir tu propio contenido
+		<p>	El usuario Somos Familia es el más privilegiado de nuestra web, con numerosas ventajas que te permitirán crear y añadir tu propio contenido
 			a nuestra web y hacerla todavía más completa. ¿Y cómo se consigue ser un usuario Somos Familia? Con nuestro sistema especial de puntos: si obtienes
 			200 puntos y los canjeas te convertirás en uno más de nosotros... <strong>¡Un nuevo usuario Somos Familia!</strong>
 		</p>
