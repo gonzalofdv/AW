@@ -51,6 +51,8 @@ $codigo = $_GET['codAlerta'];
 				case 5:
 					echo "<h1>Puntos insuficientes</h1>";
 					echo "<p>Sabemos que quieres pertenecer a esta especial familia, pero sigue esforzándote para conseguir puntos.</p>";
+					echo "<p>Te redireccionamos a la página de inicio.</p>";
+					header("refresh:5; url=index.php");
 					break;
 				case 6:
 					echo "<h1>Permisos insuficientes</h1>";
