@@ -10,11 +10,11 @@ class EquipoTransfer{
 	
 	//Constructor
 	public function __construct($codLiga, $puntos, $golesAFavor, $golesEnContra, $escudo) {
-		this->codLiga = $codLiga;
-		this->puntos = $puntos;
-		this->golesAFavor = $golesAFavor;
-		this->golesEnContra = $golesEnContra;
-		this->escudo = $escudo;
+		$this->codLiga = $codLiga;
+		$this->puntos = $puntos;
+		$this->golesAFavor = $golesAFavor;
+		$this->golesEnContra = $golesEnContra;
+		$this->escudo = $escudo;
     }
 	
 	public function getIdEquipo(){

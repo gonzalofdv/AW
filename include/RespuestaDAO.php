@@ -46,17 +46,3 @@ class RespuestaDAO extends DAO{
 }
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-	

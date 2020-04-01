@@ -9,21 +9,24 @@ class EquipoSA {
 		if(!$this->equipoDAO){
 			$this->equipoDAO = new EquipoDAO();
 		}
-		equipoDAO->insert($equipo);
+		$aux = $this->equipoDAO;
+		$aux->insert($equipo);
 	}
 	
 	public function updateEquipo(EquipoTransfer $equipo){
 		if(!$this->equipoDAO){
 			$this->equipoDAO = new EquipoDAO();
 		}
-		equipoDAO->update($equipo);
+		$aux = $this->equipoDAO;
+		$aux->update($equipo);
 	}
 	
 	public function deleteEquipo(EquipoTransfer $equipo){
 		if(!$this->equipoDAO){
 			$this->equipoDAO = new EquipoDAO();
 		}
-		equipoDAO->delete($equipo);
+		$aux = $this->equipoDAO;
+		$aux->delete($equipo);
 	}
 	
 }
