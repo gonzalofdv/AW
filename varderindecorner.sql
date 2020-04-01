@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-04-2020 a las 16:19:04
--- Versión del servidor: 10.4.6-MariaDB
--- Versión de PHP: 7.3.9
+-- Tiempo de generación: 01-04-2020 a las 21:42:34
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -179,7 +179,17 @@ INSERT INTO `preguntas` (`IdPregunta`, `Pregunta`, `CodLiga`) VALUES
 (47, '¿Cuál es el fichaje más caro de la historia de la Ligue 1?', '5'),
 (48, '¿Quién fue el máximo goleador en la Ligue 1 la temporada pasada 2018/19 con 33 goles?', '5'),
 (49, '¿Qué gran figura del fútbol que juega o ha jugado en la Ligue 1 ha marcado mayor cantidad de goles de falta directa?', '5'),
-(50, '¿Qué jugador de la Ligue 1 ha sido el más joven en debutar con la selección absoluta de Francia?', '5');
+(50, '¿Qué jugador de la Ligue 1 ha sido el más joven en debutar con la selección absoluta de Francia?', '5'),
+(51, '¿Qué equipo lleva más temporadas consecutivas en la liga Smartbank?', '2'),
+(52, '¿Cuál es el único filial español que ha quedado campeón en Segunda división española?', '2'),
+(53, '¿Qué delantero, que ha regresado este año a la liga Smartbank fue el último Pichichi no español de la categoría?', '2'),
+(54, '¿Cuál de estos futbolistas no jugo nunca en Segunda división española?', '2'),
+(55, '¿Quién es el máximo goleador de la historia de la liga Smartbank?', '2'),
+(56, '¿Cuál fue el primer equipo que ascendió a Primera a través de los playoffs de ascenso?', '2'),
+(57, '¿Qué entrenador actual de la liga Smartbank se quedó a las puertas de jugar una Eurocopa con España debido a una lesión?', '2'),
+(58, '¿Cuál de estos porteros marcó un gol en la liga Smartbank?', '2'),
+(59, '¿Cuál es el fichaje más caro de la historia de la liga Smartbank?', '2'),
+(60, '¿Qué jugador del Rayo Vallecano ha jugado junto a Cristiano Ronaldo en el Manchester United?', '2');
 
 -- --------------------------------------------------------
 
@@ -348,7 +358,37 @@ INSERT INTO `respuestas` (`IdRespuesta`, `CodPregunta`, `Respuesta`, `Correcta`)
 (147, 49, 'Neymar Jr', 0),
 (148, 50, 'Kylian Mbappé', 1),
 (149, 50, 'Oliver Giroud', 0),
-(150, 50, 'Lensois Maryan Wisnieski', 0);
+(150, 50, 'Lensois Maryan Wisnieski', 0),
+(151, 51, 'Numancia', 1),
+(152, 51, 'Rayo Vallecano', 0),
+(153, 51, 'Zaragoza', 0),
+(154, 52, 'Atético de Madrid B', 0),
+(155, 52, 'Real Madrid Castilla', 1),
+(156, 52, 'FC Barcelona B', 0),
+(157, 53, 'Choco Lozano', 0),
+(158, 53, 'Yuri de Souza', 0),
+(159, 53, 'Leo Ulloa', 1),
+(160, 54, 'Raúl González', 0),
+(161, 54, 'Johan Cruyff', 0),
+(162, 54, 'Joan Capdevila', 1),
+(163, 55, 'Nino', 1),
+(164, 55, 'Rubén Castro', 0),
+(165, 55, 'Alberto Bueno', 0),
+(166, 56, 'UD Almeria', 0),
+(167, 56, 'Real Valladolid', 0),
+(168, 56, 'Granada CF', 1),
+(169, 57, 'Paco Jémez', 0),
+(170, 57, 'Victor Sánchez del Amo', 0),
+(171, 57, 'Andoni Iraola', 1),
+(172, 58, 'Claudio Bravo', 1),
+(173, 58, 'Dani Aranzubia', 0),
+(174, 58, 'Toni Prats', 0),
+(175, 59, 'Arvin Appiah', 0),
+(176, 59, 'Ricardo Oliveira', 1),
+(177, 59, 'Alen Halilovic', 0),
+(178, 60, 'Isi', 0),
+(179, 60, 'Advíncula', 0),
+(180, 60, 'Bebé', 1);
 
 -- --------------------------------------------------------
 
@@ -379,7 +419,7 @@ INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`,
 (1, 'Administrador', 'Ad', 'Min', 'hombre', 'Atletico de Madrid', 'admin', '123', 'admin@ucm.es', 1, 0, 205),
 (2, 'Gonzalo', 'Figueroa', 'del Val', 'hombre', 'Real Madrid', 'gfigue01', '123', 'gfigue01@ucm.es', 0, 1, 276),
 (3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 'Real Madrid', 'acernuda', '123', 'acernuda@ucm.es', 0, 1, 248),
-(4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '123', 'fernag08@ucm.es', 0, 1, 250),
+(4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '123', 'fernag08@ucm.es', 0, 1, 251),
 (5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '123', 'jorborja@ucm.es', 0, 1, 285),
 (6, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '123', 'jurosado@ucm.es', 0, 1, 288),
 (7, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '123', 'amouhib@ucm.es', 0, 1, 233),
@@ -483,13 +523,13 @@ ALTER TABLE `noticias`
 -- AUTO_INCREMENT de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
-  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT de la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=181;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
