@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-03-2020 a las 22:06:11
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.2.28
+-- Tiempo de generación: 01-04-2020 a las 12:30:43
+-- Versión del servidor: 10.4.6-MariaDB
+-- Versión de PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -159,7 +159,17 @@ INSERT INTO `preguntas` (`IdPregunta`, `Pregunta`, `CodLiga`) VALUES
 (37, '¿Cuál es el estadio con mayor capacidad de espectadores de la liga italiana?', '6'),
 (38, '¿Quién es el mayor goleador en la historia de la liga italiana?', '6'),
 (39, '¿Cuál es el equipo que más veces ha ganado el campeonato Serie A?', '6'),
-(40, '¿Qué equipo no ha descendido nunca a segunda división de la Serie A?', '6');
+(40, '¿Qué equipo no ha descendido nunca a segunda división de la Serie A?', '6'),
+(41, '¿Cuántos equipos participan en la Copa de Francia?', '5'),
+(42, '¿Cuándo se instaló, oficialmente, el fútbol profesional en Francia, con el primer campeonato de liga?', '5'),
+(43, '¿Cuántos años consecutivos lleva el PSG en la Ligue 1 sin descender?', '5'),
+(44, '¿Qué equipo ha ganado más títulos de liga de primera división francesa (10)?', '5'),
+(45, '¿Cuántos títulos de Ligue 1 consecutivos ganó el Olympique Lyonnais desde 2002?', '5'),
+(46, '¿Quién es el máximo goleador histórico de la Ligue 1 con 299 goles?', '5'),
+(47, '¿Cuál es el fichaje más caro de la historia de la Ligue 1?', '5'),
+(48, '¿Quién fue el máximo goleador en la Ligue 1 la temporada pasada 2018/19 con 33 goles?', '5'),
+(49, '¿Qué gran figura del fútbol que juega o ha jugado en la Ligue 1 ha marcado mayor cantidad de goles de falta directa?', '5'),
+(50, '¿Qué jugador de la Ligue 1 ha sido el más joven en debutar con la selección absoluta de Francia?', '5');
 
 -- --------------------------------------------------------
 
@@ -298,7 +308,37 @@ INSERT INTO `respuestas` (`IdRespuesta`, `CodPregunta`, `Respuesta`, `Correcta`)
 (117, 39, 'AC Milan', 0),
 (118, 40, 'Palermo', 0),
 (119, 40, 'Juventus FC', 0),
-(120, 40, 'Inter', 1);
+(120, 40, 'Inter', 1),
+(121, 41, '128', 0),
+(122, 41, '256', 0),
+(123, 41, '8264', 1),
+(124, 42, '1932', 1),
+(125, 42, '1894', 0),
+(126, 42, '1920', 0),
+(127, 43, '54', 0),
+(128, 43, '46', 1),
+(129, 43, '80', 0),
+(130, 44, 'Olympique de Marseille', 0),
+(131, 44, 'Olympique Lyonnais', 0),
+(132, 44, 'AS Saint-Etienne', 1),
+(133, 45, '7', 1),
+(134, 45, '5', 0),
+(135, 45, '4', 0),
+(136, 46, 'Delio Onnis (AS Monaco)', 1),
+(137, 46, 'Carlos Bianchi (Stade de Reims)', 0),
+(138, 46, 'Bernard Lacombe (Olympique de Lyon)', 0),
+(139, 47, 'Oliver Giroud', 0),
+(140, 47, 'Lensois Maryan Wisnieski', 0),
+(141, 47, 'Kylian Mbappé', 1),
+(142, 48, 'Nicolas Pépé', 0),
+(143, 48, 'Edinson Cavani', 0),
+(144, 48, 'Kylian Mbappé', 1),
+(145, 49, 'David Beckham', 0),
+(146, 49, 'Juninho Pernambucano', 1),
+(147, 49, 'Neymar Jr', 0),
+(148, 50, 'Kylian Mbappé', 1),
+(149, 50, 'Oliver Giroud', 0),
+(150, 50, 'Lensois Maryan Wisnieski', 0);
 
 -- --------------------------------------------------------
 
@@ -433,13 +473,13 @@ ALTER TABLE `noticias`
 -- AUTO_INCREMENT de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
-  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT de la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
