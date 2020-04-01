@@ -17,7 +17,7 @@
 	?>
 	<div id="contenido">
 	<br>
-	<form action="procesoRegistro.php" method="post">
+	<form action="procesarRegistro.php" method="post">
 	<fieldset>
 		<legend>Registro Usuario</legend>
 			Nombre:<br> <input type="text" name="nom"><br>
