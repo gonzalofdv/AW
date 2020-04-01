@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-03-2020 a las 13:15:29
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.3
+-- Tiempo de generación: 01-04-2020 a las 12:30:43
+-- Versión del servidor: 10.4.6-MariaDB
+-- Versión de PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -139,7 +139,37 @@ INSERT INTO `preguntas` (`IdPregunta`, `Pregunta`, `CodLiga`) VALUES
 (17, '¿Por qué club de la Bundesliga no ha pasado el actual jugador del Real Madrid, Toni Kroos?', '4'),
 (18, 'De los siguientes clubes, ¿cuál tiene un solo título de Campeón de la Bundesliga?', '4'),
 (19, '¿Quién es el jugador con la mayor cantidad de partidos disputados?', '4'),
-(20, '¿Qué jugador de la Bundesliga ganó el premio a Futbolista alemán del año 2001?', '4');
+(20, '¿Qué jugador de la Bundesliga ganó el premio a Futbolista alemán del año 2001?', '4'),
+(21, '¿Quién fue el máximo goleador de la Premier League 17/18?', '3'),
+(22, '¿Qué jugador de la Premier League ha sido fichado por una mayor cantidad?', '3'),
+(23, '¿Quién es el máximo asistente histórico de la Premier League?', '3'),
+(24, '¿En qué temporada el Arsenal ganó la Premier League sin perder ningún partido?', '3'),
+(25, 'En la temporada 17/18 el Manchester City batió el récord de goles en una temporada en la Premier League. ¿Con qué cifra?', '3'),
+(26, '¿Qué equipo de la Premier League ha ganado más Champions League?', '3'),
+(27, '¿Cuál de los siguientes equipos no ha ganado ninguna liga desde que cambió su nombre a Premier League en 1992?', '3'),
+(28, '¿A qué equipo de la Premier League se le conoce con el apodo de \"Los Toffees\"?', '3'),
+(29, '¿En cuál de los siguientes equipos no ha jugado nunca Kevin De Bruyne?', '3'),
+(30, '¿Qué tres jugadores formaron una de las mejores delanteras de la historia del fútbol a finales de los años 70, conocida como la \"United Trinity\"?', '3'),
+(31, '¿Cual de estos equipos gano el campeonato el mismo año que su centenario?', '6'),
+(32, '¿Cuál era el antiguo nombre de la liga italiana?', '6'),
+(33, '¿Cuantas plazas de clasificación a la Champions League tiene la Serie A?', '6'),
+(34, '¿Qué equipos fueron los involucrados en el escándalo llamado \"Calciopoli\"?', '6'),
+(35, '¿Cuál es el equipo mas antiguo de la liga Serie A?', '6'),
+(36, '¿Qué día se disputó \"la final\" de la 1º liga italiana contando con que el primer equipo se fundó en 1893?', '6'),
+(37, '¿Cuál es el estadio con mayor capacidad de espectadores de la liga italiana?', '6'),
+(38, '¿Quién es el mayor goleador en la historia de la liga italiana?', '6'),
+(39, '¿Cuál es el equipo que más veces ha ganado el campeonato Serie A?', '6'),
+(40, '¿Qué equipo no ha descendido nunca a segunda división de la Serie A?', '6'),
+(41, '¿Cuántos equipos participan en la Copa de Francia?', '5'),
+(42, '¿Cuándo se instaló, oficialmente, el fútbol profesional en Francia, con el primer campeonato de liga?', '5'),
+(43, '¿Cuántos años consecutivos lleva el PSG en la Ligue 1 sin descender?', '5'),
+(44, '¿Qué equipo ha ganado más títulos de liga de primera división francesa (10)?', '5'),
+(45, '¿Cuántos títulos de Ligue 1 consecutivos ganó el Olympique Lyonnais desde 2002?', '5'),
+(46, '¿Quién es el máximo goleador histórico de la Ligue 1 con 299 goles?', '5'),
+(47, '¿Cuál es el fichaje más caro de la historia de la Ligue 1?', '5'),
+(48, '¿Quién fue el máximo goleador en la Ligue 1 la temporada pasada 2018/19 con 33 goles?', '5'),
+(49, '¿Qué gran figura del fútbol que juega o ha jugado en la Ligue 1 ha marcado mayor cantidad de goles de falta directa?', '5'),
+(50, '¿Qué jugador de la Ligue 1 ha sido el más joven en debutar con la selección absoluta de Francia?', '5');
 
 -- --------------------------------------------------------
 
@@ -218,7 +248,97 @@ INSERT INTO `respuestas` (`IdRespuesta`, `CodPregunta`, `Respuesta`, `Correcta`)
 (57, 19, 'Ulrich Stielike', 0),
 (58, 20, 'Oliver Neuville', 0),
 (59, 20, 'Miroslav Josef Klose', 0),
-(60, 20, 'Oliver Kahn', 1);
+(60, 20, 'Oliver Kahn', 1),
+(61, 21, 'Mohamed Salah', 1),
+(62, 21, 'Sergio Agüero', 0),
+(63, 21, 'Harry Kane', 0),
+(64, 22, 'Harry Maguire', 0),
+(65, 22, 'Romelu Lukaku', 0),
+(66, 22, 'Paul Pogba', 1),
+(67, 23, 'Cesc Fàbregas', 0),
+(68, 23, 'Ryan Giggs', 1),
+(69, 23, 'Wayne Rooney', 0),
+(70, 24, '2004/2005', 0),
+(71, 24, '2003/2004', 1),
+(72, 24, '2005/2006', 0),
+(73, 25, '100 goles', 0),
+(74, 25, '103 goles', 0),
+(75, 25, '106 goles', 1),
+(76, 26, 'Manchester United', 0),
+(77, 26, 'Chelsea', 0),
+(78, 26, 'Liverpool', 1),
+(79, 27, 'Southampton', 1),
+(80, 27, 'Leicester City', 0),
+(81, 27, 'Blackburn Rovers', 0),
+(82, 28, 'Watford', 0),
+(83, 28, 'Everton', 1),
+(84, 28, 'Crystal Palace', 0),
+(85, 29, 'Chelsea', 0),
+(86, 29, 'Tottenham', 1),
+(87, 29, 'Manchester City', 0),
+(88, 30, 'Cristiano Ronaldo, Wayne Rooney y Carlos Tévez', 0),
+(89, 30, 'George Best, Bobby Charlton y Denis Law', 1),
+(90, 30, 'Mark Hughes, Brian McClair y Éric Cantona', 0),
+(91, 31, 'Juventus FC', 0),
+(92, 31, 'AC Milan', 0),
+(93, 31, 'Lazio', 1),
+(94, 32, 'Serie B', 0),
+(95, 32, 'Lega Italiana', 0),
+(96, 32, 'Lega Calcio', 1),
+(97, 33, '3 plazas ', 0),
+(98, 33, '2 plazas y media', 1),
+(99, 33, '3 plazas y media', 0),
+(100, 34, 'Juventus FC, AC Milan, Fiorentina, Lazio, Siena y Reggina', 1),
+(101, 34, 'Inter,Juventus FC, Cesena, Hellas verona y Napoli', 0),
+(102, 34, 'Fiorentina, AC Milan, Roma, Livorno y Genoa', 0),
+(103, 35, 'Napoli', 0),
+(104, 35, 'Genoa CFC', 1),
+(105, 35, 'Internazionale de Milano', 0),
+(106, 36, '29 de junio de 1899', 0),
+(107, 36, '8 de mayo de 1898', 1),
+(108, 36, '11 de mayo de 1900', 0),
+(109, 37, 'Estadio San Polo', 0),
+(110, 37, 'Estadio Guiseppe Meazza', 1),
+(111, 37, 'Estadio Olimpico de Roma', 0),
+(112, 38, 'Cristiano Ronaldo', 0),
+(113, 38, 'Silvio Piola', 1),
+(114, 38, 'Zinedine Zidane', 0),
+(115, 39, 'Juventus FC', 1),
+(116, 39, 'Inter', 0),
+(117, 39, 'AC Milan', 0),
+(118, 40, 'Palermo', 0),
+(119, 40, 'Juventus FC', 0),
+(120, 40, 'Inter', 1),
+(121, 41, '128', 0),
+(122, 41, '256', 0),
+(123, 41, '8264', 1),
+(124, 42, '1932', 1),
+(125, 42, '1894', 0),
+(126, 42, '1920', 0),
+(127, 43, '54', 0),
+(128, 43, '46', 1),
+(129, 43, '80', 0),
+(130, 44, 'Olympique de Marseille', 0),
+(131, 44, 'Olympique Lyonnais', 0),
+(132, 44, 'AS Saint-Etienne', 1),
+(133, 45, '7', 1),
+(134, 45, '5', 0),
+(135, 45, '4', 0),
+(136, 46, 'Delio Onnis (AS Monaco)', 1),
+(137, 46, 'Carlos Bianchi (Stade de Reims)', 0),
+(138, 46, 'Bernard Lacombe (Olympique de Lyon)', 0),
+(139, 47, 'Oliver Giroud', 0),
+(140, 47, 'Lensois Maryan Wisnieski', 0),
+(141, 47, 'Kylian Mbappé', 1),
+(142, 48, 'Nicolas Pépé', 0),
+(143, 48, 'Edinson Cavani', 0),
+(144, 48, 'Kylian Mbappé', 1),
+(145, 49, 'David Beckham', 0),
+(146, 49, 'Juninho Pernambucano', 1),
+(147, 49, 'Neymar Jr', 0),
+(148, 50, 'Kylian Mbappé', 1),
+(149, 50, 'Oliver Giroud', 0),
+(150, 50, 'Lensois Maryan Wisnieski', 0);
 
 -- --------------------------------------------------------
 
@@ -250,9 +370,9 @@ INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`,
 (2, 'Gonzalo', 'Figueroa', 'del Val', 'hombre', 'Real Madrid', 'gfigue01', '123', 'gfigue01@ucm.es', 0, 1, 265),
 (3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 'Real Madrid', 'acernuda', '123', 'acernuda@ucm.es', 0, 1, 248),
 (4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '123', 'fernag08@ucm.es', 0, 1, 250),
-(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '123', 'jorborja@ucm.es', 0, 1, 284),
+(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '123', 'jorborja@ucm.es', 0, 1, 285),
 (6, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '123', 'jurosado@ucm.es', 0, 1, 278),
-(7, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '123', 'amouhib@ucm.es', 0, 1, 232),
+(7, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '123', 'amouhib@ucm.es', 0, 1, 233),
 (8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '123', 'usu@ucm.es', 0, 0, 201);
 
 --
@@ -353,13 +473,13 @@ ALTER TABLE `noticias`
 -- AUTO_INCREMENT de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
-  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT de la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
