@@ -47,7 +47,8 @@ class ComentarioDAO extends DAO{
 		$db = $this->db;
 		$sql = "SELECT * FROM comentarios WHERE CodNoticia LIKE '$idNoticia'";
 		$consulta = mysqli_query($db, $sql);
-		if($consulta){
+		$num= mysqli_num_rows($consulta);
+		if($num>0){
 			return true;
 		}
 		else{
