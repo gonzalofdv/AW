@@ -24,7 +24,7 @@ require('LigaSA.php')?>
 			}
 			else {
 				if($_SESSION["esAdmin"] == false && $_SESSION["esFamilia"] == false){
-					header('Location: mostrarAlertas.php?codAlerta=24');
+					header('Location: mostrarAlertas.php?codAlerta=6');
 				}
 				else{
 		?>

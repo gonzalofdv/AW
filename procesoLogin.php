@@ -41,7 +41,7 @@ if((!empty($usu)) && (!empty($pass))){
 		}
 }
 else{
-	header('Location: mostrarAlertas.php?codAlerta=11');
+	header('Location: mostrarAlertas.php?codAlerta=7');
 }
 
 ?>

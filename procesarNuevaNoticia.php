@@ -35,7 +35,7 @@ if((!empty($titular)) && (!empty($cuerpo)) && (!empty($condi)) && (!empty($foto)
 }
 else{
 	//Mandar error de que faltan campos por rellenar
-	header('Location: mostrarAlertas.php?codAlerta=14');
+	header('Location: mostrarAlertas.php?codAlerta=18');
 }
 
 ?>

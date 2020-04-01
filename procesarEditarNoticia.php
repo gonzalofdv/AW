@@ -19,7 +19,7 @@ if((!empty($titular)) && (!empty($cuerpo)) && (!empty($condi))){
 	header('Location: mostrarAlertas.php?codAlerta=26');
 }
 else{
-	header('Location: mostrarAlertas.php?codAlerta=14');
+	header('Location: mostrarAlertas.php?codAlerta=24');
 }	
 
 ?>
