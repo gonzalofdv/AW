@@ -80,7 +80,7 @@ $idNoticia = $_GET['idN'];
 				
 			}
 			else{
-				if($comentarioSA->existenComentarios($idNoticia)){
+				if($existen=$comentarioSA->existenComentarios($idNoticia)){
 				echo '<button onclick=location.href="formularioBorrarComentario.php?idN='.$idNoticia.'">Eliminar comentario</button>';
 				echo '	';
 				}

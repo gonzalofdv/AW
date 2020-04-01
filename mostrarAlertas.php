@@ -153,6 +153,11 @@ $codigo = $_GET['codAlerta'];
 					echo "<p>Te redireccionamos a la página de inicio.</p>";
 					header("refresh:5; url=index.php");
 					break;
+				case 27:
+					echo "<h1>Comentario borrado correctamente</h1>";
+					echo "<p>Te redireccionamos a la página de inicio.</p>";
+					header("refresh:5; url=index.php");
+					break;
 			}
 
 					
