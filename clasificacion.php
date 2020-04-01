@@ -9,7 +9,7 @@
   	<meta http-equiv="Last-Modified" content="0">
   	<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
   	<meta http-equiv="Pragma" content="no-cache">
-	<title>Clasificación</title><!-- En proceso, próximamente en la entrega 3. Tendrá otro formato completamente distinto, pero lo hemos dejado así porque no interfería en ninguna otra funcionalidad. -->
+	<title>Clasificación</title><p>En proceso, próximamente en la entrega 3. Tendrá otro formato completamente distinto, pero lo hemos dejado así para que no interfiera en ninguna otra funcionalidad. </p>
 </head>
 
 <body>
