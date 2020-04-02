@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-04-2020 a las 15:13:58
+-- Tiempo de generación: 02-04-2020 a las 16:15:16
 -- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.3
+-- Versión de PHP: 7.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -152,7 +152,9 @@ INSERT INTO `noticias` (`IdNoticia`, `CodUsuario`, `CodLiga`, `Texto`, `Titular`
 (7, 4, 2, 'La joven joya de la cantera amarilla ya es objeto de muchas miradas en el panorama nacional e internacional para hacerse con sus servicios en caso de que el Barca, propietario de sus derechos, le busque una salida como cedido para que tenga minutos.<br />\r\nEl talentoso futbolista, de solo 17 años, Pedri, que ha sido nombrado el futbolista más valioso de toda la Segunda División española, con un valor de ocho millones de euros, según la web especializada en el mercado de fichajes Transfermarkt, acapara muchos focos de buena parte de varios equipos de Primera División para contar con sus servicios la próxima temporada.<br />\r\nSegún apuntan diversos medios, Real Betis, Celta de Vigo y Real Sociedad ya habrían solicitado su futura cesión, donde el equipo sevillano tendría ventaja sobre el resto de las peticiones dada la buena relación con el FC Barcelona.', 'Pedri, el deseado de Primera', 'noticia_pedri.jpg'),
 (8, 4, 2, 'El lateral no tiene competencia real en su puesto y ha jugado siempre que ha estado disponible.<br />\r\nPablo Maffeo se ha perdido, esta temporada, cuatro partidos de Liga. Cuatro encuentros en los que no ha podido participar (en tres le sustituyó Aday y en uno Clavera) pero en ninguno fue por voluntad de su técnico: se perdió tres partidos entre septiembre y octubre por una lesión en el aductor y el último disputado, ante el Albacete hace casi un mes, por sanción. Entre medio tres entrenadores (Unzué, Moreno y Martí) que han apostado sin ambigüedades por el lateral catalán.<br />\r\nPero para llegar hasta aquí Maffeo ha recorrido una larga trayectoria (a pesar de ser joven) que ha tenido en Montilivi el centro de gravedad. Firmado por el Manchester City de la cantera del Espanyol, el lateral ha ido encadenando cesiones desde el equipo británico hasta que fue traspasado al Stuttgart. Y esas cesiones, para suerte del Girona, han sido en Montilivi.', 'Maffeo se consolida en su cuarta etapa en Girona', 'noticia_maffeo.jpg'),
 (9, 5, 3, 'Kevin de Bruyne, futbolista del Manchester City, aseguró que gracias al confinamiento provocado por el brote de coronavirus ha tomado la decisión de prolongar su carrera.<br />\r\n<br />\r\nEl belga lo confirmó a través de sus redes sociales. \"Le he dicho a mi mujer que voy a jugar un poco más\", explicó el futbolista.<br />\r\n<br />\r\n\"Después de este confinamiento no puedo quedarme más en casa. Le he dicho que voy a jugar dos años más. Es momento de jugar al fútbol, lo echo de menos y es difícil, pero ahora no es lo importante, el fútbol no es lo importante. La gente tiene que estar segura\", añadió.<br />\r\n<br />\r\nDe Bruyne, uno de los mejores jugadores de la Premier, explicó que lleva en casa encerrado dos semanas y que al principio su familia y sus hijos estuvieron un poco enfermos, lo que les preocupó, pero que ahora ya están bien.<br />\r\n<br />\r\n\"Fueron ocho o nueve días, pero ahora estamos mejor afortunadamente, porque nunca sabes lo que va a pasar\", finalizó el belga.', 'De Bruyne: \"El confinamiento hará que alargue mi carrera\"', 'noticia_deBruyne.jpg'),
-(10, 5, 3, 'El Tottenham ha pasado del subcampeonato de la Champions League a ver cómo se tambalea su proyecto deportivo en un año. Fuera de Europa en la Premier y con Harry Kane tentando su salida, la 2019-20 sigue torciéndose tras el fin de Pochettino.<br />\r\n<br />\r\nEl equipo llegó a su mejor momento en las primeras semanas con \"Mou\" pero después volvió a decaer, y se aprecia que la verdadera brecha está atrás. Tanto ahora como antes, han concedido muchas ocasiones y no se ve ni una reacción clara, ni resultados.<br />\r\n<br />\r\n¿Será capaz Mourinho de corregir los problemas y evitar el colapso del proyecto del Tottenham?', 'El Tottenham de José Mourinho se tambalea', 'noticia_Mou.jpg');
+(10, 5, 3, 'El Tottenham ha pasado del subcampeonato de la Champions League a ver cómo se tambalea su proyecto deportivo en un año. Fuera de Europa en la Premier y con Harry Kane tentando su salida, la 2019-20 sigue torciéndose tras el fin de Pochettino.<br />\r\n<br />\r\nEl equipo llegó a su mejor momento en las primeras semanas con \"Mou\" pero después volvió a decaer, y se aprecia que la verdadera brecha está atrás. Tanto ahora como antes, han concedido muchas ocasiones y no se ve ni una reacción clara, ni resultados.<br />\r\n<br />\r\n¿Será capaz Mourinho de corregir los problemas y evitar el colapso del proyecto del Tottenham?', 'El Tottenham de José Mourinho se tambalea', 'noticia_Mou.jpg'),
+(11, 7, 6, 'Las dificultades económicas derivadas del coronavirus podrían obligar al club a desprenderse del crack portugués, como medida de choque para paliar los durísimos efectos que la paralización de las competiciones futbolísticas a causa del coronavirus está teniendo sobre su economía.<br />\r\nDejar agotar su contrato o renovarlo a la baja son las otras opciones que tiene.<br />\r\nTRES escenarios distintos para el futuro de CR7 que no tiene su continuidad asegurada en Turin.<br />\r\nEl primer equipo que suena es el Real Madrid ¿Volverá la estrella mundial al equipo que le dio todo?', 'La Juve no descarta el traspaso de Cristiano Ronaldo.', 'NoticiaVentaCR.jpg'),
+(12, 7, 6, 'Mientras los clubes de Serie A buscan un camino común, el Inter estaría cerca de imitar el ejemplo de la Juventus y recortar los sueldos de sus futbolistas.<br />\r\nAún sin detallar la fecha de regreso al césped para reanudar la lida, lo más probable es que los futbolistas renunciarán a los sueldos de marzo, abril, mayo y junio como hicieron los de la Vecchia Signora, dejando abierta la posibilidad de volver a negociar si finalmente se regresará al verde.<br />\r\nSin lugar a dudas, es un ejemplo de humildad, ¿Tomarán ejemplo los demás jugadores de las grandes ligas?<br />\r\n¿Deben imponer esta acción los presidentes de las ligas?<br />\r\nLeemos vuestras opiniones.', 'La plantilla del Inter, dispuesta a renunciar a sus sueldos.', 'noticiaInter.jpg');
 
 -- --------------------------------------------------------
 
@@ -463,7 +465,7 @@ INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`,
 (4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '123', 'fernag08@ucm.es', 0, 1, 276),
 (5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '123', 'jorborja@ucm.es', 0, 1, 308),
 (6, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '123', 'jurosado@ucm.es', 0, 1, 303),
-(7, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '123', 'amouhib@ucm.es', 0, 1, 244),
+(7, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '123', 'amouhib@ucm.es', 0, 1, 255),
 (8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '123', 'usu@ucm.es', 0, 0, 224);
 
 --
@@ -558,7 +560,7 @@ ALTER TABLE `ligas`
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `preguntas`
