@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-04-2020 a las 16:15:16
+-- Tiempo de generación: 02-04-2020 a las 18:37:06
 -- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.2.28
+-- Versión de PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -68,7 +68,12 @@ INSERT INTO `comentarios` (`IdComentario`, `CodNoticia`, `CodUsuario`, `Comentar
 (26, 1, 6, 'Es de mis jugadores favoritos de la plantilla... Por favor que no se vaya la Pantera'),
 (27, 2, 4, 'El mejor jugador de la historia, ni Maradona ni Pelé ni CR7'),
 (28, 3, 4, 'Me parece que está un poco sobrevalorado pero con estas actuaciones se gana el respeto de todos. Bravo.'),
-(29, 4, 7, 'Yo creo que el rescate a Qatar es una opción muy posible y favorable... Veremos a ver qué pasa al final con las ligas');
+(29, 4, 7, 'Yo creo que el rescate a Qatar es una opción muy posible y favorable... Veremos a ver qué pasa al final con las ligas'),
+(30, 12, 6, 'Bonito gesto!!'),
+(31, 11, 6, 'Es hora de que se retire...'),
+(32, 11, 3, 'Que vuelva al Real Madrid!!'),
+(33, 11, 2, 'Que vuelva el bicho!!!'),
+(34, 12, 2, 'Chapó por los jugadores.');
 
 -- --------------------------------------------------------
 
@@ -460,11 +465,11 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`, `EquipoFavorito`, `NombreUsuario`, `Contrasena`, `Email`, `Administrador`, `SomosFamilia`, `Puntos`) VALUES
 (1, 'Administrador', 'Ad', 'Min', 'hombre', 'Atletico de Madrid', 'admin', '123', 'admin@ucm.es', 1, 0, 205),
-(2, 'Gonzalo', 'Figueroa', 'del Val', 'hombre', 'Real Madrid', 'gfigue01', '123', 'gfigue01@ucm.es', 0, 1, 290),
-(3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 'Real Madrid', 'acernuda', '123', 'acernuda@ucm.es', 0, 1, 270),
+(2, 'Gonzalo', 'Figueroa', 'del Val', 'hombre', 'Real Madrid', 'gfigue01', '123', 'gfigue01@ucm.es', 0, 1, 297),
+(3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 'Real Madrid', 'acernuda', '123', 'acernuda@ucm.es', 0, 1, 274),
 (4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '123', 'fernag08@ucm.es', 0, 1, 276),
 (5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '123', 'jorborja@ucm.es', 0, 1, 308),
-(6, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '123', 'jurosado@ucm.es', 0, 1, 303),
+(6, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '123', 'jurosado@ucm.es', 0, 1, 310),
 (7, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '123', 'amouhib@ucm.es', 0, 1, 255),
 (8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '123', 'usu@ucm.es', 0, 0, 224);
 
@@ -536,7 +541,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `IdComentario` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `IdComentario` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `equipos`
