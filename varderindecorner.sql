@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-04-2020 a las 13:58:40
+-- Tiempo de generación: 02-04-2020 a las 14:22:14
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -114,8 +114,8 @@ INSERT INTO `noticias` (`IdNoticia`, `CodUsuario`, `CodLiga`, `Texto`, `Titular`
 (4, 2, 5, 'Los clubes de Francia están pasando por un momento financiero muy complicado a causa del coronavirus. No tener una fecha de regreso para sus competiciones implica no saber cuántas pérdidas tendrán y las medidas de ayuda del gobierno no les parecen suficientes, los equipos están tratando de buscar soluciones a este problema y todas parecen pasar por un préstamo.<br />\r\n<br />\r\nLos diferentes equipos quieren obtener un préstamo colectivo que se encargaría de gestionar la federación Francesa o la Liga de Fútbol Profesional de Francia. La idea cobra fuerza, y tanto el presidente del Niza como el presidente del Olympique de Marsella o el dueño del PSG estarían de acuerdo en ofrecer como garantía el actual contrato de derechos televisivos. Esto supondría una inyección de dinero de entre 200 y 250 millones de euros.<br />\r\n<br />\r\nMientras la Ligue 1 trabaja en ello, otras propuestas han sido barajadas y una de ellas, encabezada por Nasser Al-Khelaïfi, se basa en pedir un rescate a Qatar.', 'Al-Khelaïfi propone llamar a Qatar para salvar la Ligue 1', 'noticia_ligue1.jpg'),
 (5, 3, 4, 'El 28 de julio de 2010 cambió la historia del Schalke 04. Ese día aterrizó en Gelsenkirchen Raúl González Blanco, el mejor fichaje de la historia del club alemán. A coste cero, el Schalke 04 se hizo con los servicios de un jugador con el que jamás habían soñado sus seguidores. \"Los aficionados llamaban a las oficinas para saber si era verdad que lo habíamos fichado, la gente no se lo creía\", recuerdan en el club alemán. En Alemania, el Schalke explotó como nunca su propia marca registrada. El cincuenta por ciento de las camisetas vendidas en la tienda oficial llevaban su nombre, vendiendo tres veces más que jugadores como Huntelaar o Farfán.<br />\r\n', 'Raul Gonzalez, el jugador que puso al Schalke 04 en el mapa', 'raul_schalke.jpg'),
 (6, 3, 4, 'La recomendación hecha por el exbundesliguista y excompañero en el Real Madrid, Dani Carvajal, comienza a cosechar éxitos. Achraf Hakimi llegó al BVB con tan solo 19 primaveras, como parte de un préstamo de dos años desde club español al club alemán, y desde su incorporación su crecimiento como jugador y hombre de confianza de los dirigidos por Favre, se ha potenciado al máximo.<br />\r\n', 'Achraf Hakimi el mejor \"rookie\" de la Bundesliga', 'achraf.jpg'),
-(7, 5, 3, 'Kevin de Bruyne, futbolista del Manchester City, aseguró que gracias al confinamiento provocado por el brote de coronavirus ha tomado la decisión de prolongar su carrera.<br />\r\n<br />\r\n<br />\r\nEl belga lo confirmó a través de sus redes sociales. \"Le he dicho a mi mujer que voy a jugar un poco más\", explicó el futbolista.<br />\r\n<br />\r\n\"Después de este confinamiento no puedo quedarme más en casa. Le he dicho que voy a jugar dos años más. Es momento de jugar al fútbol, lo echo de menos y es difícil, pero ahora no es lo importante, el fútbol no es lo importante. La gente tiene que estar segura\", añadió.<br />\r\n<br />\r\nDe Bruyne, uno de los mejores jugadores de la Premier, explicó que lleva en casa encerrado dos semanas y que al principio su familia y sus hijos estuvieron un poco enfermos, lo que les preocupó, pero que ahora ya están bien.<br />\r\n<br />\r\n\"Fueron ocho o nueve días, pero ahora estamos mejor afortunadamente, porque nunca sabes lo que va a pasar\", finalizó el belga.<br />\r\n', 'De Bruyne: \"El confinamiento hará que alargue mi carrera\"', 'noticia_deBruyne.jpg'),
-(8, 5, 3, 'El Tottenham ha pasado del subcampeonato de la Champions League a ver cómo se tambalea su proyecto deportivo en un año. Fuera de Europa en la Premier y con Harry Kane tentando su salida, la 2019-20 sigue torciéndose tras el fin de Pochettino.<br />\r\n<br />\r\nEl equipo llegó a su mejor momento en las primeras semanas con \"Mou\" pero después volvió a decaer, y se aprecia que la verdadera brecha está atrás. Tanto ahora como antes, han concedido muchas ocasiones y no se ve ni una reacción clara, ni resultados.<br />\r\n<br />\r\n¿Será capaz Mourinho de corregir los problemas y evitar el colapso del proyecto del Tottenham?<br />\r\n', 'El Tottenham de José Mourinho se tambalea', 'noticia_Mou.jpg');
+(7, 4, 2, 'La joven joya de la cantera amarilla ya es objeto de muchas miradas en el panorama nacional e internacional para hacerse con sus servicios en caso de que el Barca, propietario de sus derechos, le busque una salida como cedido para que tenga minutos.<br />\r\nEl talentoso futbolista, de solo 17 años, Pedri, que ha sido nombrado el futbolista más valioso de toda la Segunda División española, con un valor de ocho millones de euros, según la web especializada en el mercado de fichajes Transfermarkt, acapara muchos focos de buena parte de varios equipos de Primera División para contar con sus servicios la próxima temporada.<br />\r\nSegún apuntan diversos medios, Real Betis, Celta de Vigo y Real Sociedad ya habrían solicitado su futura cesión, donde el equipo sevillano tendría ventaja sobre el resto de las peticiones dada la buena relación con el FC Barcelona.', 'Pedri, el deseado de Primera', 'noticia_pedri.jpg'),
+(8, 4, 2, 'El lateral no tiene competencia real en su puesto y ha jugado siempre que ha estado disponible.<br />\r\nPablo Maffeo se ha perdido, esta temporada, cuatro partidos de Liga. Cuatro encuentros en los que no ha podido participar (en tres le sustituyó Aday y en uno Clavera) pero en ninguno fue por voluntad de su técnico: se perdió tres partidos entre septiembre y octubre por una lesión en el aductor y el último disputado, ante el Albacete hace casi un mes, por sanción. Entre medio tres entrenadores (Unzué, Moreno y Martí) que han apostado sin ambigüedades por el lateral catalán.<br />\r\nPero para llegar hasta aquí Maffeo ha recorrido una larga trayectoria (a pesar de ser joven) que ha tenido en Montilivi el centro de gravedad. Firmado por el Manchester City de la cantera del Espanyol, el lateral ha ido encadenando cesiones desde el equipo británico hasta que fue traspasado al Stuttgart. Y esas cesiones, para suerte del Girona, han sido en Montilivi.', 'Maffeo se consolida en su cuarta etapa en Girona', 'noticia_maffeo.jpg');
 
 -- --------------------------------------------------------
 
@@ -126,7 +126,7 @@ INSERT INTO `noticias` (`IdNoticia`, `CodUsuario`, `CodLiga`, `Texto`, `Titular`
 CREATE TABLE `preguntas` (
   `IdPregunta` int(3) NOT NULL,
   `Pregunta` varchar(300) NOT NULL,
-  `CodLiga` varchar(6) NOT NULL
+  `CodLiga` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -134,66 +134,66 @@ CREATE TABLE `preguntas` (
 --
 
 INSERT INTO `preguntas` (`IdPregunta`, `Pregunta`, `CodLiga`) VALUES
-(1, '¿Qué club ha jugado todas las ediciones de liga Santander?', '1'),
-(2, '¿Quién fue el máximo goleador de la liga Santander en la temporada 18/19 ?', '1'),
-(3, '¿Cuál es el estadio con mas aforo de la liga Santander? ', '1'),
-(4, '¿Qué equipo ganó la Copa del Rey en la temporada 18/19?', '1'),
-(5, '¿Cuál fue el ultimo equipo de la liga Santander que ganó una Europa League?', '1'),
-(6, '¿Cuál es el fichaje más caro de la liga Santander en la historia?', '1'),
-(7, '¿Cual ha sido la mayor goleada en la historia de la liga Santander?', '1'),
-(8, '¿Quién fue el ganador del trofeo Zamora en la temporada 18/19?', '1'),
-(9, '¿Cuál es el record de puntos en la liga Santander?', '1'),
-(10, '¿Cuál es el estadio activo más antiguo de la liga Santander?', '1'),
-(11, '¿Quién es el máximo goleador de la historia de la Bundesliga?', '4'),
-(12, '¿En qué equipo de la Bundesliga no jugó el histórico jugador Franz Beckenbauer?', '4'),
-(13, '¿Qué jugador ostenta el récord de velocidad punta en la Bundesliga?', '4'),
-(14, '¿Qué histórico jugador del Bayern de Múnich posee el récord de ser el único jugador en alcanzar 4 semifinales consecutivas de la Copa Mundial de Fútbol?', '4'),
-(15, '¿Quién fue el jugador que ostenta el récord de marcar el gol más rápido de la historia de la Bundesliga?', '4'),
-(16, '¿Qué jugador fue traspasado al Bayer 04 Leverkusen en el año 2012-13 procedente del Real Madrid Castilla?', '4'),
-(17, '¿Por qué club de la Bundesliga no ha pasado el actual jugador del Real Madrid, Toni Kroos?', '4'),
-(18, 'De los siguientes clubes, ¿cuál tiene un solo título de Campeón de la Bundesliga?', '4'),
-(19, '¿Quién es el jugador con la mayor cantidad de partidos disputados?', '4'),
-(20, '¿Qué jugador de la Bundesliga ganó el premio a Futbolista alemán del año 2001?', '4'),
-(21, '¿Quién fue el máximo goleador de la Premier League 17/18?', '3'),
-(22, '¿Qué jugador de la Premier League ha sido fichado por una mayor cantidad?', '3'),
-(23, '¿Quién es el máximo asistente histórico de la Premier League?', '3'),
-(24, '¿En qué temporada el Arsenal ganó la Premier League sin perder ningún partido?', '3'),
-(25, 'En la temporada 17/18 el Manchester City batió el récord de goles en una temporada en la Premier League. ¿Con qué cifra?', '3'),
-(26, '¿Qué equipo de la Premier League ha ganado más Champions League?', '3'),
-(27, '¿Cuál de los siguientes equipos no ha ganado ninguna liga desde que cambió su nombre a Premier League en 1992?', '3'),
-(28, '¿A qué equipo de la Premier League se le conoce con el apodo de \"Los Toffees\"?', '3'),
-(29, '¿En cuál de los siguientes equipos no ha jugado nunca Kevin De Bruyne?', '3'),
-(30, '¿Qué tres jugadores formaron una de las mejores delanteras de la historia del fútbol a finales de los años 70, conocida como la \"United Trinity\"?', '3'),
-(31, '¿Cual de estos equipos gano el campeonato el mismo año que su centenario?', '6'),
-(32, '¿Cuál era el antiguo nombre de la liga italiana?', '6'),
-(33, '¿Cuantas plazas de clasificación a la Champions League tiene la Serie A?', '6'),
-(34, '¿Qué equipos fueron los involucrados en el escándalo llamado \"Calciopoli\"?', '6'),
-(35, '¿Cuál es el equipo mas antiguo de la liga Serie A?', '6'),
-(36, '¿Qué día se disputó \"la final\" de la 1º liga italiana contando con que el primer equipo se fundó en 1893?', '6'),
-(37, '¿Cuál es el estadio con mayor capacidad de espectadores de la liga italiana?', '6'),
-(38, '¿Quién es el mayor goleador en la historia de la liga italiana?', '6'),
-(39, '¿Cuál es el equipo que más veces ha ganado el campeonato Serie A?', '6'),
-(40, '¿Qué equipo no ha descendido nunca a segunda división de la Serie A?', '6'),
-(41, '¿Cuántos equipos participan en la Copa de Francia?', '5'),
-(42, '¿Cuándo se instaló, oficialmente, el fútbol profesional en Francia, con el primer campeonato de liga?', '5'),
-(43, '¿Cuántos años consecutivos lleva el PSG en la Ligue 1 sin descender?', '5'),
-(44, '¿Qué equipo ha ganado más títulos de liga de primera división francesa (10)?', '5'),
-(45, '¿Cuántos títulos de Ligue 1 consecutivos ganó el Olympique Lyonnais desde 2002?', '5'),
-(46, '¿Quién es el máximo goleador histórico de la Ligue 1 con 299 goles?', '5'),
-(47, '¿Cuál es el fichaje más caro de la historia de la Ligue 1?', '5'),
-(48, '¿Quién fue el máximo goleador en la Ligue 1 la temporada pasada 2018/19 con 33 goles?', '5'),
-(49, '¿Qué gran figura del fútbol que juega o ha jugado en la Ligue 1 ha marcado mayor cantidad de goles de falta directa?', '5'),
-(50, '¿Qué jugador de la Ligue 1 ha sido el más joven en debutar con la selección absoluta de Francia?', '5'),
-(51, '¿Qué equipo lleva más temporadas consecutivas en la liga Smartbank?', '2'),
-(52, '¿Cuál es el único filial español que ha quedado campeón en Segunda división española?', '2'),
-(53, '¿Qué delantero, que ha regresado este año a la liga Smartbank fue el último Pichichi no español de la categoría?', '2'),
-(54, '¿Cuál de estos futbolistas no jugo nunca en Segunda división española?', '2'),
-(55, '¿Quién es el máximo goleador de la historia de la liga Smartbank?', '2'),
-(56, '¿Cuál fue el primer equipo que ascendió a Primera a través de los playoffs de ascenso?', '2'),
-(57, '¿Qué entrenador actual de la liga Smartbank se quedó a las puertas de jugar una Eurocopa con España debido a una lesión?', '2'),
-(58, '¿Cuál de estos porteros marcó un gol en la liga Smartbank?', '2'),
-(59, '¿Cuál es el fichaje más caro de la historia de la liga Smartbank?', '2'),
-(60, '¿Qué jugador del Rayo Vallecano ha jugado junto a Cristiano Ronaldo en el Manchester United?', '2');
+(1, '¿Qué club ha jugado todas las ediciones de liga Santander?', 1),
+(2, '¿Quién fue el máximo goleador de la liga Santander en la temporada 18/19 ?', 1),
+(3, '¿Cuál es el estadio con mas aforo de la liga Santander? ', 1),
+(4, '¿Qué equipo ganó la Copa del Rey en la temporada 18/19?', 1),
+(5, '¿Cuál fue el ultimo equipo de la liga Santander que ganó una Europa League?', 1),
+(6, '¿Cuál es el fichaje más caro de la liga Santander en la historia?', 1),
+(7, '¿Cual ha sido la mayor goleada en la historia de la liga Santander?', 1),
+(8, '¿Quién fue el ganador del trofeo Zamora en la temporada 18/19?', 1),
+(9, '¿Cuál es el record de puntos en la liga Santander?', 1),
+(10, '¿Cuál es el estadio activo más antiguo de la liga Santander?', 1),
+(11, '¿Quién es el máximo goleador de la historia de la Bundesliga?', 4),
+(12, '¿En qué equipo de la Bundesliga no jugó el histórico jugador Franz Beckenbauer?', 4),
+(13, '¿Qué jugador ostenta el récord de velocidad punta en la Bundesliga?', 4),
+(14, '¿Qué histórico jugador del Bayern de Múnich posee el récord de ser el único jugador en alcanzar 4 semifinales consecutivas de la Copa Mundial de Fútbol?', 4),
+(15, '¿Quién fue el jugador que ostenta el récord de marcar el gol más rápido de la historia de la Bundesliga?', 4),
+(16, '¿Qué jugador fue traspasado al Bayer 04 Leverkusen en el año 2012-13 procedente del Real Madrid Castilla?', 4),
+(17, '¿Por qué club de la Bundesliga no ha pasado el actual jugador del Real Madrid, Toni Kroos?', 4),
+(18, 'De los siguientes clubes, ¿cuál tiene un solo título de Campeón de la Bundesliga?', 4),
+(19, '¿Quién es el jugador con la mayor cantidad de partidos disputados?', 4),
+(20, '¿Qué jugador de la Bundesliga ganó el premio a Futbolista alemán del año 2001?', 4),
+(21, '¿Quién fue el máximo goleador de la Premier League 17/18?', 3),
+(22, '¿Qué jugador de la Premier League ha sido fichado por una mayor cantidad?', 3),
+(23, '¿Quién es el máximo asistente histórico de la Premier League?', 3),
+(24, '¿En qué temporada el Arsenal ganó la Premier League sin perder ningún partido?', 3),
+(25, 'En la temporada 17/18 el Manchester City batió el récord de goles en una temporada en la Premier League. ¿Con qué cifra?', 3),
+(26, '¿Qué equipo de la Premier League ha ganado más Champions League?', 3),
+(27, '¿Cuál de los siguientes equipos no ha ganado ninguna liga desde que cambió su nombre a Premier League en 1992?', 3),
+(28, '¿A qué equipo de la Premier League se le conoce con el apodo de \"Los Toffees\"?', 3),
+(29, '¿En cuál de los siguientes equipos no ha jugado nunca Kevin De Bruyne?', 3),
+(30, '¿Qué tres jugadores formaron una de las mejores delanteras de la historia del fútbol a finales de los años 70, conocida como la \"United Trinity\"?', 3),
+(31, '¿Cual de estos equipos gano el campeonato el mismo año que su centenario?', 6),
+(32, '¿Cuál era el antiguo nombre de la liga italiana?', 6),
+(33, '¿Cuantas plazas de clasificación a la Champions League tiene la Serie A?', 6),
+(34, '¿Qué equipos fueron los involucrados en el escándalo llamado \"Calciopoli\"?', 6),
+(35, '¿Cuál es el equipo mas antiguo de la liga Serie A?', 6),
+(36, '¿Qué día se disputó \"la final\" de la 1º liga italiana contando con que el primer equipo se fundó en 1893?', 6),
+(37, '¿Cuál es el estadio con mayor capacidad de espectadores de la liga italiana?', 6),
+(38, '¿Quién es el mayor goleador en la historia de la liga italiana?', 6),
+(39, '¿Cuál es el equipo que más veces ha ganado el campeonato Serie A?', 6),
+(40, '¿Qué equipo no ha descendido nunca a segunda división de la Serie A?', 6),
+(41, '¿Cuántos equipos participan en la Copa de Francia?', 5),
+(42, '¿Cuándo se instaló, oficialmente, el fútbol profesional en Francia, con el primer campeonato de liga?', 5),
+(43, '¿Cuántos años consecutivos lleva el PSG en la Ligue 1 sin descender?', 5),
+(44, '¿Qué equipo ha ganado más títulos de liga de primera división francesa (10)?', 5),
+(45, '¿Cuántos títulos de Ligue 1 consecutivos ganó el Olympique Lyonnais desde 2002?', 5),
+(46, '¿Quién es el máximo goleador histórico de la Ligue 1 con 299 goles?', 5),
+(47, '¿Cuál es el fichaje más caro de la historia de la Ligue 1?', 5),
+(48, '¿Quién fue el máximo goleador en la Ligue 1 la temporada pasada 2018/19 con 33 goles?', 5),
+(49, '¿Qué gran figura del fútbol que juega o ha jugado en la Ligue 1 ha marcado mayor cantidad de goles de falta directa?', 5),
+(50, '¿Qué jugador de la Ligue 1 ha sido el más joven en debutar con la selección absoluta de Francia?', 5),
+(51, '¿Qué equipo lleva más temporadas consecutivas en la liga Smartbank?', 2),
+(52, '¿Cuál es el único filial español que ha quedado campeón en Segunda división española?', 2),
+(53, '¿Qué delantero, que ha regresado este año a la liga Smartbank fue el último Pichichi no español de la categoría?', 2),
+(54, '¿Cuál de estos futbolistas no jugo nunca en Segunda división española?', 2),
+(55, '¿Quién es el máximo goleador de la historia de la liga Smartbank?', 2),
+(56, '¿Cuál fue el primer equipo que ascendió a Primera a través de los playoffs de ascenso?', 2),
+(57, '¿Qué entrenador actual de la liga Smartbank se quedó a las puertas de jugar una Eurocopa con España debido a una lesión?', 2),
+(58, '¿Cuál de estos porteros marcó un gol en la liga Smartbank?', 2),
+(59, '¿Cuál es el fichaje más caro de la historia de la liga Smartbank?', 2),
+(60, '¿Qué jugador del Rayo Vallecano ha jugado junto a Cristiano Ronaldo en el Manchester United?', 2);
 
 -- --------------------------------------------------------
 
@@ -423,8 +423,8 @@ INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`,
 (1, 'Administrador', 'Ad', 'Min', 'hombre', 'Atletico de Madrid', 'admin', '123', 'admin@ucm.es', 1, 0, 205),
 (2, 'Gonzalo', 'Figueroa', 'del Val', 'hombre', 'Real Madrid', 'gfigue01', '123', 'gfigue01@ucm.es', 0, 1, 276),
 (3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 'Real Madrid', 'acernuda', '123', 'acernuda@ucm.es', 0, 1, 259),
-(4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '123', 'fernag08@ucm.es', 0, 1, 251),
-(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '123', 'jorborja@ucm.es', 0, 1, 295),
+(4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '123', 'fernag08@ucm.es', 0, 1, 262),
+(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '123', 'jorborja@ucm.es', 0, 1, 285),
 (6, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '123', 'jurosado@ucm.es', 0, 1, 288),
 (7, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '123', 'amouhib@ucm.es', 0, 1, 233),
 (8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '123', 'usu@ucm.es', 0, 0, 201);
@@ -570,6 +570,12 @@ ALTER TABLE `jugadores`
 ALTER TABLE `noticias`
   ADD CONSTRAINT `noticias_ibfk_1` FOREIGN KEY (`CodUsuario`) REFERENCES `usuarios` (`IdUsuario`) ON UPDATE CASCADE,
   ADD CONSTRAINT `noticias_ibfk_2` FOREIGN KEY (`CodLiga`) REFERENCES `ligas` (`IdLiga`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `preguntas`
+--
+ALTER TABLE `preguntas`
+  ADD CONSTRAINT `preguntas_ibfk_1` FOREIGN KEY (`CodLiga`) REFERENCES `ligas` (`IdLiga`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `respuestas`
