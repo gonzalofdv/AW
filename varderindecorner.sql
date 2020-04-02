@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-04-2020 a las 15:13:58
+-- Tiempo de generación: 02-04-2020 a las 14:32:25
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -34,41 +34,6 @@ CREATE TABLE `comentarios` (
   `CodUsuario` int(6) NOT NULL,
   `Comentario` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `comentarios`
---
-
-INSERT INTO `comentarios` (`IdComentario`, `CodNoticia`, `CodUsuario`, `Comentario`) VALUES
-(1, 2, 5, 'Está claro que es el mejor...'),
-(2, 5, 5, 'Leyenda!! De los mejores jugadores españoles de la historia, dejando huella en Alemania también'),
-(3, 10, 3, 'Bah, con Mourinho no llegarán a nada, es un pésimo entrenador. Debería haberse quedado Pochettino'),
-(4, 3, 3, 'Además de ser un jugadorazo, es buena persona y caritativo. Me gusta'),
-(5, 9, 4, 'Sin duda el mejor jugador belga de los últimos años, ojalá prolongue su carrera mucho más tiempo.'),
-(6, 1, 4, 'Puf... esta temporada está siendo muy mala para él, quizá debería buscar una salida a otra liga menos competitiva'),
-(7, 1, 2, 'No!! Claro que no se tiene que ir, es un jugador propio para jugar en el Atleti toda su carrera'),
-(8, 6, 2, 'Vaya temporadón está haciendo Achraf, a ver si la temporada que viene tiene un hueco en el Madrid'),
-(9, 2, 6, 'Vaya dato más increíble, este tío es de otro planeta'),
-(10, 8, 6, 'Pues a mí me gusta mucho este lateral pero creo que en Girona está desaprovechado'),
-(11, 8, 7, 'Estoy de acuerdo con jurosado, debería irse a un grande de Europa a intentar dar la talla'),
-(12, 1, 7, 'Yo creo que ya se le ha pasado el arroz, esta temporada no está produciendo lo que debería, y eso es vital para el Atleti'),
-(13, 1, 8, 'Probablemente su mejor destino esté de vuelta en su país de origen, al ser una liga menos competitiva pero de su estilo de juego, fuerte físicamente'),
-(14, 2, 8, 'Yo creo que ese dato se debe a que sus compañeros le buscan demasiado, cosa que perjudica al Barcelona y a los demás jugadores... Están demasiado a su sombra'),
-(15, 4, 8, 'La idea no es mala... Ojalá se haga realidad'),
-(16, 1, 5, 'Personalmente es un jugador que me gusta por su forma de jugar, pero estoy de acuerdo con usu, su etapa en el Atleti está prácticamente acabada'),
-(17, 3, 5, 'Me encanta Mbappé, es humilde y con cosas como esta se gana el corazón de muchas personas. Qué gran futuro tiene este chico'),
-(18, 2, 3, 'Tiene treinta y pico años y sigue estando a unos números asombrosos, y lleva así ya más de 10 años, vaya tela'),
-(19, 7, 2, 'Qué gran joven promesa del fútbol, y además es de la Masía'),
-(20, 9, 2, 'Me encanta... Fue uno de los responsables de eliminar al Madrid en octavos de Champions. Ojalá se quede mucho más tiempo en Manchester'),
-(21, 4, 6, 'Es un hombre amable y caritativo pero yo creo que mancha la imagen del PSG'),
-(22, 3, 8, 'Ojalá y Zidane le traiga a Madrid, es el jugador que el Bernabéu necesita'),
-(23, 5, 8, 'Totalmente de acuerdo con jorborja, es de los jugadores que más he disfrutado desde el salón de mi casa, él solo ganaba muchos partidos'),
-(24, 10, 8, 'Creo que el gran problema fueron las lesiones de Son y Harry Kane, porque Lucas Moura sólo no puede meter muchos goles. Pero yo creo que con Mourinho lo estaban haciendo bastante bien'),
-(25, 6, 8, 'Cada día me sorprende más el joven marroquí, lleva un montón de asistencias e incluso está aportando goles'),
-(26, 1, 6, 'Es de mis jugadores favoritos de la plantilla... Por favor que no se vaya la Pantera'),
-(27, 2, 4, 'El mejor jugador de la historia, ni Maradona ni Pelé ni CR7'),
-(28, 3, 4, 'Me parece que está un poco sobrevalorado pero con estas actuaciones se gana el respeto de todos. Bravo.'),
-(29, 4, 7, 'Yo creo que el rescate a Qatar es una opción muy posible y favorable... Veremos a ver qué pasa al final con las ligas');
 
 -- --------------------------------------------------------
 
@@ -458,13 +423,13 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`, `EquipoFavorito`, `NombreUsuario`, `Contrasena`, `Email`, `Administrador`, `SomosFamilia`, `Puntos`) VALUES
 (1, 'Administrador', 'Ad', 'Min', 'hombre', 'Atletico de Madrid', 'admin', '123', 'admin@ucm.es', 1, 0, 205),
-(2, 'Gonzalo', 'Figueroa', 'del Val', 'hombre', 'Real Madrid', 'gfigue01', '123', 'gfigue01@ucm.es', 0, 1, 290),
-(3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 'Real Madrid', 'acernuda', '123', 'acernuda@ucm.es', 0, 1, 270),
-(4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '123', 'fernag08@ucm.es', 0, 1, 276),
-(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '123', 'jorborja@ucm.es', 0, 1, 308),
-(6, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '123', 'jurosado@ucm.es', 0, 1, 303),
-(7, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '123', 'amouhib@ucm.es', 0, 1, 244),
-(8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '123', 'usu@ucm.es', 0, 0, 224);
+(2, 'Gonzalo', 'Figueroa', 'del Val', 'hombre', 'Real Madrid', 'gfigue01', '123', 'gfigue01@ucm.es', 0, 1, 276),
+(3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 'Real Madrid', 'acernuda', '123', 'acernuda@ucm.es', 0, 1, 259),
+(4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '123', 'fernag08@ucm.es', 0, 1, 262),
+(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '123', 'jorborja@ucm.es', 0, 1, 295),
+(6, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '123', 'jurosado@ucm.es', 0, 1, 288),
+(7, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '123', 'amouhib@ucm.es', 0, 1, 233),
+(8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '123', 'usu@ucm.es', 0, 0, 201);
 
 --
 -- Índices para tablas volcadas
@@ -534,7 +499,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `IdComentario` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `IdComentario` int(6) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `equipos`
