@@ -37,7 +37,7 @@ $nombreLiga = $ligasa->getNombreLiga($codLiga)->Nombre;
 		<?php echo '<form action="procesarEditarNoticia.php?idN='.$idNoticia.'" method="post">'; ?>
 			<fieldset>
 						<legend>Nueva Noticia</legend>
-							Titular:<br> <input type="text" name="titular" value=<?php echo $titular; ?> ><br>
+							Titular:<br> <?php echo '<input type="text" name="titular" value="'.$titular.'"><br>';?>
 							<textarea name="cuerpo" rows="10" cols="40"><?php echo $cuerpo; ?></textarea>
 							<select name="liga">
 								<?php
