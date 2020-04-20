@@ -24,13 +24,5 @@ class DAO {
             echo "fail";
         }
     }
-
-    public static function getDAO() {
-        if (  !self::$db instanceof self) {
-            self::$db = new self;
-        }
-        return self::$db;
-    }
-
 }
 ?>
