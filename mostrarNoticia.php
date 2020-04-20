@@ -34,6 +34,15 @@ $idNoticia = $_GET['idN'];
 			$noticiaSA = new NoticiaSA();
 			$noticia = $noticiaSA->getNoticia($idNoticia);
 
+			if(!is_object($noticia)){
+				echo '<h1>¡Ups! Esta noticia no está disponible</h1>';
+				echo '<p>Es posible que la noticia haya sido borrada o no esté disponible por otras causas, disculpa las molestias.</p>';
+				echo '<p>Te redireccionaremos al inicio...</p>';
+				header("refresh:5; url=index.php");
+
+			}
+			else{
+
 			$titular = $noticia->getTitular();
 			$cuerpo = $noticia->getTexto();
 			$codLiga = $noticia->getCodLiga();
@@ -114,8 +123,9 @@ $idNoticia = $_GET['idN'];
 		    }
 		?>
 				</table>
-				
-
+		<?php		
+		}
+		?>
 	</div>
 
 	<?php

@@ -12,9 +12,14 @@ class NoticiaDAO extends DAO{
         if($consulta){
             $obj = $consulta->fetch_object();
         }
-		
-		$n = new NoticiaTransfer($obj->CodUsuario, $obj->CodLiga, $obj->Titular, $obj->Texto, $obj->Foto);
-		return $n;
+        if(!$obj){
+        	$n = "Noticia no encontrada";
+        	return $n;
+        }
+		else{
+			$n = new NoticiaTransfer($obj->CodUsuario, $obj->CodLiga, $obj->Titular, $obj->Texto, $obj->Foto);
+			return $n;
+		}
 	}
 	
 	public function insert(NoticiaTransfer $n){
