@@ -12,11 +12,31 @@ class UsuarioDAO extends DAO{
 		$consulta = mysqli_query($db, $sql);
 		$info = $consulta->fetch_object();
 
-		if(!$info){
-			//si no existe usuario con ese nombre ya
+		if($info){
+			//si existe usuario con ese nombre ya
+			//comprueba la contraseña
+			$pass = $usuario->getContrasena();
+			return password_verify($pass, $info->Contrasena);
+		}
+		else{ //si no existe ese usuario
+			return false;
+		}
+	}
+
+		public function comprobarUsuarioRepe(UsuarioTransfer $usuario){
+		$db=$this->db;
+
+		$usu = $usuario->getUsu();
+		$sql = "SELECT * FROM usuarios WHERE NombreUsuario LIKE '$usu'";
+		$consulta = mysqli_query($db, $sql);
+		$info = $consulta->fetch_object();
+
+		if($info){
+			//si existe usuario con ese nombre ya
+			//comprueba la contraseña
 			return true;
 		}
-		else{ //si ya existe ese usuario
+		else{ //si no existe ese usuario
 			return false;
 		}
 	}
@@ -53,6 +73,12 @@ class UsuarioDAO extends DAO{
 		}
 	}
 
+	private static function hashPassword($password) {
+
+        return password_hash($password, PASSWORD_DEFAULT);
+    }
+
+
 	public function insertarUsuario(UsuarioTransfer $usuario){
 		$db=$this->db;
 
@@ -62,11 +88,13 @@ class UsuarioDAO extends DAO{
 		$sexo = $usuario->getSexo();
 		$equipo = $usuario->getEquipo();
 		$usu = $usuario->getUsu();
-		$pass = $usuario->getContrasena();
+		$passAux = $usuario->getContrasena();
 		$email = $usuario->getMail();
 		$esAdmin = $usuario->getEsAdmin();
 		$familia = $usuario->getEsFamilia();
 		$puntos = $usuario->getPuntos();
+
+		$pass = self::hashPassword($passAux);
 
 		$sql = "INSERT INTO usuarios (Nombre, Apellido1, Apellido2, Sexo, EquipoFavorito, NombreUsuario, Contrasena, Email, Administrador, SomosFamilia, Puntos) VALUES ('$nombre', '$ap1', '$ap2', '$sexo', '$equipo', '$usu', '$pass', '$email', '$esAdmin', '$familia', '$puntos')";
 		$consulta = mysqli_query($db, $sql);
@@ -140,7 +168,6 @@ class UsuarioDAO extends DAO{
     	$consulta = mysqli_query($db, $sql);
     	return $consulta;
     }
-        
 }
 
 ?>

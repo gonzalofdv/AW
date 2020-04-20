@@ -1,5 +1,7 @@
-<?php session_start(); ?>
+<?php session_start();
 
+require_once __DIR__.'/include/FormularioLogin.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,11 +22,14 @@
 	?>
 
 	<div id="contenido">
-		<form action="procesarLogin.php" method="post">
-            <input type="text" name="usuario" placeholder="Introduzca su usuario: ">
-            <input type="password" name="password" placeholder="Contraseña: ">
-            <input type="submit" value="Enviar">
-        </form>
+
+		<h1>Acceso al sistema</h1>
+
+		<?php
+			$form = new FormularioLogin();
+			$form->gestiona();
+		?>
+		
 	</div>
 
 	<?php

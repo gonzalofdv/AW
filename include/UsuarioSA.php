@@ -12,11 +12,11 @@ class UsuarioSA {
 			$this->usuarioDAO = new UsuarioDAO();
 		}
 		$aux = $this->usuarioDAO;
-		if($aux->comprobarUsuario($usuario)){
-			return $aux->insertarUsuario($usuario);
+		if($aux->comprobarUsuarioRepe($usuario)){
+			return false;
 		}
 		else{
-			return false;
+			return $aux->insertarUsuario($usuario);
 		}
 	}
 
@@ -127,6 +127,14 @@ class UsuarioSA {
 		}
 		$aux = $this->usuarioDAO;
 		return $aux->devuelveRanking();
+	}
+
+	public function compruebaPassword($password){
+		if(!$this->usuarioDAO){
+			$this->usuarioDAO = new UsuarioDAO();
+		}
+		$aux = $this->usuarioDAO;
+		return $aux->compruebaPassword();
 	}
 
 }
