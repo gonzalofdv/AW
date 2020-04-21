@@ -1,6 +1,6 @@
 <?php session_start();
 
-require_once 'include/FormularioLogin.php';
+require_once ('include/FormularioLogin.php');
 ?>
 <!DOCTYPE html>
 <html>
