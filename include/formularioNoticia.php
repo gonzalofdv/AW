@@ -14,18 +14,11 @@ class FormularioNoticia extends Form {
 		$result = array();
 
 		$titular = isset($datos['titular']) ? $datos['titular'] : null;
-		$cuerpo = isset($datos['cuerpo']) ? $datos['cuerpo'] : null;
+		$cuerpo = isset($datos['cuerpo']) ? nl2br($datos['cuerpo']) : null;
 		$condi = isset($datos['condi']) ? $datos['condi'] : null;
 		$codLiga = isset($datos['liga']) ? $datos['liga'] : null;
-		$nombreUsu = isset($datos['nombreUsu']) ? $datos['nombreUsu'] : null;
+		$nombreUsu = isset($_SESSION['nombre']) ? $_SESSION['nombre'] : null;
 		$foto = isset($datos['foto']) ? $datos['foto'] : null;
-
-		echo $titular;
-		echo $cuerpo;
-		echo $condi;
-		echo $codLiga;
-		echo $nombreUsu;
-		echo $foto;
 
 		if((!empty($titular)) && (!empty($cuerpo)) && (!empty($condi)) && (!empty($foto))){
 			if($codLiga != 0){
