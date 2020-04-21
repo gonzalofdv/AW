@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/elvarderindecorner/include/transfer/NoticiaTransfer.php'; 
+require_once './include/transfer/NoticiaTransfer.php'; 
 require_once('DAO.php');
 
 class NoticiaDAO extends DAO{
