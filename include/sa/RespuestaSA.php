@@ -1,6 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'].'/elvarderindecorner/include/dao/RespuestaDAO.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/elvarderindecorner/include/transfer/RespuestaTransfer.php');
+require_once('./include/dao/RespuestaDAO.php');
+require_once('./include/transfer/RespuestaTransfer.php');
 
 class RespuestaSa{
 

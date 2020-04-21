@@ -1,6 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'].'/elvarderindecorner/include/dao/UsuarioDAO.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/elvarderindecorner/include/transfer/UsuarioTransfer.php');
+require_once('./include/dao/UsuarioDAO.php');
+require_once('./include/transfer/UsuarioTransfer.php');
 
 class UsuarioSA {
 

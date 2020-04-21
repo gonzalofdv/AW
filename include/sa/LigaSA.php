@@ -1,6 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'].'/elvarderindecorner/include/transfer/LigaTransfer.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/elvarderindecorner/include/dao/LigaDAO.php');
+require_once('./include/transfer/LigaTransfer.php');
+require_once('./include/dao/LigaDAO.php');
 
 class LigaSA {
 	

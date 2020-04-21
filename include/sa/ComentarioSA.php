@@ -1,6 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'].'/elvarderindecorner/include/dao/ComentarioDAO.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/elvarderindecorner/include/transfer/ComentarioTransfer.php');
+require_once('./include/dao/ComentarioDAO.php');
+require_once('./include/transfer/ComentarioTransfer.php');
 
 class ComentarioSA {
 
