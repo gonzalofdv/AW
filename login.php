@@ -5,7 +5,7 @@ require_once __DIR__.'/include/FormularioLogin.php';
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="estilo.css" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
 	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 	<meta charset="utf-8">
 	<meta http-equiv="Expires" content="0">
