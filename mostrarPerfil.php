@@ -16,7 +16,7 @@ require_once('include/sa/UsuarioSA.php');
 
 
 	<?php
-		require(__DIR__."include/comun/cabecera.php");
+		require("include/comun/cabecera.php");
 	?>
 
 	<div id="contenido">
@@ -41,8 +41,8 @@ require_once('include/sa/UsuarioSA.php');
 	</div>
 
 	<?php
-		require(__DIR__."include/comun/sidebarDer.php");
-		require(__DIR__."include/comun/pie.php");
+		require("include/comun/sidebarDer.php");
+		require("include/comun/pie.php");
 	?>
 
 

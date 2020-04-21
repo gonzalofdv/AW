@@ -1,6 +1,6 @@
 <?php session_start();
 
-require_once __DIR__.'/include/FormularioLogin.php';
+require_once ('/include/FormularioLogin.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,7 @@ require_once __DIR__.'/include/FormularioLogin.php';
 <body>
 
 	<?php
-		require(__DIR__."/include/comun/cabecera.php");
+		require("/include/comun/cabecera.php");
 	?>
 
 	<div id="contenido">
@@ -33,8 +33,8 @@ require_once __DIR__.'/include/FormularioLogin.php';
 	</div>
 
 	<?php
-		require(__DIR__."/include/comun/sidebarDer.php");
-		require(__DIR__."/include/comun/pie.php");
+		require("/include/comun/sidebarDer.php");
+		require("/include/comun/pie.php");
 	?>
 <!-- Fin del contenedor -->
 
