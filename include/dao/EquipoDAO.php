@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/elvarderindecorner/include/transfer/EquipoTransfer.php'; 
+require_once './include/transfer/EquipoTransfer.php'; 
 require_once('DAO.php');
 
 class EquipoDAO extends DAO{
