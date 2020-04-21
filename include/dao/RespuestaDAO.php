@@ -1,6 +1,6 @@
 <?php
+require $_SERVER['DOCUMENT_ROOT'].'/elvarderindecorner/include/transfer/RespuestaTransfer.php'; 
 
-require_once('../transfer/RespuestaTransfer.php');
 require_once('DAO.php');
 
 class RespuestaDAO extends DAO{

@@ -1,6 +1,5 @@
 <?php
-
-require_once('../transfer/ComentarioTransfer.php');
+require $_SERVER['DOCUMENT_ROOT'].'/elvarderindecorner/include/transfer/ComentarioTransfer.php'; 
 require_once('DAO.php');
 
 class ComentarioDAO extends DAO{
