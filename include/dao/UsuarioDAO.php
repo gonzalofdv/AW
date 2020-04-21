@@ -1,5 +1,5 @@
 <?php
-require_once('../transfer/UsuarioTransfer.php');
+require $_SERVER['DOCUMENT_ROOT'].'/include/transfer/UsuarioTransfer.php'; 
 require_once('DAO.php');
 
 class UsuarioDAO extends DAO{
