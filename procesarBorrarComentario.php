@@ -1,5 +1,5 @@
 <?php session_start();
-require_once('include/ComentarioSA.php');
+require_once('include/sa/ComentarioSA.php');
 
 
 $idComentario = $_POST['comentario'];

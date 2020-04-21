@@ -1,6 +1,6 @@
 <?php session_start();
-require_once('include/UsuarioSA.php');
-require_once('include/UsuarioTransfer.php');
+require_once('include/sa/UsuarioSA.php');
+require_once('include/transfer/UsuarioTransfer.php');
 
 
 if($_SESSION["esAdmin"] == 1){

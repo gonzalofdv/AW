@@ -1,10 +1,10 @@
 <?php session_start();
 
-require_once('include/LigaSA.php');
-require_once('include/UsuarioSA.php');
-require_once('include/ComentarioSA.php');
-require_once('include/NoticiaSA.php');
-require_once('include/NoticiaTransfer.php');
+require_once('include/sa/LigaSA.php');
+require_once('include/sa/UsuarioSA.php');
+require_once('include/sa/ComentarioSA.php');
+require_once('include/sa/NoticiaSA.php');
+require_once('include/transfer/NoticiaTransfer.php');
 
 $idNoticia = $_GET['idN'];
 
