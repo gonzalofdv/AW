@@ -1,6 +1,6 @@
 <?php
 
-require_once('LigaTransfer.php');
+require_once('../transfer/LigaTransfer.php');
 require_once('DAO.php');
 
 class LigaDAO extends DAO{

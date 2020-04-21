@@ -1,6 +1,6 @@
 <?php
 
-require_once('NoticiaTransfer.php');
+require_once('../transfer/NoticiaTransfer.php');
 require_once('DAO.php');
 
 class NoticiaDAO extends DAO{

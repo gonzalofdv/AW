@@ -1,6 +1,6 @@
 <?php
 
-require_once('EquipoTransfer.php');
+require_once('../transfer/EquipoTransfer.php');
 require_once('DAO.php');
 
 class EquipoDAO extends DAO{

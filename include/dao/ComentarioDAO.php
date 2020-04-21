@@ -1,6 +1,6 @@
 <?php
 
-require_once('ComentarioTransfer.php');
+require_once('../transfer/ComentarioTransfer.php');
 require_once('DAO.php');
 
 class ComentarioDAO extends DAO{
