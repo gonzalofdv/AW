@@ -12,7 +12,7 @@
 
 			<?php
 
-				require_once($_SERVER['DOCUMENT_ROOT'].'/elvarderindecorner/include/sa/UsuarioSA.php');
+				require_once './include/sa/UsuarioSA.php');
 
 
 				$usuarioSA = new UsuarioSA();
