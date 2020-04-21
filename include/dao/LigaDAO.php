@@ -1,5 +1,5 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'].'/elvarderindecorner/include/transfer/LigaTransfer.php'; 
+require_once $_SERVER['DOCUMENT_ROOT'].'/elvarderindecorner/include/transfer/LigaTransfer.php'; 
 require_once('DAO.php');
 
 class LigaDAO extends DAO{
