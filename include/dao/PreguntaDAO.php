@@ -1,7 +1,5 @@
 <?php
 require_once './include/transfer/PreguntaTransfer.php'; 
-
-require_once('../transfer/PreguntaTransfer.php');
 require_once('DAO.php');
 
 class PreguntaDAO extends DAO{
