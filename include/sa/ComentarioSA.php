@@ -1,6 +1,6 @@
 <?php
-require_once('ComentarioDAO.php');
-require_once('ComentarioTransfer.php');
+require_once('../dao/ComentarioDAO.php');
+require_once('../transfer/ComentarioTransfer.php');
 
 class ComentarioSA {
 

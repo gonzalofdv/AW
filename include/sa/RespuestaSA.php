@@ -1,6 +1,6 @@
 <?php
-require_once('RespuestaDAO.php');
-require_once('RespuestaTransfer.php');
+require_once('../dao/RespuestaDAO.php');
+require_once('../transfer/RespuestaTransfer.php');
 
 class RespuestaSa{
 

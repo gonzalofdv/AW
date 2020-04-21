@@ -1,6 +1,7 @@
 <?php
-require_once('LigaTransfer.php');
-require_once('LigaDAO.php');
+require_once('../transfer/LigaTransfer.php');
+require_once('../dao/LigaDAO.php');
+
 class LigaSA {
 	
 	// Atributos

@@ -1,6 +1,6 @@
 <?php
-require_once('NoticiaDAO.php');
-require_once('NoticiaTransfer.php');
+require_once('../dao/NoticiaDAO.php');
+require_once('../transfer/NoticiaTransfer.php');
 
 class NoticiaSA {
 

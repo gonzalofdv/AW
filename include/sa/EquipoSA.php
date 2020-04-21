@@ -1,5 +1,5 @@
 <?php
-require_once('EquipoDAO.php');
+require_once('../dao/EquipoDAO.php');
 
 class EquipoSA {
 	// Atributos
