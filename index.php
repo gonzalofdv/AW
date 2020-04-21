@@ -4,7 +4,7 @@ require('include/sa/NoticiaSA.php')?>
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="estilo.css" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
 	<meta charset="utf-8">
 	<meta http-equiv="Expires" content="0">
 	<meta http-equiv="Last-Modified" content="0">
@@ -16,7 +16,7 @@ require('include/sa/NoticiaSA.php')?>
 <body>
 
 	<?php
-		require("include/comun/cabecera.php");
+		require(__DIR__."/include/comun/cabecera.php");
 	?>
 
 	<div id="contenido">
@@ -33,17 +33,17 @@ require('include/sa/NoticiaSA.php')?>
 			}
 				
 			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false || ($_SESSION["esAdmin"] == false && $_SESSION["esFamilia"] == false)){
-				echo '<button onclick=location.href="formularioNoticia.php" disabled>Agregar nueva noticia</button>';
+				echo '<button onclick=location.href="noticia.php" disabled>Agregar nueva noticia</button>';
 			}
 			else{
-				echo '<button onclick=location.href="formularioNoticia.php">Agregar nueva noticia</button>';
+				echo '<button onclick=location.href="noticia.php">Agregar nueva noticia</button>';
 			}
 		?>
 	</div>
 
 	<?php
-		require("include/comun/sidebarDer.php");
-		require("include/comun/pie.php");
+		require(__DIR__."/include/comun/sidebarDer.php");
+		require(__DIR__."/include/comun/pie.php");
 	?>
 <!-- Fin del contenedor -->
 

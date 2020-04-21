@@ -1,0 +1,97 @@
+<?php
+require_once('include/transfer/NoticiaTransfer.php');
+require_once('include/sa/NoticiaSA.php');
+require_once('include/sa/UsuarioSA.php');
+require_once('include/transfer/UsuarioTransfer.php');
+require('include/sa/LigaSA.php');
+require_once __DIR__.'/Form.php';
+
+class FormularioNoticia extends Form {
+
+	public function __construct(){}
+
+	protected function procesaFormulario($datos){
+		$result = array();
+
+		$titular = isset($datos['titular']) ? $datos['titular'] : null;
+		$cuerpo = isset($datos['cuerpo']) ? $datos['cuerpo'] : null;
+		$condi = isset($datos['condi']) ? $datos['condi'] : null;
+		$codLiga = isset($datos['liga']) ? $datos['liga'] : null;
+		$nombreUsu = isset($datos['nombreUsu']) ? $datos['nombreUsu'] : null;
+		$foto = isset($datos['foto']) ? $datos['foto'] : null;
+
+		echo $titular;
+		echo $cuerpo;
+		echo $condi;
+		echo $codLiga;
+		echo $nombreUsu;
+		echo $foto;
+
+		if((!empty($titular)) && (!empty($cuerpo)) && (!empty($condi)) && (!empty($foto))){
+			if($codLiga != 0){
+				
+				$usuarioSA = new UsuarioSA();
+				$consulta = $usuarioSA->obtenerId($nombreUsu); 	
+				$codUsuario = $consulta->IdUsuario;
+				$n = new NoticiaTransfer($codUsuario, $codLiga, $cuerpo, $titular, $foto);
+				
+				$noticiaSA = new NoticiaSA();
+				$anadido = $noticiaSA->insertNoticia($n);
+				
+				if($anadido){
+					$usuarioSA->sumarPuntos($codUsuario,5);
+					
+					$result = 'mostrarAlertas.php?codAlerta=12';
+				}
+				else{
+					
+					$result = 'mostrarAlertas.php?codAlerta=13';
+				}
+			}
+		}
+		else{
+			//Mandar error de que faltan campos por rellenar
+			$result[] = "Faltan campos por rellenar";
+		}
+
+	 	return $result;
+	}
+
+	protected function generaCamposFormulario($datosIniciales){
+
+		$titular = '';
+		$cuerpo = 'Escribe aqui la noticia que quieres agregar';
+		$codLiga = '';
+
+		if($datosIniciales) {
+			$titular = isset($datosIniciales['titular']) ? $datosIniciales['titular'] : $titular;
+			$cuerpo = isset($datosIniciales['cuerpo']) ? $datosIniciales['cuerpo'] : $cuerpo;
+			$codLiga = isset($datosIniciales['codLiga']) ? $datosIniciales['codLiga'] : $codLiga;
+		}
+	
+		$html = '';
+		$html .= '<fieldset>';
+        $html .= '<legend>Nueva Noticia</legend>';
+        $html .= 'Titular:<br> <input type="text" name="titular" value="'.$titular.'"><br>';
+        $html .= '<textarea name="cuerpo" rows="10" cols="40">'.$cuerpo.'</textarea>';
+        $html .= '<select name="liga">';
+        $html .= '<option value="0">Ligas:</option>';
+            $ligasa=new LigaSA();
+            $res=$ligasa->devuelveLigaSA();
+            while($valores = mysqli_fetch_array($res)){
+                $html .= '<option value=' . $valores[0] . '> ' . $valores[1] . '</option>';
+            }
+        $html .='</select>';
+        $html .='<br>';
+        $html .='<input type="file" name="foto" /><br>';
+        $html .='<input type="checkbox" name="condi" value="ok">Confirmar enviar noticia.<br>';
+        $html .='<input type="submit" name="aceptar">';
+        $html .='</fieldset>';
+
+		return $html;
+	}
+
+}
+
+
+?>
