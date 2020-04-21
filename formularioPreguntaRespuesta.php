@@ -1,5 +1,5 @@
 <?php session_start(); 
-require('include/LigaSA.php')?>
+require('include/sa/LigaSA.php')?>
 
 <!DOCTYPE html>
 <html>
@@ -14,7 +14,7 @@ require('include/LigaSA.php')?>
 </head>
 <body>
 	<?php
-		require("cabecera.php");
+		require("include/comun/cabecera.php");
 	?>
 	<div id="contenido">
 	<br>
@@ -64,8 +64,8 @@ require('include/LigaSA.php')?>
 
 	</div>
 	<?php
-		require("sidebarDer.php");
-		require("pie.php");
+		require("include/comun/sidebarDer.php");
+		require("include/comun/pie.php");
 	?>
 </body>
 </html>

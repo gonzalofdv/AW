@@ -18,7 +18,7 @@ $codigo = $_GET['codAlerta'];
 <body>
 
 	<?php
-		require("cabecera.php");
+		require("include/comun/cabecera.php");
 	?>
 
 	<div id="contenido">
@@ -170,8 +170,8 @@ $codigo = $_GET['codAlerta'];
 	</div>
 
 	<?php
-		require("sidebarDer.php");
-		require("pie.php");
+		require("include/comun/sidebarDer.php");
+		require("include/comun/pie.php");
 	?>
 <!-- Fin del contenedor -->
 

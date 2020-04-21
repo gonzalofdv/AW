@@ -1,6 +1,6 @@
 <?php session_start(); 
-require_once('include/LigaSA.php');
-require_once('include/NoticiaSA.php');
+require_once('include/sa/LigaSA.php');
+require_once('include/sa/NoticiaSA.php');
 
 
 $idNoticia = $_GET['idN'];
@@ -30,7 +30,7 @@ $nombreLiga = $ligasa->getNombreLiga($codLiga)->Nombre;
 </head>
 <body>
 	<?php
-		require("cabecera.php");
+		require("include/comun/cabecera.php");
 	?>
 	<div id="contenido">
 	<br>
@@ -57,8 +57,8 @@ $nombreLiga = $ligasa->getNombreLiga($codLiga)->Nombre;
 
 	</div>
 	<?php
-		require("sidebarDer.php");
-		require("pie.php");
+		require("include/comun/sidebarDer.php");
+		require("include/comun/pie.php");
 	?>
 </body>
 </html>

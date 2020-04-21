@@ -17,7 +17,7 @@
 	<body>
 
 		<?php
-			require("cabecera.php");
+			require("include/comun/cabecera.php");
 		?>
 		
 		<div id="contenido">
@@ -65,8 +65,8 @@
 		</div>
 		
 		<?php
-			require("sidebarDer.php");
-			require("pie.php");
+			require("include/comun/sidebarDer.php");
+			require("include/comun/pie.php");
 		?>
 		
 	</body>
