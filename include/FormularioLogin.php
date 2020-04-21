@@ -1,6 +1,6 @@
 <?php
-require_once('include/UsuarioSA.php');
-require_once('include/UsuarioTransfer.php');
+require_once('sa/UsuarioSA.php');
+require_once('transfer/UsuarioTransfer.php');
 require_once __DIR__.'/Form.php';
 
 class FormularioLogin extends Form {
