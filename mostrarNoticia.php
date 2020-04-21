@@ -25,7 +25,7 @@ $idNoticia = $_GET['idN'];
 <body>
 
 	<?php
-		require("/include/comun/cabecera.php");
+		require(__DIR__."include/comun/cabecera.php");
 	?>
 
 	<div id="contenido">
@@ -129,8 +129,8 @@ $idNoticia = $_GET['idN'];
 	</div>
 
 	<?php
-		require("include/comun/sidebarDer.php");
-		require("include/comun/pie.php");
+		require(__DIR__."include/comun/sidebarDer.php");
+		require(__DIR__."include/comun/pie.php");
 	?>
 <!-- Fin del contenedor -->
 
