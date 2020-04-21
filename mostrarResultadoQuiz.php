@@ -18,7 +18,7 @@ $aciertos = $_GET['aciertos'];?>
 <body>
 
 	<?php
-		require("cabecera.php");
+		require(__DIR__."include/comun/cabecera.php");
 	?>
 
 	<div id="contenido">		
@@ -39,8 +39,8 @@ $aciertos = $_GET['aciertos'];?>
 	</div>
 
 	<?php
-		require("sidebarDer.php");
-		require("pie.php");
+		require(__DIR__."include/comun/sidebarDer.php");
+		require(__DIR__."include/comun/pie.php");
 	?>
 
 

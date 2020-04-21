@@ -17,7 +17,7 @@ require_once('include/sa/RespuestaSA.php');
 </head>
 <body>
 	<?php
-		require("cabecera.php");
+		require(__DIR__."include/comun/cabecera.php");
 	?>
 	<div id="contenido">
 	<br>
@@ -65,8 +65,8 @@ require_once('include/sa/RespuestaSA.php');
 
 	</div>
 	<?php
-		require("sidebarDer.php");
-		require("pie.php");
+		require(__DIR__."include/comun/sidebarDer.php");
+		require(__DIR__."include/comun/pie.php");
 	?>
 </body>
 </html>
