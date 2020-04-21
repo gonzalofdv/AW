@@ -1,5 +1,5 @@
 <?php
-require_once('../dao/EquipoDAO.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/elvarderindecorner/include/dao/EquipoDAO.php');
 
 class EquipoSA {
 	// Atributos
