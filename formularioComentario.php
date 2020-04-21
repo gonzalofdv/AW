@@ -23,7 +23,7 @@ $idNoticia = $_GET['idN'];
 		<?php echo'<form action="procesarNuevoComentario.php?idN='.$idNoticia.'" method=post>';?>
 			<fieldset>
 				<legend>Nuevo Comentario</legend>
-					<textarea name="cuerpo" rows="5" cols="10">Escribe aquí el comentario</textarea>
+					<textarea name="cuerpo" rows="15" cols="70">Escribe aquí el comentario</textarea>
 					<input type="checkbox" name="condi" value="ok">Confirmar enviar comentario.<br>
 					<input type="submit" name="aceptar">	
 			</fieldset>
