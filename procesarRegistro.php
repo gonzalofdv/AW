@@ -1,6 +1,6 @@
 <?php session_start(); 
-require_once('include/UsuarioSA.php');
-require_once('include/UsuarioTransfer.php');
+require_once(__DIR__.'include/transfer/UsuarioSA.php');
+require_once(__DIR__.'include/transfer/UsuarioTransfer.php');
 
 $nom=$_POST['nom'];
 $ape1=$_POST['apellido1'];
