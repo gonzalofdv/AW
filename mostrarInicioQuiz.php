@@ -46,12 +46,19 @@
 			
 			
 			<p>¿Estás preparado? ¡Adelante!</p>
-			<button onclick="location.href='mostrarQuiz.php'">¡Empezar Quiz!</button>
-
-			<p>Si ya dispones de los privilegios Somos Familia, puedes incluir nuevas preguntas para el Quiz con el botón que aparece aquí debajo. No olvides que siempre será bienvenida tu colaboración.</p>
-
+			
 			<?php
+				//Desahibilta el boton si no estas logueado
+				if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
+					echo '<button onclick=location.href="mostrarQuiz.php" disabled>¡Empezar Quiz!</button>';	
+				}
+				else{
+					echo '<button onclick=location.href="mostrarQuiz.php">¡Empezar Quiz!</button>';	
+				}
 
+				echo '<p>Si ya dispones de los privilegios Somos Familia, puedes incluir nuevas preguntas para el Quiz con el botón que aparece aquí debajo. No olvides que siempre será bienvenida tu colaboración.</p>';
+
+				//Deshabilita el boton si no estas logueado, no eres admin o no eres somos familia
 				if(!isset($_SESSION["login"]) || $_SESSION["login"] == false || ($_SESSION["esAdmin"] == false && $_SESSION["esFamilia"] == false)){
 
 					echo '<button onclick=location.href="formularioPreguntaRespuesta.php" disabled>Crea una nueva pregunta</button>';
