@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-require_once('include/UsuarioSA.php');
+require_once(__DIR__.'/include/sa/UsuarioSA.php');
 
 
 	$res0 = $_POST['res0'];
