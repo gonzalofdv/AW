@@ -9,7 +9,7 @@ $idNoticia = $_GET['idN'];
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+	<link rel="stylesheet" type="text/css" href="estilo.css" />
 	<meta charset="utf-8">
 	<meta http-equiv="Expires" content="0">
 	<meta http-equiv="Last-Modified" content="0">

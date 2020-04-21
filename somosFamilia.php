@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+	<link rel="stylesheet" type="text/css" href="estilo.css" />
 	<meta charset="utf-8">
 	<meta http-equiv="Expires" content="0">
 	<meta http-equiv="Last-Modified" content="0">
@@ -16,7 +16,7 @@
 <body>
 
 	<?php
-		require(__DIR__."/include/comun/cabecera.php");
+		require("include/comun/cabecera.php");
 	?>
 
 	<div id="contenido">
@@ -103,8 +103,8 @@
 	</div>
 
 	<?php
-		require(__DIR__."/include/comun/sidebarDer.php");
-		require(__DIR__."/include/comun/pie.php");
+		require("include/comun/sidebarDer.php");
+		require("include/comun/pie.php");
 	?>
 <!-- Fin del contenedor -->
 
