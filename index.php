@@ -1,5 +1,5 @@
 <?php session_start(); 
-require('include/NoticiaSA.php')?>
+require('include/sa/NoticiaSA.php')?>
 
 <!DOCTYPE html>
 <html>
