@@ -69,10 +69,10 @@ $idNoticia = $_GET['idN'];
 		<p>Noticia escrita por el usuario <?php echo $usuario->NombreUsuario; ?></p>
 		<?php
 			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
-				echo '<button onclick=location.href="formularioComentario.php?idN='.$idNoticia.'" disabled>Agregar comentario</button>';
+				echo '<button onclick=location.href="nuevoComentario.php?idN='.$idNoticia.'" disabled>Agregar comentario</button>';
 			}
 			else{
-				echo '<button onclick=location.href="formularioComentario.php?idN='.$idNoticia.'">Agregar comentario</button>';
+				echo '<button onclick=location.href="nuevoComentario.php?idN='.$idNoticia.'">Agregar comentario</button>';
 			}
 		
 		    $comentarioSA=new ComentarioSA();
@@ -83,23 +83,23 @@ $idNoticia = $_GET['idN'];
 			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false || ($_SESSION["esAdmin"] == false)){
 				echo '<button onclick=location.href="procesarBorrarNoticia.php?idN='.$idNoticia.'" disabled>Eliminar noticia</button>';
 				echo '	';
-				echo '<button onclick=location.href="editarNoticia.php?idN='.$idNoticia.'" disabled>Editar noticia</button>';
-				echo '<button onclick=location.href="formularioBorrarComentario.php?idN='.$idNoticia.'" disabled>Eliminar comentario</button>';
+				echo '<button onclick=location.href="formularioEditarNoticia.php?idN='.$idNoticia.'" disabled>Editar noticia</button>';
+				echo '<button onclick=location.href="borrarComentario.php?idN='.$idNoticia.'" disabled>Eliminar comentario</button>';
 				echo '	';
 				
 			}
 			else{
 				if($existen=$comentarioSA->existenComentarios($idNoticia)){
-				echo '<button onclick=location.href="formularioBorrarComentario.php?idN='.$idNoticia.'">Eliminar comentario</button>';
-				echo '	';
+					echo '<button onclick=location.href="borrarComentario.php?idN='.$idNoticia.'">Eliminar comentario</button>';
+					echo '	';
 				}
 				else{
-					echo '<button onclick=location.href="formularioBorrarComentario.php?idN='.$idNoticia.'" disabled>Eliminar comentario</button>';
+					echo '<button onclick=location.href="borrarComentario.php?idN='.$idNoticia.'" disabled>Eliminar comentario</button>';
 					echo '	';
 				}
 				echo '<button onclick=location.href="procesarBorrarNoticia.php?idN='.$idNoticia.'">Eliminar noticia</button>';
 				echo '	';
-				echo '<button onclick=location.href="editarNoticia.php?idN='.$idNoticia.'">Editar noticia</button>';
+				echo '<button onclick=location.href="formularioEditarNoticia.php?idN='.$idNoticia.'">Editar noticia</button>';
 			}
 		
 			echo "<br><br>";
