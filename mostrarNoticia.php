@@ -69,10 +69,10 @@ $idNoticia = $_GET['idN'];
 		<p>Noticia escrita por el usuario <?php echo $usuario->NombreUsuario; ?></p>
 		<?php
 			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
-				echo '<button onclick=location.href="formularioComentario.php?idN='.$idNoticia.'" disabled>Agregar comentario</button>';
+				echo '<button onclick=location.href="nuevoComentario.php?idN='.$idNoticia.'" disabled>Agregar comentario</button>';
 			}
 			else{
-				echo '<button onclick=location.href="formularioComentario.php?idN='.$idNoticia.'">Agregar comentario</button>';
+				echo '<button onclick=location.href="nuevoComentario.php?idN='.$idNoticia.'">Agregar comentario</button>';
 			}
 		
 		    $comentarioSA=new ComentarioSA();
