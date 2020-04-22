@@ -2,17 +2,7 @@
 session_start(); 
 require_once('include/FormularioEditarNoticia.php');
 
-$idNoticia = $_GET['idN'];
-
-$noticiaSA = new noticiaSA();
-$noticia = $noticiaSA->getNoticia($idNoticia);
-
-$titular = $noticia->getTitular();
-$cuerpo = $noticia->getTexto();
-$codLiga = $noticia->getCodLiga();
-
-$ligasa = new LigaSA();
-$nombreLiga = $ligasa->getNombreLiga($codLiga)->Nombre;
+$idN= $_GET['idN'];
 
 ?>
 
@@ -33,7 +23,7 @@ $nombreLiga = $ligasa->getNombreLiga($codLiga)->Nombre;
 	?>
 	<div id="contenido">
 	<?php
-		$form = new FormularioEditarNoticia();
+		$form = new FormularioEditarNoticia($idN);
 		$form->gestiona();
 	?>
 	</div>
