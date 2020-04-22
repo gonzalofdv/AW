@@ -48,7 +48,9 @@ class FormularioEditarNoticia extends Form {
 		if($datosIniciales) {
 			$titular = isset($datosIniciales['titular']) ? $datosIniciales['titular'] : $titular;
 			$cuerpo = isset($datosIniciales['cuerpo']) ? $datosIniciales['cuerpo'] : $cuerpo;
-			$codLiga = isset($datosIniciales['codLiga']) ? $datosIniciales['codLiga'] : $codLiga;
+			$codLiga = isset($datosIniciales['liga']) ? $datosIniciales['liga'] : $codLiga;
+            $ligasa = new LigaSA();
+            $nombreLiga = $ligasa->getNombreLiga($codLiga)->Nombre;
 		}
 	
 		$html = '';

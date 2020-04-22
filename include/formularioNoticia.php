@@ -54,12 +54,20 @@ class FormularioNoticia extends Form {
 
 		$titular = '';
 		$cuerpo = 'Escribe aqui la noticia que quieres agregar';
-		$codLiga = '';
+		$codLiga = 0;
+		$valueLiga = "Ligas:";
 
 		if($datosIniciales) {
 			$titular = isset($datosIniciales['titular']) ? $datosIniciales['titular'] : $titular;
 			$cuerpo = isset($datosIniciales['cuerpo']) ? $datosIniciales['cuerpo'] : $cuerpo;
-			$codLiga = isset($datosIniciales['codLiga']) ? $datosIniciales['codLiga'] : $codLiga;
+			$codLiga = isset($datosIniciales['liga']) ? $datosIniciales['liga'] : $codLiga;
+			if($codLiga != 0){
+				$ligasa = new LigaSA();
+				$valueLiga = $ligasa->getNombreLiga($codLiga)->Nombre;
+			}
+			else{
+				$valueLiga = "Ligas:";
+			}
 		}
 	
 		$html = '';
@@ -68,7 +76,7 @@ class FormularioNoticia extends Form {
         $html .= 'Titular:<br> <input type="text" name="titular" value="'.$titular.'"><br>';
         $html .= '<textarea name="cuerpo" rows="10" cols="40">'.$cuerpo.'</textarea>';
         $html .= '<select name="liga">';
-        $html .= '<option value="0">Ligas:</option>';
+        $html .= '<option value="'.$codLiga.'">'.$valueLiga.'</option>';
             $ligasa=new LigaSA();
             $res=$ligasa->devuelveLigaSA();
             while($valores = mysqli_fetch_array($res)){
