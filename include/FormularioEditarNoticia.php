@@ -4,7 +4,12 @@ require_once('include/sa/NoticiaSA.php');
 require_once('Form.php');
 
 class FormularioEditarNoticia extends Form {
-    public function __construct(){}
+
+    private $idNoticia;
+
+    public function __construct($idN){
+        $this->idNoticia = $idN;
+    }
 
     protected function procesaFormulario($datos){
         $result = array();
@@ -29,9 +34,16 @@ class FormularioEditarNoticia extends Form {
     }
 
     protected function generaCamposFormulario($datosIniciales){
-        $titular = isset($datos['titular']) ? $datos['titular'] : null;
-		$cuerpo = isset($datos['cuerpo']) ? nl2br($datos['cuerpo']) : null;
-		$codLiga = isset($datos['liga']) ? $datos['liga'] : null;
+
+        $noticiaSA = new noticiaSA();
+        $noticia = $noticiaSA->getNoticia($this->idNoticia);
+
+        $titular = $noticia->getTitular();
+        $cuerpo = $noticia->getTexto();
+        $codLiga = $noticia->getCodLiga();
+
+        $ligasa = new LigaSA();
+        $nombreLiga = $ligasa->getNombreLiga($codLiga)->Nombre;
 
 		if($datosIniciales) {
 			$titular = isset($datosIniciales['titular']) ? $datosIniciales['titular'] : $titular;
@@ -45,7 +57,7 @@ class FormularioEditarNoticia extends Form {
         $html .= 'Titular:<br> <input type="text" name="titular" value="'.$titular.'"><br>';
         $html .= '<textarea name="cuerpo" rows="10" cols="40">'.$cuerpo.'</textarea>';
         $html .= '<select name="liga">';
-        $html .= '<option value="0">Ligas:</option>';
+        $html .= '<option value="'.$codLiga.'">'.$nombreLiga.'</option>';
             $ligasa=new LigaSA();
             $res=$ligasa->devuelveLigaSA();
             while($valores = mysqli_fetch_array($res)){
