@@ -1,5 +1,5 @@
 <?php session_start(); 
-require_once ('include/FormularioComentario.php');
+require_once('include/FormularioComentario.php');
 $idN= $_GET['idN'];
 ?>
 

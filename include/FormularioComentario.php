@@ -5,7 +5,7 @@ require_once('include/sa/UsuarioSA.php');
 require_once('include/transfer/UsuarioTransfer.php');
 require_once __DIR__.'/Form.php';
 
-class FormularioNoticia extends Form {
+class FormularioComentario extends Form {
 
 	public function __construct($idNoticia){
 		$idNoticia=$idNoticia;
