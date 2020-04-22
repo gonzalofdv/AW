@@ -1,7 +1,6 @@
-<?php session_start(); 
-require_once('include/sa/LigaSA.php');
-require_once('include/sa/NoticiaSA.php');
-
+<?php 
+session_start(); 
+require_once('include/FormularioEditarNoticia.php');
 
 $idNoticia = $_GET['idN'];
 
@@ -33,28 +32,10 @@ $nombreLiga = $ligasa->getNombreLiga($codLiga)->Nombre;
 		require("include/comun/cabecera.php");
 	?>
 	<div id="contenido">
-	<br>
-		<?php echo '<form action="procesarEditarNoticia.php?idN='.$idNoticia.'" method="post">'; ?>
-			<fieldset>
-						<legend>Nueva Noticia</legend>
-							Titular:<br> <?php echo '<input type="text" name="titular" value="'.$titular.'"><br>';?>
-							<textarea name="cuerpo" rows="10" cols="40"><?php echo $cuerpo; ?></textarea>
-							<select name="liga">
-								<?php
-									echo '<option value="'.$codLiga.'">'.$nombreLiga.'</option>';			
-		                            $res=$ligasa->devuelveLigaSA();
-									while($valores = mysqli_fetch_array($res)){
-										echo '<option value="' . $valores[0] . '"> ' . $valores[1] . '</option>';
-									}
-								?>
-							</select>
-							<br>
-							<input type="checkbox" name="condi" value="ok">Confirmar cambios de noticia.<br>
-							<input type="submit" name="aceptar">	
-			</fieldset>
-		</form>
-
-
+	<?php
+		$form = new FormularioEditarNoticia();
+		$form->gestiona();
+	?>
 	</div>
 	<?php
 		require("include/comun/sidebarDer.php");
