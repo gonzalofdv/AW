@@ -61,10 +61,10 @@
 				//Deshabilita el boton si no estas logueado, no eres admin o no eres somos familia
 				if(!isset($_SESSION["login"]) || $_SESSION["login"] == false || ($_SESSION["esAdmin"] == false && $_SESSION["esFamilia"] == false)){
 
-					echo '<button onclick=location.href="formularioPreguntaRespuesta.php" disabled>Crea una nueva pregunta</button>';
+					echo '<button onclick=location.href="nuevaPreguntaRespuesta.php" disabled>Crea una nueva pregunta</button>';
 				}
 				else{
-					echo '<button onclick=location.href="formularioPreguntaRespuesta.php">Crea una nueva pregunta</button>';
+					echo '<button onclick=location.href="nuevaPreguntaRespuesta.php">Crea una nueva pregunta</button>';
 				}
 
 			?>
