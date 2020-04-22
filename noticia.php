@@ -1,5 +1,5 @@
 <?php session_start(); 
-require_once __DIR__.'/include/FormularioNoticia.php';
+require_once ('include/FormularioNoticia.php');
 ?>
 
 <!DOCTYPE html>
