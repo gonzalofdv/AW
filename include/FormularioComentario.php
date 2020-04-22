@@ -14,7 +14,6 @@ class FormularioNoticia extends Form {
 	protected function procesaFormulario($datos){
 		$result = array();
 
-		/*$idNoticia = $_GET['idN'];*/
 		$comentario = isset($datos['cuerpo']) ? nl2br($datos['cuerpo']) : null;
 		$condi = isset($datos['condi']) ? $datos['condi'] : null;
 		$nombreUsu = isset($_SESSION['nombre']) ? $_SESSION['nombre'] : null;
@@ -51,15 +50,13 @@ class FormularioNoticia extends Form {
 			$comentario= isset($datosIniciales['comentario']) ? $datosIniciales['comentario'] : $comentario;
 		}
 
-        $html = <<<EOF
-        <fieldset>
-		<legend>Nuevo Comentario</legend>
-		<textarea name="cuerpo" rows="15" cols="70">Escribe aquí el comentario</textarea>
-		<input type="checkbox" name="condi" value="ok">Confirmar enviar comentario.<br>
-		<input type="submit" name="aceptar">	
-		</fieldset>
-        EOF;
-
+        $html ='';
+        $html.='<fieldset>';
+		$html.='<legend>Nuevo Comentario</legend>';
+		$html.='<textarea name="cuerpo" rows="15" cols="70">Escribe aquí el comentario</textarea>';
+		$html.='<input type="checkbox" name="condi" value="ok">Confirmar enviar comentario.<br>';
+		$html.='<input type="submit" name="aceptar">';
+		$html.='</fieldset>';
 		return $html;
 	}
 }
