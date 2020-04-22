@@ -6,14 +6,12 @@ require_once('include/transfer/UsuarioTransfer.php');
 require_once __DIR__.'/Form.php';
 
 class FormularioComentario extends Form {
-
-	public function __construct($idNoticia){
-		$idNoticia=$idNoticia;
+	public function __construct($idN){
+		$this->idNoticia=$idN;
 	}
 
 	protected function procesaFormulario($datos){
 		$result = array();
-
 		$comentario = isset($datos['cuerpo']) ? nl2br($datos['cuerpo']) : null;
 		$condi = isset($datos['condi']) ? $datos['condi'] : null;
 		$nombreUsu = isset($_SESSION['nombre']) ? $_SESSION['nombre'] : null;
@@ -22,7 +20,7 @@ class FormularioComentario extends Form {
 			$usuarioSA = new UsuarioSA();
 			$consulta = $usuarioSA->obtenerId($nombreUsu); 
 			$codUsuario=$consulta->IdUsuario;
-			$n = new ComentarioTransfer($idNoticia, $codUsuario, $comentario);
+			$n = new ComentarioTransfer($this->idNoticia, $codUsuario, $comentario);
 			$comentarioSA = new ComentarioSA();
 			$anadido = $comentarioSA->insertComentario($n);
 
@@ -57,6 +55,8 @@ class FormularioComentario extends Form {
 		$html.='<input type="checkbox" name="condi" value="ok">Confirmar enviar comentario.<br>';
 		$html.='<input type="submit" name="aceptar">';
 		$html.='</fieldset>';
+		return $html;
+
 		return $html;
 	}
 }
