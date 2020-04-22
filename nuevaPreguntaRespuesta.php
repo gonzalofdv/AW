@@ -1,6 +1,5 @@
 <?php session_start(); 
-require_once('include/FormularioComentario.php');
-$idN= $_GET['idN'];
+require_once ('include/FormularioPreguntaRespuesta.php');
 ?>
 
 <!DOCTYPE html>
@@ -12,17 +11,32 @@ $idN= $_GET['idN'];
 	<meta http-equiv="Last-Modified" content="0">
 	<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
 	<meta http-equiv="Pragma" content="no-cache">
-	<title>Nuevo Comentario</title>
+	<title>Registro Pregunta</title>
 </head>
 <body>
 	<?php
 		require("include/comun/cabecera.php");
 	?>
 	<div id="contenido">
+	<br>
 		<?php
-			$form = new FormularioComentario($idN);
-			$form->gestiona();
+			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false) {
+				header('Location: mostrarAlertas.php?codAlerta=1');
+			}
+			else {
+				if($_SESSION["esAdmin"] == false && $_SESSION["esFamilia"] == false){
+					header('Location: mostrarAlertas.php?codAlerta=6');
+				}
+				else{
+
+					$form = new FormularioPreguntaRespuesta();
+					$form->gestiona();
+
+				}
+			}
+
 		?>
+
 	</div>
 	<?php
 		require("include/comun/sidebarDer.php");
