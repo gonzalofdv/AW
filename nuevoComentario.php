@@ -1,5 +1,6 @@
 <?php session_start(); 
 require_once ('include/FormularioComentario.php');
+$idN= $_GET['idN'];
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +20,7 @@ require_once ('include/FormularioComentario.php');
 	?>
 	<div id="contenido">
 		<?php
-			$form = new FormularioComentario();
+			$form = new FormularioComentario($idN);
 			$form->gestiona();
 		?>
 	</div>
