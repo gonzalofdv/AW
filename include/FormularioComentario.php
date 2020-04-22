@@ -35,7 +35,6 @@ class FormularioComentario extends Form {
 		else{
 			//Mandar error de que faltan campos por rellenar
 			$result[] = "Faltan campos por rellenar";
-			header('Location: mostrarAlertas.php?codAlerta=14');
 		}
 
 	 	return $result;
