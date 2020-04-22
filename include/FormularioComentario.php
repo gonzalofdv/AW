@@ -15,7 +15,7 @@ class FormularioNoticia extends Form {
 		$result = array();
 
 		/*$idNoticia = $_GET['idN'];*/
-		$comentario = isset($datos['cuerpo']) ? nl2br($datos['cuerpo'] : null;
+		$comentario = isset($datos['cuerpo']) ? nl2br($datos['cuerpo']) : null;
 		$condi = isset($datos['condi']) ? $datos['condi'] : null;
 		$nombreUsu = isset($_SESSION['nombre']) ? $$_SESSION['nombre']) : null;
 
