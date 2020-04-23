@@ -11,6 +11,7 @@ class RespuestaDAO extends DAO{
 
 
     public function getRespuestas($idPregunta){
+    	$idPregunta = mysqli_real_escape_string($idPregunta);
         $sql = "SELECT * from respuestas where CodPregunta = '$idPregunta'";
         $consulta = mysqli_query($this->db, $sql);
         return $consulta;
@@ -18,8 +19,11 @@ class RespuestaDAO extends DAO{
     
     public function insert(RespuestaTransfer $r){
         $codPregunta = $r->getCodPregunta();
+        $codPregunta = mysqli_real_escape_string($codPregunta);
         $respuesta = $r->getRespuesta();
+        $respuesta = mysqli_real_escape_string($respuesta);
         $correcta = $r->getCorrecta();
+        $correcta= mysqli_real_escape_string($correcta);
 
 
         $sql = "INSERT into respuestas (CodPregunta, Respuesta, Correcta)
@@ -29,16 +33,25 @@ class RespuestaDAO extends DAO{
     }
 
     public function update(RespuestaTransfer $r){
-        
-        $sql = "UPDATE Respuestas SET CodPregunta = '$r->getCodPregunta()', Respuesta = '$r->getRespuesta()', Correcta = '$r->getCorrecta()'
+        $codPregunta = $r->getCodPregunta();
+        $codPregunta = mysqli_real_escape_string($codPregunta);
+        $respuesta = $r->getRespuesta();
+        $respuesta = mysqli_real_escape_string($respuesta);
+        $correcta = $r->getCorrecta();
+        $correcta= mysqli_real_escape_string($correcta);
+
+
+
+        $sql = "UPDATE Respuestas SET CodPregunta = '$codPregunta', Respuesta = '$respuesta', Correcta = '$correcta'
         WHERE IdRespuesta LIKE '$r->getIdRespuesta()'";
         
         $consulta = mysqli_query($this->db, $sql);
     }
 
     public function delete(RespuestaTransfer $r){
-
-        $sql = "DELETE Respuestas where IdRespuesta = '$r->getIdRespuesta()'";
+    	$respuesta = $r->getRespuesta();
+        $respuesta = mysqli_real_escape_string($respuesta);
+        $sql = "DELETE Respuestas where IdRespuesta = '$respuesta'";
         mysqli_query($this->db, $sql);
 		$consulta = mysqli_query($this->db, $sql);
     }

@@ -9,6 +9,7 @@ class PreguntaDAO extends DAO{
 	}
 	
 	public function getPregunta($rand) {
+        $rand = mysqli_real_escape_string($rand);
 		$sql = "SELECT Pregunta from preguntas where IdPregunta = '$rand'";
 		$consulta = mysqli_query($this->db, $sql);
 		$res=$consulta->fetch_object();
@@ -18,7 +19,10 @@ class PreguntaDAO extends DAO{
 	public function insert(PreguntaTransfer $n){
 		
 		$codLiga = $n->getCodLiga();
+		$codLiga= mysqli_real_escape_string($codLiga);
 		$pregunta = $n->getPregunta();
+		$pregunta = mysqli_real_escape_string($pregunta);
+
 		
 		$sql = "INSERT into preguntas (Pregunta, CodLiga) values ('$pregunta', '$codLiga')";
 		$consulta = mysqli_query($this->db, $sql);
@@ -32,12 +36,20 @@ class PreguntaDAO extends DAO{
 	}
 	
 	public function update(PreguntaTransfer $n){
-		$sql = "UPDATE Preguntas SET Pregunta = '$n->getPregunta()', CodLiga = '$n->getCodLiga()' WHERE IdPregunta LIKE '$n->getIdPregunta()'"; 
+		$pregunta=$n->getPregunta();
+		$pregunta= mysqli_real_escape_string($pregunta);
+		$CodLiga=$n->getCodLiga();
+		$codLiga= mysqli_real_escape_string($codLiga);
+		$IdPregunta=$n->getIdPregunta()
+		$IdPregunta= mysqli_real_escape_string($IdPregunta);
+		$sql = "UPDATE Preguntas SET Pregunta = '$pregunta', CodLiga = '$CodLiga' WHERE IdPregunta LIKE '$IdPregunta'"; 
 		$consulta = mysqli_query($this->db, $sql);
 	}
 	
 	public function delete(PreguntaTransfer $n){
-		$sql = "DELETE Preguntas where IdPregunta = '$n->getIdPregunta()'"; 
+		$pregunta=$n->getPregunta();
+		$pregunta= mysqli_real_escape_string($pregunta);
+		$sql = "DELETE Preguntas where IdPregunta = '$pregunta'"; 
 		mysqli_query($this->db, $sql);
 		$consulta = mysqli_query($this->db, $sql);
 	}
@@ -45,7 +57,10 @@ class PreguntaDAO extends DAO{
 	public function obtenerId(PreguntaTransfer $n){
 		$db=$this->db;
 		$preg = $n->getPregunta();
+		$preg= mysqli_real_escape_string($preg);
 		$codLiga = $n->getCodLiga();
+		$codLiga= mysqli_real_escape_string($codLiga);
+
 
 		$sql = "SELECT IdPregunta FROM preguntas WHERE Pregunta = '$preg' AND CodLiga = '$codLiga'"; 
 		$consulta = mysqli_query($db, $sql);
