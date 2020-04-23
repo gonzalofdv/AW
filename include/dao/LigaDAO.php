@@ -10,6 +10,8 @@ class LigaDAO extends DAO{
 
 	//Metodos
 	public function getLiga($idLiga) {
+		$idLiga = mysql_real_escape_string($idLiga);
+		
 		$sql = "SELECT * from ligas where IdLiga = '$idLiga'";
 		$consulta = mysqli_query($this->db, $sql);
         if($consulta){
@@ -27,18 +29,37 @@ class LigaDAO extends DAO{
 		$pais = $l->getPais();
 		$nEquipos = $l->getNEquipos();
 		
+		$nombre = mysql_real_escape_string($nombre);
+		$pais = mysql_real_escape_string($pais);
+		$nEquipos = mysql_real_escape_string($nEquipos);
+		
 		$sql = "INSERT into Ligas (Nombre, Pais, NEquipos) values ('$nombre', '$pais', '$nEquipos')";
 		$consulta = mysqli_query($this->db, $sql);
 	}
 	
 	public function update(LigaTransfer $l){
-		$sql = "UPDATE Ligas SET Nombre = '$l->getNombre()', Pais = '$l->getPais()', NEquipos = '$l->getNEquipos()' 
-		WHERE IdLiga LIKE '$l->getIdLiga()'"; 
+		
+		$idLiga = $l->getIdLiga();
+		$nombre = $l->getNombre();
+		$pais = $l->getPais();
+		$nEquipos = $l->getNEquipos();
+		
+		$idLiga = mysql_real_escape_string($idLiga);
+		$nombre = mysql_real_escape_string($nombre);
+		$pais = mysql_real_escape_string($pais);
+		$nEquipos = mysql_real_escape_string($nEquipos);
+		
+		$sql = "UPDATE Ligas SET Nombre = '$nombre', Pais = '$pais', NEquipos = '$nEquipos' 
+		WHERE IdLiga LIKE '$idLiga'";
 		$consulta = mysqli_query($this->db, $sql);
 	}
 	
 	public function delete(LigaTransfer $l){
-		$sql = "DELETE Ligas where IdLiga= '$l->getIdLiga()'"; 
+		$idLiga = $l->getIdLiga();
+		
+		$idLiga = mysql_real_escape_string($idLiga);
+		
+		$sql = "DELETE Ligas where IdLiga= '$idLiga'"; 
 		mysqli_query($this->db, $sql);
 		$consulta = mysqli_query($this->db, $sql);
 	}
@@ -51,6 +72,8 @@ class LigaDAO extends DAO{
 	}
 
 	public function getNombreLiga($idLiga){
+		$idLiga = mysql_real_escape_string($idLiga);
+		
 		$sql = "SELECT Nombre from ligas where IdLiga = '$idLiga'";
 		$consulta = mysqli_query($this->db, $sql);
         

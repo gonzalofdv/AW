@@ -13,6 +13,10 @@ class ComentarioDAO extends DAO{
 		$codNoticia = $c->getCodNoticia();
 		$comentario = $c->getComentario();
 		
+		$codUsuario = mysql_real_escape_string($codUsuario);
+		$codNoticia = mysql_real_escape_string($codNoticia);
+		$comentario = mysql_real_escape_string($comentario);
+		
 		$sql = "INSERT INTO comentarios (CodNoticia, CodUsuario, Comentario) VALUES ('$codNoticia', '$codUsuario', '$comentario')";
 		$consulta = mysqli_query($db, $sql);
 		if($consulta){
@@ -25,6 +29,9 @@ class ComentarioDAO extends DAO{
 	
 	public function delete($idNoticia){
 		$db = $this->db;
+		
+		$idNoticia = mysql_real_escape_string($idNoticia);
+		
 		$sql = "DELETE FROM comentarios WHERE CodNoticia = '$idNoticia'"; 
 		$consulta = mysqli_query($db, $sql);
 		if($consulta){
@@ -37,6 +44,9 @@ class ComentarioDAO extends DAO{
 
 	public function devuelveComentarios($idNoticia){
 		$db = $this->db;
+		
+		$idNoticia = mysql_real_escape_string($idNoticia);
+		
 		$sql = "SELECT * FROM comentarios WHERE CodNoticia LIKE '$idNoticia'";
 		$consulta = mysqli_query($db, $sql);
 		return $consulta;
@@ -44,6 +54,9 @@ class ComentarioDAO extends DAO{
 
 	public function existenComentarios($idNoticia){
 		$db = $this->db;
+		
+		$idNoticia = mysql_real_escape_string($idNoticia);
+		
 		$sql = "SELECT * FROM comentarios WHERE CodNoticia LIKE '$idNoticia'";
 		$consulta = mysqli_query($db, $sql);
 		$num= mysqli_num_rows($consulta);
@@ -57,6 +70,9 @@ class ComentarioDAO extends DAO{
 
 	public function borrarComentarioConcreto($idComentario){
 		$db = $this->db;
+		
+		$idComentario = mysql_real_escape_string($idComentario);
+		
 		$sql = "DELETE FROM comentarios WHERE IdComentario = '$idComentario'"; 
 		$consulta = mysqli_query($db, $sql);
 	}
