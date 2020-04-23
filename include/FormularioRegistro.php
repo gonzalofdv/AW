@@ -10,52 +10,52 @@ class FormularioRegistro extends Form {
 	protected function procesaFormulario($datos){
 		$result = array();
 
-		$nombre = isset($datos['nom']) ? $datos['nom'] : null;
+		$nombre = isset($datos['nom']) ? htmlspecialchars($datos['nom']) : null;
 		if(empty($nombre)){
 			$result[] = "El nombre no puede estar vacío";
 		}
 
-		$apellido1 = isset($datos['apellido1']) ? $datos['apellido1'] : null;
+		$apellido1 = isset($datos['apellido1']) ? htmlspecialchars($datos['apellido1']) : null;
 		if(empty($apellido1)){
 			$result[] = "El apellido1 no puede estar vacío";
 		}
 
-		$apellido2 = isset($datos['apellido2']) ? $datos['apellido2'] : null;
+		$apellido2 = isset($datos['apellido2']) ? htmlspecialchars($datos['apellido2']) : null;
 		if(empty($apellido2)){
 			$result[] = "El apellido2 no puede estar vacío";
 		}
 
-		$sexo = isset($datos['sexo']) ? $datos['sexo'] : null;
+		$sexo = isset($datos['sexo']) ? htmlspecialchars($datos['sexo']) : null;
 		if(empty($sexo)){
 			$result[] = "El sexo no puede estar vacío";
 		}
 
-		$equipo = isset($datos['equipo']) ? $datos['equipo'] : null;
+		$equipo = isset($datos['equipo']) ? htmlspecialchars($datos['equipo']) : null;
 		if(empty($equipo)){
 			$result[] = "El equipo no puede estar vacío";
 		}
 
-		$nombreUsuario = isset($datos['usu']) ? $datos['usu'] : null;
+		$nombreUsuario = isset($datos['usu']) ? htmlspecialchars($datos['usu']) : null;
 		if(empty($nombreUsuario)){
 			$result[] = "El nombre de usuario no puede estar vacío";
 		}
 
-		$contrasena = isset($datos['contrasena']) ? $datos['contrasena'] : null;
+		$contrasena = isset($datos['contrasena']) ? htmlspecialchars($datos['contrasena']) : null;
 		if(empty($contrasena)){
 			$result[] = "La contrasena no puede estar vacía";
 		}
 
-		$contrasenaRep = isset($datos['rContrasena']) ? $datos['rContrasena'] : null;
+		$contrasenaRep = isset($datos['rContrasena']) ? htmlspecialchars($datos['rContrasena']) : null;
 		if(empty($contrasenaRep)){
 			$result[] = "La contrasena repetida no puede estar vacía";
 		}
 
-		$mail = isset($datos['mail']) ? $datos['mail'] : null;
+		$mail = isset($datos['mail']) ? htmlspecialchars($datos['mail']) : null;
 		if(empty($mail)){
 			$result[] = "El e-mail no puede estar vacío";
 		}
 
-		$condi = isset($datos['condi']) ? $datos['condi'] : null;
+		$condi = isset($datos['condi']) ? htmlspecialchars($datos['condi']) : null;
 		if(empty($condi)){
 			$result[] = "Hay que marcar la condicion no puede estar vacío";
 		}

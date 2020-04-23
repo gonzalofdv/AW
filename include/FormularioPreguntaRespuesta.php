@@ -77,11 +77,11 @@ class FormularioPreguntaRespuesta extends Form {
 		$codLiga = '';
 
 		if($datosIniciales) {
-			$preg = isset($datosIniciales['preg']) ? $datosIniciales['preg'] : $preg;
-			$v = isset($datosIniciales['v']) ? $datosIniciales['v'] : $v;
-			$f1 = isset($datosIniciales['f1']) ? $datosIniciales['f1'] : $f1;
-			$f2 = isset($datosIniciales['f2']) ? $datosIniciales['f2'] : $f2;
-			$codLiga = isset($datosIniciales['codLiga']) ? $datosIniciales['codLiga'] : $codLiga;
+			$preg = isset($datosIniciales['preg']) ? htmlspecialchars($datosIniciales['preg']) : $preg;
+			$v = isset($datosIniciales['v']) ? htmlspecialchars($datosIniciales['v']) : $v;
+			$f1 = isset($datosIniciales['f1']) ? htmlspecialchars($datosIniciales['f1']) : $f1;
+			$f2 = isset($datosIniciales['f2']) ? htmlspecialchars($datosIniciales['f2']) : $f2;
+			$codLiga = isset($datosIniciales['codLiga']) ? htmlspecialchars($datosIniciales['codLiga']) : $codLiga;
 		}
 	
 		$html = '';
