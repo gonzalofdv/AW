@@ -43,6 +43,16 @@ class PreguntaSA {
 		
 		return $res;
 	}
+
+	public function getIdsLiga($cod){
+		if(!$this->preguntaDAO){
+			$this->preguntaDAO = new PreguntaDAO();
+		}
+		$aux = $this->preguntaDAO;
+		$res = $aux->getIdsLiga($cod);
+		
+		return $res;
+	}
 }
 
 ?>

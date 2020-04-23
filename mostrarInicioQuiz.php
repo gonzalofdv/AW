@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	require_once('include/sa/LigaSA.php');
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +46,7 @@
 			</p>
 			
 			
-			<p>¿Estás preparado? ¡Adelante!</p>
+			<p>¿Estás preparado? Elige de que liga quieres hacer el quiz, o si te atreves, prueba el quiz con preguntas de todas las ligas y... ¡Adelante!</p>
 			
 			<?php
 				//Desahibilta el boton si no estas logueado
@@ -53,7 +54,23 @@
 					echo '<button onclick=location.href="mostrarQuiz.php" disabled>¡Empezar Quiz!</button>';	
 				}
 				else{
-					echo '<button onclick=location.href="mostrarQuiz.php">¡Empezar Quiz!</button>';	
+			?>
+				<form action="mostrarQuiz.php" method="post">
+
+					<select name="liga">
+						<option value='0'>Todas</option>	
+				<?php
+					$ligasa = new LigaSA();
+					$res=$ligasa->devuelveLigaSA();
+					while($valores = mysqli_fetch_array($res)){
+						echo '<option value="'.$valores[0].'"> ' . $valores[1] . '</option>';
+					}
+				?>
+					</select>
+					<input type="submit" value="¡Empezar Quiz!">
+				<form>	
+
+			<?php	
 				}
 
 				echo '<p>Si ya dispones de los privilegios Somos Familia, puedes incluir nuevas preguntas para el Quiz con el botón que aparece aquí debajo. No olvides que siempre será bienvenida tu colaboración.</p>';

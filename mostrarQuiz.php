@@ -2,6 +2,8 @@
 
 require_once('include/sa/PreguntaSA.php');
 require_once('include/sa/RespuestaSA.php');
+
+$codLiga = htmlspecialchars($_POST['liga']);
 ?>
 
 <!DOCTYPE html>
@@ -22,46 +24,84 @@ require_once('include/sa/RespuestaSA.php');
 	<div id="contenido">
 	<br>
 
-		<?php
+	<?php
 			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false) {
 				header('Location: mostrarAlertas.php?codAlerta=1');
 			}
 			else {
-		?>
-
-			<form action="procesarQuiz.php" method="post">
-			<fieldset>
-				<legend>Bienvenido al Quiz!</legend>
+				if($codLiga == 0){ //el 0 significa que hacemos quiz de todo
+	?>
+				<form action="procesarQuiz.php" method="post">
+					<fieldset>
+						<legend>Bienvenido al Quiz!</legend>
 				<?php
-					$preguntaSA=new PreguntaSA();
-					$respuestaSA=new RespuestaSA();
-					$num=$preguntaSA->getNumPreguntas();
-					$valores=array();
-					$i=0;
-					while($i<10){
-						$rand =rand(1,$num);
-						if(!in_array($rand,$valores)){
-							array_push($valores,$rand);
-							$pregunta=$preguntaSA->getPregunta($rand);
-							$respuestas=$respuestaSA->getRespuestas($rand);
-							echo "<b>".$pregunta->Pregunta . "</b><br><br>";
-							while($res=mysqli_fetch_array($respuestas)){
-								echo '<input type=radio name=res'.$i.' value='.$res[3].' />'.$res[2]. '<br>';
-								echo "<br>";
+						$preguntaSA=new PreguntaSA();
+						$respuestaSA=new RespuestaSA();
+						$num=$preguntaSA->getNumPreguntas();
+						$valores=array();
+						$i=0;
+						while($i<10){
+							$rand =rand(1,$num);
+							if(!in_array($rand,$valores)){
+								array_push($valores,$rand);
+								$pregunta=$preguntaSA->getPregunta($rand);
+								$respuestas=$respuestaSA->getRespuestas($rand);
+								echo "<b>".$pregunta->Pregunta . "</b><br><br>";
+								while($res=mysqli_fetch_array($respuestas)){
+									echo '<input type=radio name=res'.$i.' value='.$res[3].' />'.$res[2]. '<br>';
+									echo "<br>";
+								}
+								$i++;	
 							}
-							$i++;	
 						}
-					}
 				?>
-					<input type="submit" name="aceptar">	
-			</fieldset>
-			</form>
-			<?php
+						<input type="submit" name="aceptar">	
+					</fieldset>
+				</form>
+	<?php
+				}
+				else{ //si el codigo de liga especifica una liga concreta
+	?>
+					<form action="procesarQuiz.php" method="post">
+						<fieldset>
+							<legend>Bienvenido al Quiz!</legend>
 
-				
+	<?php				
+							$respuestaSA = new RespuestaSA();
+							$preguntaSA = new PreguntaSA();
+
+							$idspreguntas = array();
+							$lista = $preguntaSA->getIdsLiga($codLiga);
+							while($id = mysqli_fetch_array($lista)){
+								array_push($idspreguntas, $id[0]);
+							}
+
+							$valores = array(); //array de control para no repetir numeros
+							$i = 0;
+							while ($i<10){
+								$rand = rand(0, sizeof($idspreguntas)-1); //creo que seria asi o hasta  sizeof -1?
+								if(!in_array($rand, $valores)){
+									array_push($valores, $rand);
+									$idPreg = $idspreguntas[$rand];
+									$pregunta = $preguntaSA->getPregunta($idPreg);
+									$respuestas =$respuestaSA->getRespuestas($idPreg);
+									echo "<b>".$pregunta->Pregunta . "</b><br><br>";
+									while($res=mysqli_fetch_array($respuestas)){
+										echo '<input type=radio name=res'.$i.' value='.$res[3].' />'.$res[2]. '<br>';
+										echo "<br>";
+									}
+									$i++;
+								}
+							}
+	?>
+							<input type="submit" name="aceptar">	
+						</fieldset>
+					</form>
+	<?php
+				}			
 			}
 
-			?>
+	?>
 
 	</div>
 	<?php

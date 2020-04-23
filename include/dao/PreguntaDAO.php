@@ -79,6 +79,14 @@ class PreguntaDAO extends DAO{
 		$res = intval($result[0]);
 		return $res;
 	}
+
+	public function getIdsLiga($cod){
+		$db=$this->db;
+		$cod=mysqli_real_escape_string($db, $cod);
+		$sql = "SELECT IdPregunta FROM preguntas WHERE CodLiga = '$cod'";
+		$consulta = mysqli_query($db, $sql);
+		return $consulta;
+	}
 }
 
 ?>
