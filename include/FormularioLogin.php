@@ -9,12 +9,12 @@ class FormularioLogin extends Form {
 
 	protected function procesaFormulario($datos){
 		$result = array();
-		$usuario = isset($datos['usuario']) ? $datos['usuario'] : null;
+		$usuario = isset($datos['usuario']) ? htmlspecialchars($datos['usuario']) : null;
 		if(empty($usuario)){
 			$result[] = "El nombre de usuario no puede estar vacío";
 		}
 
-		$password = isset($datos['password']) ? $datos['password'] : null;
+		$password = isset($datos['password']) ? htmlspecialchars($datos['password']) : null;
 		if(empty($password)){
 			$result[] = "El password no puede estar vacío.";
 		}

@@ -14,10 +14,10 @@ class FormularioEditarNoticia extends Form {
     protected function procesaFormulario($datos){
         $result = array();
 
-		$titular = isset($datos['titular']) ? $datos['titular'] : null;
-		$cuerpo = isset($datos['cuerpo']) ? nl2br($datos['cuerpo']) : null;
-		$condi = isset($datos['condi']) ? $datos['condi'] : null;
-		$codLiga = isset($datos['liga']) ? $datos['liga'] : null;
+		$titular = isset($datos['titular']) ? htmlspecialchars($datos['titular']) : null;
+		$cuerpo = isset($datos['cuerpo']) ? htmlspecialchars(nl2br($datos['cuerpo'])) : null;
+		$condi = isset($datos['condi']) ? htmlspecialchars($datos['condi']) : null;
+		$codLiga = isset($datos['liga']) ? htmlspecialchars($datos['liga']) : null;
 		
 
 		if((!empty($titular)) && (!empty($cuerpo)) && (!empty($condi))){

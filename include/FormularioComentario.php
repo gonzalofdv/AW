@@ -12,8 +12,8 @@ class FormularioComentario extends Form {
 
 	protected function procesaFormulario($datos){
 		$result = array();
-		$comentario = isset($datos['cuerpo']) ? nl2br($datos['cuerpo']) : null;
-		$condi = isset($datos['condi']) ? $datos['condi'] : null;
+		$comentario = isset($datos['cuerpo']) ? htmlspecialchars(nl2br($datos['cuerpo'])) : null;
+		$condi = isset($datos['condi']) ? htmlspecialchars($datos['condi']) : null;
 		$nombreUsu = isset($_SESSION['nombre']) ? $_SESSION['nombre'] : null;
 
 		if((!empty($comentario)) && (!empty($nombreUsu)) && (!empty($condi))){

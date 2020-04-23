@@ -9,6 +9,26 @@ class FormularioBorrarComentario extends Form{
 		$this->idNoticia = $idN;
 	}
 	
+	protected function procesaFormulario($datos){
+		$result = array();
+		
+		$idComentario = isset($datos['comentario']) ? htmlspecialchars($datos['comentario']) : null;
+		
+		if(!empty($idComentario)){
+
+			$comentarioSA = new ComentarioSA();
+			$res = $comentarioSA->borrarComentarioConcreto($idComentario);
+			
+			$result = 'mostrarAlertas.php?codAlerta=27';
+			
+		}
+		else{
+			$result[] = "Debes seleccionar un comentario";
+		}
+		
+		return $result;
+	}
+	
 	protected function generaCamposFormulario($datosIniciales){
 		
 		$html = '';
@@ -31,26 +51,6 @@ class FormularioBorrarComentario extends Form{
 		$html .= '</fieldset>';
 		
 		return $html;
-	}
-	
-	protected function procesaFormulario($datos){
-		$result = array();
-		
-		$idComentario = isset($datos['comentario']) ? $datos['comentario'] : null;
-		
-		if(!empty($idComentario)){
-
-			$comentarioSA = new ComentarioSA();
-			$res = $comentarioSA->borrarComentarioConcreto($idComentario);
-			
-			$result = 'mostrarAlertas.php?codAlerta=27';
-			
-		}
-		else{
-			$result[] = "Debes seleccionar un comentario";
-		}
-		
-		return $result;
 	}
 	
 }
