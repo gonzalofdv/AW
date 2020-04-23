@@ -70,12 +70,22 @@ class NoticiaDAO extends DAO{
 		}
 	}
 
-	public function devuelveNoticias(){
-		$db = $this->db;
-		$sql = "SELECT * FROM noticias";
-		$res = mysqli_query($db, $sql);
-		return $res;
-	}
+	public function devuelveNoticias($codLiga){
+        $db = $this->db;
+        $codLiga = mysqli_real_escape_string($db,$codLiga);
+        
+        if($codLiga == 0){
+            $sql = "SELECT * FROM noticias";
+            $res = mysqli_query($db, $sql);
+            return $res;
+        }
+        else{
+            $sql = "SELECT * FROM noticias WHERE CodLiga = '$codLiga'";
+            $res = mysqli_query($db, $sql);
+            return $res;
+        }
+
+    }
 	
 }
 	
