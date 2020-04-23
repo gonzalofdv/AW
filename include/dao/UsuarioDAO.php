@@ -8,7 +8,7 @@ class UsuarioDAO extends DAO{
 		$db=$this->db;
 
 		$usu = $usuario->getUsu();
-		$usu = mysqli_real_escape_string($usu);
+		$usu = mysqli_real_escape_string($db,$usu);
 		$sql = "SELECT * FROM usuarios WHERE NombreUsuario LIKE '$usu'";
 		$consulta = mysqli_query($db, $sql);
 		$info = $consulta->fetch_object();
@@ -28,7 +28,7 @@ class UsuarioDAO extends DAO{
 		$db=$this->db;
 
 		$usu = $usuario->getUsu();
-		$usu = mysqli_real_escape_string($usu);
+		$usu = mysqli_real_escape_string($db,$usu);
 		$sql = "SELECT * FROM usuarios WHERE NombreUsuario LIKE '$usu'";
 		$consulta = mysqli_query($db, $sql);
 		$info = $consulta->fetch_object();
@@ -45,7 +45,7 @@ class UsuarioDAO extends DAO{
 
 	public function esAdmin($usu){
 		$db=$this->db;
-		$usu = mysqli_real_escape_string($usu);
+		$usu = mysqli_real_escape_string($db,$usu);
 		$sql = "SELECT Administrador FROM usuarios WHERE NombreUsuario LIKE '$usu'";
 		$consulta = mysqli_query($db, $sql);
 		$res = mysqli_fetch_array($consulta);
@@ -61,7 +61,7 @@ class UsuarioDAO extends DAO{
 
 	public function esFamilia($usu){
 		$db=$this->db;
-		$usu = mysqli_real_escape_string($usu);
+		$usu = mysqli_real_escape_string($db,$usu);
 		$sql = "SELECT SomosFamilia FROM usuarios WHERE NombreUsuario LIKE '$usu'";
 		$consulta = mysqli_query($db, $sql);
 		$res = mysqli_fetch_array($consulta);
@@ -85,27 +85,27 @@ class UsuarioDAO extends DAO{
 		$db=$this->db;
 
 		$nombre = $usuario->getNom();
-		$nombre = mysqli_real_escape_string($nombre);
+		$nombre = mysqli_real_escape_string($db,$nombre);
 		$ap1 = $usuario->getApellido1();
-		$ap1 = mysqli_real_escape_string($ap1);
+		$ap1 = mysqli_real_escape_string($db,$ap1);
 		$ap2 = $usuario->getApellido2();
-		$ap2 = mysqli_real_escape_string($ap2);
+		$ap2 = mysqli_real_escape_string($db,$ap2);
 		$sexo = $usuario->getSexo();
-		$sexo = mysqli_real_escape_string($sexo);
+		$sexo = mysqli_real_escape_string($db,$sexo);
 		$equipo = $usuario->getEquipo();
-		$equipo = mysqli_real_escape_string($equipo);
+		$equipo = mysqli_real_escape_string($db,$equipo);
 		$usu = $usuario->getUsu();
-		$usu = mysqli_real_escape_string($usu);
+		$usu = mysqli_real_escape_string($db,$usu);
 		$passAux = $usuario->getContrasena();
-		$passAux = mysqli_real_escape_string($passAux);
+		$passAux = mysqli_real_escape_string($db,$passAux);
 		$email = $usuario->getMail();
-		$email = mysqli_real_escape_string($email);
+		$email = mysqli_real_escape_string($db,$email);
 		$esAdmin = $usuario->getEsAdmin();
-		$esAdmin = mysqli_real_escape_string($esAdmin);
+		$esAdmin = mysqli_real_escape_string($db,$esAdmin);
 		$familia = $usuario->getEsFamilia();
-		$familia = mysqli_real_escape_string($familia);
+		$familia = mysqli_real_escape_string($db,$familia);
 		$puntos = $usuario->getPuntos();
-		$puntos = mysqli_real_escape_string($puntos);
+		$puntos = mysqli_real_escape_string($db,$puntos);
 
 		$pass = self::hashPassword($passAux);
 
@@ -122,7 +122,7 @@ class UsuarioDAO extends DAO{
 	
 	public function obtenerId($usu){
 		$db=$this->db;
-		$usu = mysqli_real_escape_string($usu);
+		$usu = mysqli_real_escape_string($db,$usu);
 		$sql = "SELECT IdUsuario FROM usuarios WHERE NombreUsuario = '$usu'";
 		$consulta = mysqli_query($db, $sql);
 		
@@ -131,7 +131,7 @@ class UsuarioDAO extends DAO{
 
 	public function obtenerNombreUsu($idUsu){
 		$db = $this->db;
-		$idUsu = mysqli_real_escape_string($idUsu);
+		$idUsu = mysqli_real_escape_string($db,$idUsu);
 		$sql = "SELECT NombreUsuario FROM usuarios WHERE IdUsuario = '$idUsu'";
 		$consulta = mysqli_query($db, $sql);
 
@@ -141,7 +141,7 @@ class UsuarioDAO extends DAO{
 	//funcion para llamar al user y obtener sus datos
 	public function getUsuario($nombre) {
 		$db = $this->db;
-		$nombre = mysqli_real_escape_string($nombre);
+		$nombre = mysqli_real_escape_string($db,$nombre);
 		$sql = "SELECT * from usuarios where NombreUsuario = '$nombre'";
 		$consulta = mysqli_query($db, $sql);
 		
@@ -150,15 +150,15 @@ class UsuarioDAO extends DAO{
 
     public function sumarPuntos($idUsu,$puntos){
 		$db = $this->db;
-		$idUsu = mysqli_real_escape_string($idUsu);
-		$puntos = mysqli_real_escape_string($puntos);
+		$idUsu = mysqli_real_escape_string($db,$idUsu);
+		$puntos = mysqli_real_escape_string($db,$puntos);
 		$sql = "UPDATE usuarios SET Puntos= Puntos +'$puntos' where IdUsuario = '$idUsu'";
 		$consulta = mysqli_query($db, $sql);
     }
 
     public function canjearFamilia($nombreUsu){
     	$db = $this->db;
-    	$nombreUsu = mysqli_real_escape_string($nombreUsu);
+    	$nombreUsu = mysqli_real_escape_string($db,$nombreUsu);
     	$sql = "SELECT Puntos FROM  usuarios WHERE NombreUsuario = '$nombreUsu'";
     	$consulta = mysqli_query($db, $sql);
     	$obj = $consulta->fetch_object();

@@ -9,7 +9,8 @@ class PreguntaDAO extends DAO{
 	}
 	
 	public function getPregunta($rand) {
-        $rand = mysqli_real_escape_string($rand);
+		$db=$this->db;
+        $rand = mysqli_real_escape_string($db,$rand);
 		$sql = "SELECT Pregunta from preguntas where IdPregunta = '$rand'";
 		$consulta = mysqli_query($this->db, $sql);
 		$res=$consulta->fetch_object();
@@ -17,11 +18,11 @@ class PreguntaDAO extends DAO{
 	}
 	
 	public function insert(PreguntaTransfer $n){
-		
+		$db=$this->db;
 		$codLiga = $n->getCodLiga();
-		$codLiga= mysqli_real_escape_string($codLiga);
+		$codLiga= mysqli_real_escape_string($db,$codLiga);
 		$pregunta = $n->getPregunta();
-		$pregunta = mysqli_real_escape_string($pregunta);
+		$pregunta = mysqli_real_escape_string($db,$pregunta);
 
 		
 		$sql = "INSERT into preguntas (Pregunta, CodLiga) values ('$pregunta', '$codLiga')";
@@ -36,19 +37,21 @@ class PreguntaDAO extends DAO{
 	}
 	
 	public function update(PreguntaTransfer $n){
+		$db=$this->db;
 		$pregunta=$n->getPregunta();
-		$pregunta= mysqli_real_escape_string($pregunta);
+		$pregunta= mysqli_real_escape_string($db,$pregunta);
 		$CodLiga=$n->getCodLiga();
-		$codLiga= mysqli_real_escape_string($codLiga);
+		$codLiga= mysqli_real_escape_string($db,$codLiga);
 		$IdPregunta=$n->getIdPregunta()
-		$IdPregunta= mysqli_real_escape_string($IdPregunta);
+		$IdPregunta= mysqli_real_escape_string($db,$IdPregunta);
 		$sql = "UPDATE Preguntas SET Pregunta = '$pregunta', CodLiga = '$CodLiga' WHERE IdPregunta LIKE '$IdPregunta'"; 
 		$consulta = mysqli_query($this->db, $sql);
 	}
 	
 	public function delete(PreguntaTransfer $n){
+		$db=$this->db;
 		$pregunta=$n->getPregunta();
-		$pregunta= mysqli_real_escape_string($pregunta);
+		$pregunta= mysqli_real_escape_string($db,$pregunta);
 		$sql = "DELETE Preguntas where IdPregunta = '$pregunta'"; 
 		mysqli_query($this->db, $sql);
 		$consulta = mysqli_query($this->db, $sql);
@@ -57,9 +60,9 @@ class PreguntaDAO extends DAO{
 	public function obtenerId(PreguntaTransfer $n){
 		$db=$this->db;
 		$preg = $n->getPregunta();
-		$preg= mysqli_real_escape_string($preg);
+		$preg= mysqli_real_escape_string($db,$preg);
 		$codLiga = $n->getCodLiga();
-		$codLiga= mysqli_real_escape_string($codLiga);
+		$codLiga= mysqli_real_escape_string($db,$codLiga);
 
 
 		$sql = "SELECT IdPregunta FROM preguntas WHERE Pregunta = '$preg' AND CodLiga = '$codLiga'"; 

@@ -11,19 +11,21 @@ class RespuestaDAO extends DAO{
 
 
     public function getRespuestas($idPregunta){
-    	$idPregunta = mysqli_real_escape_string($idPregunta);
+		$db=$this->db;
+    	$idPregunta = mysqli_real_escape_string($db,$idPregunta);
         $sql = "SELECT * from respuestas where CodPregunta = '$idPregunta'";
         $consulta = mysqli_query($this->db, $sql);
         return $consulta;
     }
     
     public function insert(RespuestaTransfer $r){
+    	$db=$this->db;
         $codPregunta = $r->getCodPregunta();
-        $codPregunta = mysqli_real_escape_string($codPregunta);
+        $codPregunta = mysqli_real_escape_string($db,$codPregunta);
         $respuesta = $r->getRespuesta();
-        $respuesta = mysqli_real_escape_string($respuesta);
+        $respuesta = mysqli_real_escape_string($db,$respuesta);
         $correcta = $r->getCorrecta();
-        $correcta= mysqli_real_escape_string($correcta);
+        $correcta= mysqli_real_escape_string($db,$correcta);
 
 
         $sql = "INSERT into respuestas (CodPregunta, Respuesta, Correcta)
@@ -33,12 +35,13 @@ class RespuestaDAO extends DAO{
     }
 
     public function update(RespuestaTransfer $r){
+    	$db=$this->db;
         $codPregunta = $r->getCodPregunta();
-        $codPregunta = mysqli_real_escape_string($codPregunta);
+        $codPregunta = mysqli_real_escape_string($db,$codPregunta);
         $respuesta = $r->getRespuesta();
-        $respuesta = mysqli_real_escape_string($respuesta);
+        $respuesta = mysqli_real_escape_string($db,$respuesta);
         $correcta = $r->getCorrecta();
-        $correcta= mysqli_real_escape_string($correcta);
+        $correcta= mysqli_real_escape_string($db,$correcta);
 
 
 
@@ -49,8 +52,9 @@ class RespuestaDAO extends DAO{
     }
 
     public function delete(RespuestaTransfer $r){
+    	$db=$this->db;
     	$respuesta = $r->getRespuesta();
-        $respuesta = mysqli_real_escape_string($respuesta);
+        $respuesta = mysqli_real_escape_string($db,$respuesta);
         $sql = "DELETE Respuestas where IdRespuesta = '$respuesta'";
         mysqli_query($this->db, $sql);
 		$consulta = mysqli_query($this->db, $sql);

@@ -6,7 +6,7 @@ class NoticiaDAO extends DAO{
 
 	public function getNoticia($idNoticia) {
 		$db = $this->db;
-		$idNoticia= mysqli_real_escape_string($idNoticia);
+		$idNoticia= mysqli_real_escape_string($db,$idNoticia);
 
 		$sql = "SELECT * from Noticias where IdNoticia = '$idNoticia'";
 		$consulta = mysqli_query($db, $sql);
@@ -27,15 +27,15 @@ class NoticiaDAO extends DAO{
 		$db = $this->db;
 		
 		$codUsuario = $n->getCodUsuario();
-		$codUsuario= mysqli_real_escape_string($codUsuario);
+		$codUsuario= mysqli_real_escape_string($db,$codUsuario);
 		$codLiga = $n->getCodLiga();
-		$codLiga= mysqli_real_escape_string($codLiga);
+		$codLiga= mysqli_real_escape_string($db,$codLiga);
 		$texto = $n->getTexto();
-		$texto= mysqli_real_escape_string($texto);
+		$texto= mysqli_real_escape_string($db,$texto);
 		$titular = $n->getTitular();
-		$titular= mysqli_real_escape_string($titular);
+		$titular= mysqli_real_escape_string($db,$titular);
 		$foto = $n->getFoto();
-		$foto= mysqli_real_escape_string($foto);
+		$foto= mysqli_real_escape_string($db,$foto);
 
 		$sql = "INSERT INTO noticias (CodUsuario, CodLiga, Texto, Titular, Foto) VALUES ('$codUsuario', '$codLiga', '$titular', '$texto', '$foto')";
 		$consulta = mysqli_query($db, $sql);
@@ -49,17 +49,17 @@ class NoticiaDAO extends DAO{
 	
 	public function update($idNoticia, $titular, $cuerpo, $codLiga){
 		$db = $this->db;
-		$idNoticia= mysqli_real_escape_string($idNoticia);
-		$codLiga= mysqli_real_escape_string($codLiga);
-		$texto= mysqli_real_escape_string($texto);
-		$titular= mysqli_real_escape_string($titular);
+		$idNoticia= mysqli_real_escape_string($db,$idNoticia);
+		$codLiga= mysqli_real_escape_string($db,$codLiga);
+		$texto= mysqli_real_escape_string($db,$texto);
+		$titular= mysqli_real_escape_string($db,$titular);
 		$sql = "UPDATE noticias SET CodLiga = '$codLiga', Texto = '$cuerpo', Titular = '$titular' WHERE IdNoticia LIKE '$idNoticia'"; 
 		$consulta = mysqli_query($db, $sql);
 	}
 	
 	public function delete($idNoticia){
 		$db = $this->db;
-		$idNoticia= mysqli_real_escape_string($idNoticia);
+		$idNoticia= mysqli_real_escape_string($db,$idNoticia);
 		$sql = "DELETE FROM noticias where IdNoticia = '$idNoticia'"; 
 		$consulta = mysqli_query($db, $sql);
 		if($consulta){
