@@ -42,7 +42,7 @@ class PreguntaDAO extends DAO{
 		$pregunta= mysqli_real_escape_string($db,$pregunta);
 		$CodLiga=$n->getCodLiga();
 		$codLiga= mysqli_real_escape_string($db,$codLiga);
-		$IdPregunta=$n->getIdPregunta()
+		$IdPregunta=$n->getIdPregunta();
 		$IdPregunta= mysqli_real_escape_string($db,$IdPregunta);
 		$sql = "UPDATE Preguntas SET Pregunta = '$pregunta', CodLiga = '$CodLiga' WHERE IdPregunta LIKE '$IdPregunta'"; 
 		$consulta = mysqli_query($this->db, $sql);
