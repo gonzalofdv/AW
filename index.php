@@ -1,5 +1,10 @@
 <?php session_start(); 
-require('include/sa/NoticiaSA.php')?>
+require('include/sa/NoticiaSA.php');
+require('include/sa/LigaSA.php');
+
+$codLiga = isset($_POST['liga']) ? $_POST['liga'] : 0;
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -22,8 +27,35 @@ require('include/sa/NoticiaSA.php')?>
 	<div id="contenido">
 		<h1><b>EL VARDERÍN DE CORNER</b></h1>
 		<?php
+			
+			echo '<form method="POST" action="index.php">';
+
+			if($codLiga != 0){
+				$ligasa = new LigaSA();
+				$valueLiga = $ligasa->getNombreLiga($codLiga)->Nombre;
+			}
+			else{
+				$valueLiga = "Ligas:";
+			}
+
+			echo '<select name="liga">';
+        	echo '<option value="'.$codLiga.'">'.$valueLiga.'</option>';
+            $ligasa = new LigaSA();
+            $res=$ligasa->devuelveLigaSA();
+            while($valores = mysqli_fetch_array($res)){
+                echo '<option value=' . $valores[0] . '> ' . $valores[1] . '</option>';
+            }
+            echo '</select>';
+
+			//echo '<button onclick=location.href="index.php?liga='.$codLiga.'">Aplicar filtro</button>';
+			echo '<input type="submit" value="Aplicar filtro">';
+
+			echo '</form>';
+			echo '<br>';
+			echo '<br>';
+
 			$noticiaSA = new NoticiaSA();
-			$res = $noticiaSA->devuelveNoticias();
+			$res = $noticiaSA->devuelveNoticias($codLiga);
 			while($valores = mysqli_fetch_array($res)){
 				echo '<img src="'.'./img/noticias/'.$valores[5].'" alt="Imagen noticia" width="350">';
 				echo '<h2><a href="mostrarNoticia.php?idN='.$valores[0].'">' . $valores[4] . '</a></h2>';

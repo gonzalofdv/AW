@@ -38,12 +38,12 @@ class NoticiaSA {
 		$aux->delete($idNoticia);
 	}
 
-	public function devuelveNoticias(){
+	public function devuelveNoticias($codLiga){
 		if(!$this->noticiaDAO){
 			$this->noticiaDAO = new NoticiaDAO();
 		}
 		$aux = $this->noticiaDAO;
-		$res = $aux->devuelveNoticias();
+		$res = $aux->devuelveNoticias($codLiga);
 
 		return $res;
 	}
