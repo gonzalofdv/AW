@@ -10,10 +10,12 @@ class EquipoDAO extends DAO{
 
 	//Metodos
 	public function getEquipo($idEquipo) {
-		$idEquipo = mysql_real_escape_string($idEquipo);
+		$db = $this->db;
+		
+		$idEquipo = mysqli_real_escape_string($db, $idEquipo);
 		
 		$sql = "SELECT * from Equipos where IdEquipo = '$idEquipo'";
-		$consulta = mysqli_query($this->db, $sql);
+		$consulta = mysqli_query($db, $sql);
         if($consulta){
             $obj = $consulta->fetch_object();
         }
@@ -24,6 +26,7 @@ class EquipoDAO extends DAO{
 	}
 	
 	public function insert(EquipoTransfer $e){
+		$db = $this->db;
 		
 		$codLiga = $e->getCodLiga();
 		$puntos = $e->getPuntos();
@@ -31,17 +34,18 @@ class EquipoDAO extends DAO{
 		$golesEnContra = $e->getGolesEnContra();
 		$escudo = $e->getEscudo();
 		
-		$codLiga = mysql_real_escape_string($codLiga);
-		$puntos = mysql_real_escape_string($puntos);
-		$golesAFavor = mysql_real_escape_string($golesAFavor);
-		$golesEnContra = mysql_real_escape_string($golesEnContra);
-		$escudo = mysql_real_escape_string($escudo);
+		$codLiga = mysqli_real_escape_string($db, $codLiga);
+		$puntos = mysqli_real_escape_string($db, $puntos);
+		$golesAFavor = mysqli_real_escape_string($db, $golesAFavor);
+		$golesEnContra = mysqli_real_escape_string($db, $golesEnContra);
+		$escudo = mysqli_real_escape_string($db, $escudo);
 		
 		$sql = "INSERT into Equipos (CodLiga, Puntos, GolesAFavor, GolesEnContra, Escudo) values ('$codLiga', '$puntos', '$golesAFavor', '$golesEnContra', '$escudo')";
-		$consulta = mysqli_query($this->db, $sql);
+		$consulta = mysqli_query($db, $sql);
 	}
 	
 	public function update(EquipoTransfer $e){
+		$db = $this->db;
 		
 		$idEquipo = $e->getIdEquipo();
 		$codLiga = $e->getCodLiga();
@@ -50,25 +54,27 @@ class EquipoDAO extends DAO{
 		$golesEnContra = $e->getGolesEnContra();
 		$escudo = $e->getEscudo();
 		
-		$idEquipo = mysql_real_escape_string($idEquipo);
-		$codLiga = mysql_real_escape_string($codLiga);
-		$puntos = mysql_real_escape_string($puntos);
-		$golesAFavor = mysql_real_escape_string($golesAFavor);
-		$golesEnContra = mysql_real_escape_string($golesEnContra);
-		$escudo = mysql_real_escape_string($escudo);
+		$idEquipo = mysqli_real_escape_string($db, $idEquipo);
+		$codLiga = mysqli_real_escape_string($db, $codLiga);
+		$puntos = mysqli_real_escape_string($db, $puntos);
+		$golesAFavor = mysqli_real_escape_string($db, $golesAFavor);
+		$golesEnContra = mysqli_real_escape_string($db, $golesEnContra);
+		$escudo = mysqli_real_escape_string($db, $escudo);
 		
 		$sql = "UPDATE Equipos SET CodLiga = '$codLiga', Puntos = '$puntos', GolesAFavor = '$golesAFavor', GolesEnContra = '$golesEnContra',
 		Escudo = '$escudo' WHERE IdEquipo LIKE '$idEquipo'";
-		$consulta = mysqli_query($this->db, $sql);
+		$consulta = mysqli_query($db, $sql);
 	}
 	
 	public function delete(EquipoTransfer $e){
+		$db = $this->db;
+		
 		$idEquipo = $e->getIdEquipo();
-		$idEquipo = mysql_real_escape_string($idEquipo);
+		$idEquipo = mysqli_real_escape_string($db, $idEquipo);
 		
 		$sql = "DELETE Equipos where IdEquipo = '$idEquipo'"; 
 		mysqli_query($this->db, $sql);
-		$consulta = mysqli_query($this->db, $sql);
+		$consulta = mysqli_query($db, $sql);
 	}
 	
 }

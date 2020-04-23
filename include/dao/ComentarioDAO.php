@@ -13,9 +13,9 @@ class ComentarioDAO extends DAO{
 		$codNoticia = $c->getCodNoticia();
 		$comentario = $c->getComentario();
 		
-		$codUsuario = mysql_real_escape_string($codUsuario);
-		$codNoticia = mysql_real_escape_string($codNoticia);
-		$comentario = mysql_real_escape_string($comentario);
+		$codUsuario = mysqli_real_escape_string($db, $codUsuario);
+		$codNoticia = mysqli_real_escape_string($db, $codNoticia);
+		$comentario = mysqli_real_escape_string($db, $comentario);
 		
 		$sql = "INSERT INTO comentarios (CodNoticia, CodUsuario, Comentario) VALUES ('$codNoticia', '$codUsuario', '$comentario')";
 		$consulta = mysqli_query($db, $sql);
@@ -30,7 +30,7 @@ class ComentarioDAO extends DAO{
 	public function delete($idNoticia){
 		$db = $this->db;
 		
-		$idNoticia = mysql_real_escape_string($idNoticia);
+		$idNoticia = mysqli_real_escape_string($db, $idNoticia);
 		
 		$sql = "DELETE FROM comentarios WHERE CodNoticia = '$idNoticia'"; 
 		$consulta = mysqli_query($db, $sql);
@@ -45,7 +45,7 @@ class ComentarioDAO extends DAO{
 	public function devuelveComentarios($idNoticia){
 		$db = $this->db;
 		
-		$idNoticia = mysql_real_escape_string($idNoticia);
+		$idNoticia = mysqli_real_escape_string($db, $idNoticia);
 		
 		$sql = "SELECT * FROM comentarios WHERE CodNoticia LIKE '$idNoticia'";
 		$consulta = mysqli_query($db, $sql);
@@ -55,7 +55,7 @@ class ComentarioDAO extends DAO{
 	public function existenComentarios($idNoticia){
 		$db = $this->db;
 		
-		$idNoticia = mysql_real_escape_string($idNoticia);
+		$idNoticia = mysqli_real_escape_string($db, $idNoticia);
 		
 		$sql = "SELECT * FROM comentarios WHERE CodNoticia LIKE '$idNoticia'";
 		$consulta = mysqli_query($db, $sql);
@@ -71,7 +71,7 @@ class ComentarioDAO extends DAO{
 	public function borrarComentarioConcreto($idComentario){
 		$db = $this->db;
 		
-		$idComentario = mysql_real_escape_string($idComentario);
+		$idComentario = mysqli_real_escape_string($db, $idComentario);
 		
 		$sql = "DELETE FROM comentarios WHERE IdComentario = '$idComentario'"; 
 		$consulta = mysqli_query($db, $sql);
