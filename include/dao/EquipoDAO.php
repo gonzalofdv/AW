@@ -76,6 +76,16 @@ class EquipoDAO extends DAO{
 		mysqli_query($this->db, $sql);
 		$consulta = mysqli_query($db, $sql);
 	}
+
+	public function devuelveEquipos($codLiga){
+        $db = $this->db;
+        $codLiga = mysqli_real_escape_string($db,$codLiga);
+        $sql = "SELECT * FROM equipos WHERE CodLiga = '$codLiga' ORDER BY Puntos DESC";
+        $res = mysqli_query($db, $sql);
+        return $res;
+        
+
+    }
 	
 }
 

@@ -28,6 +28,15 @@ class EquipoSA {
 		$aux = $this->equipoDAO;
 		$aux->delete($equipo);
 	}
+
+	public function devuelveEquipos($codLiga){
+		if(!$this->equipoDAO){
+			$this->equipoDAO = new EquipoDAO();
+		}
+		$aux = $this->equipoDAO;
+		return $aux->devuelveEquipos($codLiga);
+	}
+
 	
 }
 

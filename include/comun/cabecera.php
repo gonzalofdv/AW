@@ -23,6 +23,6 @@
 
 		<button onclick="location.href='index.php'">Inicio</button>
 		<button onclick="location.href='mostrarInicioQuiz.php'">Quiz</button>
-		<button onclick="location.href='clasificacion.php'">Clasificacion</button>
+		<button onclick="location.href='liga.php?idL=4'">Clasificacion</button>
 		<button onclick="location.href='somosFamilia.php'">Somos Familia</button>
 </div>
