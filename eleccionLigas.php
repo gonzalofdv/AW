@@ -31,7 +31,7 @@ $codLiga = isset($_POST['liga']) ? $_POST['liga'] : 0;
 				});  
 			});
 			$("#quiz").click(function(event) {
-				$("#content").load('eleccionLigas.php',{
+				$("#content").load('quizEleccion.php',{
 					'codLiga':'.$codLiga.',
 				});  
 			});
