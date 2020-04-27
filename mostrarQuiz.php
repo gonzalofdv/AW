@@ -29,8 +29,11 @@ $codLiga = htmlspecialchars($_POST['liga']);
 				header('Location: mostrarAlertas.php?codAlerta=1');
 			}
 			else {
+
 				if($codLiga == 0){ //el 0 significa que hacemos quiz de todo
-	?>
+	?>			
+				<h1>Tiempo restante: <span id="clock"></span></h1>
+				<script src="temporizador.js"></script>
 				<form action="procesarQuiz.php" method="post">
 					<fieldset>
 						<legend>Bienvenido al Quiz!</legend>
@@ -62,6 +65,8 @@ $codLiga = htmlspecialchars($_POST['liga']);
 				}
 				else{ //si el codigo de liga especifica una liga concreta
 	?>
+					<h1>Tiempo restante: <span id="clock"></span></h1>
+					<script src="temporizador.js"></script>
 					<form action="procesarQuiz.php" method="post">
 						<fieldset>
 							<legend>Bienvenido al Quiz!</legend>
