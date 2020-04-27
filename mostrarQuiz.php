@@ -34,7 +34,7 @@ $codLiga = htmlspecialchars($_POST['liga']);
 	?>			
 				<h1>Tiempo restante: <span id="clock"></span></h1>
 				<script src="temporizador.js"></script>
-				<form action="procesarQuiz.php" method="post">
+				<form id="formularioQuiz" action="procesarQuiz.php" method="post">
 					<fieldset>
 						<legend>Bienvenido al Quiz!</legend>
 				<?php
@@ -67,7 +67,7 @@ $codLiga = htmlspecialchars($_POST['liga']);
 	?>
 					<h1>Tiempo restante: <span id="clock"></span></h1>
 					<script src="temporizador.js"></script>
-					<form action="procesarQuiz.php" method="post">
+					<form id="formularioQuiz" action="procesarQuiz.php" method="post">
 						<fieldset>
 							<legend>Bienvenido al Quiz!</legend>
 
