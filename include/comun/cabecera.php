@@ -23,6 +23,14 @@
 
 		<button onclick="location.href='index.php'">Inicio</button>
 		<button onclick="location.href='mostrarInicioQuiz.php'">Quiz</button>
-		<button onclick="location.href='eleccionLigas.php'">Ligas</button>
 		<button onclick="location.href='somosFamilia.php'">Somos Familia</button>
+</div>
+
+<div id="ligas">
+        <button onclick="location.href='eleccionLigas.php?codLiga=1'">Liga Santander</button>
+        <button onclick="location.href='eleccionLigas.php?codLiga=2'">Liga Smartbank</button>
+        <button onclick="location.href='eleccionLigas.php?codLiga=3'">Premier League</button>
+        <button onclick="location.href='eleccionLigas.php?codLiga=6'">Serie A</button>
+        <button onclick="location.href='eleccionLigas.php?codLiga=5'">Ligue 1</button>
+        <button onclick="location.href='eleccionLigas.php?codLiga=4'">Bundesliga</button>
 </div>
