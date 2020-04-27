@@ -55,7 +55,7 @@
 				}
 				else{
 			?>
-				<form action="mostrarQuiz.php" method="post">
+				<form action="mostrarQuiz.php" method="get">
 
 					<select name="liga">
 						<option value='0'>Todas</option>	

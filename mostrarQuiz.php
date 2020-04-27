@@ -3,7 +3,7 @@
 require_once('include/sa/PreguntaSA.php');
 require_once('include/sa/RespuestaSA.php');
 
-$codLiga = htmlspecialchars($_POST['liga']);
+$codLiga = htmlspecialchars($_GET['liga']);
 ?>
 
 <!DOCTYPE html>
