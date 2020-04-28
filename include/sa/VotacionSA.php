@@ -6,41 +6,13 @@ class VotacionSA {
 
 	protected $votacionDAO;
 
-	public function insertVotacion($vot){
-		if(!$this->VotacionDAO){
-			$this->VotacionDAO = new VotacionDAO();
-		}
-		$aux = $this->VotacionDAO;
-		return $aux->insert($vot);
-	}
-	
-	public function getIdVotacion($vot){
-		if(!$this->VotacionDAO){
-			$this->VotacionDAO = new VotacionDAO();
-		}
-		$aux = $this->VotacionDAO;
-		$res = $aux->obtenerId($vot);
-		
-		return $res;
-	}
-
-	public function getNumVotacions(){
-		if(!$this->VotacionDAO){
-			$this->VotacionDAO = new VotacionDAO();
-		}
-		$aux = $this->VotacionDAO;
-		$res = $aux->getNumVotacions();
-		
-		return $res;
-	}
-
 	
 
 	public function getVotacion($codLiga){
-		if(!$this->VotacionDAO){
-			$this->VotacionDAO = new VotacionDAO();
+		if(!$this->votacionDAO){
+			$this->votacionDAO = new VotacionDAO();
 		}
-		$aux = $this->VotacionDAO;
+		$aux = $this->votacionDAO;
 		$res = $aux->getVotacion($codLiga);
 		return $res;
 	}
