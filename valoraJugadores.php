@@ -25,11 +25,10 @@ $codLiga = $_POST['codLiga'];
 				<fieldset>
 					<?php
 					$votacionSA= new VotacionSA();
-					$votacion = $votacionSA->getNombre($codLiga);
+					$votacion = $votacionSA->getVotacion($codLiga);
 					
 					echo "<legend>".$votacion->Titulo."</legend>";
-					$opcionesSA =new OpcionesVotacionSA();
-					while($)
+			
 
 					?>
 					<input type="submit" name="aceptar">	
