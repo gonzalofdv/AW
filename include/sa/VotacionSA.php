@@ -44,12 +44,12 @@ class VotacionSA {
 		return $res;
 	}
 
-	public function getNombre($codLiga){
+	public function getVotacion($codLiga){
 		if(!$this->VotacionDAO){
 			$this->VotacionDAO = new VotacionDAO();
 		}
 		$aux = $this->VotacionDAO;
-		$res = $aux->getNombre($rand);
+		$res = $aux->getVotacion($rand);
 		return $res;
 	}
 

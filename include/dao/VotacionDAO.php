@@ -8,7 +8,7 @@ class VotacionDAO extends DAO{
 		parent::__construct();
 	}
 	
-	public function getNombre($codLiga){
+	public function getVotacion($codLiga){
 		$db=$this->db;
 		$cod=mysqli_real_escape_string($db, $codLiga);
 		$sql = "SELECT IdVotacion FROM Votaciones WHERE CodLiga = '$cod'";
