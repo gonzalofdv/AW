@@ -34,22 +34,14 @@ class VotacionSA {
 		return $res;
 	}
 
-	public function getVotacion($rand){
-		if(!$this->VotacionDAO){
-			$this->VotacionDAO = new VotacionDAO();
-		}
-		$aux = $this->VotacionDAO;
-		$res = $aux->getVotacion($rand);
-		
-		return $res;
-	}
+	
 
 	public function getVotacion($codLiga){
 		if(!$this->VotacionDAO){
 			$this->VotacionDAO = new VotacionDAO();
 		}
 		$aux = $this->VotacionDAO;
-		$res = $aux->getVotacion($rand);
+		$res = $aux->getVotacion($codLiga);
 		return $res;
 	}
 
