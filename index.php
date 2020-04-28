@@ -35,11 +35,13 @@ $codLiga = isset($_POST['liga']) ? $_POST['liga'] : 0;
 				$valueLiga = $ligasa->getNombreLiga($codLiga)->Nombre;
 			}
 			else{
-				$valueLiga = "Ligas:";
+				$valueLiga = "todas las ligas";
 			}
 
+			echo '<h2>Visualizando noticias de ' . $valueLiga .'</h2><br>';
+
 			echo '<select name="liga">';
-        	echo '<option value="'.$codLiga.'">'.$valueLiga.'</option>';
+        	echo '<option value="0">Todas</option>';
             $ligasa = new LigaSA();
             $res=$ligasa->devuelveLigaSA();
             while($valores = mysqli_fetch_array($res)){
