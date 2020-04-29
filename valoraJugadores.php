@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once('include/sa/VotacionSA.php');
+require_once('include/sa/OpcionesSA.php');
+require_once('include/sa/JugadoresSA.php');
 $codLiga = $_POST['codLiga'];
 ?>
 
@@ -18,26 +20,32 @@ $codLiga = $_POST['codLiga'];
 
 <body>
 
-	
-
-	<div id="contenido">
-		<form id="formularioQuiz" action="procesarQuiz.php" method="post">
-				<fieldset>
-					<?php
-					$votacionSA= new VotacionSA();
-					$votacion = $votacionSA->getVotacion($codLiga);
-					
-					echo "<legend>".$votacion->Titulo."</legend>";
-			
-
-					?>
-					<input type="submit" name="aceptar">	
-				</fieldset>
-		</form>
+	<?php
+	$votacionSA= new VotacionSA();
+	$opcionesSA = new OpcionesSA();
+	$jugadoresSA = new JugadoresSA();
+	$votacion = $votacionSA->getVotacion($codLiga);
+	$i=0;
+	while($res=mysqli_fetch_array($votacion)){
+		echo '<form id="valoraJugadores" action="procesarValoracion.php?i='.$i.'" method="post">';
+		echo '<fieldset>';
+		echo "<legend>".$res[2]."</legend>";
+		$opciones=$opcionesSA->getOpciones($res[0]);
+		while($res2=mysqli_fetch_array($opciones)){
+			$jugador=$jugadoresSA->getApodo($res2[2]);
+			echo '<input type=radio name=vot'.$i.' value='.$res2[0].' />'.$jugador->Apodo.'  -  '.$res2[3].' votos <br>';
+		}
+		$i++;
+		echo '<input type="submit" name="aceptar">';
+	}
+	?>
 		
+</fieldset>
+</form>
+
 			
 			
-	</div>
+	
 
 	
 <!-- Fin del contenedor -->

@@ -30,6 +30,7 @@ class FormularioLogin extends Form {
 			else{
 				$_SESSION['login'] = true;
 				$_SESSION['nombre'] = $usuario;
+				$_SESSION['votos'] = 0;
 				$checkAd=$usuarioSA->checkAdmin($usuario);
 				if($checkAd){
 					$_SESSION['esAdmin']=true;

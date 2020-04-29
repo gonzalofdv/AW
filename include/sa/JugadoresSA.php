@@ -25,6 +25,16 @@ class JugadoresSA {
 
 		return $res;
 	}
+
+	public function getApodo($idJugador){
+		if(!$this->jugadorDAO){
+			$this->jugadorDAO = new JugadoresDAO();
+		}
+		$aux = $this->jugadorDAO;
+		$res = $aux->getApodo($idJugador);
+
+		return $res;
+	}
 	
 }
 

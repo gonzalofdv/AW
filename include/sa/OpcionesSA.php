@@ -14,6 +14,14 @@ class OpcionesSA {
 		
 		return $res;
 	}
+
+	public function sumarVoto($idOpcion){
+		if(!$this->opcionesDAO){
+			$this->opcionesDAO = new OpcionesDAO();
+		}
+		$aux = $this->opcionesDAO;
+		$res = $aux->sumarVoto($idOpcion);
+	}
 }
 
 ?>

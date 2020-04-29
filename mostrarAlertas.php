@@ -160,6 +160,10 @@ $codigo = $_GET['codAlerta'];
 					echo "<p>Te redireccionamos a la página de inicio.</p>";
 					header("refresh:5; url=index.php");
 					break;
+				case 28:
+					echo "<h1>Has llegado al límite de votos. ¡Vuelve mañana!</h1>";
+					echo "<p>Te redireccionamos a la página de inicio.</p>";
+					header("refresh:5; url=index.php");
 			}
 
 					
