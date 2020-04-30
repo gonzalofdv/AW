@@ -17,6 +17,15 @@
 				echo "<a href='registro.php'>Registrate! </a>" . "<a class=boton_personalizado href=login.php>Accede</a>";
 			}
 		?>
+		<img src="./img/ElVARderinDeCornerr.jpg" class="center">
+		<style>
+		.center {
+  				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				width: 30%;
+		}</style>
+		<!--<img src="./img/ElVARderinDeCorner.jpg" position = center>-->
 		
 </div>
 <div id="menu">

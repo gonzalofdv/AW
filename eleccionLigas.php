@@ -62,12 +62,12 @@ $codLiga = $_GET['codLiga'];
 	?>
 	
 	<div id="contenido">
-	
-		<input type="image" id="noticias" value="Noticias" src="img/iconos/news.png"/>
-		<input type="image" id="clasificacion" value="Clasificacion" src="img/iconos/clasificacion2.png"/>
-		<input type="image" id="quiz" value="Quiz" src="img/iconos/quizIcon.png"/>
-		<input type="image" id="valora" value="Valorar jugadores" src="img/iconos/votar.png"/>
-		
+		<div id="opcionesLiga">
+			<input type="image" id="noticias" value="Noticias" src="img/iconos/news.png"/>
+			<input type="image" id="clasificacion" value="Clasificacion" src="img/iconos/clasificacion2.png"/>
+			<input type="image" id="quiz" value="Quiz" src="img/iconos/quizIcon.png"/>
+			<input type="image" id="valora" value="Valorar jugadores" src="img/iconos/votar.png"/>
+		</div>
 		<div id="content">
 			
 		</div>
