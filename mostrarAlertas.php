@@ -81,28 +81,8 @@ $codigo = $_GET['codAlerta'];
 					echo "Por favor, rellene todos los campos y acepte las condiciones del servicio.";
 					header("refresh:3; url=registro.php");
 					break;
-				case 12:
-					echo "Nueva noticia insertada a la BBDD correctamente, gracias por colaborar";
-					echo "<p>Te redireccionamos a la página de inicio.</p>";
-					header("refresh:5; url=index.php");
-					break;
-				case 13:
-					echo "Algo ha fallado por aquí";
-					echo "<p>Te redireccionamos a la página de inicio.</p>";
-					header("refresh:5; url=index.php");
-					break;
-				case 14:
-					echo "Faltan campos por rellenar! <br>";
-					echo "Redireccionando...";
-					header("refresh:3; url=formularioComentario.php");
-					break;
 				case 15:
 					echo "Gracias, ¡Vuelva pronto!" . "<br>";
-					echo "<p>Te redireccionamos a la página de inicio.</p>";
-					header("refresh:5; url=index.php");
-					break;
-				case 16:
-					echo "Nuevo comentario insertada a la BBDD correctamente, gracias por colaborar<br>";
 					echo "<p>Te redireccionamos a la página de inicio.</p>";
 					header("refresh:5; url=index.php");
 					break;
@@ -110,11 +90,6 @@ $codigo = $_GET['codAlerta'];
 					echo"Usuario correcto" . "<br>";
 					echo "<p>Te redireccionamos a la página de inicio.</p>";
 					header("refresh:5; url=index.php");
-					break;
-				case 18:
-					echo "Faltan campos por rellenar! <br>";
-					echo "Redireccionando...";
-					header("refresh:3; url=formularioNoticia.php");
 					break;
 				case 19:
 					echo "Nueva pregunta insertada a la BBDD correctamente, gracias por colaborar<br>";
@@ -140,23 +115,8 @@ $codigo = $_GET['codAlerta'];
 					echo"El usuario o la contraseña no son correctas" . "<br>" . "Redireccionando en 3 segundos..";
 					header("refresh:3; url=login.php");
 					break;
-				case 24:
-					echo "Faltan campos por rellenar! <br>";
-					echo "Redireccionando...";
-					header("refresh:3; url=formularioEditarNoticia.php");
-					break;
 				case 25:
 					echo "<h1>Noticia eliminada con éxito</h1>";
-					echo "<p>Te redireccionamos a la página de inicio.</p>";
-					header("refresh:5; url=index.php");
-					break;
-				case 26:
-					echo "<h1>Noticia actualizada correctamente</h1>";
-					echo "<p>Te redireccionamos a la página de inicio.</p>";
-					header("refresh:5; url=index.php");
-					break;
-				case 27:
-					echo "<h1>Comentario borrado correctamente</h1>";
 					echo "<p>Te redireccionamos a la página de inicio.</p>";
 					header("refresh:5; url=index.php");
 					break;
@@ -164,9 +124,7 @@ $codigo = $_GET['codAlerta'];
 					echo "<h1>Has llegado al límite de votos. ¡Vuelve mañana!</h1>";
 					echo "<p>Te redireccionamos a la página de inicio.</p>";
 					header("refresh:5; url=index.php");
-			}
-
-					
+			}	
 
 		?>
 
