@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-04-2020 a las 19:49:46
+-- Tiempo de generación: 30-04-2020 a las 20:35:27
 -- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.3
+-- Versión de PHP: 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -34,6 +33,24 @@ CREATE TABLE `comentarios` (
   `CodUsuario` int(6) NOT NULL,
   `Comentario` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `comentarios`
+--
+
+INSERT INTO `comentarios` (`IdComentario`, `CodNoticia`, `CodUsuario`, `Comentario`) VALUES
+(1, 1, 2, 'Menos mal, ¡Diego Costa es horrible! Basta ya de reírse del club'),
+(2, 2, 2, '¡Amo a Messi, es mi jugador favorito!'),
+(3, 1, 4, 'Qué pena, con lo buen jugador que es. ¡Aúpa Atleti!'),
+(4, 3, 4, 'Mbappe solo quiere dinero. Odio eterno al fútbol moderno.'),
+(5, 12, 4, 'Qué solidarios, a ver si Mbappé toma ejemplo...'),
+(6, 4, 4, 'En estos momentos difíciles cualquier ayuda es buena'),
+(7, 1, 3, 'Diego Costa en mi siempre en mi equipo. ¡Forza Atleti!'),
+(8, 5, 3, 'Raúl está sobrevalorado. Siempre lo he dicho...'),
+(9, 6, 3, 'Carvajal es mejor por dios'),
+(10, 9, 3, 'Qué? Entonces yo también'),
+(11, 8, 4, 'Maffeo no es tan bueno como dicen. Prefiero a Mario Suarez'),
+(12, 10, 4, 'Mourinho nunca llegará a ser tan bueno como lo fue en el Inter');
 
 -- --------------------------------------------------------
 
@@ -112,7 +129,16 @@ CREATE TABLE `noticias` (
 INSERT INTO `noticias` (`IdNoticia`, `CodUsuario`, `CodLiga`, `Texto`, `Titular`, `Foto`) VALUES
 (1, 7, 1, '¿Le venderá el Atlético? ¿Le aguantará un año más? Esta temporada ha estado parado tres meses por una operación de hernia discal cervical. De ahí sus números, sólo comparables a los que tuvo en el Sporting de sus inicios, temporada 2006-07 (un gol): dos en 19 partidos, dos en 1.192 minutos.\r\nAdemás de en Italia, sigue teniendo mercado en Brasil y en Qatar. Flamengo. Al-Rayyan. Su nombre sobre la mesa del despacho de Andrea Berta, director deportivo rojiblanco, este verano. El 7 de octubre cumple 32 años. Mientras Simeone le elogia y no para de comentar en público que es un futbolista que aporta algo diferente, otros entienden que su ciclo en el Atlético ha terminado.', 'La encrucijada de Diego Costa', 'noticia_diego_costa.jpg'),
 (2, 7, 1, 'Leo Messi no para de batir récords y cada temporada que pasa nos asombra con un sinfín de genialidades a la altura de los mejores futbolistas de la historia. A causa del coronavirus, no ha acabado el curso y ya es el máximo goleador y asistente de la Liga Santander con 19 tantos y 12 pases de gol.\r\nPero si tenemos en cuenta a las cinco grandes ligas europeas, encontramos un dato sorprendente: ha marcado más goles desde fuera del área esta temporada que 86 equipos (contabilizando a todos los jugadores del mismo) de los 98 que forman las cinco grandes ligas, según indica el portal WhoScored.\r\nEl argentino ha anotado ocho goles desde fuera del área, por lo que supera a equipos de la talla del Chelsea (7), Manchester United (7), Liverpool (6), Real Madrid (6), Tottenham (5), Juventus (5), PSG (4), Atlético de Madrid (3) o Arsenal (3).\r\n', 'Messi,más goles fuera del área que 86 equipos', 'noticia_messi.jpg'),
-(3, 7, 5, 'Kylian Mbappé ha vuelto a demostrar que, más allá de ser un gran futbolistas, es una gran persona. El jugador del PSG ha realizado una gran donación (la familia quiere que sea confidencial la cantidad) a la fundación Abe Pierre, dedicada a ayudar a las familias más necesitadas de París.<br /><br />\r\n<br /><br />\r\n\"Preocupado por las consecuencias de la grave crisis de salud que azota a nuestro país, pero también por todas las consecuencias que puede generar en las personas más vulnerables, Kylian Mbappé acaba de hacer una gran donación para apoyar a la Fundación Abe Pierre\", reza el comunicado de la organización.<br /><br />\r\n<br /><br />\r\nEsta donación permitirá a la fundación acceder a las situaciones de mayor emergencia: acceso al agua potable, higiene para las personas en situaciones de precariedad, ayuda alimentaria y refugio para personas sin hogar. En su cuenta de Instagram, el delantero del PSG envió un mensaje conciso y claro: \"Los más pobres no están confinados. No lo olvides\"<br />\r\n', 'Mbappé hace una gran donación a familias sin hogar', 'noticia_mbappe.jpg');
+(3, 7, 5, 'Kylian Mbappé ha vuelto a demostrar que, más allá de ser un gran futbolistas, es una gran persona. El jugador del PSG ha realizado una gran donación (la familia quiere que sea confidencial la cantidad) a la fundación Abe Pierre, dedicada a ayudar a las familias más necesitadas de París.<br /><br />\r\n<br /><br />\r\n\"Preocupado por las consecuencias de la grave crisis de salud que azota a nuestro país, pero también por todas las consecuencias que puede generar en las personas más vulnerables, Kylian Mbappé acaba de hacer una gran donación para apoyar a la Fundación Abe Pierre\", reza el comunicado de la organización.<br /><br />\r\n<br /><br />\r\nEsta donación permitirá a la fundación acceder a las situaciones de mayor emergencia: acceso al agua potable, higiene para las personas en situaciones de precariedad, ayuda alimentaria y refugio para personas sin hogar. En su cuenta de Instagram, el delantero del PSG envió un mensaje conciso y claro: \"Los más pobres no están confinados. No lo olvides\"<br />\r\n', 'Mbappé hace una gran donación a familias sin hogar', 'noticia_mbappe.jpg'),
+(4, 4, 5, 'Los clubes de Francia están pasando por un momento financiero muy complicado a causa del coronavirus. No tener una fecha de regreso para sus competiciones implica no saber cuántas pérdidas tendrán y las medidas de ayuda del gobierno no les parecen suficientes, los equipos están tratando de buscar soluciones a este problema y todas parecen pasar por un préstamo.<br />\r\n<br />\r\nLos diferentes equipos quieren obtener un préstamo colectivo que se encargaría de gestionar la federación Francesa o la Liga de Fútbol Profesional de Francia. La idea cobra fuerza, y tanto el presidente del Niza como el presidente del Olympique de Marsella o el dueño del PSG estarían de acuerdo en ofrecer como garantía el actual contrato de derechos televisivos. Esto supondría una inyección de dinero de entre 200 y 250 millones de euros.<br />\r\n<br />\r\nMientras la Ligue 1 trabaja en ello, otras propuestas han sido barajadas y una de ellas, encabezada por Nasser Al-Khelaïfi, se basa en pedir un rescate a Qatar.', 'Al-Khelaïfi propone llamar a Qatar para salvar la Ligue 1', 'noticia_ligue1.jpg'),
+(5, 4, 4, 'El 28 de julio de 2010 cambió la historia del Schalke 04. Ese día aterrizó en Gelsenkirchen Raúl González Blanco, el mejor fichaje de la historia del club alemán. A coste cero, el Schalke 04 se hizo con los servicios de un jugador con el que jamás habían soñado sus seguidores. \"Los aficionados llamaban a las oficinas para saber si era verdad que lo habíamos fichado, la gente no se lo creía\", recuerdan en el club alemán. En Alemania, el Schalke explotó como nunca su propia marca registrada. El cincuenta por ciento de las camisetas vendidas en la tienda oficial llevaban su nombre, vendiendo tres veces más que jugadores como Huntelaar o Farfán.<br />', 'Raul Gonzalez, el jugador que puso al Schalke 04 en el mapa', 'raul_schalke.jpg'),
+(6, 3, 4, 'La recomendación hecha por el ex-bundesliguista y excompañero en el Real Madrid, Dani Carvajal, comienza a cosechar éxitos. Achraf Hakimi llegó al BVB con tan solo 19 primaveras, como parte de un préstamo de dos años desde club español al club alemán, y desde su incorporación su crecimiento como jugador y hombre de confianza de los dirigidos por Favre, se ha potenciado al máximo.<br />', 'Achraf Hakimi el mejor &quot;rookie&quot; de la Bundesliga', 'achraf.jpg'),
+(7, 3, 2, 'La joven joya de la cantera amarilla ya es objeto de muchas miradas en el panorama nacional e internacional para hacerse con sus servicios en caso de que el Barca, propietario de sus derechos, le busque una salida como cedido para que tenga minutos.<br /><br />\r\nEl talentoso futbolista, de solo 17 años, Pedri, que ha sido nombrado el futbolista más valioso de toda la Segunda División española, con un valor de ocho millones de euros, según la web especializada en el mercado de fichajes Transfermarkt, acapara muchos focos de buena parte de varios equipos de Primera División para contar con sus servicios la próxima temporada.<br /><br />\r\nSegún apuntan diversos medios, Real Betis, Celta de Vigo y Real Sociedad ya habrían solicitado su futura cesión, donde el equipo sevillano tendría ventaja sobre el resto de las peticiones dada la buena relación con el FC Barcelona.', 'Pedri, el deseado de Primera', 'noticia_pedri.jpg'),
+(8, 5, 2, 'El lateral no tiene competencia real en su puesto y ha jugado siempre que ha estado disponible.<br /><br />\r\nPablo Maffeo se ha perdido, esta temporada, cuatro partidos de Liga. Cuatro encuentros en los que no ha podido participar (en tres le sustituyó Aday y en uno Clavera) pero en ninguno fue por voluntad de su técnico: se perdió tres partidos entre septiembre y octubre por una lesión en el aductor y el último disputado, ante el Albacete hace casi un mes, por sanción. Entre medio tres entrenadores (Unzué, Moreno y Martí) que han apostado sin ambigüedades por el lateral catalán.<br /><br />\r\nPero para llegar hasta aquí Maffeo ha recorrido una larga trayectoria (a pesar de ser joven) que ha tenido en Montilivi el centro de gravedad. Firmado por el Manchester City de la cantera del Espanyol, el lateral ha ido encadenando cesiones desde el equipo británico hasta que fue traspasado al Stuttgart. Y esas cesiones, para suerte del Girona, han sido en Montilivi.', 'Maffeo se consolida en su cuarta etapa en Girona', 'noticia_maffeo.jpg'),
+(9, 5, 3, 'Kevin de Bruyne, futbolista del Manchester City, aseguró que gracias al confinamiento provocado por el brote de coronavirus ha tomado la decisión de prolongar su carrera.<br /><br />\r\n<br /><br />\r\nEl belga lo confirmó a través de sus redes sociales. \"Le he dicho a mi mujer que voy a jugar un poco más\", explicó el futbolista.<br /><br />\r\n<br /><br />\r\n\"Después de este confinamiento no puedo quedarme más en casa. Le he dicho que voy a jugar dos años más. Es momento de jugar al fútbol, lo echo de menos y es difícil, pero ahora no es lo importante, el fútbol no es lo importante. La gente tiene que estar segura\", añadió.<br /><br />\r\n<br /><br />\r\nDe Bruyne, uno de los mejores jugadores de la Premier, explicó que lleva en casa encerrado dos semanas y que al principio su familia y sus hijos estuvieron un poco enfermos, lo que les preocupó, pero que ahora ya están bien.<br /><br />\r\n<br /><br />\r\n\"Fueron ocho o nueve días, pero ahora estamos mejor afortunadamente, porque nunca sabes lo que va a pasar\", finalizó el belga.', 'De Bruyne: &quot;El confinamiento hará que alargue mi carrera&quot;', 'noticia_deBruyne.jpg'),
+(10, 5, 3, 'El Tottenham ha pasado del subcampeonato de la Champions League a ver cómo se tambalea su proyecto deportivo en un año. Fuera de Europa en la Premier y con Harry Kane tentando su salida, la 2019-20 sigue torciéndose tras el fin de Pochettino.<br /><br />\r\n<br /><br />\r\nEl equipo llegó a su mejor momento en las primeras semanas con \"Mou\" pero después volvió a decaer, y se aprecia que la verdadera brecha está atrás. Tanto ahora como antes, han concedido muchas ocasiones y no se ve ni una reacción clara, ni resultados.<br /><br />\r\n<br /><br />\r\n¿Será capaz Mourinho de corregir los problemas y evitar el colapso del proyecto del Tottenham?', 'El Tottenham de José Mourinho se tambalea', 'noticia_Mou.jpg'),
+(11, 5, 6, 'Las dificultades económicas derivadas del coronavirus podrían obligar al club a desprenderse del crack portugués, como medida de choque para paliar los durísimos efectos que la paralización de las competiciones futbolísticas a causa del coronavirus está teniendo sobre su economía.<br /><br />\r\nDejar agotar su contrato o renovarlo a la baja son las otras opciones que tiene.<br /><br />\r\nTRES escenarios distintos para el futuro de CR7 que no tiene su continuidad asegurada en Turin.<br /><br />\r\nEl primer equipo que suena es el Real Madrid ¿Volverá la estrella mundial al equipo que le dio todo?', 'La Juve no descarta el traspaso de Cristiano Ronaldo.', 'NoticiaVentaCR.jpg'),
+(12, 6, 6, 'Mientras los clubes de Serie A buscan un camino común, el Inter estaría cerca de imitar el ejemplo de la Juventus y recortar los sueldos de sus futbolistas.<br /><br />\r\nAún sin detallar la fecha de regreso al césped para reanudar la lida, lo más probable es que los futbolistas renunciarán a los sueldos de marzo, abril, mayo y junio como hicieron los de la Vecchia Signora, dejando abierta la posibilidad de volver a negociar si finalmente se regresará al verde.<br /><br />\r\nSin lugar a dudas, es un ejemplo de humildad, ¿Tomarán ejemplo los demás jugadores de las grandes ligas?<br /><br />\r\n¿Deben imponer esta acción los presidentes de las ligas?<br /><br />\r\nLeemos vuestras opiniones.', 'La plantilla del Inter, dispuesta a renunciar a sus sueldos.', 'noticiaInter.jpg');
 
 -- --------------------------------------------------------
 
@@ -431,11 +457,11 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`, `EquipoFavorito`, `NombreUsuario`, `Contrasena`, `Email`, `Administrador`, `SomosFamilia`, `Puntos`) VALUES
 (1, 'Administrador', 'Ad', 'Min', 'hombre', 'Atletico de Madrid', 'admin', '$2y$10$ZRVF3yPQBWAgTKhRrYjXJO.pGWvvJeVl2Zgb0IBxNYpOqIeWoA4oG', 'admin@ucm.es', 1, 0, 205),
-(2, 'Gonzalo', 'Figueroa', 'Del Val', 'hombre', 'Real Madrid', 'gfigue01', '$2y$10$ANx3ithfFe4l6ew3oZhW5uJ45yoyzqUj5SIYn3fuCl/XmtYEnqyeW', 'gfigue01@ucm.es', 0, 1, 290),
-(3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 'Real Madrid', 'acernuda', '$2y$10$fuAnn.RfDk4iyTOIkcYlQ.gCWB1evtijABmOAF355GShObXjqWSGi', 'acernuda@ucm.es', 0, 1, 270),
-(4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '$2y$10$.GNAP.NVYpuAh6b5zmATgu1mr/4TVRMzckqd0UyP/vuaPIv87tKj2', 'fernag08@ucm.es', 0, 1, 283),
-(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '$2y$10$9chuTLHd/cRIMM1XLSs3I.mLk4eNESPqBSg5yLMN0T5sNkFjTZdjy', 'jorborja@ucm.es', 0, 1, 308),
-(6, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '$2y$10$NiV1zfngh25e1BAlessipO6SZ0LnDzG2hvBcLfhTcfiqm3rOuxRoK', 'amouhib@ucm.es', 0, 1, 244),
+(2, 'Gonzalo', 'Figueroa', 'Del Val', 'hombre', 'Real Madrid', 'gfigue01', '$2y$10$ANx3ithfFe4l6ew3oZhW5uJ45yoyzqUj5SIYn3fuCl/XmtYEnqyeW', 'gfigue01@ucm.es', 0, 1, 297),
+(3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 'Real Madrid', 'acernuda', '$2y$10$fuAnn.RfDk4iyTOIkcYlQ.gCWB1evtijABmOAF355GShObXjqWSGi', 'acernuda@ucm.es', 0, 1, 294),
+(4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '$2y$10$.GNAP.NVYpuAh6b5zmATgu1mr/4TVRMzckqd0UyP/vuaPIv87tKj2', 'fernag08@ucm.es', 0, 1, 314),
+(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '$2y$10$9chuTLHd/cRIMM1XLSs3I.mLk4eNESPqBSg5yLMN0T5sNkFjTZdjy', 'jorborja@ucm.es', 0, 1, 329),
+(6, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '$2y$10$NiV1zfngh25e1BAlessipO6SZ0LnDzG2hvBcLfhTcfiqm3rOuxRoK', 'amouhib@ucm.es', 0, 1, 250),
 (7, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '$2y$10$lvMSB1YxaNhoE7z5.SZl0.zcK.7joA2.uWeXkxQJ/VsJR9peW8klC', 'jurosado@ucm.es', 0, 1, 339),
 (8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '$2y$10$Zjeyq2P9kmANI94HOGgPEenA5XQ1X.sYVkefTmW1IXolIUd9YEA9K', 'usu@ucm.es', 0, 0, 202);
 
@@ -534,7 +560,7 @@ ALTER TABLE `votaciones`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `IdComentario` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdComentario` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `equipos`
@@ -558,7 +584,7 @@ ALTER TABLE `ligas`
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `opcionesvotacion`
