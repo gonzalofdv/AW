@@ -36,17 +36,23 @@ $codLiga = $_POST['codLiga'];
 			echo '<input type=radio name=vot'.$i.' value='.$res2[0].' />'.$jugador->Apodo.'  -  '.$res2[3].' votos <br>';
 		}
 		$i++;
-		echo '<input type="submit" name="aceptar">';
+		if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
+			echo '<input type="submit" name="aceptar" disabled><br>';
+		}
+		else{
+			echo '<input type="submit" name="aceptar"><br>';
+		}
+		
 	}
 	?>
 		
-</fieldset>
-</form>
-
-			
-			
-	
-
+		</fieldset>
+		</form>
+		<?php
+		if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
+			echo 'Para participar en la valoracion, ¡Regístrate! <button onclick="location.href="registro.php"></button>';
+		}
+		?>
 	
 <!-- Fin del contenedor -->
 
