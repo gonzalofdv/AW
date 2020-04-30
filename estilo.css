@@ -149,3 +149,38 @@ label {
 button {
 	margin: 0 auto;
 } 
+
+.perfil{
+	margin: 20px auto;
+	border: none;
+	padding: 10px 44px;
+	font-size: 36px;
+	position: relative;
+}
+	.perfil::before{
+		transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+		content: '';
+		width: 50%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+.rounded{
+	border-radius:50px;
+}
+
+.text-green{
+	color:#00F0B5;
+	mix-blend-mode: difference;
+}
+	.rounded::before{
+		border-radius: 50px;
+		width: 25%;
+		background: #00F0B5;
+	}
+
+		.rounded:hover::before{
+		background: #00F0B5;
+			width: 100%;
+		}

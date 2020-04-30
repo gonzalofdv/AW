@@ -3,7 +3,9 @@
 		<div id="perfil">
 			<?php
 				if (isset($_SESSION["login"]) && ($_SESSION["login"]==true)) {
-					echo "<h2><a href='mostrarPerfil.php'>Mi perfil</a></h2>";
+			?>
+					<button class="perfil rounded" onclick="location.href='mostrarPerfil.php'"><span class="text-green">Mi perfil</button>
+			<?php
 				}
 			?>
 		</div>
