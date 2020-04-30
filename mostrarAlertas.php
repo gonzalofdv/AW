@@ -60,10 +60,6 @@ $codigo = $_GET['codAlerta'];
 					echo "<p>Te redireccionamos a la página de inicio.</p>";
 					header("refresh:5; url=index.php");
 					break;
-				case 7:
-					echo "Por favor, rellene todos los campos.";
-					header("refresh:3; url=login.php");
-					break;
 				case 8:
 					echo "Usuario registrado correctamente.";
 					echo "<p>Te redireccionamos a la página de inicio.</p>";
@@ -86,11 +82,6 @@ $codigo = $_GET['codAlerta'];
 					echo "<p>Te redireccionamos a la página de inicio.</p>";
 					header("refresh:5; url=index.php");
 					break;
-				case 17:
-					echo"Usuario correcto" . "<br>";
-					echo "<p>Te redireccionamos a la página de inicio.</p>";
-					header("refresh:5; url=index.php");
-					break;
 				case 19:
 					echo "Nueva pregunta insertada a la BBDD correctamente, gracias por colaborar<br>";
 					echo "<p>Te redireccionamos a la página de inicio.</p>";
@@ -110,10 +101,6 @@ $codigo = $_GET['codAlerta'];
 					echo "Faltan campos por rellenar! <br>";
 					echo "Redireccionando...";
 					header("refresh:3; url=formularioPreguntaRespuesta.php");
-					break;
-				case 23:
-					echo"El usuario o la contraseña no son correctas" . "<br>" . "Redireccionando en 3 segundos..";
-					header("refresh:3; url=login.php");
 					break;
 				case 25:
 					echo "<h1>Noticia eliminada con éxito</h1>";
