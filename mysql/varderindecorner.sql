@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-04-2020 a las 18:37:06
+-- Tiempo de generación: 30-04-2020 a las 19:49:46
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -35,46 +35,6 @@ CREATE TABLE `comentarios` (
   `Comentario` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `comentarios`
---
-
-INSERT INTO `comentarios` (`IdComentario`, `CodNoticia`, `CodUsuario`, `Comentario`) VALUES
-(1, 2, 5, 'Está claro que es el mejor...'),
-(2, 5, 5, 'Leyenda!! De los mejores jugadores españoles de la historia, dejando huella en Alemania también'),
-(3, 10, 3, 'Bah, con Mourinho no llegarán a nada, es un pésimo entrenador. Debería haberse quedado Pochettino'),
-(4, 3, 3, 'Además de ser un jugadorazo, es buena persona y caritativo. Me gusta'),
-(5, 9, 4, 'Sin duda el mejor jugador belga de los últimos años, ojalá prolongue su carrera mucho más tiempo.'),
-(6, 1, 4, 'Puf... esta temporada está siendo muy mala para él, quizá debería buscar una salida a otra liga menos competitiva'),
-(7, 1, 2, 'No!! Claro que no se tiene que ir, es un jugador propio para jugar en el Atleti toda su carrera'),
-(8, 6, 2, 'Vaya temporadón está haciendo Achraf, a ver si la temporada que viene tiene un hueco en el Madrid'),
-(9, 2, 6, 'Vaya dato más increíble, este tío es de otro planeta'),
-(10, 8, 6, 'Pues a mí me gusta mucho este lateral pero creo que en Girona está desaprovechado'),
-(11, 8, 7, 'Estoy de acuerdo con jurosado, debería irse a un grande de Europa a intentar dar la talla'),
-(12, 1, 7, 'Yo creo que ya se le ha pasado el arroz, esta temporada no está produciendo lo que debería, y eso es vital para el Atleti'),
-(13, 1, 8, 'Probablemente su mejor destino esté de vuelta en su país de origen, al ser una liga menos competitiva pero de su estilo de juego, fuerte físicamente'),
-(14, 2, 8, 'Yo creo que ese dato se debe a que sus compañeros le buscan demasiado, cosa que perjudica al Barcelona y a los demás jugadores... Están demasiado a su sombra'),
-(15, 4, 8, 'La idea no es mala... Ojalá se haga realidad'),
-(16, 1, 5, 'Personalmente es un jugador que me gusta por su forma de jugar, pero estoy de acuerdo con usu, su etapa en el Atleti está prácticamente acabada'),
-(17, 3, 5, 'Me encanta Mbappé, es humilde y con cosas como esta se gana el corazón de muchas personas. Qué gran futuro tiene este chico'),
-(18, 2, 3, 'Tiene treinta y pico años y sigue estando a unos números asombrosos, y lleva así ya más de 10 años, vaya tela'),
-(19, 7, 2, 'Qué gran joven promesa del fútbol, y además es de la Masía'),
-(20, 9, 2, 'Me encanta... Fue uno de los responsables de eliminar al Madrid en octavos de Champions. Ojalá se quede mucho más tiempo en Manchester'),
-(21, 4, 6, 'Es un hombre amable y caritativo pero yo creo que mancha la imagen del PSG'),
-(22, 3, 8, 'Ojalá y Zidane le traiga a Madrid, es el jugador que el Bernabéu necesita'),
-(23, 5, 8, 'Totalmente de acuerdo con jorborja, es de los jugadores que más he disfrutado desde el salón de mi casa, él solo ganaba muchos partidos'),
-(24, 10, 8, 'Creo que el gran problema fueron las lesiones de Son y Harry Kane, porque Lucas Moura sólo no puede meter muchos goles. Pero yo creo que con Mourinho lo estaban haciendo bastante bien'),
-(25, 6, 8, 'Cada día me sorprende más el joven marroquí, lleva un montón de asistencias e incluso está aportando goles'),
-(26, 1, 6, 'Es de mis jugadores favoritos de la plantilla... Por favor que no se vaya la Pantera'),
-(27, 2, 4, 'El mejor jugador de la historia, ni Maradona ni Pelé ni CR7'),
-(28, 3, 4, 'Me parece que está un poco sobrevalorado pero con estas actuaciones se gana el respeto de todos. Bravo.'),
-(29, 4, 7, 'Yo creo que el rescate a Qatar es una opción muy posible y favorable... Veremos a ver qué pasa al final con las ligas'),
-(30, 12, 6, 'Bonito gesto!!'),
-(31, 11, 6, 'Es hora de que se retire...'),
-(32, 11, 3, 'Que vuelva al Real Madrid!!'),
-(33, 11, 2, 'Que vuelva el bicho!!!'),
-(34, 12, 2, 'Chapó por los jugadores.');
-
 -- --------------------------------------------------------
 
 --
@@ -83,6 +43,7 @@ INSERT INTO `comentarios` (`IdComentario`, `CodNoticia`, `CodUsuario`, `Comentar
 
 CREATE TABLE `equipos` (
   `IdEquipo` int(6) NOT NULL,
+  `nombreEquipo` varchar(30) NOT NULL,
   `CodLiga` int(6) NOT NULL,
   `Puntos` int(3) NOT NULL,
   `GolesAFavor` int(3) NOT NULL,
@@ -100,7 +61,8 @@ CREATE TABLE `jugadores` (
   `IdJugador` int(6) NOT NULL,
   `CodEquipo` int(6) NOT NULL,
   `Nombre` varchar(20) NOT NULL,
-  `Apellido` varchar(20) NOT NULL
+  `Apellido` varchar(20) NOT NULL,
+  `Apodo` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -148,18 +110,22 @@ CREATE TABLE `noticias` (
 --
 
 INSERT INTO `noticias` (`IdNoticia`, `CodUsuario`, `CodLiga`, `Texto`, `Titular`, `Foto`) VALUES
-(1, 6, 1, '¿Le venderá el Atlético? ¿Le aguantará un año más? Esta temporada ha estado parado tres meses por una operación de hernia discal cervical. De ahí sus números, sólo comparables a los que tuvo en el Sporting de sus inicios, temporada 2006-07 (un gol): dos en 19 partidos, dos en 1.192 minutos.<br />\r\n<br />\r\nAdemás de en Italia, sigue teniendo mercado en Brasil y en Qatar. Flamengo. Al-Rayyan. Su nombre sobre la mesa del despacho de Andrea Berta, director deportivo rojiblanco, este verano. El 7 de octubre cumple 32 años. Mientras Simeone le elogia y no para de comentar en público que es un futbolista que aporta algo diferente, otros entienden que su ciclo en el Atlético ha terminado.', 'La encrucijada de Diego Costa', 'noticia_diego_costa.jpg'),
-(2, 6, 1, 'Leo Messi no para de batir récords y cada temporada que pasa nos asombra con un sinfín de genialidades a la altura de los mejores futbolistas de la historia. A causa del coronavirus, no ha acabado el curso y ya es el máximo goleador y asistente de la Liga Santander con 19 tantos y 12 pases de gol.<br />\r\nPero si tenemos en cuenta a las cinco grandes ligas europeas, encontramos un dato sorprendente: ha marcado más goles desde fuera del área esta temporada que 86 equipos (contabilizando a todos los jugadores del mismo) de los 98 que forman las cinco grandes ligas, según indica el portal WhoScored.<br />\r\nEl argentino ha anotado ocho goles desde fuera del área, por lo que supera a equipos de la talla del Chelsea (7), Manchester United (7), Liverpool (6), Real Madrid (6), Tottenham (5), Juventus (5), PSG (4), Atlético de Madrid (3) o Arsenal (3).', 'Messi,más goles fuera del área que 86 equipos', 'noticia_messi.jpg'),
-(3, 2, 5, 'Kylian Mbappé ha vuelto a demostrar que, más allá de ser un gran futbolistas, es una gran persona. El jugador del PSG ha realizado una gran donación (la familia quiere que sea confidencial la cantidad) a la fundación Abe Pierre, dedicada a ayudar a las familias más necesitadas de París.<br />\r\n<br />\r\n\"Preocupado por las consecuencias de la grave crisis de salud que azota a nuestro país, pero también por todas las consecuencias que puede generar en las personas más vulnerables, Kylian Mbappé acaba de hacer una gran donación para apoyar a la Fundación Abe Pierre\", reza el comunicado de la organización.<br />\r\n<br />\r\nEsta donación permitirá a la fundación acceder a las situaciones de mayor emergencia: acceso al agua potable, higiene para las personas en situaciones de precariedad, ayuda alimentaria y refugio para personas sin hogar. En su cuenta de Instagram, el delantero del PSG envió un mensaje conciso y claro: \"Los más pobres no están confinados. No lo olvides\"', 'Mbappé hace una gran donación a familias sin hogar', 'noticia_mbappe.jpg'),
-(4, 2, 5, 'Los clubes de Francia están pasando por un momento financiero muy complicado a causa del coronavirus. No tener una fecha de regreso para sus competiciones implica no saber cuántas pérdidas tendrán y las medidas de ayuda del gobierno no les parecen suficientes, los equipos están tratando de buscar soluciones a este problema y todas parecen pasar por un préstamo.<br />\r\n<br />\r\nLos diferentes equipos quieren obtener un préstamo colectivo que se encargaría de gestionar la federación Francesa o la Liga de Fútbol Profesional de Francia. La idea cobra fuerza, y tanto el presidente del Niza como el presidente del Olympique de Marsella o el dueño del PSG estarían de acuerdo en ofrecer como garantía el actual contrato de derechos televisivos. Esto supondría una inyección de dinero de entre 200 y 250 millones de euros.<br />\r\n<br />\r\nMientras la Ligue 1 trabaja en ello, otras propuestas han sido barajadas y una de ellas, encabezada por Nasser Al-Khelaïfi, se basa en pedir un rescate a Qatar.', 'Al-Khelaïfi propone llamar a Qatar para salvar la Ligue 1', 'noticia_ligue1.jpg'),
-(5, 3, 4, 'El 28 de julio de 2010 cambió la historia del Schalke 04. Ese día aterrizó en Gelsenkirchen Raúl González Blanco, el mejor fichaje de la historia del club alemán. A coste cero, el Schalke 04 se hizo con los servicios de un jugador con el que jamás habían soñado sus seguidores. \"Los aficionados llamaban a las oficinas para saber si era verdad que lo habíamos fichado, la gente no se lo creía\", recuerdan en el club alemán. En Alemania, el Schalke explotó como nunca su propia marca registrada. El cincuenta por ciento de las camisetas vendidas en la tienda oficial llevaban su nombre, vendiendo tres veces más que jugadores como Huntelaar o Farfán.<br />\r\n', 'Raul Gonzalez, el jugador que puso al Schalke 04 en el mapa', 'raul_schalke.jpg'),
-(6, 3, 4, 'La recomendación hecha por el exbundesliguista y excompañero en el Real Madrid, Dani Carvajal, comienza a cosechar éxitos. Achraf Hakimi llegó al BVB con tan solo 19 primaveras, como parte de un préstamo de dos años desde club español al club alemán, y desde su incorporación su crecimiento como jugador y hombre de confianza de los dirigidos por Favre, se ha potenciado al máximo.<br />\r\n', 'Achraf Hakimi el mejor \"rookie\" de la Bundesliga', 'achraf.jpg'),
-(7, 4, 2, 'La joven joya de la cantera amarilla ya es objeto de muchas miradas en el panorama nacional e internacional para hacerse con sus servicios en caso de que el Barca, propietario de sus derechos, le busque una salida como cedido para que tenga minutos.<br />\r\nEl talentoso futbolista, de solo 17 años, Pedri, que ha sido nombrado el futbolista más valioso de toda la Segunda División española, con un valor de ocho millones de euros, según la web especializada en el mercado de fichajes Transfermarkt, acapara muchos focos de buena parte de varios equipos de Primera División para contar con sus servicios la próxima temporada.<br />\r\nSegún apuntan diversos medios, Real Betis, Celta de Vigo y Real Sociedad ya habrían solicitado su futura cesión, donde el equipo sevillano tendría ventaja sobre el resto de las peticiones dada la buena relación con el FC Barcelona.', 'Pedri, el deseado de Primera', 'noticia_pedri.jpg'),
-(8, 4, 2, 'El lateral no tiene competencia real en su puesto y ha jugado siempre que ha estado disponible.<br />\r\nPablo Maffeo se ha perdido, esta temporada, cuatro partidos de Liga. Cuatro encuentros en los que no ha podido participar (en tres le sustituyó Aday y en uno Clavera) pero en ninguno fue por voluntad de su técnico: se perdió tres partidos entre septiembre y octubre por una lesión en el aductor y el último disputado, ante el Albacete hace casi un mes, por sanción. Entre medio tres entrenadores (Unzué, Moreno y Martí) que han apostado sin ambigüedades por el lateral catalán.<br />\r\nPero para llegar hasta aquí Maffeo ha recorrido una larga trayectoria (a pesar de ser joven) que ha tenido en Montilivi el centro de gravedad. Firmado por el Manchester City de la cantera del Espanyol, el lateral ha ido encadenando cesiones desde el equipo británico hasta que fue traspasado al Stuttgart. Y esas cesiones, para suerte del Girona, han sido en Montilivi.', 'Maffeo se consolida en su cuarta etapa en Girona', 'noticia_maffeo.jpg'),
-(9, 5, 3, 'Kevin de Bruyne, futbolista del Manchester City, aseguró que gracias al confinamiento provocado por el brote de coronavirus ha tomado la decisión de prolongar su carrera.<br />\r\n<br />\r\nEl belga lo confirmó a través de sus redes sociales. \"Le he dicho a mi mujer que voy a jugar un poco más\", explicó el futbolista.<br />\r\n<br />\r\n\"Después de este confinamiento no puedo quedarme más en casa. Le he dicho que voy a jugar dos años más. Es momento de jugar al fútbol, lo echo de menos y es difícil, pero ahora no es lo importante, el fútbol no es lo importante. La gente tiene que estar segura\", añadió.<br />\r\n<br />\r\nDe Bruyne, uno de los mejores jugadores de la Premier, explicó que lleva en casa encerrado dos semanas y que al principio su familia y sus hijos estuvieron un poco enfermos, lo que les preocupó, pero que ahora ya están bien.<br />\r\n<br />\r\n\"Fueron ocho o nueve días, pero ahora estamos mejor afortunadamente, porque nunca sabes lo que va a pasar\", finalizó el belga.', 'De Bruyne: \"El confinamiento hará que alargue mi carrera\"', 'noticia_deBruyne.jpg'),
-(10, 5, 3, 'El Tottenham ha pasado del subcampeonato de la Champions League a ver cómo se tambalea su proyecto deportivo en un año. Fuera de Europa en la Premier y con Harry Kane tentando su salida, la 2019-20 sigue torciéndose tras el fin de Pochettino.<br />\r\n<br />\r\nEl equipo llegó a su mejor momento en las primeras semanas con \"Mou\" pero después volvió a decaer, y se aprecia que la verdadera brecha está atrás. Tanto ahora como antes, han concedido muchas ocasiones y no se ve ni una reacción clara, ni resultados.<br />\r\n<br />\r\n¿Será capaz Mourinho de corregir los problemas y evitar el colapso del proyecto del Tottenham?', 'El Tottenham de José Mourinho se tambalea', 'noticia_Mou.jpg'),
-(11, 7, 6, 'Las dificultades económicas derivadas del coronavirus podrían obligar al club a desprenderse del crack portugués, como medida de choque para paliar los durísimos efectos que la paralización de las competiciones futbolísticas a causa del coronavirus está teniendo sobre su economía.<br />\r\nDejar agotar su contrato o renovarlo a la baja son las otras opciones que tiene.<br />\r\nTRES escenarios distintos para el futuro de CR7 que no tiene su continuidad asegurada en Turin.<br />\r\nEl primer equipo que suena es el Real Madrid ¿Volverá la estrella mundial al equipo que le dio todo?', 'La Juve no descarta el traspaso de Cristiano Ronaldo.', 'NoticiaVentaCR.jpg'),
-(12, 7, 6, 'Mientras los clubes de Serie A buscan un camino común, el Inter estaría cerca de imitar el ejemplo de la Juventus y recortar los sueldos de sus futbolistas.<br />\r\nAún sin detallar la fecha de regreso al césped para reanudar la lida, lo más probable es que los futbolistas renunciarán a los sueldos de marzo, abril, mayo y junio como hicieron los de la Vecchia Signora, dejando abierta la posibilidad de volver a negociar si finalmente se regresará al verde.<br />\r\nSin lugar a dudas, es un ejemplo de humildad, ¿Tomarán ejemplo los demás jugadores de las grandes ligas?<br />\r\n¿Deben imponer esta acción los presidentes de las ligas?<br />\r\nLeemos vuestras opiniones.', 'La plantilla del Inter, dispuesta a renunciar a sus sueldos.', 'noticiaInter.jpg');
+(1, 7, 1, '¿Le venderá el Atlético? ¿Le aguantará un año más? Esta temporada ha estado parado tres meses por una operación de hernia discal cervical. De ahí sus números, sólo comparables a los que tuvo en el Sporting de sus inicios, temporada 2006-07 (un gol): dos en 19 partidos, dos en 1.192 minutos.\r\nAdemás de en Italia, sigue teniendo mercado en Brasil y en Qatar. Flamengo. Al-Rayyan. Su nombre sobre la mesa del despacho de Andrea Berta, director deportivo rojiblanco, este verano. El 7 de octubre cumple 32 años. Mientras Simeone le elogia y no para de comentar en público que es un futbolista que aporta algo diferente, otros entienden que su ciclo en el Atlético ha terminado.', 'La encrucijada de Diego Costa', 'noticia_diego_costa.jpg'),
+(2, 7, 1, 'Leo Messi no para de batir récords y cada temporada que pasa nos asombra con un sinfín de genialidades a la altura de los mejores futbolistas de la historia. A causa del coronavirus, no ha acabado el curso y ya es el máximo goleador y asistente de la Liga Santander con 19 tantos y 12 pases de gol.\r\nPero si tenemos en cuenta a las cinco grandes ligas europeas, encontramos un dato sorprendente: ha marcado más goles desde fuera del área esta temporada que 86 equipos (contabilizando a todos los jugadores del mismo) de los 98 que forman las cinco grandes ligas, según indica el portal WhoScored.\r\nEl argentino ha anotado ocho goles desde fuera del área, por lo que supera a equipos de la talla del Chelsea (7), Manchester United (7), Liverpool (6), Real Madrid (6), Tottenham (5), Juventus (5), PSG (4), Atlético de Madrid (3) o Arsenal (3).\r\n', 'Messi,más goles fuera del área que 86 equipos', 'noticia_messi.jpg'),
+(3, 7, 5, 'Kylian Mbappé ha vuelto a demostrar que, más allá de ser un gran futbolistas, es una gran persona. El jugador del PSG ha realizado una gran donación (la familia quiere que sea confidencial la cantidad) a la fundación Abe Pierre, dedicada a ayudar a las familias más necesitadas de París.<br /><br />\r\n<br /><br />\r\n\"Preocupado por las consecuencias de la grave crisis de salud que azota a nuestro país, pero también por todas las consecuencias que puede generar en las personas más vulnerables, Kylian Mbappé acaba de hacer una gran donación para apoyar a la Fundación Abe Pierre\", reza el comunicado de la organización.<br /><br />\r\n<br /><br />\r\nEsta donación permitirá a la fundación acceder a las situaciones de mayor emergencia: acceso al agua potable, higiene para las personas en situaciones de precariedad, ayuda alimentaria y refugio para personas sin hogar. En su cuenta de Instagram, el delantero del PSG envió un mensaje conciso y claro: \"Los más pobres no están confinados. No lo olvides\"<br />\r\n', 'Mbappé hace una gran donación a familias sin hogar', 'noticia_mbappe.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `opcionesvotacion`
+--
+
+CREATE TABLE `opcionesvotacion` (
+  `IdOpcion` int(6) NOT NULL,
+  `CodVotacion` int(6) NOT NULL,
+  `CodJugador` int(6) NOT NULL,
+  `NumVotos` int(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -464,14 +430,26 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`, `EquipoFavorito`, `NombreUsuario`, `Contrasena`, `Email`, `Administrador`, `SomosFamilia`, `Puntos`) VALUES
-(1, 'Administrador', 'Ad', 'Min', 'hombre', 'Atletico de Madrid', 'admin', '123', 'admin@ucm.es', 1, 0, 205),
-(2, 'Gonzalo', 'Figueroa', 'del Val', 'hombre', 'Real Madrid', 'gfigue01', '123', 'gfigue01@ucm.es', 0, 1, 297),
-(3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 'Real Madrid', 'acernuda', '123', 'acernuda@ucm.es', 0, 1, 274),
-(4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '123', 'fernag08@ucm.es', 0, 1, 276),
-(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '123', 'jorborja@ucm.es', 0, 1, 308),
-(6, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '123', 'jurosado@ucm.es', 0, 1, 310),
-(7, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '123', 'amouhib@ucm.es', 0, 1, 255),
-(8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '123', 'usu@ucm.es', 0, 0, 224);
+(1, 'Administrador', 'Ad', 'Min', 'hombre', 'Atletico de Madrid', 'admin', '$2y$10$ZRVF3yPQBWAgTKhRrYjXJO.pGWvvJeVl2Zgb0IBxNYpOqIeWoA4oG', 'admin@ucm.es', 1, 0, 205),
+(2, 'Gonzalo', 'Figueroa', 'Del Val', 'hombre', 'Real Madrid', 'gfigue01', '$2y$10$ANx3ithfFe4l6ew3oZhW5uJ45yoyzqUj5SIYn3fuCl/XmtYEnqyeW', 'gfigue01@ucm.es', 0, 1, 290),
+(3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 'Real Madrid', 'acernuda', '$2y$10$fuAnn.RfDk4iyTOIkcYlQ.gCWB1evtijABmOAF355GShObXjqWSGi', 'acernuda@ucm.es', 0, 1, 270),
+(4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '$2y$10$.GNAP.NVYpuAh6b5zmATgu1mr/4TVRMzckqd0UyP/vuaPIv87tKj2', 'fernag08@ucm.es', 0, 1, 283),
+(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '$2y$10$9chuTLHd/cRIMM1XLSs3I.mLk4eNESPqBSg5yLMN0T5sNkFjTZdjy', 'jorborja@ucm.es', 0, 1, 308),
+(6, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '$2y$10$NiV1zfngh25e1BAlessipO6SZ0LnDzG2hvBcLfhTcfiqm3rOuxRoK', 'amouhib@ucm.es', 0, 1, 244),
+(7, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '$2y$10$lvMSB1YxaNhoE7z5.SZl0.zcK.7joA2.uWeXkxQJ/VsJR9peW8klC', 'jurosado@ucm.es', 0, 1, 339),
+(8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '$2y$10$Zjeyq2P9kmANI94HOGgPEenA5XQ1X.sYVkefTmW1IXolIUd9YEA9K', 'usu@ucm.es', 0, 0, 202);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `votaciones`
+--
+
+CREATE TABLE `votaciones` (
+  `IdVotacion` int(6) NOT NULL,
+  `CodLiga` int(6) NOT NULL,
+  `Titulo` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tablas volcadas
@@ -514,6 +492,14 @@ ALTER TABLE `noticias`
   ADD KEY `CodLiga` (`CodLiga`);
 
 --
+-- Indices de la tabla `opcionesvotacion`
+--
+ALTER TABLE `opcionesvotacion`
+  ADD PRIMARY KEY (`IdOpcion`),
+  ADD KEY `CodVotacion` (`CodVotacion`),
+  ADD KEY `CodJugador` (`CodJugador`);
+
+--
 -- Indices de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
@@ -534,6 +520,13 @@ ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`IdUsuario`);
 
 --
+-- Indices de la tabla `votaciones`
+--
+ALTER TABLE `votaciones`
+  ADD PRIMARY KEY (`IdVotacion`),
+  ADD KEY `CodLiga` (`CodLiga`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -541,7 +534,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `IdComentario` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `IdComentario` int(6) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `equipos`
@@ -565,7 +558,13 @@ ALTER TABLE `ligas`
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `opcionesvotacion`
+--
+ALTER TABLE `opcionesvotacion`
+  MODIFY `IdOpcion` int(6) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `preguntas`
@@ -584,6 +583,12 @@ ALTER TABLE `respuestas`
 --
 ALTER TABLE `usuarios`
   MODIFY `IdUsuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `votaciones`
+--
+ALTER TABLE `votaciones`
+  MODIFY `IdVotacion` int(6) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -616,6 +621,13 @@ ALTER TABLE `noticias`
   ADD CONSTRAINT `noticias_ibfk_2` FOREIGN KEY (`CodLiga`) REFERENCES `ligas` (`IdLiga`) ON UPDATE CASCADE;
 
 --
+-- Filtros para la tabla `opcionesvotacion`
+--
+ALTER TABLE `opcionesvotacion`
+  ADD CONSTRAINT `opcionesvotacion_ibfk_1` FOREIGN KEY (`CodVotacion`) REFERENCES `votaciones` (`IdVotacion`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `opcionesvotacion_ibfk_2` FOREIGN KEY (`CodJugador`) REFERENCES `jugadores` (`IdJugador`) ON UPDATE CASCADE;
+
+--
 -- Filtros para la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
@@ -626,6 +638,12 @@ ALTER TABLE `preguntas`
 --
 ALTER TABLE `respuestas`
   ADD CONSTRAINT `respuestas_ibfk_1` FOREIGN KEY (`CodPregunta`) REFERENCES `preguntas` (`IdPregunta`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `votaciones`
+--
+ALTER TABLE `votaciones`
+  ADD CONSTRAINT `votaciones_ibfk_1` FOREIGN KEY (`CodLiga`) REFERENCES `ligas` (`IdLiga`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

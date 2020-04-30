@@ -14,7 +14,7 @@ class FormularioNoticia extends Form {
 		$result = array();
 
 		$titular = isset($datos['titular']) ? htmlspecialchars($datos['titular']) : null;
-		$cuerpo = isset($datos['cuerpo']) ? htmlspecialchars(nl2br($datos['cuerpo'])) : null;
+		$cuerpo = isset($datos['cuerpo']) ? nl2br($datos['cuerpo']) : null;
 		$condi = isset($datos['condi']) ? htmlspecialchars($datos['condi']) : null;
 		$codLiga = isset($datos['liga']) ? htmlspecialchars($datos['liga']) : null;
 		$nombreUsu = isset($_SESSION['nombre']) ? $_SESSION['nombre'] : null;
