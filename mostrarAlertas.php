@@ -77,8 +77,18 @@ $codigo = $_GET['codAlerta'];
 					echo "Por favor, rellene todos los campos y acepte las condiciones del servicio.";
 					header("refresh:3; url=registro.php");
 					break;
+				case 13:
+					echo "Algo ha fallado por aquí..." . "<br>";
+					echo "<p>Te redireccionamos a la página de inicio.</p>";
+					header("refresh:5; url=index.php");
+					break;
 				case 15:
 					echo "Gracias, ¡Vuelva pronto!" . "<br>";
+					echo "<p>Te redireccionamos a la página de inicio.</p>";
+					header("refresh:5; url=index.php");
+					break;
+				case 16:
+					echo "El comentario se ha agregado con éxito" . "<br>";
 					echo "<p>Te redireccionamos a la página de inicio.</p>";
 					header("refresh:5; url=index.php");
 					break;
