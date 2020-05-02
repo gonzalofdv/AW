@@ -59,6 +59,7 @@ div#start a:hover {
 	margin-left: auto;
 	margin-right: auto;
 	width: 30%;
+	border: 4px solid #FFFFFF;
 }
 
 div#menu {
