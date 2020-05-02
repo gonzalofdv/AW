@@ -224,6 +224,10 @@ div.saludo {
 	text-align: right;
 }
 
+#comentarios{
+	padding: 0.7em;
+}
+
 fieldset {
 	border: 1px solid black;
 	width: 15em;

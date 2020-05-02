@@ -181,8 +181,8 @@ $idNoticia = $_GET['idN'];
 	   				$usu=$usuario->NombreUsuario;
 	   				?>
 					<tr>
-						<td><?php echo $usu ?></td>
-						<td><?php echo $mostrar->Comentario ?></td>
+						<td id="comentarios"><?php echo $usu ?></td>
+						<td id=comentarios><?php echo $mostrar->Comentario ?></td>
  					</tr>
 		<?php
 		    }
