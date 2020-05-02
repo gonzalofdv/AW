@@ -24,7 +24,7 @@
 			?>
 	</div>
 	<div id="elVarderin">
-		<img src="./img/ElVARderinDeCornerr.jpg" class="imagenPrincipal">
+		<input type="image" onclick="location.href='index.php'" src="./img/ElVARderinDeCornerr.jpg" class="imagenPrincipal">
 		<!--<img src="./img/ElVARderinDeCorner.jpg" position = center>-->
 	</div>
 	<div id="menu">
