@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Rubik+One';
+
 body {
 	display: grid;
 	grid-template-columns: auto 350px;
@@ -42,7 +44,8 @@ div#cabecera a, div#cabecera a:visited {
 div#start {
 	padding: 10px;
 	text-align: right;
-	margin-bottom: 14px;
+	display: flex;
+	justify-content: flex-end;
 }
 
 div#start a:hover {
@@ -52,9 +55,9 @@ div#start a:hover {
 
 .boton_registro{
     text-decoration: none;
-    padding: 10px;
+    padding: 8px;
 	font-family: candara;
-    font-size: 20px;
+    font-size: 18px;
     background-color: #FFA62C;
     border-radius: 6px;
     border: 2px solid #E18100;
@@ -62,12 +65,40 @@ div#start a:hover {
 
 .boton_accede{
     text-decoration: none;
-    padding: 10px;
+    padding: 8px;
 	font-family: candara;
-    font-size: 20px;
+    font-size: 18px;
     background-color: #1883ba;
     border-radius: 6px;
     border: 2px solid #0016b0;
+}
+
+div#infoStart {
+	text-decoration: none;
+	padding-top: 4px;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-top: 10px;
+	font-family: candara;
+	font-size: 15px;
+	color: white;
+	background-color: grey;
+	border-radius: 20px;
+	border: 2px solid black;
+}
+
+div#logout {
+	text-decoration: none;
+	padding: 8px;
+	font-family: candara;
+	font-size: 18px;
+	background-color: red;
+	border-radius: 6px;
+	border: 2px solid black;
+}
+
+div#elVarderin {
+	margin-bottom: 14px;
 }
 
 .imagenPrincipal {
@@ -75,11 +106,11 @@ div#start a:hover {
 	margin-left: auto;
 	margin-right: auto;
 	width: 30%;
-	border: 4px solid #FFFFFF;
+	border: 4px solid #FFFFFF
 }
 
 div#menu {
-	height: 40px;
+	height: 60px;
 	background-color: #303030
 	color: white;
 	text-align: center;
@@ -91,13 +122,52 @@ div#menu button{
 	width: 200px;
 }
 
-div#ligas {
-	margin-top: 20px;
-	display: flex;
-	justify-content: space-between;
-	animation: ligas 5s infinite linear;
-	position:relative;
+.botonMenu { 
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-family: 'Rubik One', sans-serif;
+  font-size: 17px;
+  padding: 20px;
+  width: 100px; 
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
 }
+.botonMenu span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.botonMenu span:after {
+content: '\00bb';  /* Entidades CSS. Para usar entidades HTML, use &#8594;*/
+position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.botonMenu:hover span {
+  padding-right: 25px;
+}
+.botonMenu:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+div#ligas {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    animation: ligas 5s infinite linear;
+    position:relative;
+}
+
+.botonLiga:hover {-webkit-transform:scale(1.1);transform:scale(1.1);}
 
 @keyframes ligas{
 	0%{top:0em}
