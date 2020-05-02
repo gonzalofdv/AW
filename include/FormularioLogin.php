@@ -66,6 +66,7 @@ class FormularioLogin extends Form {
 		}
 
         $html = <<<EOF
+        <legend>Acceso al sistema</legend><br>
         <input type="text" name="usuario" placeholder="Introduzca su usuario: " value="$usuario">
         <input type="password" name="password" placeholder="Contraseña: ">
         <input type="submit" value="Enviar">
