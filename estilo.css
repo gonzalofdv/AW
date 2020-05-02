@@ -22,6 +22,22 @@ div#cabecera a, div#cabecera a:visited {
 	font-weight: bold;
 	text-decoration: none;
 }
+.divnoticias{
+	width:1400px;
+    height:650px;
+	overflow: auto;
+}
+
+.divnoticias div{
+	
+	margin-top:-10px;
+}
+.tusmus{
+	width:360px;
+    height:360px;
+    float:left;
+    margin:10px 10px 0 0;
+}
 
 div#start {
 	padding: 10px;
