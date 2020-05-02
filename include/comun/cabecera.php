@@ -23,17 +23,17 @@
 			
 	</div>
 	<div id="menu">
-			<button onclick="location.href='index.php'">Inicio</button>
-			<button onclick="location.href='mostrarInicioQuiz.php'">Quiz</button>
-			<button onclick="location.href='somosFamilia.php'">Somos Familia</button>
+			<button onclick="location.href='index.php'" class="botonMenu">Inicio</button>
+			<button onclick="location.href='mostrarInicioQuiz.php'" class="botonMenu">Quiz</button>
+			<button onclick="location.href='somosFamilia.php'" class="botonMenu">Somos Familia</button>
 	</div>
 
 	<div id="ligas">
-			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=1'" value="Liga Santander" src="img/ligas/LaLigaSantander.png" />
-			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=2'" value="Liga Smartbank" src="img/ligas/LaLigaSmartbank.png" />
-			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=3'" value="Premier League" src="img/ligas/PremierLeague.png" />
-			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=4'" value="Bundesliga" src="img/ligas/Bundesliga.png" />
-			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=5'" value="Ligue 1" src="img/ligas/Ligue1.png" />
-			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=6'" value="Serie A" src="img/ligas/SerieA.png" />
+			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=1'" value="Liga Santander" src="img/ligas/LaLigaSantander.png" class="botonLiga" />
+			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=2'" value="Liga Smartbank" src="img/ligas/LaLigaSmartbank.png" class="botonLiga"/>
+			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=3'" value="Premier League" src="img/ligas/PremierLeague.png" class="botonLiga"/>
+			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=4'" value="Bundesliga" src="img/ligas/Bundesliga.png" class="botonLiga"/>
+			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=5'" value="Ligue 1" src="img/ligas/Ligue1.png" class="botonLiga"/>
+			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=6'" value="Serie A" src="img/ligas/SerieA.png" class="botonLiga"/>
 	</div>
 </div>
