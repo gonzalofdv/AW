@@ -74,7 +74,7 @@ $codLiga = isset($_POST['liga']) ? $_POST['liga'] : 0;
 				else{
 					echo '<button onclick=location.href="noticia.php">Agregar nueva noticia</button>';
 				}
-			echo '</div>;
+			echo '</div>';
 		?>
 	</div>
 
