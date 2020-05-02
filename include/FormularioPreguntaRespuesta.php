@@ -102,7 +102,7 @@ class FormularioPreguntaRespuesta extends Form {
         $html .= 'Respuesta falsa 1:<br> <input type="text" name="f1" value="'.$f1.'"><br>';
         $html .= 'Respuesta falsa 2: <br> <input type="text" name="f2" value="'.$f2.'"><br>';
         $html .='<input type="checkbox" name="condi" value="ok">Confirmar enviar noticia.<br>';
-        $html .='<input type="submit" name="aceptar">';
+        $html .='<input class="botGen" type="submit" name="aceptar">';
         $html .='</fieldset>';
 
 		return $html;

@@ -337,3 +337,79 @@ label {
 button {
 	margin: 0 auto;
 } 
+
+img#somosFam{
+	width:800px;
+	height:420px;
+	display: block;
+	margin: auto;
+}
+
+p.somosFam{
+	font-size: 18px;
+}
+
+h2#somosFam{
+	font-size: 30px;
+}
+
+.botGen{
+	position: relative;
+	padding: 25px 10px;
+	border-radius: 6px;
+	text-align: center;
+	font-weight: bold;
+	max-width: 320px;
+	height: 65px;
+	overflow: hidden;
+	color:rgba(255,255,255,1);
+	cursor: pointer;
+	letter-spacing: 2px;
+	box-shadow:inset 0 0 0 1px rgba(0,0,0,0.1);
+	text-decoration: none;
+	transition: all ease 0.5s;
+	background:#10B87B;
+}
+
+.botGen:after,
+.botGen:before{
+	width: 80px;
+	height: 200px;
+	content: '';
+	display: block;
+	background: rgba(255,255,255,0.5);
+	transform: rotate(45deg);
+	top: -60px;
+	position: absolute;
+	transition: none;
+	right:-45%;
+	cursor: pointer;
+}
+
+.botGen:before{
+	left: -48%;
+}
+
+.botGen:hover{
+	text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+	background:#12C987
+}
+
+.botGen:hover:after,
+.botGen:hover:before{
+	transform: rotate(45deg), scaleX(130%);
+	background: rgba(255,255,255,0.1);
+	transition: all ease 0.5s;
+}
+
+.botGen:hover:after{
+	right: 130%;
+}
+
+.botGen:hover:before{
+	left: 130%;
+}
+
+div.centro{
+	text-align: center;
+}

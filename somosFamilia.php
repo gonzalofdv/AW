@@ -19,17 +19,17 @@
 		require("include/comun/cabecera.php");
 	?>
 
-	<div id="contenido">
+	<div class="centro" id="contenido">
 	
-		<h1>Somos Familia</h1>
-		<h2> ¿Aún no eres usuario Somos Familia? Aquí te explicamos todo.</h2>
-		<p>	El usuario Somos Familia es el más privilegiado de nuestra web, con numerosas ventajas que te permitirán crear y añadir tu propio contenido
+		<img id="somosFam" src="img/somosfamilia.png">
+		<h2 id="somosFam"> ¿Aún no eres usuario Somos Familia? Aquí te explicamos todo.</h2>
+		<p class="somosFam">	El usuario Somos Familia es el más privilegiado de nuestra web, con numerosas ventajas que te permitirán crear y añadir tu propio contenido
 			a nuestra web y hacerla todavía más completa. ¿Y cómo se consigue ser un usuario Somos Familia? Con nuestro sistema especial de puntos: si obtienes
 			200 puntos y los canjeas te convertirás en uno más de nosotros... <strong>¡Un nuevo usuario Somos Familia!</strong>
 		</p>
 		
-		<button id="puntos" onclick=myFunction()>¡Pulsa para ver el sistema de puntos!</button>
-		<button id="ventajas" onclick=myFunctionTwo()>Ventajas</button>
+		<button class="botGen" id="puntos" onclick=myFunction()>¡Ver el sistema de puntos!</button>
+		<button class="botGen" id="ventajas" onclick=myFunctionTwo()>Mostrar las ventajas</button>
 		
 		<script>
 			
@@ -46,15 +46,15 @@
 		</script>
 		
 		
-		<p>Si tienes puntos por canjear, pulsa aquí para sumarlos a tu casillero (será necesario que hayas iniciado sesión para ver activo el botón): </p>
+		<p class="somosFam"> Si tienes puntos por canjear, pulsa aquí para sumarlos a tu casillero (será necesario que hayas iniciado sesión para ver activo el botón): </p>
 
 		<?php
 
 			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
-				echo '<button onclick=location.href="procesarCanjearFamilia.php" disabled>Canjea tus puntos!</button>';
+				echo '<button class="botGen" onclick=location.href="procesarCanjearFamilia.php" disabled>Canjea tus puntos!</button>';
 			}
 			else{
-				echo '<button onclick=location.href="procesarCanjearFamilia.php">Canjea tus puntos!</button>';
+				echo '<button class="botGen" onclick=location.href="procesarCanjearFamilia.php">Canjea tus puntos!</button>';
 			}
 
 		?>

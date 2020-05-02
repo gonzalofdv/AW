@@ -51,7 +51,7 @@
 			<?php
 				//Desahibilta el boton si no estas logueado
 				if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
-					echo '<button onclick=location.href="mostrarQuiz.php" disabled>¡Empezar Quiz!</button>';	
+					echo '<button class="botGen" onclick=location.href="mostrarQuiz.php" disabled>¡Empezar Quiz!</button>';	
 				}
 				else{
 			?>
@@ -67,8 +67,8 @@
 					}
 				?>
 					</select>
-					<input type="submit" value="¡Empezar Quiz!">
-				<form>	
+					<input class="botGen" type="submit" value="¡Empezar Quiz!">
+				</form>	
 
 			<?php	
 				}
@@ -78,10 +78,10 @@
 				//Deshabilita el boton si no estas logueado, no eres admin o no eres somos familia
 				if(!isset($_SESSION["login"]) || $_SESSION["login"] == false || ($_SESSION["esAdmin"] == false && $_SESSION["esFamilia"] == false)){
 
-					echo '<button onclick=location.href="nuevaPreguntaRespuesta.php" disabled>Crea una nueva pregunta</button>';
+					echo '<button class="botGen" onclick=location.href="nuevaPreguntaRespuesta.php" disabled>Crea una nueva pregunta</button>';
 				}
 				else{
-					echo '<button onclick=location.href="nuevaPreguntaRespuesta.php">Crea una nueva pregunta</button>';
+					echo '<button class="botGen" onclick=location.href="nuevaPreguntaRespuesta.php">Crea una nueva pregunta</button>';
 				}
 
 			?>

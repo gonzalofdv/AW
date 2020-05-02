@@ -6,10 +6,10 @@ $ligasa = new LigaSA();
 $res=$ligasa->getNombreLiga($codLiga);
 
 if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
-	echo '<button onclick=location.href="mostrarQuiz.php" disabled>¡Empezar Quiz '.$res->Nombre.'!</button>';	
+	echo '<button class="botGen" onclick=location.href="mostrarQuiz.php" disabled>¡Empezar Quiz '.$res->Nombre.'!</button>';	
 }
 else{
-	echo '<button onclick=location.href="mostrarQuiz.php?liga='.$codLiga.'">¡Empezar Quiz '.$res->Nombre.'!</button>';
+	echo '<button class="botGen" onclick=location.href="mostrarQuiz.php?liga='.$codLiga.'">¡Empezar Quiz '.$res->Nombre.'!</button>';
 }
 
 
