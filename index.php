@@ -27,8 +27,7 @@ $codLiga = isset($_POST['liga']) ? $_POST['liga'] : 0;
 	<div id="contenido">
 		<h1><b>EL VARDERÍN DE CORNER</b></h1>
 		<?php
-			echo '<div class="divnoticias>';
-				echo '<form method="POST" action="index.php">';
+			echo '<form method="POST" action="index.php">';
 
 				if($codLiga != 0){
 					$ligasa = new LigaSA();
@@ -40,41 +39,41 @@ $codLiga = isset($_POST['liga']) ? $_POST['liga'] : 0;
 
 				echo '<h2>Visualizando noticias de ' . $valueLiga .'</h2><br>';
 
-				echo '<select name="liga">';
-				echo '<option value="0">Todas</option>';
-				$ligasa = new LigaSA();
-				$res=$ligasa->devuelveLigaSA();
-				while($valores = mysqli_fetch_array($res)){
-					echo '<option value=' . $valores[0] . '> ' . $valores[1] . '</option>';
-				}
+				echo '<select name="liga" class="selectTam">';
+					echo '<option value="0">Todas</option>';
+					$ligasa = new LigaSA();
+					$res=$ligasa->devuelveLigaSA();
+					while($valores = mysqli_fetch_array($res)){
+						echo '<option value=' . $valores[0] . '> ' . $valores[1] . '</option>';
+					}
 				echo '</select>';
+				echo '<input class="botGen" type="submit" value="Aplicar filtro">';
 
-				//echo '<button onclick=location.href="index.php?liga='.$codLiga.'">Aplicar filtro</button>';
-				echo '<input type="submit" value="Aplicar filtro">';
+			echo '</form>';
+			echo '<br><br>';
 
-				echo '</form>';
-				echo '<br>';
-				echo '<br>';
+			echo '<div class="divnoticias">';
 
 				$noticiaSA = new NoticiaSA();
 				$res = $noticiaSA->devuelveNoticias($codLiga);
 				while($valores = mysqli_fetch_array($res)){
-					echo '<div class="tusmus">';
-					echo '<img src="'.'./img/noticias/'.$valores[5].'" alt="Imagen noticia" width="350">';
-					echo '<h2><a href="mostrarNoticia.php?idN='.$valores[0].'">' . $valores[4] . '</a></h2>';
-					echo '<h3>'.substr($valores[3],0,40) . "...".'</h3>';
+					echo '<div class="noticiaindiv">';
+						echo '<img class="imgNot" src="'.'./img/noticias/'.$valores[5].'" alt="Imagen noticia">';
+						echo '<h2><a href="mostrarNoticia.php?idN='.$valores[0].'">' . $valores[4] . '</a></h2>';
+						echo '<h3>'.substr($valores[3],0,40) . "...".'</h3>';
 
-					echo '<br>';
-					echo '</div>';
+						echo '<br>';
+					echo '</div>';		
 				}
 					
-				if(!isset($_SESSION["login"]) || $_SESSION["login"] == false || ($_SESSION["esAdmin"] == false && $_SESSION["esFamilia"] == false)){
-					echo '<button onclick=location.href="noticia.php" disabled>Agregar nueva noticia</button>';
-				}
-				else{
-					echo '<button onclick=location.href="noticia.php">Agregar nueva noticia</button>';
-				}
 			echo '</div>';
+
+			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false || ($_SESSION["esAdmin"] == false && $_SESSION["esFamilia"] == false)){
+				echo '<button class="botGenOff" onclick=location.href="noticia.php" disabled>Agregar nueva noticia</button>';
+			}
+			else{
+				echo '<button class="botGen" onclick=location.href="noticia.php">Agregar nueva noticia</button>';
+			}
 		?>
 	</div>
 

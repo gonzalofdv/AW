@@ -51,7 +51,7 @@
 		<?php
 
 			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
-				echo '<button class="botGen" onclick=location.href="procesarCanjearFamilia.php" disabled>Canjea tus puntos!</button>';
+				echo '<button class="botGenOff" onclick=location.href="procesarCanjearFamilia.php" disabled>Canjea tus puntos!</button>';
 			}
 			else{
 				echo '<button class="botGen" onclick=location.href="procesarCanjearFamilia.php">Canjea tus puntos!</button>';
