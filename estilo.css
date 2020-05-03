@@ -1,4 +1,7 @@
-@import 'https://fonts.googleapis.com/css?family=Rubik+One';
+@import 'https://fonts.googleapis.com/css?family=Rubik+One'; /* Fuente de los botones de la cabecera (Inicio, Quiz, SomosFamilia) */
+@import 'https://fonts.googleapis.com/css2?family=Days+One&display=swap'; /* Fuente de "TOP 10 USUARIOS" */
+@import 'https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap'; /* Fuente de los títulos del ranking de usuarios */
+@import 'https://fonts.googleapis.com/css2?family=Neucha&display=swap'; /* Fuente del contenido del ranking de usuarios */
 
 body {
 	display: grid;
@@ -11,8 +14,9 @@ body {
 	background-color: #14B76E;
 	background-image:url(./img/cesped.jpg);
 }
+/*----------------------------------------------------------------*/
 	
-div#cabecera {
+div#cabecera { /* Cabecera de la página */
 	padding: 20px;
 	grid-area: header;
 	display: flex;
@@ -24,24 +28,8 @@ div#cabecera a, div#cabecera a:visited {
 	font-weight: bold;
 	text-decoration: none;
 }
-.divnoticias{
-	width:1400px;
-    height:650px;
-	overflow: auto;
-}
 
-.divnoticias div{
-	
-	margin-top:-10px;
-}
-.tusmus{
-	width:360px;
-    height:360px;
-    float:left;
-    margin:10px 10px 0 0;
-}
-
-div#start {
+div#start { /* Apartado donde se encuentran los botones de registrarse, accede, y cerrar sesión */
 	padding: 10px;
 	text-align: right;
 	display: flex;
@@ -73,7 +61,7 @@ div#start a:hover {
     border: 2px solid #0016b0;
 }
 
-div#infoStart {
+div#infoStart { /* Saludo al usuario e información de sus privilegios */
 	text-decoration: none;
 	padding-top: 4px;
 	padding-right: 10px;
@@ -87,7 +75,7 @@ div#infoStart {
 	border: 2px solid black;
 }
 
-div#logout {
+div#logout { /* Botón de cerrar sesión */
 	text-decoration: none;
 	padding: 8px;
 	font-family: candara;
@@ -97,7 +85,7 @@ div#logout {
 	border: 2px solid black;
 }
 
-div#elVarderin {
+div#elVarderin { /* Imagen de portada de ElVARderin */
 	margin-bottom: 14px;
 }
 
@@ -109,7 +97,7 @@ div#elVarderin {
 	border: 4px solid #FFFFFF
 }
 
-div#menu {
+div#menu { /* Botones de inicio, quiz y somosFamilia */
 	height: 60px;
 	background-color: #303030
 	color: white;
@@ -159,7 +147,7 @@ position: absolute;
   right: 0;
 }
 
-div#ligas {
+div#ligas { /* Iconos de las seis ligas */
     margin-top: 20px;
     display: flex;
     justify-content: space-around;
@@ -178,8 +166,9 @@ div#ligas {
 	50%{top:0em}
 	100%{top:0em}
 }
+/*----------------------------------------------------------------*/
 
-div#contenido {
+div#contenido { /* Todo el contenido de la página */
 	padding: 10px;
 	border-style: solid;
 	border-width: 2px;
@@ -196,168 +185,26 @@ div#opcionesLiga{
 	justify-content: center;
 }
 
-div#sidebar-right {
-	padding: 10px;
-	border-style: solid;
-	border-width: 2px;
-	border-color: #939393;
-	float: right;
-	width: auto;
-	min-height: 600px;
-	background-color: #dddddd;
-	grid-area: sidebar;
-	display: flex;
-	flex-direction: column;
+.divnoticias{
+	width:1400px;
+    height:650px;
+	overflow: auto;
 }
 
-div#perfil {
-	text-align: center;
-}
-
-.perfil{
-	margin: 20px auto;
-	border: none;
-	padding: 10px 44px;
-	font-size: 36px;
-	position: relative;
-}
-
-.perfil::before{
-	transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-	content: '';
-	width: 50%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
+.divnoticias div{
 	
-.rounded{
-	border-radius:50px;
+	margin-top:-10px;
 }
-
-.text-green{
-	color:#00F0B5;
-	mix-blend-mode: difference;
-}
-
-.rounded::before{
-	border-radius: 50px;
-	width: 25%;
-	background: #00F0B5;
-}
-
-.rounded:hover::before{
-background: #00F0B5;
-	width: 100%;
-}
-
-div#ranking {
-	text-align: center;
-	font-family: verdana;
-	width: 100%;
-}
-
-div .tablas {
-	
-}
-
-div .imagenes {
-	width: 325px;
-	
-}
-
-div#pie {
-	padding: 20px;
-	border-style: solid;
-	border-width: 2px;
-	border-color: black;
-	background-color: #303030;
-	color: white;
-	text-align: center;
-	grid-area: footer;
-}
-
-div#contenedor {
-	width: 1134px;
-	margin: auto;
-	border: 1px solid black;
-	background-color: #aaaaaa;
-	margin-top: 30px;
-}
-
-div#sidebar-left {
-	padding: 10px;
-	float: left;
-	width: 170px;
-	height: 400px;
-	background-color: #dddddd;
-}
-
-div#sidebar-left a, div#sidebar-left a:visited {
-	color: red;
-	font-weight: bold;
-	text-decoration: none;
-} 
-
-div#sidebar-left a:hover {
-	color: red;
-	text-decoration: underline;
-}
-
-div.saludo {
-	width: 100%;
-	text-align: right;
-}
-
-div#miPerfil h1{
-	padding: 5px;
-	background-color:#07AA2A; 
-	text-align: center;
-	 font-family: 'Rubik One', sans-serif;
-  	font-size: 35px;
-}
-
-div#miPerfil p{
-	color: #07AA2A;
-	font-weight: bold;
-	text-decoration: none;
-	font-size: 25px;
-}
-
-div#miPerfil span{
-	color: black;
-	text-decoration: none;
-	font-size: 25px;
+.tusmus{
+	width:360px;
+    height:360px;
+    float:left;
+    margin:10px 10px 0 0;
 }
 
 #comentarios{
 	padding: 0.7em;
 }
-
-fieldset {
-	border: 1px solid black;
-	width: 15em;
-	margin: 0 auto;
-}
-
-legend {
-	color: #fff;
-	background: #303030;
-	border: 1px solid black;
-	padding: 2px 6px;
-} 
-
-label {
-	width: 4em;
-	text-align: right;
-	margin-right: 0.5em;
-	display: inline-block;
-}
-
-button {
-	margin: 0 auto;
-} 
 
 img#somosFam{
 	width:800px;
@@ -433,4 +280,181 @@ h2#somosFam{
 
 div.centro{
 	text-align: center;
+}
+/*----------------------------------------------------------------*/
+
+div#sidebar-right { /* Zona de la derecha de la página */
+	padding: 10px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #939393;
+	float: right;
+	width: auto;
+	min-height: 600px;
+	background-color: #dddddd;
+	grid-area: sidebar;
+	display: flex;
+	flex-direction: column;
+}
+
+div#perfil { /* Botón de "Mi perfil" */
+	text-align: center;
+}
+
+.perfil{
+	margin: 20px auto;
+	border: none;
+	padding: 10px 44px;
+	font-size: 36px;
+	position: relative;
+}
+
+.perfil::before{
+	transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	content: '';
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+	
+.rounded{
+	border-radius:50px;
+}
+
+.text-green{
+	color:#00F0B5;
+	mix-blend-mode: difference;
+}
+
+.rounded::before{
+	border-radius: 50px;
+	width: 25%;
+	background: #00F0B5;
+}
+
+.rounded:hover::before{
+background: #00F0B5;
+	width: 100%;
+}
+
+div#miPerfil h1{ /* Página de mi perfil */
+	padding: 5px;
+	background-color:#07AA2A; 
+	text-align: center;
+	 font-family: 'Rubik One', sans-serif;
+  	font-size: 35px;
+}
+
+div#miPerfil p{
+	color: #07AA2A;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 25px;
+}
+
+div#miPerfil span{
+	color: black;
+	text-decoration: none;
+	font-size: 25px;
+}
+
+div#ranking { /* Tabla del ranking de usuarios */
+	text-align: center;
+	width: 100%;
+}
+
+div .tablas {
+	width: 100%;
+	border-collapse: collapse;
+	border: 2px solid;
+}
+
+.tablas caption {
+	padding: 10px;
+	font-family: 'Days One', sans-serif;
+	font-size: 150%;
+}
+
+.tablas tr {
+	background-color: #FCFF3D;
+}
+
+tr:hover {
+	background-color:#E5E800;
+}
+
+.tablas th {
+	background-color: black;
+	color: white;
+	padding: 5px;
+	font-family: 'Montserrat Alternates', sans-serif;
+	font-size: 120%;
+}
+
+.tablas td {
+	padding: 3px;
+	font-family: 'Neucha', cursive;
+	font-size: 120%;
+	font-weight: bold;
+}
+
+div .imagenes { /* Anuncios del final del sidebar */
+	width: 325px;
+}
+/*----------------------------------------------------------------*/
+
+div#pie { /* Pie de la página */
+	padding: 20px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+	background-color: #303030;
+	color: white;
+	text-align: center;
+	grid-area: footer;
+}
+/*----------------------------------------------------------------*/
+
+
+div#contenedor {
+	width: 1134px;
+	margin: auto;
+	border: 1px solid black;
+	background-color: #aaaaaa;
+	margin-top: 30px;
+}
+/*<<<<<< ESTO CREO QUE SOBRA >>>>>>>>*/
+
+
+div.saludo {
+	width: 100%;
+	text-align: right;
+}
+/*<<<<<< ESTO CREO QUE SOBRA >>>>>>>>*/
+
+
+fieldset {
+	border: 1px solid black;
+	width: 15em;
+	margin: 0 auto;
+}
+
+legend {
+	color: #fff;
+	background: #303030;
+	border: 1px solid black;
+	padding: 2px 6px;
+} 
+
+label {
+	width: 4em;
+	text-align: right;
+	margin-right: 0.5em;
+	display: inline-block;
+}
+
+button {
+	margin: 0 auto;
 }

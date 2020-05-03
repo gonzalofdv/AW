@@ -22,12 +22,12 @@
 
 		?>
 
-		<table class="tablas" border="2">
-			<caption><b>⭐TOP 10 USUARIOS⭐</b></caption>
+		<table class="tablas">
+			<caption>? TOP 10 USUARIOS ?</caption>
 			<tr>
-				<td><b>Puesto</b></td>	
-				<td><b>Usuario</b></td>
-				<td><b>Puntos</b></td>
+				<th>Puesto</th>	
+				<th>Usuario</th>
+				<th>Puntos</th>
 			</tr>
 
 		<?php
