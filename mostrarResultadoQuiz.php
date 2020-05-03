@@ -21,7 +21,7 @@ $aciertos = $_GET['aciertos'];?>
 		require("include/comun/cabecera.php");
 	?>
 
-	<div id="contenido">		
+	<div class="contenido">		
 	<?php
 	if($aciertos==10){
 		echo "<h2>¡Enhorabuena ".$_SESSION['nombre']."!, has conseguido acertar todas las preguntas del Quiz. Sumarás 20 puntos a tu registro</h2>";

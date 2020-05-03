@@ -21,7 +21,7 @@ require_once ('include/FormularioLogin.php');
 		require("include/comun/cabecera.php");
 	?>
 
-	<div id="contenido">
+	<div class="contenido">
 
 		<?php
 			$form = new FormularioLogin();

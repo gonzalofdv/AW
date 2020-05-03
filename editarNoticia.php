@@ -21,7 +21,7 @@ $idN= $_GET['idN'];
 	<?php
 		require("include/comun/cabecera.php");
 	?>
-	<div id="contenido">
+	<div class="contenido">
 	<?php
 		$form = new FormularioEditarNoticia($idN);
 		$form->gestiona();

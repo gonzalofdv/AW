@@ -21,7 +21,7 @@ $codLiga = htmlspecialchars($_GET['liga']);
 	<?php
 		require("include/comun/cabecera.php");
 	?>
-	<div id="contenido">
+	<div class="contenido">
 	<br>
 
 	<?php

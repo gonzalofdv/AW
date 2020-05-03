@@ -23,7 +23,7 @@ $idNoticia = $_GET['idN'];
 		require("include/comun/cabecera.php");
 	?>
 
-	<div id="contenido">
+	<div class="contenido">
 
 		<h1>Acceso al sistema</h1>
 

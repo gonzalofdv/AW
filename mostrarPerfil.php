@@ -19,7 +19,7 @@ require_once('include/sa/UsuarioSA.php');
 		require("include/comun/cabecera.php");
 	?>
 
-	<div id="contenido">
+	<div class="contenido">
 		<div id="miPerfil">
 		<h1>Perfil de Usuario</h1>
 		<?php

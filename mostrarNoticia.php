@@ -28,7 +28,7 @@ $idNoticia = $_GET['idN'];
 		require("include/comun/cabecera.php");
 	?>
 
-	<div id="contenido">
+	<div class="contenido">
 		<?php
 
 			$noticiaSA = new NoticiaSA();
@@ -164,7 +164,7 @@ $idNoticia = $_GET['idN'];
 				}
 				echo '<button class="botGen" onclick=location.href="procesarBorrarNoticia.php?idN='.$idNoticia.'">Eliminar noticia</button>';
 				echo '	';
-				echo '<button class="botGen" onclick=location.href="formularioEditarNoticia.php?idN='.$idNoticia.'">Editar noticia</button>';
+				echo '<button class="botGen" onclick=location.href="editarNoticia.php?idN='.$idNoticia.'">Editar noticia</button>';
 			}
 		
 			echo "<br><br>";

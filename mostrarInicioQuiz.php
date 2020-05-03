@@ -21,7 +21,7 @@
 			require("include/comun/cabecera.php");
 		?>
 		
-		<div id="contenido">
+		<div class="contenido">
 			<center>
 				<h1>¡Bienvenido al QUIZ!</h1>
 				<img src="./img/modifquiz.jpg" alt="quiz" width="400">

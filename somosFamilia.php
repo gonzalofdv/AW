@@ -19,7 +19,7 @@
 		require("include/comun/cabecera.php");
 	?>
 
-	<div class="centro" id="contenido">
+	<div class="centro contenido">
 	
 		<img id="somosFam" src="img/somosfamilia.png">
 		<h2 id="somosFam"> ¿Aún no eres usuario Somos Familia? Aquí te explicamos todo.</h2>

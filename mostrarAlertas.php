@@ -21,7 +21,7 @@ $codigo = $_GET['codAlerta'];
 		require("include/comun/cabecera.php");
 	?>
 
-	<div id="contenido">
+	<div class="contenido">
 
 		<?php
 

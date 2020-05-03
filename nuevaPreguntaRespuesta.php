@@ -17,7 +17,7 @@ require_once ('include/FormularioPreguntaRespuesta.php');
 	<?php
 		require("include/comun/cabecera.php");
 	?>
-	<div id="contenido">
+	<div class="contenido">
 	<br>
 		<?php
 			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false) {

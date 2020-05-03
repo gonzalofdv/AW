@@ -168,7 +168,7 @@ div#ligas { /* Iconos de las seis ligas */
 }
 /*----------------------------------------------------------------*/
 
-div#contenido { /* Todo el contenido de la página */
+div.contenido { /* Todo el contenido de la página */
 	padding: 10px;
 	border-style: solid;
 	border-width: 2px;
@@ -181,13 +181,17 @@ div#contenido { /* Todo el contenido de la página */
 	overflow: auto;
 }
 
+div#contenidoIni {
+	background-color:transparent;
+}
+
 div#opcionesLiga{
 	display:flex;
 	justify-content: center;
 }
 
 .divnoticias{
-	width:1400px;
+	min-width:600px;
     height:650px;
 	overflow: auto;
 }

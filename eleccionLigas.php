@@ -61,7 +61,7 @@ $codLiga = $_GET['codLiga'];
 		require("include/comun/cabecera.php");
 	?>
 	
-	<div id="contenido">
+	<div class="contenido">
 		<div id="opcionesLiga">
 			<input type="image" id="noticias" value="Noticias" src="img/iconos/news.png"/>
 			<input type="image" id="clasificacion" value="Clasificacion" src="img/iconos/clasificacion2.png"/>

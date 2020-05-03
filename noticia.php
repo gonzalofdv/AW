@@ -17,7 +17,7 @@ require_once ('include/FormularioNoticia.php');
 	<?php
 		require("include/comun/cabecera.php");
 	?>
-	<div id="contenido">
+	<div class="contenido">
 		<?php
 			$form = new FormularioNoticia();
 			$form->gestiona();

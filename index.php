@@ -24,7 +24,7 @@ $codLiga = isset($_POST['liga']) ? $_POST['liga'] : 0;
 		require("include/comun/cabecera.php");
 	?>
 
-	<div id="contenido">
+	<div class="contenido" id="contenidoIni">
 		<h1><b>EL VARDERÍN DE CORNER</b></h1>
 		<?php
 			echo '<form method="POST" action="index.php">';

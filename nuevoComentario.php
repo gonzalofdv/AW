@@ -18,7 +18,7 @@ $idN= $_GET['idN'];
 	<?php
 		require("include/comun/cabecera.php");
 	?>
-	<div id="contenido">
+	<div class="contenido">
 		<?php
 			$form = new FormularioComentario($idN);
 			$form->gestiona();
