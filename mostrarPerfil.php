@@ -20,22 +20,24 @@ require_once('include/sa/UsuarioSA.php');
 	?>
 
 	<div id="contenido">
+		<div id="miPerfil">
 		<h1>Perfil de Usuario</h1>
 		<?php
 			$usuarioSA = new UsuarioSA();
 			$perfil = $usuarioSA->getUsuario($usuario);
-			echo "<b>Usuario: </b>" . $perfil->NombreUsuario . "<br>";
-			echo "<b>Nombre: </b>" .$perfil->Nombre ." ".$perfil->Apellido1 ." ". $perfil->Apellido2 . "<br>";
-			echo "<b>Sexo: </b>" . $perfil->Sexo . "<br>";
-			echo "<b>Tu equipo: </b>" . $perfil->EquipoFavorito . "<br>";
-			echo "<b>Mail: </b>" . $perfil->Email . "<br>";
+			echo "<p>Usuario: <span>" . $perfil->NombreUsuario . "</span></p>";
+			echo "<p>Nombre: <span>" .$perfil->Nombre ." ".$perfil->Apellido1 ." ". $perfil->Apellido2 . "</span></p>";
+			echo "<p>Sexo: <span>" . $perfil->Sexo . "</span></p>";
+			echo "<p>Tu equipo: <span>" . $perfil->EquipoFavorito . "</span></p>";
+			echo "<p>Mail: <span>" . $perfil->Email . "</span></p>";
 			if($perfil->SomosFamilia){
-				echo"<b>Usuario SomosFamilia: </b> SI <br>";
+				echo"<p>Usuario SomosFamilia: <span>SI </span> </p>";
 			}else{
-				echo"<b>Usuario SomosFamilia: </b> NO <br>";
+				echo"<p>Usuario SomosFamilia:  <span>NO </span></p>";
 			}  
-			echo "<b>Puntos conseguidos: </b>" . $perfil->Puntos . "<br>";
+			echo "<p>Puntos conseguidos: <span>" . $perfil->Puntos . "</span></p>";
 		?>
+		</div>
 		
 
 	</div>

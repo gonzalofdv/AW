@@ -310,6 +310,27 @@ div.saludo {
 	text-align: right;
 }
 
+div#miPerfil h1{
+	padding: 5px;
+	background-color:#07AA2A; 
+	text-align: center;
+	 font-family: 'Rubik One', sans-serif;
+  	font-size: 35px;
+}
+
+div#miPerfil p{
+	color: #07AA2A;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 25px;
+}
+
+div#miPerfil span{
+	color: black;
+	text-decoration: none;
+	font-size: 25px;
+}
+
 #comentarios{
 	padding: 0.7em;
 }
