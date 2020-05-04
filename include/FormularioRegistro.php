@@ -106,6 +106,7 @@ class FormularioRegistro extends Form {
 
 		$html = <<<EOF
 		<legend>Registro Usuario</legend>
+		<div class=formulario>
 		Nombre:<br> <input type="text" name="nom" value="$nombre"><br>
 		Apellido1:<br> <input type="text" name="apellido1" value="$apellido1"><br>
 		Apellido2:<br> <input type="text" name="apellido2" value="$apellido2"><br>
@@ -120,6 +121,7 @@ class FormularioRegistro extends Form {
 		<input type="password" name="rContrasena" value="" /><br>
 		E-mail:<br> <input type="text" name="mail" value="$mail"><br>
 		<input type="checkbox" name="condi" value="ok">Acepto las condiciones del servicio<br>
+		</div>
 		<input type="submit" name="aceptar">
 		EOF;	
 		

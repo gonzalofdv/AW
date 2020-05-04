@@ -66,11 +66,15 @@ class FormularioLogin extends Form {
 		}
 
         $html = <<<EOF
-        <legend>Acceso al sistema</legend><br>
-        <input type="text" name="usuario" placeholder="Introduzca su usuario: " value="$usuario">
-        <input type="password" name="password" placeholder="Contraseña: ">
-        <input type="submit" value="Enviar">
-        EOF;
+		<legend>Login</legend>
+		<div class="formulario">
+		<label><span class="number">1</span>Usuario:</label>
+		<input type="text" name="usuario" placeholder="Introduzca su usuario: " value="$usuario" />
+		<label><span class="number">2</span>Contraseña:</label>
+		<input type="password" name="password" placeholder="Contraseña: " /><br>
+		</div>
+		<input type="submit" value="Enviar">
+		EOF;
 
 		return $html;
 	}
