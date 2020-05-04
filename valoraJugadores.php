@@ -26,23 +26,34 @@ $codLiga = $_POST['codLiga'];
 	$jugadoresSA = new JugadoresSA();
 	$votacion = $votacionSA->getVotacion($codLiga);
 	$i=0;
+	$j=0;
 	while($res=mysqli_fetch_array($votacion)){
 		echo '<form action="procesarValoracion.php?i='.$i.'" method="post">';
-		echo '<fieldset>';
-		echo "<legend>".$res[2]."</legend>";
-		$opciones=$opcionesSA->getOpciones($res[0]);
-		while($res2=mysqli_fetch_array($opciones)){
-			$jugador=$jugadoresSA->getApodo($res2[2]);
-			echo '<input type=radio name=vot'.$i.' value='.$res2[0].' />'.$jugador->Apodo.'  -  '.$res2[3].' votos <br>';
-		}
-		$i++;
-		if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
-			echo '<input type="submit" name="aceptar" disabled><br>';
-		}
-		else{
-			echo '<input type="submit" name="aceptar"><br>';
-		}
-		echo '</fieldset>';
+			echo '<div class="divValoracion">';
+				echo '<fieldset class="fieldValoracion">';
+					echo "<legend class='legValoracion'>".$res[2]."</legend>";
+					echo '<div class="opcionesVal">';
+						$opciones=$opcionesSA->getOpciones($res[0]);
+						echo '<ul>';
+						while($res2=mysqli_fetch_array($opciones)){
+							$jugador=$jugadoresSA->getApodo($res2[2]);
+							echo '<li>';
+							echo '<input type=radio id=vot'.$j.' name=vot'.$i.' value='.$res2[0].' >';
+							echo '<label class="labelVal" for=vot'.$j.'>' .$jugador->Apodo.'  -  '.$res2[3].' votos <br>';
+							echo '</li>';
+							$j++;
+						}
+						echo '</ul>';
+						$i++;
+						if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
+							echo '<input type="submit" name="aceptar" disabled><br>';
+						}
+						else{
+							echo '<input type="submit" name="aceptar"><br>';
+						}
+					echo '</div>';
+				echo '</fieldset>';
+			echo '</div>';
 		echo '</form>';
 		
 	}
