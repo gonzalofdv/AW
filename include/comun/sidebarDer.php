@@ -23,7 +23,7 @@
 		?>
 
 		<table class="tablas">
-			<caption>⭐ TOP 10 USUARIOS ⭐</caption>
+			<caption>⭐TOP 10 USUARIOS⭐</caption>
 			<tr>
 				<th>Puesto</th>	
 				<th>Usuario</th>
