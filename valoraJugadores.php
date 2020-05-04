@@ -27,7 +27,7 @@ $codLiga = $_POST['codLiga'];
 	$votacion = $votacionSA->getVotacion($codLiga);
 	$i=0;
 	while($res=mysqli_fetch_array($votacion)){
-		echo '<form id="valoraJugadores" action="procesarValoracion.php?i='.$i.'" method="post">';
+		echo '<form action="procesarValoracion.php?i='.$i.'" method="post">';
 		echo '<fieldset>';
 		echo "<legend>".$res[2]."</legend>";
 		$opciones=$opcionesSA->getOpciones($res[0]);
@@ -42,12 +42,14 @@ $codLiga = $_POST['codLiga'];
 		else{
 			echo '<input type="submit" name="aceptar"><br>';
 		}
+		echo '</fieldset>';
+		echo '</form>';
 		
 	}
 	?>
 		
-		</fieldset>
-		</form>
+		
+		
 		<?php
 		if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
 			echo 'Para participar en la valoracion, ';
