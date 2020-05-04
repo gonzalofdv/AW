@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-05-2020 a las 18:58:44
+-- Tiempo de generación: 04-05-2020 a las 23:51:06
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -76,7 +76,24 @@ CREATE TABLE `equipos` (
 INSERT INTO `equipos` (`IdEquipo`, `nombreEquipo`, `CodLiga`, `Puntos`, `GolesAFavor`, `GolesEnContra`, `Escudo`) VALUES
 (1, 'Barcelona', 1, 58, 63, 31, 'barcelona.png'),
 (2, 'Real Madrid', 1, 56, 49, 19, 'madrid.png'),
-(3, 'Sevilla', 1, 47, 39, 29, 'sevilla.png');
+(3, 'Sevilla', 1, 47, 39, 29, 'sevilla.png'),
+(4, 'R.Sociedad', 1, 46, 45, 33, 'real.png'),
+(5, 'Getafe', 1, 46, 37, 25, 'getafe.png'),
+(6, 'Atletico de madrid', 1, 45, 31, 21, 'atletico.png'),
+(7, 'Valencia', 1, 42, 38, 39, 'valencia.png'),
+(8, 'Villarreal', 1, 38, 44, 38, 'villarreal.png'),
+(9, 'Granada', 1, 38, 33, 32, 'granada.png'),
+(10, 'Athletic', 1, 37, 29, 23, 'athletic.png'),
+(11, 'Osasuna', 1, 34, 34, 38, 'osasuna.png'),
+(12, 'Betis', 1, 33, 38, 43, 'betis.png'),
+(13, 'Levante', 1, 33, 32, 40, 'levante.png'),
+(14, 'Alaves', 1, 32, 29, 37, 'alaves.png'),
+(15, 'Valladolid', 1, 29, 23, 33, 'valladolid.png'),
+(16, 'Eibar', 1, 27, 27, 41, 'eibar.png'),
+(17, 'Celta', 1, 26, 22, 34, 'celta.png'),
+(18, 'Mallorca', 1, 25, 28, 44, 'mallorca.png'),
+(19, 'Leganes', 1, 23, 21, 39, 'leganes.png'),
+(20, 'Espanyol', 1, 20, 23, 46, 'espanyol.png');
 
 -- --------------------------------------------------------
 
@@ -98,8 +115,21 @@ CREATE TABLE `jugadores` (
 
 INSERT INTO `jugadores` (`IdJugador`, `CodEquipo`, `Nombre`, `Apellido`, `Apodo`) VALUES
 (1, 1, 'Leo', 'Messi', 'Messi'),
-(2, 2, 'Rafael', 'Varane', 'Varane'),
-(3, 3, 'Ocampos', 'Lucas', 'Ocampos');
+(2, 1, 'Luis', 'Suarez', 'Suarez'),
+(3, 6, 'Joao', 'Felix', 'Joao Felix'),
+(4, 2, 'Karim', 'Benzema', 'Benzema'),
+(5, 2, 'Eden', 'Hazard', 'Hazard'),
+(6, 17, 'Iago', 'Iago', 'Aspas'),
+(7, 12, 'Borja', 'Iglesias', 'Borja Iglesias'),
+(8, 7, 'Rodrigo', 'Moreno', 'Rodrigo'),
+(9, 6, 'Jan', 'Oblak', 'Oblak'),
+(10, 1, 'Marc Andre', 'Ter Stegen', 'Ter Stegen'),
+(11, 13, 'Aitor', 'Fernandez', 'Aitor Fernandez'),
+(12, 2, 'Thibaut', 'Courtois', 'Courtois'),
+(13, 5, 'David', 'Soria', 'David Soria'),
+(14, 15, 'Jordi', 'Masip', 'Masip'),
+(15, 20, 'Diego', 'Lopez', 'Diego Lopez'),
+(16, 9, 'Rui Tiago', 'Silva', 'Rui Silva');
 
 -- --------------------------------------------------------
 
@@ -177,10 +207,23 @@ CREATE TABLE `opcionesvotacion` (
 --
 
 INSERT INTO `opcionesvotacion` (`IdOpcion`, `CodVotacion`, `CodJugador`, `NumVotos`) VALUES
-(1, 1, 1, 6),
-(2, 1, 3, 13),
-(3, 2, 3, 4),
-(4, 2, 2, 4);
+(1, 1, 7, 24),
+(2, 1, 5, 35),
+(3, 1, 6, 12),
+(4, 1, 3, 60),
+(5, 1, 4, 84),
+(6, 1, 1, 229),
+(7, 1, 2, 157),
+(8, 1, 8, 47),
+(9, 2, 11, 26),
+(10, 2, 7, 61),
+(11, 2, 13, 55),
+(12, 2, 15, 19),
+(13, 2, 9, 198),
+(14, 2, 14, 89),
+(15, 2, 10, 145),
+(16, 2, 16, 64),
+(17, 2, 12, 128);
 
 -- --------------------------------------------------------
 
@@ -491,7 +534,7 @@ INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`,
 (4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '$2y$10$.GNAP.NVYpuAh6b5zmATgu1mr/4TVRMzckqd0UyP/vuaPIv87tKj2', 'fernag08@ucm.es', 0, 1, 314),
 (5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '$2y$10$9chuTLHd/cRIMM1XLSs3I.mLk4eNESPqBSg5yLMN0T5sNkFjTZdjy', 'jorborja@ucm.es', 0, 1, 329),
 (6, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '$2y$10$NiV1zfngh25e1BAlessipO6SZ0LnDzG2hvBcLfhTcfiqm3rOuxRoK', 'amouhib@ucm.es', 0, 1, 250),
-(7, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '$2y$10$lvMSB1YxaNhoE7z5.SZl0.zcK.7joA2.uWeXkxQJ/VsJR9peW8klC', 'jurosado@ucm.es', 0, 1, 412),
+(7, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '$2y$10$lvMSB1YxaNhoE7z5.SZl0.zcK.7joA2.uWeXkxQJ/VsJR9peW8klC', 'jurosado@ucm.es', 0, 1, 422),
 (8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '$2y$10$Zjeyq2P9kmANI94HOGgPEenA5XQ1X.sYVkefTmW1IXolIUd9YEA9K', 'usu@ucm.es', 0, 0, 202);
 
 -- --------------------------------------------------------
@@ -511,8 +554,8 @@ CREATE TABLE `votaciones` (
 --
 
 INSERT INTO `votaciones` (`IdVotacion`, `CodLiga`, `Titulo`) VALUES
-(1, 1, '¿Quien es el mas guapo?'),
-(2, 1, '¿quien marca mas?');
+(1, 1, '¿Quien sera el pichichi de la liga?'),
+(2, 1, '¿Quien ganara el trofeo Zamora?');
 
 --
 -- Índices para tablas volcadas
@@ -603,13 +646,13 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT de la tabla `equipos`
 --
 ALTER TABLE `equipos`
-  MODIFY `IdEquipo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `IdEquipo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `jugadores`
 --
 ALTER TABLE `jugadores`
-  MODIFY `IdJugador` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `IdJugador` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `ligas`
@@ -627,7 +670,7 @@ ALTER TABLE `noticias`
 -- AUTO_INCREMENT de la tabla `opcionesvotacion`
 --
 ALTER TABLE `opcionesvotacion`
-  MODIFY `IdOpcion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `IdOpcion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `preguntas`
