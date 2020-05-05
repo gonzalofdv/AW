@@ -10,6 +10,8 @@ $codLiga = htmlspecialchars($_GET['liga']);
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="estilo.css" />
+	<link rel="stylesheet" type="text/css" href="valoracionesYquiz.css" />
+
 	<meta charset="utf-8">
 	<meta http-equiv="Expires" content="0">
 	<meta http-equiv="Last-Modified" content="0">
@@ -21,7 +23,7 @@ $codLiga = htmlspecialchars($_GET['liga']);
 	<?php
 		require("include/comun/cabecera.php");
 	?>
-	<div class="contenido">
+	<div class="contenido" id="contenidoIni">
 	<br>
 
 	<?php
@@ -33,16 +35,18 @@ $codLiga = htmlspecialchars($_GET['liga']);
 				if($codLiga == 0){ //el 0 significa que hacemos quiz de todo
 	?>			
 				<h1>Tiempo restante: <span id="clock"></span></h1>
+				<div class="divQuiz">
 				<script src="temporizador.js"></script>
-				<form id="formularioQuiz" action="procesarQuiz.php" method="post">
-					<fieldset>
-						<legend>Bienvenido al Quiz!</legend>
+				<form class="quiz" id="formularioQuiz" action="procesarQuiz.php" method="post">
+					<fieldset class="fieldValoracion">
+						<legend class="legValoracion">Bienvenido al Quiz!</legend>
 				<?php
 						$preguntaSA=new PreguntaSA();
 						$respuestaSA=new RespuestaSA();
 						$num=$preguntaSA->getNumPreguntas();
 						$valores=array();
 						$i=0;
+						$j=0;
 						while($i<10){
 							$rand =rand(1,$num);
 							if(!in_array($rand,$valores)){
@@ -50,10 +54,18 @@ $codLiga = htmlspecialchars($_GET['liga']);
 								$pregunta=$preguntaSA->getPregunta($rand);
 								$respuestas=$respuestaSA->getRespuestas($rand);
 								echo "<b>".$pregunta->Pregunta . "</b><br><br>";
+								echo '<div class="opcionesVal">';
+								echo '<ul>';
 								while($res=mysqli_fetch_array($respuestas)){
-									echo '<input type=radio name=res'.$i.' value='.$res[3].' />'.$res[2]. '<br>';
+									echo '<li>';
+									echo '<input type=radio id=op'.$j.' name=res'.$i.' value='.$res[3].' >';
+									echo '<label class="labelVal" for=op'.$j.'>'.$res[2].'';
 									echo "<br>";
+									echo '</li>';
+									$j++;
 								}
+								echo '</ul>';
+								echo '</div>';
 								$i++;	
 							}
 						}
@@ -61,6 +73,7 @@ $codLiga = htmlspecialchars($_GET['liga']);
 						<input type="submit" name="aceptar">	
 					</fieldset>
 				</form>
+				</div>
 	<?php
 				}
 				else{ //si el codigo de liga especifica una liga concreta
