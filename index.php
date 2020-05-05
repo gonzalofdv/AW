@@ -25,7 +25,7 @@ $codLiga = isset($_POST['liga']) ? $_POST['liga'] : 0;
 	?>
 
 	<div class="contenido" id="contenidoIni">
-		<h1><b>EL VARDERÍN DE CORNER</b></h1>
+		<h1 id="tituloBienvenida"><b>EL VARDERÍN DE CORNER</b></h1>
 		<?php
 			echo '<form method="POST" action="index.php">';
 
@@ -37,7 +37,7 @@ $codLiga = isset($_POST['liga']) ? $_POST['liga'] : 0;
 					$valueLiga = "todas las ligas";
 				}
 
-				echo '<h2>Visualizando noticias de ' . $valueLiga .'</h2><br>';
+				//echo '<h2>Visualizando noticias de ' . $valueLiga .'</h2><br>';
 
 				echo '<select name="liga" class="selectTam">';
 					echo '<option value="0">Todas</option>';
@@ -67,7 +67,7 @@ $codLiga = isset($_POST['liga']) ? $_POST['liga'] : 0;
 				}
 					
 			echo '</div>';
-
+			echo '<br>';
 			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false || ($_SESSION["esAdmin"] == false && $_SESSION["esFamilia"] == false)){
 				echo '<button class="botGenOff" onclick=location.href="noticia.php" disabled>Agregar nueva noticia</button>';
 			}

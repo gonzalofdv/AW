@@ -170,9 +170,6 @@ div#ligas { /* Iconos de las seis ligas */
 
 div.contenido { /* Todo el contenido de la página */
 	padding: 10px;
-	border-style: solid;
-	border-width: 2px;
-	border-color: #939393;
 	float: left;
 	max-height: 1000px;
 	width: auto;
@@ -184,6 +181,17 @@ div.contenido { /* Todo el contenido de la página */
 div#contenidoIni {
 	background-color:transparent;
 }
+
+h1#tituloBienvenida{
+	color:black; 
+	text-align: center;
+	background-color: white;
+	padding: 20px;
+	border: 2px solid black;
+}
+
+}
+
 
 div#opcionesLiga{
 	display:flex;
@@ -329,31 +337,31 @@ div#perfil { /* Botón de "Mi perfil" */
 }
 
 .text-green{
-	color:#00F0B5;
-	mix-blend-mode: difference;
+	mix-blend-mode: multiply;
 }
 
 .rounded::before{
 	border-radius: 50px;
 	width: 25%;
-	background: #00F0B5;
+	background: #41CF19;
 }
 
 .rounded:hover::before{
-background: #00F0B5;
+	background: #41CF19;
 	width: 100%;
 }
 
 div#miPerfil h1{ /* Página de mi perfil */
 	padding: 5px;
-	background-color:#07AA2A; 
+	background-color:#41CF19; 
 	text-align: center;
-	 font-family: 'Rubik One', sans-serif;
   	font-size: 35px;
+  	color:white;
+  	border: 2px solid black;
 }
 
 div#miPerfil p{
-	color: #07AA2A;
+	color: #41CF19;
 	font-weight: bold;
 	text-decoration: none;
 	font-size: 25px;
@@ -381,6 +389,34 @@ div .tablas {
 	font-family: 'Days One', sans-serif;
 	font-size: 120%;
 }
+
+
+/*CLASIFICACION*/
+.imgClasificacion{
+	width:30px;
+}
+
+.tablaClasificacion{
+	width: 90%;
+	height: 100px;
+	text-align: left;
+}
+
+tr:nth-child(odd) {
+    background-color:#f2f2f2;
+   }
+tr:nth-child(even) {
+    background-color:#fbfbfb;
+}
+.hclasificacion{
+	background-color:#41CF19; 
+	color: white;
+	padding: 20px;
+	text-align: center;
+	border: 2px solid black;
+}
+
+
 
 .tablas tr {
 	background-color: #FCFF3D;
@@ -741,3 +777,4 @@ input[type="radio"]:checked:disabled + label:before {
 		width: 100%;
 	}
 }
+
