@@ -42,7 +42,7 @@ $idNoticia = $_GET['idN'];
 
 			}
 			else{
-
+			
 			$titular = $noticia->getTitular();
 			$cuerpo = $noticia->getTexto();
 			$codLiga = $noticia->getCodLiga();
@@ -55,16 +55,18 @@ $idNoticia = $_GET['idN'];
 			$usuarioSA = new UsuarioSA();
 			$usuario = $usuarioSA->obtenerNombreUsu($codUsu);
 		?>
-		<h1><?php echo $titular; ?></h1>
-		
-		<?php
-			$folder_path = './img/noticias/';
-			$file_path = $folder_path.$foto;
-		?>
-			<img src="<?php echo $file_path; ?>" alt="Imagen noticia" width="350">
-		
-		
-		<h3>Noticia perteneciente a la liga: <?php echo $liga->Nombre;  ?></h3>
+		<div class="centraTitulosImagen">
+			<h1><?php echo $titular; ?></h1>
+			
+			<?php
+				$folder_path = './img/noticias/';
+				$file_path = $folder_path.$foto;
+			?>
+				<img src="<?php echo $file_path; ?>" alt="Imagen noticia" width="350">
+			
+			
+			<h3>Noticia perteneciente a la liga: <?php echo $liga->Nombre;  ?></h3>
+		</div>
 		<p><?php echo $cuerpo; ?></p>
 		<p>Noticia escrita por el usuario <?php echo $usuario->NombreUsuario; ?></p>
 		<?php
@@ -169,21 +171,23 @@ $idNoticia = $_GET['idN'];
 		
 			echo "<br><br>";
 		?>
-		       <table border="2">
+		
+			<table border="2">
 					<tr>
 						<td><b>Usuario</b></td>
 						<td><b>Comentario</b></td>
 					</tr>
 		<?php 
-		    while($mostrar=mysqli_fetch_object($comentarios)){
-	   				$usuarioSA=new UsuarioSA();
-	   				$usuario=$usuarioSA->obtenerNombreUsu($mostrar->CodUsuario);
-	   				$usu=$usuario->NombreUsuario;
-	   				?>
+			while($mostrar=mysqli_fetch_object($comentarios)){
+					$usuarioSA=new UsuarioSA();
+					$usuario=$usuarioSA->obtenerNombreUsu($mostrar->CodUsuario);
+					$usu=$usuario->NombreUsuario;
+					?>
 					<tr>
 						<td id="comentarios"><?php echo $usu ?></td>
 						<td id=comentarios><?php echo $mostrar->Comentario ?></td>
- 					</tr>
+					</tr>
+		
 		<?php
 		    }
 		?>

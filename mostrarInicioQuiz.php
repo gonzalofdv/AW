@@ -22,10 +22,10 @@
 		?>
 		
 		<div class="contenido">
-			<center>
+			<div class="centraTitulosImagen">
 				<h1>¡Bienvenido al QUIZ!</h1>
 				<img src="./img/modifquiz.jpg" alt="quiz" width="400">
-			</center>
+			</div>
 			
 			<p>
 				Esta es nuestra sección favorita y probablemente la tuya también. Participa en nuestra sección estrella y pon a prueba tus conocimientos 
