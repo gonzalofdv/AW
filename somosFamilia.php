@@ -41,7 +41,8 @@
 				miVentana = window.open( "ventanasEmergentes.php?id=ventajas", "nombrePop-Up", "width=600,height=400, top=150,left=350");
 			}
 			
-					
+			//var popup = document.getElementById("puntos").onclick = function(){myFunction()};
+			//var popup = document.getElementById("ventajas").onclick = function(){myFunction2()};			
 		</script>
 		
 		

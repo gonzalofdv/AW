@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-05-2020 a las 12:13:51
+-- Tiempo de generación: 05-05-2020 a las 11:56:34
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -234,13 +234,14 @@ INSERT INTO `opcionesvotacion` (`IdOpcion`, `CodVotacion`, `CodJugador`, `NumVot
 (7, 1, 2, 157),
 (8, 1, 8, 47),
 (9, 2, 11, 26),
-(10, 2, 13, 55),
-(11, 2, 15, 19),
-(12, 2, 9, 198),
-(13, 2, 14, 89),
-(14, 2, 10, 145),
-(15, 2, 16, 64),
-(16, 2, 12, 128);
+(10, 2, 7, 61),
+(11, 2, 13, 55),
+(12, 2, 15, 19),
+(13, 2, 9, 198),
+(14, 2, 14, 89),
+(15, 2, 10, 145),
+(16, 2, 16, 64),
+(17, 2, 12, 128);
 
 -- --------------------------------------------------------
 
@@ -687,7 +688,7 @@ ALTER TABLE `noticias`
 -- AUTO_INCREMENT de la tabla `opcionesvotacion`
 --
 ALTER TABLE `opcionesvotacion`
-  MODIFY `IdOpcion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `IdOpcion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `preguntas`

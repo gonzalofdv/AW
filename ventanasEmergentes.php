@@ -44,12 +44,9 @@
 							<td>- Si aciertas las 10 preguntas:</td>
 							<td>10 Puntos extra</td>
 						</tr>
-					</table>	
+					</table>
+				
 				</td>
-			  </tr>
-			  <tr>
-				<td>- Al participar en una valoracion:</td>
-				<td>3 Puntos</td>
 			  </tr>
 			</table>
 			

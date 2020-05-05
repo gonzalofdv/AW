@@ -8,9 +8,9 @@
 	$ligasa = new LigaSA();
 	$nombreLiga = $ligasa->getNombreLiga($codLiga)->Nombre;
 
-	echo'<h1 class="hclasificacion">Clasificacion '.$nombreLiga.'</h1>';
+	echo'<h1>Clasificacion '.$nombreLiga.'</h1>';
 ?>
-	<p><table class="tablaClasificacion">
+	<p><table>
 	<tr>
 		<th></th>
 		<th>Equipo</th>
@@ -24,9 +24,9 @@
 	while($res = mysqli_fetch_array($equipos)){ 
 		$folder_path = './img/equipos/';
 		$file_path = $folder_path.$res[6];
-?>	
+?>
 		<tr>
-			<td><img class="imgClasificacion" src="<?php echo $file_path; ?>" alt="Imagen noticia"></td>
+			<td><img src="<?php echo $file_path; ?>" alt="Imagen equipo" width="20"></td>
 			<td><?= $res[1]?></td>
 			<td><?= $res[3]?></td>
 			<td><?= $res[4]?></td>
