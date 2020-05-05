@@ -27,9 +27,10 @@ $codLiga = $_POST['codLiga'];
 	$votacion = $votacionSA->getVotacion($codLiga);
 	$i=0;
 	$j=0;
-	while($res=mysqli_fetch_array($votacion)){
-		echo '<form action="procesarValoracion.php?i='.$i.'" method="post">';
-			echo '<div class="divValoracion">';
+
+	echo '<div class="divValoracion">';
+		while($res=mysqli_fetch_array($votacion)){
+			echo '<form action="procesarValoracion.php?i='.$i.'" method="post">';
 				echo '<fieldset class="fieldValoracion">';
 					echo "<legend class='legValoracion'>".$res[2]."</legend>";
 					echo '<div class="opcionesVal">';
@@ -53,10 +54,10 @@ $codLiga = $_POST['codLiga'];
 						}
 					echo '</div>';
 				echo '</fieldset>';
-			echo '</div>';
-		echo '</form>';
-		
-	}
+			echo '</form>';
+			
+		}
+	echo '</div>';
 	?>
 		
 		

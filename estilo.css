@@ -379,7 +379,7 @@ div .tablas {
 .tablas caption {
 	padding: 10px;
 	font-family: 'Days One', sans-serif;
-	font-size: 150%;
+	font-size: 120%;
 }
 
 .tablas tr {
@@ -630,11 +630,14 @@ button {
 /* VALORACIONES DE JUGADORES */
 
 .divValoracion{
-	width:50%;
-	padding:1em;
-	box-sizing: border-box;
-	float:left;
+	margin-top: 40px;
+	margin-left: 50px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
 }
+
 
 fieldset.fieldValoracion {
 	padding: 2em;
