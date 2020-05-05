@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-05-2020 a las 23:51:06
+-- Tiempo de generación: 05-05-2020 a las 11:56:34
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -93,7 +93,25 @@ INSERT INTO `equipos` (`IdEquipo`, `nombreEquipo`, `CodLiga`, `Puntos`, `GolesAF
 (17, 'Celta', 1, 26, 22, 34, 'celta.png'),
 (18, 'Mallorca', 1, 25, 28, 44, 'mallorca.png'),
 (19, 'Leganes', 1, 23, 21, 39, 'leganes.png'),
-(20, 'Espanyol', 1, 20, 23, 46, 'espanyol.png');
+(20, 'Espanyol', 1, 20, 23, 46, 'espanyol.png'),
+(21, 'Bayern Munich', 4, 55, 73, 26, 'BayernMunich.png'),
+(22, 'Borussia Dortmund', 4, 51, 68, 33, 'BorussiaDortmund.png'),
+(23, 'RB Leipzig', 4, 50, 62, 26, 'RBLeipzig.png'),
+(24, 'Borussia Mönchengladbach', 4, 49, 49, 30, 'BorussiaMönchengladbach.png'),
+(25, 'Bayer 04 Leverkusen', 4, 47, 45, 30, 'Bayer04Leverkusen.png'),
+(26, 'Schalke 04', 4, 37, 33, 36, 'Schalke04.png'),
+(27, 'Wolfsburgo', 4, 36, 34, 30, 'Wolfsburgo.png'),
+(28, 'SC Friburgo', 4, 36, 34, 35, 'SCFriburgo.png'),
+(29, 'TSG 1899 Hoffenheim', 4, 35, 35, 43, 'TSG1899Hoffenheim.png'),
+(30, 'Colonia', 4, 32, 39, 45, 'Colonia.png'),
+(31, '1. FC Unión Berlin', 4, 30, 32, 41, '1.FCUnionBerlin.png'),
+(32, 'Eintracht Frankfurt', 4, 28, 38, 41, 'EintrachtFrankfurt.png'),
+(33, 'Hertha Berlin', 4, 28, 32, 48, 'HerthaBerlin.png'),
+(34, 'FC Augsburgo', 4, 27, 36, 52, 'FCAugsburgo.png'),
+(40, '1. FSV Mainz 05', 4, 26, 34, 53, '1.FSVMainz05.png'),
+(41, 'Fortuna Düsseldorf', 4, 22, 27, 50, 'FortunaDüsseldorf.png'),
+(42, 'SV Werder Bremen', 4, 18, 27, 55, 'SVWerderBremen.png'),
+(43, 'SC Paderborn 07', 4, 16, 30, 54, 'SCPaderborn07.png');
 
 -- --------------------------------------------------------
 
@@ -646,7 +664,7 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT de la tabla `equipos`
 --
 ALTER TABLE `equipos`
-  MODIFY `IdEquipo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `IdEquipo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de la tabla `jugadores`
