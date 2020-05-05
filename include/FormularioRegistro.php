@@ -106,23 +106,28 @@ class FormularioRegistro extends Form {
 
 		$html = <<<EOF
 		<legend>Registro Usuario</legend>
-		<div class=formulario>
-		Nombre:<br> <input type="text" name="nom" value="$nombre"><br>
-		Apellido1:<br> <input type="text" name="apellido1" value="$apellido1"><br>
-		Apellido2:<br> <input type="text" name="apellido2" value="$apellido2"><br>
-		Sexo:<br/>
-		<input type="radio" name="sexo" value="hombre" checked/> Hombre
-		<input type="radio" name="sexo" value="mujer" /> Mujer<br>
-		Equipo favorito: <br> <input type="text" name="equipo" value="$equipo"><br>
-		Nombre de usuario:<br> <input type="text" name="usu" value="$usu"><br>
-		Contraseña:<br/>
-		<input type="password" name="contrasena" value="" /><br>
-		Repetir contraseña:<br>
-		<input type="password" name="rContrasena" value="" /><br>
-		E-mail:<br> <input type="text" name="mail" value="$mail"><br>
+		<div class="formulario">
+		<br>
+		<input type="text" name="nom" placeholder="Nombre:" value="$nombre"><br>
+		<br> <input type="text" name="apellido1" placeholder="Apellido 1:" value="$apellido1"><br>
+		<br> <input type="text" name="apellido2" placeholder="Apellido 2:" value="$apellido2"><br>
+		<br>
+		Sexo:<br>
+		<input type="radio" class="radioForm" name="sexo" value="hombre" checked/> Hombre
+		<input type="radio" class="radioForm" name="sexo" value="mujer" /> Mujer<br>
+		<br>
+		<input type="text" name="mail" placeholder="E-mail:" value="$mail"><br>
+		<br>
+		<input type="password" name="contrasena" placeholder="Contraseña:" value="" /><br>
+		<br>
+		<input type="password" name="rContrasena" placeholder="Repetir contraseña:" value="" />
+		<br>
+		<br> <input type="text" name="usu" placeholder="Nombre de usuario:" value="$usu"><br>
+		<br> <input type="text" name="equipo" placeholder="Equipo favorito:" value="$equipo"><br>
+		<br>
 		<input type="checkbox" name="condi" value="ok">Acepto las condiciones del servicio<br>
+		<button type="submit" class="botonEnviar" name="aceptar" />Enviar</button>
 		</div>
-		<input type="submit" name="aceptar">
 		EOF;	
 		
 		return $html;

@@ -499,65 +499,6 @@ legend {
 	font-size: 200%;
 }
 
-.formulario {
-	width: 100%;
-	background-color: #C2C2C2;
-	padding-bottom: 40px;
-}
-
-.formulario input {
-	
-	font-family: 'Nunito', sans-serif;
-	color: #384047;
-}
-
-.formulario label {	
-	font-family: 'Rubik One', sans-serif;
-	color: #384047;
-	margin-left: 30px;
-	margin-top: 10px;
-}
-
-input[type="text"], input[type="password"] {
-  background: rgba(255,255,255,0.1);
-  border: none;
-  font-size: 16px;
-  height: auto;
-  margin: 0;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 30px;
-  outline: 0;
-  padding: 15px;
-  width: 80%;
-  background-color: #e8eeef;
-  color: #8a97a0;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-}
-
-.number {
-  background-color: #5fcf80;
-  color: #fff;
-  height: 30px;
-  width: 30px;
-  display: inline-block;
-  font-size: 0.8em;
-  margin-top: 20px;
-  margin-right: 4px;
-  line-height: 30px;
-  text-align: center;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
-  border-radius: 100%;
-}
-
-@media screen and (min-width: 480px) {
-
-  form {
-    max-width: 480px;
-  }
-
-}
-
 button {
 	margin: 0 auto;
 }
