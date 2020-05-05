@@ -79,10 +79,11 @@ $codLiga = htmlspecialchars($_GET['liga']);
 				else{ //si el codigo de liga especifica una liga concreta
 	?>
 					<h1>Tiempo restante: <span id="clock"></span></h1>
+					<div class="divQuiz">
 					<script src="temporizador.js"></script>
-					<form id="formularioQuiz" action="procesarQuiz.php" method="post">
-						<fieldset>
-							<legend>Bienvenido al Quiz!</legend>
+					<form class="quiz" id="formularioQuiz" action="procesarQuiz.php" method="post">
+						<fieldset class="fieldValoracion">
+							<legend class="legValoracion">Bienvenido al Quiz!</legend>
 
 	<?php				
 							$respuestaSA = new RespuestaSA();
@@ -96,6 +97,7 @@ $codLiga = htmlspecialchars($_GET['liga']);
 
 							$valores = array(); //array de control para no repetir numeros
 							$i = 0;
+							$j = 0;
 							while ($i<10){
 								$rand = rand(0, sizeof($idspreguntas)-1); //creo que seria asi o hasta  sizeof -1?
 								if(!in_array($rand, $valores)){
@@ -104,10 +106,18 @@ $codLiga = htmlspecialchars($_GET['liga']);
 									$pregunta = $preguntaSA->getPregunta($idPreg);
 									$respuestas =$respuestaSA->getRespuestas($idPreg);
 									echo "<b>".$pregunta->Pregunta . "</b><br><br>";
+									echo '<div class="opcionesVal">';
+									echo '<ul>';
 									while($res=mysqli_fetch_array($respuestas)){
-										echo '<input type=radio name=res'.$i.' value='.$res[3].' />'.$res[2]. '<br>';
+										echo '<li>';
+										echo '<input type=radio id=op'.$j.' name=res'.$i.' value='.$res[3].' >';
+										echo '<label class="labelVal" for=op'.$j.'>'.$res[2].'';
 										echo "<br>";
+										echo '</li>';
+										$j++;
 									}
+									echo '</ul>';
+									echo '</div>';
 									$i++;
 								}
 							}
@@ -115,6 +125,7 @@ $codLiga = htmlspecialchars($_GET['liga']);
 							<input type="submit" name="aceptar">	
 						</fieldset>
 					</form>
+					</div>
 	<?php
 				}			
 			}
