@@ -112,9 +112,9 @@ class FormularioRegistro extends Form {
 		<br> <input type="text" name="apellido1" placeholder="Apellido 1:" value="$apellido1"><br>
 		<br> <input type="text" name="apellido2" placeholder="Apellido 2:" value="$apellido2"><br>
 		<br>
-		Sexo:<br>
-		<input type="radio" class="radioForm" name="sexo" value="hombre" checked/> Hombre
-		<input type="radio" class="radioForm" name="sexo" value="mujer" /> Mujer<br>
+		<label>Sexo:</label><br>
+		<input type="radio" class="radioForm" name="sexo" value="hombre" /><label>Hombre</label>
+		<input type="radio" class="radioForm" name="sexo" value="mujer" /><label>Mujer</label><br>
 		<br>
 		<input type="text" name="mail" placeholder="E-mail:" value="$mail"><br>
 		<br>
@@ -125,7 +125,7 @@ class FormularioRegistro extends Form {
 		<br> <input type="text" name="usu" placeholder="Nombre de usuario:" value="$usu"><br>
 		<br> <input type="text" name="equipo" placeholder="Equipo favorito:" value="$equipo"><br>
 		<br>
-		<input type="checkbox" name="condi" value="ok">Acepto las condiciones del servicio<br>
+		<input type="checkbox" name="condi" value="ok"><label>Acepto las condiciones del servicio</label><br>
 		<button type="submit" class="botonEnviar" name="aceptar" />Enviar</button>
 		</div>
 		EOF;	

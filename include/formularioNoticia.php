@@ -53,7 +53,7 @@ class FormularioNoticia extends Form {
 	protected function generaCamposFormulario($datosIniciales){
 
 		$titular = '';
-		$cuerpo = 'Escribe aqui la noticia que quieres agregar';
+		$cuerpo = 'Escribe aqui la noticia que quieres agregar.';
 		$codLiga = 0;
 		$valueLiga = "Ligas:";
 
@@ -71,10 +71,10 @@ class FormularioNoticia extends Form {
 		}
 	
 		$html = '';
-		$html .= '<fieldset>';
         $html .= '<legend>Nueva Noticia</legend>';
-        $html .= 'Titular:<br> <input type="text" name="titular" value="'.$titular.'"><br>';
-        $html .= '<textarea name="cuerpo" rows="10" cols="40">'.$cuerpo.'</textarea>';
+        $html .= '<div class="formulario">';
+        $html .= '<br> <input type="text" name="titular" placeholder="Titular:" value="'.$titular.'"><br>';
+        $html .= '<textarea name="cuerpo" rows="10" cols="40">'.$cuerpo.'</textarea><br><br>';
         $html .= '<select name="liga">';
         $html .= '<option value="'.$codLiga.'">'.$valueLiga.'</option>';
             $ligasa=new LigaSA();
@@ -83,11 +83,11 @@ class FormularioNoticia extends Form {
                 $html .= '<option value=' . $valores[0] . '> ' . $valores[1] . '</option>';
             }
         $html .='</select>';
-        $html .='<br>';
+        $html .='<br><br>';
         $html .='<input type="file" name="foto" /><br>';
-        $html .='<input type="checkbox" name="condi" value="ok">Confirmar enviar noticia.<br>';
-        $html .='<input type="submit" name="aceptar">';
-        $html .='</fieldset>';
+        $html .='<input type="checkbox" name="condi" value="ok"><label>Confirmar enviar noticia.</label><br>';
+        $html .='<button type="submit" class="botonEnviar" name="aceptar">Enviar</button>';
+        $html .='</div>';
 
 		return $html;
 	}

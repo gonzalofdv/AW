@@ -1,3 +1,4 @@
+
 legend {
 	color: #fff;
 	background: #303030;
@@ -9,14 +10,14 @@ legend {
 }
 
 #legendLogin {
-	width: auto;
+	width: 41.8%;
 	
 }
 
 .login {
-	width: 100%;
+	width: 50%;
 	background-color: #C2C2C2;
-	padding-bottom: 40px;
+	padding-bottom: 30px;
 }
 
 .login input {
@@ -64,28 +65,45 @@ legend {
   border-radius: 100%;
 }
 
-@media screen and (min-width: 480px) {
-
-  form {
-    max-width: 480px;
-  }
-
+.botonLogin {
+	border:0;
+	outline:none;
+	border-radius:50px;
+	margin-top: 15px;
+	margin-left: 39%;
+	padding:15px;
+	font-size:120%;
+	font-weight:bold;
+	text-transform:uppercase;
+	background:#5fcf80;
+	color:white;
+	transition:all.5s ease;
+	-webkit-appearance: none;
+	display: flex;
+  	justify-content: center;
 }
+
+.botonLogin:hover, .botonEnviar:focus {
+	background:#1AB195;
+}
+
 
 .formulario {
 	background-color: #13232f;
 	width: auto;
+	padding-left: 30px;
+	padding-bottom: 15px;
+	padding-right: 30px;
+	padding-top: 15px;
 }
 
 .formulario input[type="text"], .formulario input[type="password"] {
-	/*float: left;*/
 	font-size:18px;
 	display:block;
-	width:35%;
+	width:40%;
 	height:100%;
 	padding:5px 10px;
 	margin-top: 10px;
-	margin-left: 25px;
 	background:none;
 	background-image:none;
 	border:1px solid;
@@ -95,7 +113,7 @@ legend {
 	transition:border-color .75s ease, box-shadow .25s ease;
 }
 
-.formulario input:focus {
+.formulario input:focus, .formulario textarea:focus {
 	outline:0;
 	border-color:#51FF00;
 }
@@ -106,31 +124,85 @@ legend {
 	
 }
 
+.formulario label {
+    font-size:22px;
+    color:#1ab188;
+}
+
+.formulario textarea {
+	font-size:18px;
+	display:block;
+	width:40%;
+	height:100%;
+	padding:5px 10px;
+	padding-top: 10px;
+	background:none;
+	background-image:none;
+	border:1px solid;
+	color:white;
+	border-radius:0;
+	border-color:#1ab188;
+	transition:border-color .75s ease, box-shadow .25s ease;
+}
+
 .botonEnviar {
 	border:0;
 	outline:none;
 	border-radius:50px;
-	margin-bottom: 15px;
-	margin-left: 44%;
+	margin-top: 15px;
 	padding:15px;
 	font-size:120%;
 	font-weight:bold;
 	text-transform:uppercase;
-	letter-spacing:.1em;
 	background:#1ab188;
 	color:white;
 	transition:all.5s ease;
 	-webkit-appearance: none;
+	display: flex;
+  	justify-content: center;
 }
 
 .botonEnviar:hover, .botonEnviar:focus {
 	background:#51FF00;
 }
 
-/*input[type="text"], input[type="password"] {
-	
-	
+input[type=”file”]{
+ width: 0.1px;
+ height: 0.1px;
+ opacity: 0;
+ overflow: hidden;
+ position: absolute;
+ z-index: -1;
+ }
+
+/*.formulario input[type="radio"]:checked + label:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 8px solid #0fbf12;
+    float: left;
+    border-radius: 100%;
+}
+
+.formulario input[type="radio"] + label:before{
+	content: "";
+    width: 10px;
+    height: 10px;
+    border: 8px solid #0fbf12;
+    float: left;
+    border-radius: 100%;
 }*/
+
+
+.formulario input[type="checkbox"] + label {
+    font-weight: bold;
+    line-height: 3em;
+    color: #1ab188;
+}
+
+.formulario input[type="checkbox"]:checked + label {
+    color: #51FF00;
+}
 
 button {
 	margin: 0 auto;

@@ -54,10 +54,10 @@ class FormularioEditarNoticia extends Form {
 		}
 	
 		$html = '';
-		$html .= '<fieldset>';
         $html .= '<legend>Edite su noticia</legend>';
-        $html .= 'Titular:<br> <input type="text" name="titular" value="'.$titular.'"><br>';
-        $html .= '<textarea name="cuerpo" rows="10" cols="40">'.$cuerpo.'</textarea>';
+		$html .= '<div class="formulario">';
+        $html .= '<label>Titular:</label><br> <input type="text" name="titular" value="'.$titular.'"><br>';
+        $html .= '<textarea name="cuerpo" rows="10" cols="40">'.$cuerpo.'</textarea><br>';
         $html .= '<select name="liga">';
         $html .= '<option value="'.$codLiga.'">'.$nombreLiga.'</option>';
             $ligasa=new LigaSA();
@@ -67,9 +67,9 @@ class FormularioEditarNoticia extends Form {
             }
         $html .='</select>';
         $html .='<br>';
-        $html .='<input type="checkbox" name="condi" value="ok">Confirmar enviar noticia.<br>';
-        $html .='<input type="submit" name="aceptar">';
-        $html .='</fieldset>';
+        $html .='<input type="checkbox" name="condi" value="ok"><label>Confirmar enviar noticia.</label><br>';
+        $html.='<button type="submit" class="botonEnviar" name="aceptar">Aceptar</button>';
+        $html .='</div>';
         return $html;
     }
 

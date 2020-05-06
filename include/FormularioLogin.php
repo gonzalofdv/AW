@@ -72,8 +72,8 @@ class FormularioLogin extends Form {
 		<input type="text" id="usuLogin" name="usuario" placeholder="Introduzca su usuario: " value="$usuario" />
 		<label><span class="number">2</span>Contraseña:</label>
 		<input type="password" id="passLogin" name="password" placeholder="Contraseña: " /><br>
+		<input type="submit" class="botonLogin" value="Enviar">
 		</div>
-		<input type="submit" value="Enviar">
 		EOF;
 
 		return $html;

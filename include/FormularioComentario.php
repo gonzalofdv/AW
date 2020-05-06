@@ -42,18 +42,18 @@ class FormularioComentario extends Form {
 
 	protected function generaCamposFormulario($datosIniciales){
 
-		$comentario = 'Escribe aqui tu comentario';
+		$comentario = 'Escribe aqui tu comentario.';
 		if($datosIniciales) {
 			$comentario= isset($datosIniciales['cuerpo']) ? $datosIniciales['cuerpo'] : $comentario;
 		}
 
         $html ='';
-        $html.='<fieldset>';
-		$html.='<legend>Nuevo Comentario</legend>';
-		$html.='<textarea name="cuerpo" rows="15" cols="70">'.$comentario.'</textarea>';
-		$html.='<input type="checkbox" name="condi" value="ok">Confirmar enviar comentario.<br>';
-		$html.='<input type="submit" name="aceptar">';
-		$html.='</fieldset>';
+        $html.='<legend>Nuevo Comentario</legend>';
+        $html.='<div class="formulario">';
+		$html.='<textarea name="cuerpo" rows="15" cols="70">'.$comentario.'</textarea><br>';
+		$html.='<input type="checkbox" name="condi" value="ok"><label>Confirmar enviar comentario.</label><br>';
+		$html.='<button type="submit" class="botonEnviar" name="aceptar">Enviar</button>';
+		$html.='</div>';
 
 		return $html;
 	}
