@@ -34,7 +34,7 @@ $codLiga = htmlspecialchars($_GET['liga']);
 
 				if($codLiga == 0){ //el 0 significa que hacemos quiz de todo
 	?>			
-				<h1>Tiempo restante: <span id="clock"></span></h1>
+				<h1 id="tituloBienvenida">Tiempo restante: <span id="clock"></span></h1>
 				<div class="divQuiz">
 				<script src="temporizador.js"></script>
 				<form class="quiz" id="formularioQuiz" action="procesarQuiz.php" method="post">
@@ -78,7 +78,7 @@ $codLiga = htmlspecialchars($_GET['liga']);
 				}
 				else{ //si el codigo de liga especifica una liga concreta
 	?>
-					<h1>Tiempo restante: <span id="clock"></span></h1>
+					<h1 id="tituloBienvenida">Tiempo restante: <span id="clock"></span></h1>
 					<div class="divQuiz">
 					<script src="temporizador.js"></script>
 					<form class="quiz" id="formularioQuiz" action="procesarQuiz.php" method="post">
