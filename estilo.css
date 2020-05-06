@@ -210,12 +210,6 @@ div#opcionesLiga{
 	
 	margin-top:-10px;
 }
-.tusmus{
-	width:360px;
-    height:360px;
-    float:left;
-    margin:10px 10px 0 0;
-}
 
 #comentarios{
 	padding: 0.7em;
@@ -608,4 +602,10 @@ button {
 
 .centraTitulosImagen{
 	text-align: center;
+}
+
+#centrarBoton{
+	display:block;
+	margin:auto;
+	
 }

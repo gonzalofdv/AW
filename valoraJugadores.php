@@ -20,7 +20,15 @@ $codLiga = $_POST['codLiga'];
 </head>
 
 <body>
-
+	<h1>¡Vota y participa!</h1>
+	<h2>Cada vez que inicies sesión tendrás 6 votos a repartir entre todas las ligas disponibles</h2>
+	<br>
+	<h3>Votos restantes: 
+		<?php
+			$votos = 6 - $_SESSION['votos'];
+			echo $votos;
+		?>
+	</h3>
 	<?php
 	$votacionSA= new VotacionSA();
 	$opcionesSA = new OpcionesSA();
@@ -48,10 +56,10 @@ $codLiga = $_POST['codLiga'];
 						echo '</ul>';
 						$i++;
 						if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
-							echo '<input type="submit" name="aceptar" disabled><br>';
+							echo '<input type="submit" class="botonEnviar" name="aceptar" disabled><br>';
 						}
 						else{
-							echo '<input type="submit" name="aceptar"><br>';
+							echo '<input type="submit" class="botonEnviar" name="aceptar"><br>';
 						}
 					echo '</div>';
 				echo '</fieldset>';

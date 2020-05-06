@@ -60,6 +60,11 @@ $codigo = $_GET['codAlerta'];
 					echo "<p>Te redireccionamos a la página de inicio.</p>";
 					header("refresh:5; url=index.php");
 					break;
+				case 7:
+					echo "<h1>¡Asegúrate de que estás votando correctamente!</h1>";
+					echo "<p>Te redireccionamos a la página de inicio.</p>";
+					header("refresh:5; url=index.php");
+					break;
 				case 8:
 					echo "Usuario registrado correctamente.";
 					echo "<p>Te redireccionamos a la página de inicio.</p>";

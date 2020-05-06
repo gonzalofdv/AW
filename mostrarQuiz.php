@@ -70,7 +70,7 @@ $codLiga = htmlspecialchars($_GET['liga']);
 							}
 						}
 				?>
-						<input type="submit" name="aceptar">	
+						<input type="submit" class="botonEnviar" name="aceptar">	
 					</fieldset>
 				</form>
 				</div>
@@ -122,7 +122,7 @@ $codLiga = htmlspecialchars($_GET['liga']);
 								}
 							}
 	?>
-							<input type="submit" name="aceptar">	
+							<input type="submit" class="botonEnviar" name="aceptar">	
 						</fieldset>
 					</form>
 					</div>

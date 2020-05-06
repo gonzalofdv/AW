@@ -11,19 +11,22 @@ require_once ('include/sa/OpcionesSA.php');
 $i=htmlspecialchars($_GET['i']);
 $aux="vot".$i."";
 $idOp=htmlspecialchars($_POST[$aux]);
+
+if(!empty($idOp)){
+	$opcionesSA = new OpcionesSA();
+	$opcionesSA->sumarVoto($idOp);
+
+	$usuarioSA=new UsuarioSA();
+	$consulta = $usuarioSA->obtenerId($_SESSION['nombre']); 
+	$idUsuario=$consulta->IdUsuario;
+	$usuarioSA->sumarPuntos($idUsuario,3);
+	$_SESSION['votos']+=1;
 	
+	header("Location:index.php");
+}else{
+	header("Location:mostrarAlertas.php?codAlerta=7");
+}
 
-$usuarioSA=new UsuarioSA();
-$consulta = $usuarioSA->obtenerId($_SESSION['nombre']); 
-$idUsuario=$consulta->IdUsuario;
-$usuarioSA->sumarPuntos($idUsuario,3);
-$_SESSION['votos']+=1;
-
-
-$opcionesSA = new OpcionesSA();
-$opcionesSA->sumarVoto($idOp);
-
-header("Location:index.php");
 }
 
 ?>
