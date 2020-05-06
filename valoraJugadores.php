@@ -66,7 +66,9 @@ $codLiga = $_POST['codLiga'];
 		<?php
 		if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
 			echo 'Para participar en la valoracion, ';
-			echo  '<button onclick=location.href="registro.php">¡Registrate!</button>';
+			echo  '<button class="botGen" onclick=location.href="registro.php">¡Registrate!</button>';
+			echo ' o ';
+			echo '<button class="botGen" onclick=location.href="login.php">Inicia sesión</button>';
 		}
 		?>
 	
