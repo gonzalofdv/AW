@@ -50,7 +50,7 @@ class FormularioComentario extends Form {
         $html ='';
         $html.='<legend>Nuevo Comentario</legend>';
         $html.='<div class="formulario">';
-		$html.='<textarea name="cuerpo" rows="15" cols="70">'.$comentario.'</textarea><br>';
+		$html.='<textarea name="cuerpo" rows="15" cols="70">'.$comentario.'</textarea>';
 		$html.='<input type="checkbox" name="condi" value="ok"><label>Confirmar enviar comentario.</label><br>';
 		$html.='<button type="submit" class="botonEnviar" name="aceptar">Enviar</button>';
 		$html.='</div>';

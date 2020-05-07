@@ -87,7 +87,7 @@ class FormularioPreguntaRespuesta extends Form {
 		$html = '';
 		$html .= '<legend>Nueva Pregunta</legend>';
 		$html .= '<div class="formulario">';
-        $html .= '<label>Pregunta:</label><br> <input type="text" name="preg" value="'.$preg.'"><br>';
+        $html .= '<input type="text" name="preg" placeholder="Pregunta:" value="'.$preg.'"><br>';
         $html .= '<label>Selecciona la liga a la que pertenece:</label><br><br>';
         $html .= '<div class="caja">';
         $html .= '<select name ="liga">';
@@ -99,10 +99,10 @@ class FormularioPreguntaRespuesta extends Form {
             }
         $html .='</select>';
         $html .= '</div>';
-        $html .='<br><br>';
-        $html .='<label>Respuesta correcta:</label><br> <input type="text" name="v" value="'.$v.'"><br>';          
-        $html .='<label>Respuesta falsa 1:</label><br> <input type="text" name="f1" value="'.$f1.'"><br>';
-        $html .='<label>Respuesta falsa 2:</label><br> <input type="text" name="f2" value="'.$f2.'"><br>';
+        $html .='<br>';
+        $html .='<input type="text" name="v" placeholder="Respuesta correcta:" value="'.$v.'"><br>';          
+        $html .='<input type="text" name="f1" placeholder="Respuesta falsa 1:" value="'.$f1.'"><br>';
+        $html .='<input type="text" name="f2" placeholder="Respuesta falsa 2:" value="'.$f2.'"><br>';
         $html .='<input type="checkbox" name="condi" value="ok"><label>Confirmar enviar nueva pregunta.</label><br>';
         $html .='<button type="submit" class="botonEnviar" name="aceptar">Enviar</button>';
         $html .='</div>';
