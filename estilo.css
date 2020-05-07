@@ -175,7 +175,6 @@ div.contenido { /* Todo el contenido de la página */
 	width: auto;
 	background-color: white;
 	grid-area: contenido;
-	overflow: auto;
 }
 
 div#contenidoIni {
@@ -589,7 +588,7 @@ button {
 	display:flex;
 	flex-direction: column;
 	justify-content: center;
-	background: white;
+	background: #EBEBEB;
 	text-align: center;
 }
 

@@ -34,11 +34,11 @@
 		<script>
 			
 			function myFunction() {
-				miVentana = window.open( "ventanasEmergentes.php?id=puntos", "nombrePop-Up", "width=600,height=150, top=250,left=350");
+				miVentana = window.open( "ventanasEmergentes.php?id=puntos", "nombrePop-Up", "width=600,height=350, top=250,left=350");
 			}
 			
 			function myFunctionTwo() {
-				miVentana = window.open( "ventanasEmergentes.php?id=ventajas", "nombrePop-Up", "width=600,height=400, top=150,left=350");
+				miVentana = window.open( "ventanasEmergentes.php?id=ventajas", "nombrePop-Up", "width=666,height=350, top=250,left=350");
 			}
 			
 					

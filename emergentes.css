@@ -1,0 +1,22 @@
+.tabla{
+	width: 90%;
+	height: 100px;
+	text-align: left;
+}
+
+tr:nth-child(odd) {
+    background-color:#f2f2f2;
+   }
+tr:nth-child(even) {
+    background-color:#fbfbfb;
+}
+tr:hover {
+	background-color:#E5E800;
+}
+.hTabla{
+	text-align:left;
+	background-color:#41CF19; 
+	color: white;
+	padding: 20px;
+	border: 2px solid black;
+}

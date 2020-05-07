@@ -53,7 +53,7 @@ $codLiga = htmlspecialchars($_GET['liga']);
 								array_push($valores,$rand);
 								$pregunta=$preguntaSA->getPregunta($rand);
 								$respuestas=$respuestaSA->getRespuestas($rand);
-								echo "<b>".$pregunta->Pregunta . "</b><br><br>";
+								echo "<h3>".$pregunta->Pregunta . "</h3>";
 								echo '<div class="opcionesVal">';
 								echo '<ul>';
 								while($res=mysqli_fetch_array($respuestas)){
@@ -105,7 +105,7 @@ $codLiga = htmlspecialchars($_GET['liga']);
 									$idPreg = $idspreguntas[$rand];
 									$pregunta = $preguntaSA->getPregunta($idPreg);
 									$respuestas =$respuestaSA->getRespuestas($idPreg);
-									echo "<b>".$pregunta->Pregunta . "</b><br><br>";
+									echo "<h3>".$pregunta->Pregunta . "</h3>";
 									echo '<div class="opcionesVal">';
 									echo '<ul>';
 									while($res=mysqli_fetch_array($respuestas)){
