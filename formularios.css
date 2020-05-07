@@ -118,6 +118,7 @@ legend {
 	border-color:#51FF00;
 }
 
+
 .formulario .radioForm {
 	border-color: blue;
 	background-color: yellow;
@@ -125,8 +126,9 @@ legend {
 }
 
 .formulario label {
-    font-size:22px;
+    font-size:20px;
     color:#1ab188;
+    font-family: Candara;
 }
 
 .formulario textarea {
@@ -145,38 +147,53 @@ legend {
 	transition:border-color .75s ease, box-shadow .25s ease;
 }
 
-.caja {
-   margin:20px auto 40px auto;	
-   border:1px solid #d9d9d9;
-   height:30px;
+.caja {	
+   border:1px solid;
+   height:40px;
    overflow: hidden;
    width: 230px;
    position:relative;
-   background: white;
+   background: #13232f;
 }
+
 select {
    background: transparent;
-   border: none;
-   font-size: 14px;
-   height: 30px;
+   border-radius: 0; 
+   border-color: #1ab188;
+   font-size: 18px;
+   color:#1ab188;
+   height: 40px;
    padding: 5px;
    width: 250px;
+   padding-bottom: 0;
+   padding-top: 0;
+   font-family: Candara;
 }
 
 select:focus{ outline: none;}
 
 .caja::after{
-	content:"\025be";
+	content:"\021e9";
 	display:table-cell;
 	padding-top:7px;
 	text-align:center;
-	width:30px;
-	height:30px;
-	background-color:#d9d9d9;
+	width:40px;
+	height:40px;
+	background-color:#1ab188;
 	position:absolute;
 	top:0;
-	right:0px;	
+	right:0px;
+   	padding-top: 12px;	
 	pointer-events: none;
+}
+
+.formulario select:focus{
+	outline:0;
+	border-color:#51FF00;
+}
+
+.caja:focus {
+	background-color:#51FF00;
 }
 
 .botonEnviar {

@@ -75,7 +75,7 @@ class FormularioPreguntaRespuesta extends Form {
 		$f1 = '';
 		$f2 = '';
 		$codLiga = '';
-
+		
 		if($datosIniciales) {
 			$preg = isset($datosIniciales['preg']) ? htmlspecialchars($datosIniciales['preg']) : $preg;
 			$v = isset($datosIniciales['v']) ? htmlspecialchars($datosIniciales['v']) : $v;
