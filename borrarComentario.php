@@ -25,8 +25,6 @@ $idNoticia = $_GET['idN'];
 
 	<div class="contenido">
 
-		<h1>Acceso al sistema</h1>
-
 		<?php
 			$form = new FormularioBorrarComentario($idNoticia);
 			$form->gestiona();

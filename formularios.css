@@ -11,17 +11,18 @@ legend {
 
 #legendLogin {
 	width: 41.8%;
-	
+	margin-left: 25%;
+	font-size: 200%;
 }
 
 .login {
 	width: 50%;
 	background-color: #C2C2C2;
-	padding-bottom: 30px;
+	padding-bottom: 20px;
+	margin-left: 25%;
 }
 
 .login input {
-	
 	font-family: 'Nunito', sans-serif;
 	color: #384047;
 }
@@ -104,12 +105,12 @@ legend {
 	height:100%;
 	padding:5px 10px;
 	margin-top: 10px;
+	/*margin-left: 30%; // Si queremos poner los formularios en el centro*/
 	background:none;
 	background-image:none;
-	border:1px solid;
+	border:1px solid #1ab188;
 	color:white;
 	border-radius:0;
-	border-color:#1ab188;
 	transition:border-color .75s ease, box-shadow .25s ease;
 }
 
@@ -148,7 +149,6 @@ legend {
 }
 
 .caja {	
-   border:1px solid;
    height:40px;
    overflow: hidden;
    width: 230px;
@@ -246,6 +246,11 @@ button {
 
 .erroresForm{
 	font-size:20px;
+    max-height:1500px;
+}
+
+.erroresForm{
+    font-size:20px;
     color:#1ab188;
     font-family: Candara;
     font-weight: bold;

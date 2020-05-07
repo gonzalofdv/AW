@@ -58,6 +58,7 @@ class FormularioEditarNoticia extends Form {
 		$html .= '<div class="formulario">';
         $html .= '<label>Titular:</label><br> <input type="text" name="titular" value="'.$titular.'"><br>';
         $html .= '<textarea name="cuerpo" rows="10" cols="40">'.$cuerpo.'</textarea><br>';
+		$html .= '<div class="caja">';
         $html .= '<select name="liga">';
         $html .= '<option value="'.$codLiga.'">'.$nombreLiga.'</option>';
             $ligasa=new LigaSA();
@@ -66,8 +67,8 @@ class FormularioEditarNoticia extends Form {
                 $html .= '<option value=' . $valores[0] . '> ' . $valores[1] . '</option>';
             }
         $html .='</select>';
-        $html .='<br>';
-        $html .='<input type="checkbox" name="condi" value="ok"><label>Confirmar enviar noticia.</label><br>';
+		$html .= '</div>';
+        $html .='<input type="checkbox" name="condi" value="ok"><label>Confirmar enviar noticia.</label>';
         $html.='<button type="submit" class="botonEnviar" name="aceptar">Aceptar</button>';
         $html .='</div>';
         return $html;

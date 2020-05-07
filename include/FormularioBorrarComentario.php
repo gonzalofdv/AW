@@ -32,8 +32,8 @@ class FormularioBorrarComentario extends Form{
 	protected function generaCamposFormulario($datosIniciales){
 		
 		$html = '';
-		$html .= '<fieldset>';
 		$html .= '<legend>¿Qué comentario quieres borrar?</legend>';
+		$html .= '<div class="formulario">';
 	
 		$comentarioSA=new ComentarioSA();
 		$usuarioSA=new UsuarioSA();
@@ -48,7 +48,7 @@ class FormularioBorrarComentario extends Form{
 		}
 	
 		$html .= '<input type="submit" name="aceptar">	';
-		$html .= '</fieldset>';
+		$html .= '</div>';
 		
 		return $html;
 	}
