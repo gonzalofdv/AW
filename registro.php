@@ -18,7 +18,7 @@ require_once ('include/FormularioRegistro.php');
 	<?php
 		require("include/comun/cabecera.php");
 	?>
-	<div class="contenido">
+	<div class="contenido" id="formus">
 		<?php
 			$form = new FormularioRegistro();
 			$form->gestiona();

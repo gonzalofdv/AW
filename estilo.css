@@ -171,10 +171,11 @@ div#ligas { /* Iconos de las seis ligas */
 div.contenido { /* Todo el contenido de la página */
 	padding: 10px;
 	float: left;
-	max-height: 1000px;
+	max-height: 1050px;
 	width: auto;
 	background-color: white;
 	grid-area: contenido;
+	overflow: auto;
 }
 
 div#contenidoIni {

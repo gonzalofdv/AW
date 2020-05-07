@@ -38,7 +38,7 @@ $codigo = $_GET['codAlerta'];
 					header("refresh:5; url=index.php");
 					break;
 				case 3:
-					echo "<p>¡Quieto ahí! Ya eres un usuario Somos Familia, sabemos que estás encantado pero no vas a perder los privilegios no te preocupes</p>";
+					echo "<p>¡Quieto ahí! Ya eres un usuario Somos Familia, sabemos que estás encantado pero no vas a perder los privilegios, no te preocupes</p>";
 					echo "<p>Te redireccionamos a la página de inicio.</p>";
 					header("refresh:5; url=index.php");
 					break;
