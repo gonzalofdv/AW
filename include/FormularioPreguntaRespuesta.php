@@ -85,25 +85,27 @@ class FormularioPreguntaRespuesta extends Form {
 		}
 	
 		$html = '';
-		$html .= '<fieldset>';
-        $html .= '<legend>Nueva Pregunta</legend>';
-        $html .= 'Pregunta:<br> <input type="text" name="preg" value="'.$preg.'"><br>';
-        $html .= 'Selecciona la liga a la que pertenece:<br>';
-        $html .= '<select name="liga">';
+		$html .= '<legend>Nueva Pregunta</legend>';
+		$html .= '<div class="formulario">';
+        $html .= '<label>Pregunta:</label><br> <input type="text" name="preg" value="'.$preg.'"><br>';
+        $html .= '<label>Selecciona la liga a la que pertenece:</label><br><br>';
+        $html .= '<div class="caja">';
+        $html .= '<select name ="liga">';
         $html .= '<option value="0">Ligas:</option>';
-            $ligasa=new LigaSA();
-            $res=$ligasa->devuelveLigaSA();
+            $ligasa = new LigaSA();
+            $res = $ligasa->devuelveLigaSA();
             while($valores = mysqli_fetch_array($res)){
                 $html .= '<option value=' . $valores[0] . '> ' . $valores[1] . '</option>';
             }
         $html .='</select>';
-        $html .='<br>';
-        $html .='Respuesta correcta:<br> <input type="text" name="v" value="'.$v.'"><br>';          
-        $html .= 'Respuesta falsa 1:<br> <input type="text" name="f1" value="'.$f1.'"><br>';
-        $html .= 'Respuesta falsa 2: <br> <input type="text" name="f2" value="'.$f2.'"><br>';
-        $html .='<input type="checkbox" name="condi" value="ok">Confirmar enviar noticia.<br>';
-        $html .='<input class="botGen" type="submit" name="aceptar">';
-        $html .='</fieldset>';
+        $html .= '</div>';
+        $html .='<br><br>';
+        $html .='<label>Respuesta correcta:</label><br> <input type="text" name="v" value="'.$v.'"><br>';          
+        $html .='<label>Respuesta falsa 1:</label><br> <input type="text" name="f1" value="'.$f1.'"><br>';
+        $html .='<label>Respuesta falsa 2:</label><br> <input type="text" name="f2" value="'.$f2.'"><br>';
+        $html .='<input type="checkbox" name="condi" value="ok"><label>Confirmar enviar nueva pregunta.</label><br>';
+        $html .='<button type="submit" class="botonEnviar" name="aceptar">Enviar</button>';
+        $html .='</div>';
 
 		return $html;
 	}
