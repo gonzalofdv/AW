@@ -86,74 +86,7 @@ $idNoticia = $_GET['idN'];
 				echo '<button class="botGenOff" onclick=location.href="procesarBorrarNoticia.php?idN='.$idNoticia.'" disabled>Eliminar noticia</button>';
 				echo '	';
 				echo '<button class="botGenOff" onclick=location.href="formularioEditarNoticia.php?idN='.$idNoticia.'" disabled>Editar noticia</button>';
-				echo '<button class="botGenOff" onclick=location.href="borrarComentario.php?idN='.$idNoticia.'" disabled>Eliminar comentario</button>';
-			?>
-				<style>
-				label{ color:grey;}
-				input[type = "radio"]{ display:none;}
-				.clasificacion{
-					  direction: rtl;/* right to left /
-					  unicode-bidi: bidi-override;/ bidi de bidireccional */
-				  }
-				  label:hover{color:orange;}
-				  label:hover ~ label{color:orange;}
-				  input[type = "radio"]:checked ~ label{color:orange;}
-				  #form {
-				  width: 250px;
-				  margin: 0 auto;
-				  height: 50px;
-				}
-				
-				#form p {
-				  text-align: center;
-				}
-				
-				#form label {
-				  font-size: 20px;
-				}
-				
-				input[type="radio"] {
-				  display: none;
-				}
-				
-				label {
-				  color: grey;
-				}
-				
-				.clasificacion {
-				  direction: rtl;
-				  unicode-bidi: bidi-override;
-				}
-				
-				label:hover,
-				label:hover ~ label {
-				  color: orange;
-				}
-				
-				input[type="radio"]:checked ~ label {
-				  color: orange;
-				}
-				</style>
-				
-				<form>
-				  <p class="clasificacion">
-					<input id="radio1" type="radio" name="estrellas" value="5">
-						<label for="radio1">★</label>
-						<input id="radio2" type="radio" name="estrellas" value="4">
-						<label for="radio2">★</label>
-						<input id="radio3" type="radio" name="estrellas" value="3">
-						<label for="radio3">★</label>
-						<input id="radio4" type="radio" name="estrellas" value="2">
-						<label for="radio4">★</label>
-						<input id="radio5" type="radio" name="estrellas" value="1">
-						<label for="radio5">★</label>
-						<br>
-						<input type="submit" value="Enviar" name="submit">
-				  </p>
-				</form>
-				<?php
-				echo '	';
-				
+				echo '<button class="botGenOff" onclick=location.href="borrarComentario.php?idN='.$idNoticia.'" disabled>Eliminar comentario</button>';	
 			}
 			else{
 				if($existen=$comentarioSA->existenComentarios($idNoticia)){
