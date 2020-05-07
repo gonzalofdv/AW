@@ -211,9 +211,25 @@ div#opcionesLiga{
 	margin-top:-10px;
 }
 
+
+.tablaComent{
+	border: black 3px solid;
+}
+
 #comentarios{
 	padding: 0.7em;
+	border:black 2px solid;
 }
+
+#trComent:hover {
+	background-color:#5fcf80;
+}
+#thComent{
+	padding: 0.7em;
+	border:black 2px solid;
+	background-color:#42A15E;
+}
+
 
 img#somosFam{
 	width:800px;

@@ -239,3 +239,14 @@ input[type=”file”]{
 button {
 	margin: 0 auto;
 }
+
+#formus{
+	max-height:1500px;
+}
+
+.erroresForm{
+	font-size:20px;
+    color:#1ab188;
+    font-family: Candara;
+    font-weight: bold;
+}

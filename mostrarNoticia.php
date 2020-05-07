@@ -105,10 +105,10 @@ $idNoticia = $_GET['idN'];
 			echo "<br><br>";
 		?>
 		
-			<table border="2">
-					<tr>
-						<td><b>Usuario</b></td>
-						<td><b>Comentario</b></td>
+			<table class="tablaComent">
+					<tr id="trComent">
+						<th id="thComent"><b>Usuario</b></th>
+						<th id="thComent"><b>Comentario</b></th>
 					</tr>
 		<?php 
 			while($mostrar=mysqli_fetch_object($comentarios)){
@@ -116,9 +116,9 @@ $idNoticia = $_GET['idN'];
 					$usuario=$usuarioSA->obtenerNombreUsu($mostrar->CodUsuario);
 					$usu=$usuario->NombreUsuario;
 					?>
-					<tr>
+					<tr id="trComent">
 						<td id="comentarios"><?php echo $usu ?></td>
-						<td id=comentarios><?php echo $mostrar->Comentario ?></td>
+						<td id="comentarios"><?php echo $mostrar->Comentario ?></td>
 					</tr>
 		
 		<?php
