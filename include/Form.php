@@ -120,9 +120,9 @@ abstract class Form
         $html='';
         $numErrores = count($errores);
         if (  $numErrores == 1 ) {
-            $html .= "<ul><li>".$errores[0]."</li></ul>";
+            $html .= "<ul class='erroresForm'><li>".$errores[0]."</li></ul>";
         } else if ( $numErrores > 1 ) {
-            $html .= "<ul><li>";
+            $html .= "<ul class='erroresForm'><li>";
             $html .= implode("</li><li>", $errores);
             $html .= "</li></ul>";
         }
