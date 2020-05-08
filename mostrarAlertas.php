@@ -78,6 +78,11 @@ $codigo = $_GET['codAlerta'];
 					echo "Las contraseñas no coinciden";
 					header("refresh:3; url=registro.php");
 					break;
+				case 12:
+					echo "Nueva noticia agregada correctamente.<br>";
+					echo "<p>Te redireccionamos a la página de inicio.</p>";
+					header("refresh:3; url=index.php");
+					break;
 				case 11:
 					echo "Por favor, rellene todos los campos y acepte las condiciones del servicio.";
 					header("refresh:3; url=registro.php");
