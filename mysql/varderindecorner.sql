@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-05-2020 a las 12:23:47
+-- Tiempo de generación: 08-05-2020 a las 22:34:20
 -- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.4
+-- Versión de PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -132,7 +133,27 @@ INSERT INTO `equipos` (`IdEquipo`, `nombreEquipo`, `CodLiga`, `Puntos`, `GolesAF
 (62, 'Deportivo', 2, 35, 28, 46, 'depor.png'),
 (63, 'Lugo', 2, 34, 28, 40, 'lugo.png'),
 (64, 'Extremadura', 2, 31, 30, 43, 'extremadura.png'),
-(65, 'Racing de Santander', 2, 28, 31, 40, 'racing.png');
+(65, 'Racing de Santander', 2, 28, 31, 40, 'racing.png'),
+(66, 'Liverpool', 3, 82, 66, 21, 'Liverpool.png'),
+(68, 'Manchester City', 3, 57, 68, 31, 'ManCity.png'),
+(69, 'Leicester City', 3, 53, 58, 28, 'Leicester.png'),
+(70, 'Chelsea', 3, 48, 51, 39, 'Chelsea.png'),
+(71, 'Manchester United', 3, 45, 44, 30, 'ManUnited.png'),
+(72, 'Wolverhampton', 3, 43, 41, 34, 'Wolves.png'),
+(73, 'Sheffield Utd', 3, 43, 30, 25, 'Sheffield.png'),
+(74, 'Tottenham', 3, 41, 47, 40, 'Tottenham.png'),
+(75, 'Arsenal', 3, 40, 40, 36, 'Arsenal.png'),
+(76, 'Burnley', 3, 39, 34, 40, 'Burnley.png'),
+(77, 'Crystal Palace', 3, 39, 26, 32, 'CrystalPalace.png'),
+(78, 'Everton', 3, 37, 37, 46, 'Everton.png'),
+(79, 'Newcastle Utd', 3, 35, 25, 41, 'Newcastle.png'),
+(80, 'Southampton', 3, 34, 35, 52, 'Southampton.png'),
+(81, 'Brighton', 3, 29, 32, 40, 'Brighton.png'),
+(82, 'West Ham', 3, 27, 35, 50, 'WestHam.png'),
+(83, 'Watford', 3, 27, 27, 44, 'Watford.png'),
+(84, 'Bournemouth', 3, 27, 29, 47, 'Bournemouth.png'),
+(85, 'Aston Villa', 3, 25, 34, 56, 'AstonVilla.png'),
+(86, 'Norwich', 3, 21, 25, 52, 'Norwich.png');
 
 -- --------------------------------------------------------
 
@@ -590,7 +611,7 @@ INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`,
 (2, 'Gonzalo', 'Figueroa', 'Del Val', 'hombre', 'Real Madrid', 'gfigue01', '$2y$10$ANx3ithfFe4l6ew3oZhW5uJ45yoyzqUj5SIYn3fuCl/XmtYEnqyeW', 'gfigue01@ucm.es', 0, 1, 297),
 (3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 'Real Madrid', 'acernuda', '$2y$10$fuAnn.RfDk4iyTOIkcYlQ.gCWB1evtijABmOAF355GShObXjqWSGi', 'acernuda@ucm.es', 0, 1, 294),
 (4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '$2y$10$.GNAP.NVYpuAh6b5zmATgu1mr/4TVRMzckqd0UyP/vuaPIv87tKj2', 'fernag08@ucm.es', 0, 1, 314),
-(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '$2y$10$9chuTLHd/cRIMM1XLSs3I.mLk4eNESPqBSg5yLMN0T5sNkFjTZdjy', 'jorborja@ucm.es', 0, 1, 329),
+(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '$2y$10$9chuTLHd/cRIMM1XLSs3I.mLk4eNESPqBSg5yLMN0T5sNkFjTZdjy', 'jorborja@ucm.es', 0, 1, 330),
 (6, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '$2y$10$NiV1zfngh25e1BAlessipO6SZ0LnDzG2hvBcLfhTcfiqm3rOuxRoK', 'amouhib@ucm.es', 0, 1, 250),
 (7, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '$2y$10$lvMSB1YxaNhoE7z5.SZl0.zcK.7joA2.uWeXkxQJ/VsJR9peW8klC', 'jurosado@ucm.es', 0, 1, 422),
 (8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '$2y$10$Zjeyq2P9kmANI94HOGgPEenA5XQ1X.sYVkefTmW1IXolIUd9YEA9K', 'usu@ucm.es', 0, 0, 202);
@@ -706,7 +727,7 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT de la tabla `equipos`
 --
 ALTER TABLE `equipos`
-  MODIFY `IdEquipo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `IdEquipo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT de la tabla `jugadores`
