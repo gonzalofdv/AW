@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-05-2020 a las 22:34:20
+-- Tiempo de generación: 08-05-2020 a las 23:18:07
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -258,7 +258,9 @@ INSERT INTO `noticias` (`IdNoticia`, `CodUsuario`, `CodLiga`, `Texto`, `Titular`
 (9, 5, 3, 'Kevin de Bruyne, futbolista del Manchester City, aseguró que gracias al confinamiento provocado por el brote de coronavirus ha tomado la decisión de prolongar su carrera.<br /><br />\r\n<br /><br />\r\nEl belga lo confirmó a través de sus redes sociales. \"Le he dicho a mi mujer que voy a jugar un poco más\", explicó el futbolista.<br /><br />\r\n<br /><br />\r\n\"Después de este confinamiento no puedo quedarme más en casa. Le he dicho que voy a jugar dos años más. Es momento de jugar al fútbol, lo echo de menos y es difícil, pero ahora no es lo importante, el fútbol no es lo importante. La gente tiene que estar segura\", añadió.<br /><br />\r\n<br /><br />\r\nDe Bruyne, uno de los mejores jugadores de la Premier, explicó que lleva en casa encerrado dos semanas y que al principio su familia y sus hijos estuvieron un poco enfermos, lo que les preocupó, pero que ahora ya están bien.<br /><br />\r\n<br /><br />\r\n\"Fueron ocho o nueve días, pero ahora estamos mejor afortunadamente, porque nunca sabes lo que va a pasar\", finalizó el belga.', 'De Bruyne: &quot;El confinamiento hará que alargue mi carrera&quot;', 'noticia_deBruyne.jpg'),
 (10, 5, 3, 'El Tottenham ha pasado del subcampeonato de la Champions League a ver cómo se tambalea su proyecto deportivo en un año. Fuera de Europa en la Premier y con Harry Kane tentando su salida, la 2019-20 sigue torciéndose tras el fin de Pochettino.<br /><br />\r\n<br /><br />\r\nEl equipo llegó a su mejor momento en las primeras semanas con \"Mou\" pero después volvió a decaer, y se aprecia que la verdadera brecha está atrás. Tanto ahora como antes, han concedido muchas ocasiones y no se ve ni una reacción clara, ni resultados.<br /><br />\r\n<br /><br />\r\n¿Será capaz Mourinho de corregir los problemas y evitar el colapso del proyecto del Tottenham?', 'El Tottenham de José Mourinho se tambalea', 'noticia_Mou.jpg'),
 (11, 5, 6, 'Las dificultades económicas derivadas del coronavirus podrían obligar al club a desprenderse del crack portugués, como medida de choque para paliar los durísimos efectos que la paralización de las competiciones futbolísticas a causa del coronavirus está teniendo sobre su economía.<br /><br />\r\nDejar agotar su contrato o renovarlo a la baja son las otras opciones que tiene.<br /><br />\r\nTRES escenarios distintos para el futuro de CR7 que no tiene su continuidad asegurada en Turin.<br /><br />\r\nEl primer equipo que suena es el Real Madrid ¿Volverá la estrella mundial al equipo que le dio todo?', 'La Juve no descarta el traspaso de Cristiano Ronaldo.', 'NoticiaVentaCR.jpg'),
-(12, 6, 6, 'Mientras los clubes de Serie A buscan un camino común, el Inter estaría cerca de imitar el ejemplo de la Juventus y recortar los sueldos de sus futbolistas.<br /><br />\r\nAún sin detallar la fecha de regreso al césped para reanudar la lida, lo más probable es que los futbolistas renunciarán a los sueldos de marzo, abril, mayo y junio como hicieron los de la Vecchia Signora, dejando abierta la posibilidad de volver a negociar si finalmente se regresará al verde.<br /><br />\r\nSin lugar a dudas, es un ejemplo de humildad, ¿Tomarán ejemplo los demás jugadores de las grandes ligas?<br /><br />\r\n¿Deben imponer esta acción los presidentes de las ligas?<br /><br />\r\nLeemos vuestras opiniones.', 'La plantilla del Inter, dispuesta a renunciar a sus sueldos.', 'noticiaInter.jpg');
+(12, 6, 6, 'Mientras los clubes de Serie A buscan un camino común, el Inter estaría cerca de imitar el ejemplo de la Juventus y recortar los sueldos de sus futbolistas.<br /><br />\r\nAún sin detallar la fecha de regreso al césped para reanudar la lida, lo más probable es que los futbolistas renunciarán a los sueldos de marzo, abril, mayo y junio como hicieron los de la Vecchia Signora, dejando abierta la posibilidad de volver a negociar si finalmente se regresará al verde.<br /><br />\r\nSin lugar a dudas, es un ejemplo de humildad, ¿Tomarán ejemplo los demás jugadores de las grandes ligas?<br /><br />\r\n¿Deben imponer esta acción los presidentes de las ligas?<br /><br />\r\nLeemos vuestras opiniones.', 'La plantilla del Inter, dispuesta a renunciar a sus sueldos.', 'noticiaInter.jpg'),
+(13, 7, 1, 'Cada equipo dispondrá de tres oportunidades para realizar las cinco sustituciones. Habrá una más añadida en la prórroga. Se permiten dos pausas para hidratación.<br />\r\n- Los dos equipos podrán utilizar un máximo de cinco suplentes.<br />\r\n<br />\r\n- Si ambos equipos realizaran una sustitución al mismo tiempo, se restará una oportunidad de sustitución a cada uno de ellos.<br />\r\n<br />\r\n- En el caso de que se dispute una prórroga, ambos equipos llegarán a ésta con el número de suplentes y oportunidades de sustitución que no hayan empleado.<br />\r\n<br />\r\n- Si el reglamento de la competición permitiera realizar una sustitución más durante la prórroga, los dos equipos dispondrán entonces de una nueva oportunidad, que podrá aprovecharse tanto antes del inicio de la prórroga como durante el periodo de descanso de la misma.', 'La FIFA autoriza 5+1 cambios y convocatoria de 23 jugadores', 'cincoCambiosNoticia.jpg'),
+(14, 7, 1, 'Milan Jovic, padre del madridista, en \'Kurir\': \"Se estaba preparando en su casa de Belgrado y sintió un dolor\".<br />\r\nLuka Jovic está destrozado después de conocer que sufre una “fractura extraarticular en el hueso calcáneo del pie derecho” y que puede estar de baja hasta dos meses. El delantero serbio, de 21 años, regresó este lunes a Madrid desde Belgrado con el chip cambiado y decidido a ganarse un sitio en el equipo que no ha logrado tener, pero esta lesión ha sido un jarro de agua helada. “Está deprimido y tiene un poco de miedo”, declaró Milan Jovic, el padre del jugador del equipo blanco en el periódico Kurir.', '&quot;Jovic está deprimido&quot;', 'noticiaJovic.jpg');
 
 -- --------------------------------------------------------
 
@@ -380,7 +382,12 @@ INSERT INTO `preguntas` (`IdPregunta`, `Pregunta`, `CodLiga`) VALUES
 (57, '¿Qué entrenador actual de la liga Smartbank se quedó a las puertas de jugar una Eurocopa con España debido a una lesión?', 2),
 (58, '¿Cuál de estos porteros marcó un gol en la liga Smartbank?', 2),
 (59, '¿Cuál es el fichaje más caro de la historia de la liga Smartbank?', 2),
-(60, '¿Qué jugador del Rayo Vallecano ha jugado junto a Cristiano Ronaldo en el Manchester United?', 2);
+(60, '¿Qué jugador del Rayo Vallecano ha jugado junto a Cristiano Ronaldo en el Manchester United?', 2),
+(61, '¿Quien era el lider de la liga Santander cuando se declaró el estado de alarma?', 1),
+(62, '¿Quien es el jugador con mas partidos jugados en la historia de la liga Santander?', 1),
+(63, '¿Quien es el portero con mas minutos imbatido en la historia de la liga Santander?', 1),
+(64, '¿Cual es el equipo con mas derrotas consecutivas en la historia de la liga Santander?', 1),
+(65, '¿Cual es el equipo que mas faltas ha cometido en la liga Santander durante la temporada 19/20?', 1);
 
 -- --------------------------------------------------------
 
@@ -579,7 +586,22 @@ INSERT INTO `respuestas` (`IdRespuesta`, `CodPregunta`, `Respuesta`, `Correcta`)
 (177, 59, 'Alen Halilovic', 0),
 (178, 60, 'Isi', 0),
 (179, 60, 'Advíncula', 0),
-(180, 60, 'Bebé', 1);
+(180, 60, 'Bebé', 1),
+(181, 61, 'Getafe', 0),
+(182, 61, 'Barcelona', 1),
+(183, 61, 'Real Madrid', 0),
+(184, 62, 'Messi', 0),
+(185, 62, 'Gento', 0),
+(186, 62, 'Zubizarreta', 1),
+(187, 63, 'Abel ', 1),
+(188, 63, 'Oblak', 0),
+(189, 63, 'Casillas', 0),
+(190, 64, 'Mallorca', 0),
+(191, 64, 'Las Palmas', 1),
+(192, 64, 'Sporting', 0),
+(193, 65, 'Leganes', 0),
+(194, 65, 'Getafe', 1),
+(195, 65, 'Atletico de Madrid', 0);
 
 -- --------------------------------------------------------
 
@@ -613,7 +635,7 @@ INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`,
 (4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '$2y$10$.GNAP.NVYpuAh6b5zmATgu1mr/4TVRMzckqd0UyP/vuaPIv87tKj2', 'fernag08@ucm.es', 0, 1, 314),
 (5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '$2y$10$9chuTLHd/cRIMM1XLSs3I.mLk4eNESPqBSg5yLMN0T5sNkFjTZdjy', 'jorborja@ucm.es', 0, 1, 330),
 (6, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '$2y$10$NiV1zfngh25e1BAlessipO6SZ0LnDzG2hvBcLfhTcfiqm3rOuxRoK', 'amouhib@ucm.es', 0, 1, 250),
-(7, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '$2y$10$lvMSB1YxaNhoE7z5.SZl0.zcK.7joA2.uWeXkxQJ/VsJR9peW8klC', 'jurosado@ucm.es', 0, 1, 422),
+(7, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '$2y$10$lvMSB1YxaNhoE7z5.SZl0.zcK.7joA2.uWeXkxQJ/VsJR9peW8klC', 'jurosado@ucm.es', 0, 1, 433),
 (8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '$2y$10$Zjeyq2P9kmANI94HOGgPEenA5XQ1X.sYVkefTmW1IXolIUd9YEA9K', 'usu@ucm.es', 0, 0, 202);
 
 -- --------------------------------------------------------
@@ -745,7 +767,7 @@ ALTER TABLE `ligas`
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `opcionesvotacion`
@@ -757,13 +779,13 @@ ALTER TABLE `opcionesvotacion`
 -- AUTO_INCREMENT de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
-  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT de la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=181;
+  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=196;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
