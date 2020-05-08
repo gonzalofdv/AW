@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-05-2020 a las 12:13:51
+-- Tiempo de generación: 08-05-2020 a las 12:23:47
 -- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.3
+-- Versión de PHP: 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -111,7 +110,29 @@ INSERT INTO `equipos` (`IdEquipo`, `nombreEquipo`, `CodLiga`, `Puntos`, `GolesAF
 (40, '1. FSV Mainz 05', 4, 26, 34, 53, '1.FSVMainz05.png'),
 (41, 'Fortuna Düsseldorf', 4, 22, 27, 50, 'FortunaDüsseldorf.png'),
 (42, 'SV Werder Bremen', 4, 18, 27, 55, 'SVWerderBremen.png'),
-(43, 'SC Paderborn 07', 4, 16, 30, 54, 'SCPaderborn07.png');
+(43, 'SC Paderborn 07', 4, 16, 30, 54, 'SCPaderborn07.png'),
+(44, 'Cádiz', 2, 56, 41, 29, 'cadiz.png'),
+(45, 'Real Zaragoza', 2, 55, 45, 30, 'zaragoza.png'),
+(46, 'Almería', 2, 50, 51, 32, 'almeria.png'),
+(47, 'Huesca', 2, 50, 39, 32, 'huesca.png'),
+(48, 'Girona', 2, 47, 40, 35, 'girona.png'),
+(49, 'Elche', 2, 46, 41, 33, 'elche.png'),
+(50, 'Mirandés', 2, 42, 42, 43, 'mirandes.png'),
+(51, 'Sporting de Gijón', 2, 41, 32, 30, 'sporting_gijon.png'),
+(52, 'Alcorcón', 2, 41, 38, 37, 'alcorcon.png'),
+(53, 'Ponferradina', 2, 40, 36, 34, 'ponferradina.png'),
+(54, 'Rayo Vallecano', 2, 40, 38, 32, 'rayo_vallecano.png'),
+(55, 'Tenerife', 2, 39, 36, 36, 'tenerife.png'),
+(56, 'Fuenlabrada', 2, 39, 32, 33, 'fuenlabrada.png'),
+(57, 'Las Palmas', 2, 38, 34, 39, 'palmas.png'),
+(58, 'Málaga', 2, 38, 27, 27, 'malaga.png'),
+(59, 'Numancia', 2, 38, 35, 35, 'numancia.png'),
+(60, 'Oviedo', 2, 35, 37, 43, 'oviedo.png'),
+(61, 'Albacete', 2, 35, 24, 36, 'albacete.png'),
+(62, 'Deportivo', 2, 35, 28, 46, 'depor.png'),
+(63, 'Lugo', 2, 34, 28, 40, 'lugo.png'),
+(64, 'Extremadura', 2, 31, 30, 43, 'extremadura.png'),
+(65, 'Racing de Santander', 2, 28, 31, 40, 'racing.png');
 
 -- --------------------------------------------------------
 
@@ -147,7 +168,18 @@ INSERT INTO `jugadores` (`IdJugador`, `CodEquipo`, `Nombre`, `Apellido`, `Apodo`
 (13, 5, 'David', 'Soria', 'David Soria'),
 (14, 15, 'Jordi', 'Masip', 'Masip'),
 (15, 20, 'Diego', 'Lopez', 'Diego Lopez'),
-(16, 9, 'Rui Tiago', 'Silva', 'Rui Silva');
+(16, 9, 'Rui Tiago', 'Silva', 'Rui Silva'),
+(17, 61, 'Roman', 'Zozulya', 'Zozulya'),
+(18, 54, 'Mario', 'Suárez', 'Mario Suárez'),
+(19, 54, 'Stole', 'Dimitrievski', 'Dimitrievski'),
+(20, 51, 'Diego', 'Mariño', 'Mariño'),
+(21, 44, 'Alberto', 'Cifuentes', 'Cifuentes'),
+(22, 47, 'Álvaro', 'Fernández', 'Álvaro F.'),
+(23, 56, 'Gabriel', 'Ribas', 'Biel Ribas'),
+(24, 48, 'Christian Ricardo', 'Stuani', 'Stuani'),
+(25, 45, 'Luis Javier', 'Suárez', 'Luis Suárez'),
+(26, 53, 'Yuri', 'de Souza', 'Yuri'),
+(27, 46, 'Darwin', 'Núñez', 'Darwin');
 
 -- --------------------------------------------------------
 
@@ -240,7 +272,16 @@ INSERT INTO `opcionesvotacion` (`IdOpcion`, `CodVotacion`, `CodJugador`, `NumVot
 (13, 2, 14, 89),
 (14, 2, 10, 145),
 (15, 2, 16, 64),
-(16, 2, 12, 128);
+(16, 2, 12, 128),
+(17, 4, 27, 36),
+(18, 4, 26, 56),
+(19, 4, 24, 87),
+(20, 4, 24, 75),
+(21, 3, 23, 45),
+(22, 3, 19, 36),
+(23, 3, 21, 73),
+(24, 3, 20, 90),
+(25, 3, 22, 66);
 
 -- --------------------------------------------------------
 
@@ -572,7 +613,9 @@ CREATE TABLE `votaciones` (
 
 INSERT INTO `votaciones` (`IdVotacion`, `CodLiga`, `Titulo`) VALUES
 (1, 1, '¿Quien sera el pichichi de la liga?'),
-(2, 1, '¿Quien ganara el trofeo Zamora?');
+(2, 1, '¿Quien ganara el trofeo Zamora?'),
+(3, 2, '¿Quién está siendo el mejor portero?'),
+(4, 2, '¿Quién está siendo el mejor delantero?');
 
 --
 -- Índices para tablas volcadas
@@ -663,13 +706,13 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT de la tabla `equipos`
 --
 ALTER TABLE `equipos`
-  MODIFY `IdEquipo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `IdEquipo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT de la tabla `jugadores`
 --
 ALTER TABLE `jugadores`
-  MODIFY `IdJugador` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `IdJugador` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `ligas`
@@ -687,7 +730,7 @@ ALTER TABLE `noticias`
 -- AUTO_INCREMENT de la tabla `opcionesvotacion`
 --
 ALTER TABLE `opcionesvotacion`
-  MODIFY `IdOpcion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `IdOpcion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `preguntas`
@@ -711,7 +754,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `votaciones`
 --
 ALTER TABLE `votaciones`
-  MODIFY `IdVotacion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IdVotacion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
