@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2020 a las 21:09:01
+-- Tiempo de generación: 09-05-2020 a las 23:32:53
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -515,7 +515,12 @@ INSERT INTO `preguntas` (`IdPregunta`, `Pregunta`, `CodLiga`) VALUES
 (67, '¿Quién de los siguientes jugadores de la Bundesliga viene del filial del Real Madrid?', 4),
 (68, 'La Bundesliga está considerada una de las cinco grandes ligas europeas, ¿qué puesto ocupa?', 4),
 (69, '¿A qué ex-jugador de la Bundesliga apodaban \"Torpedo\"?', 4),
-(70, 'El ahora jugador del Borussia Dortmund, Erling Haaland, batió un récord con su selección, Noruega, marcando muchos goles a Honduras, ¿cuántos?', 4);
+(70, 'El ahora jugador del Borussia Dortmund, Erling Haaland, batió un récord con su selección, Noruega, marcando muchos goles a Honduras, ¿cuántos?', 4),
+(71, '¿Cuál de los siguientes jugadores en activo lleva más de 100 goles en la Premier League?', 3),
+(72, '¿Quién es el máximo goleador del North London Derby (Arsenal - Tottenham)?', 3),
+(73, '¿Quién es el entrenador español con más partidos en la Premier League?', 3),
+(74, '¿Qué jugador del Manchester United ha disputado más partidos?', 3),
+(75, '¿En qué temporada Cristiano Ronaldo fue el Jugador del Año de la Premier League y fue máximo goleador de la competición?', 3);
 
 -- --------------------------------------------------------
 
@@ -744,7 +749,22 @@ INSERT INTO `respuestas` (`IdRespuesta`, `CodPregunta`, `Respuesta`, `Correcta`)
 (211, 69, 'Philipp Lahm', 0),
 (212, 70, '8', 0),
 (214, 70, '13', 0),
-(215, 70, '9', 1);
+(215, 70, '9', 1),
+(216, 71, 'Kun Agüero', 1),
+(217, 71, 'Mohamed Salah', 0),
+(218, 71, 'Heung-min Son', 0),
+(219, 72, 'Gareth Bale', 0),
+(220, 72, 'Thierry Henry', 0),
+(221, 72, 'Emmanuel Adebayor', 1),
+(222, 73, 'Pep Guardiola', 0),
+(223, 73, 'Rafa Benítez', 1),
+(224, 73, 'Roberto Martínez', 0),
+(225, 74, 'Wayne Rooney', 0),
+(226, 74, 'Ryan Giggs', 1),
+(227, 74, 'Sir Bobby Charlton', 0),
+(228, 75, '2006/2007', 0),
+(229, 75, '2008/2009', 0),
+(230, 75, '2007/2008', 1);
 
 -- --------------------------------------------------------
 
@@ -776,7 +796,7 @@ INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`,
 (2, 'Gonzalo', 'Figueroa', 'Del Val', 'hombre', 'Real Madrid', 'gfigue01', '$2y$10$ANx3ithfFe4l6ew3oZhW5uJ45yoyzqUj5SIYn3fuCl/XmtYEnqyeW', 'gfigue01@ucm.es', 0, 1, 297),
 (3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 'Real Madrid', 'acernuda', '$2y$10$fuAnn.RfDk4iyTOIkcYlQ.gCWB1evtijABmOAF355GShObXjqWSGi', 'acernuda@ucm.es', 0, 1, 294),
 (4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '$2y$10$.GNAP.NVYpuAh6b5zmATgu1mr/4TVRMzckqd0UyP/vuaPIv87tKj2', 'fernag08@ucm.es', 0, 1, 314),
-(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '$2y$10$9chuTLHd/cRIMM1XLSs3I.mLk4eNESPqBSg5yLMN0T5sNkFjTZdjy', 'jorborja@ucm.es', 0, 1, 330),
+(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '$2y$10$9chuTLHd/cRIMM1XLSs3I.mLk4eNESPqBSg5yLMN0T5sNkFjTZdjy', 'jorborja@ucm.es', 0, 1, 332),
 (6, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '$2y$10$NiV1zfngh25e1BAlessipO6SZ0LnDzG2hvBcLfhTcfiqm3rOuxRoK', 'amouhib@ucm.es', 0, 1, 250),
 (7, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '$2y$10$lvMSB1YxaNhoE7z5.SZl0.zcK.7joA2.uWeXkxQJ/VsJR9peW8klC', 'jurosado@ucm.es', 0, 1, 433),
 (8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '$2y$10$Zjeyq2P9kmANI94HOGgPEenA5XQ1X.sYVkefTmW1IXolIUd9YEA9K', 'usu@ucm.es', 0, 0, 202);
@@ -929,13 +949,13 @@ ALTER TABLE `opcionesvotacion`
 -- AUTO_INCREMENT de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
-  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT de la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
+  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=231;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
