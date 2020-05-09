@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2020 a las 06:38:38
+-- Tiempo de generación: 09-05-2020 a las 14:47:24
 -- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.2.28
+-- Versión de PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -231,7 +231,30 @@ INSERT INTO `jugadores` (`IdJugador`, `CodEquipo`, `Nombre`, `Apellido`, `Apodo`
 (35, 89, 'Leonardo', 'Bonucci', 'Bonucci'),
 (36, 94, 'Kalidou', 'Koulibaly', 'Koulibaly'),
 (37, 94, 'Konstantinos', 'Manolas', 'Manolas'),
-(38, 90, 'Ciro', 'Immobile', 'Immobile');
+(38, 90, 'Ciro', 'Immobile', 'Immobile'),
+(39, 21, 'Alphonso', 'Davies', 'Davies'),
+(40, 21, 'David', 'Alaba', 'Alaba'),
+(41, 23, 'Dayot', 'Upamecano', 'Upamecano'),
+(42, 23, 'Marcel', 'Halstenberg', 'Halstenberg'),
+(43, 22, 'Achraf', 'Hakimi', 'Achraf'),
+(44, 23, 'Nordi', 'Mukiele', 'Mukiele'),
+(45, 22, 'Mats', 'Hummels', 'Hummels'),
+(46, 24, 'Nico', 'Elvedi', 'Elvedi'),
+(47, 24, 'Matthias', 'Ginter', 'Ginter'),
+(48, 24, 'Stefan', 'Lainer', 'Lainer'),
+(49, 21, 'Benjamin', 'Pavard', 'Pavard'),
+(51, 22, 'Jadon', 'Sancho', 'Sancho'),
+(52, 21, 'Robert', 'Lewandowski', 'Lewandowski'),
+(53, 23, 'Timo', 'Werner', 'Werner'),
+(54, 21, 'Serge', 'Gnabry', 'Gnabry'),
+(55, 24, 'Marcus', 'Thuram', 'Thuram'),
+(56, 21, 'Thomas', 'Müller', 'Müller'),
+(57, 24, 'Breel', 'Embolo', 'Embolo'),
+(58, 24, 'Patrick', 'Herrmann', 'Herrmann'),
+(59, 23, 'Marcel', 'Sabitzer', 'Sabitzer'),
+(60, 24, 'Lars', 'Stindl', 'Stindl'),
+(61, 25, 'Kevin', 'Volland', 'Volland'),
+(62, 22, 'Thorgan', 'Hazard', 'T. Hazard');
 
 -- --------------------------------------------------------
 
@@ -291,7 +314,9 @@ INSERT INTO `noticias` (`IdNoticia`, `CodUsuario`, `CodLiga`, `Texto`, `Titular`
 (11, 5, 6, 'Las dificultades económicas derivadas del coronavirus podrían obligar al club a desprenderse del crack portugués, como medida de choque para paliar los durísimos efectos que la paralización de las competiciones futbolísticas a causa del coronavirus está teniendo sobre su economía.<br /><br />\r\nDejar agotar su contrato o renovarlo a la baja son las otras opciones que tiene.<br /><br />\r\nTRES escenarios distintos para el futuro de CR7 que no tiene su continuidad asegurada en Turin.<br /><br />\r\nEl primer equipo que suena es el Real Madrid ¿Volverá la estrella mundial al equipo que le dio todo?', 'La Juve no descarta el traspaso de Cristiano Ronaldo.', 'NoticiaVentaCR.jpg'),
 (12, 6, 6, 'Mientras los clubes de Serie A buscan un camino común, el Inter estaría cerca de imitar el ejemplo de la Juventus y recortar los sueldos de sus futbolistas.<br /><br />\r\nAún sin detallar la fecha de regreso al césped para reanudar la lida, lo más probable es que los futbolistas renunciarán a los sueldos de marzo, abril, mayo y junio como hicieron los de la Vecchia Signora, dejando abierta la posibilidad de volver a negociar si finalmente se regresará al verde.<br /><br />\r\nSin lugar a dudas, es un ejemplo de humildad, ¿Tomarán ejemplo los demás jugadores de las grandes ligas?<br /><br />\r\n¿Deben imponer esta acción los presidentes de las ligas?<br /><br />\r\nLeemos vuestras opiniones.', 'La plantilla del Inter, dispuesta a renunciar a sus sueldos.', 'noticiaInter.jpg'),
 (13, 7, 1, 'Cada equipo dispondrá de tres oportunidades para realizar las cinco sustituciones. Habrá una más añadida en la prórroga. Se permiten dos pausas para hidratación.<br />\r\n- Los dos equipos podrán utilizar un máximo de cinco suplentes.<br />\r\n<br />\r\n- Si ambos equipos realizaran una sustitución al mismo tiempo, se restará una oportunidad de sustitución a cada uno de ellos.<br />\r\n<br />\r\n- En el caso de que se dispute una prórroga, ambos equipos llegarán a ésta con el número de suplentes y oportunidades de sustitución que no hayan empleado.<br />\r\n<br />\r\n- Si el reglamento de la competición permitiera realizar una sustitución más durante la prórroga, los dos equipos dispondrán entonces de una nueva oportunidad, que podrá aprovecharse tanto antes del inicio de la prórroga como durante el periodo de descanso de la misma.', 'La FIFA autoriza 5+1 cambios y convocatoria de 23 jugadores', 'cincoCambiosNoticia.jpg'),
-(14, 7, 1, 'Milan Jovic, padre del madridista, en \'Kurir\': \"Se estaba preparando en su casa de Belgrado y sintió un dolor\".<br />\r\nLuka Jovic está destrozado después de conocer que sufre una “fractura extraarticular en el hueso calcáneo del pie derecho” y que puede estar de baja hasta dos meses. El delantero serbio, de 21 años, regresó este lunes a Madrid desde Belgrado con el chip cambiado y decidido a ganarse un sitio en el equipo que no ha logrado tener, pero esta lesión ha sido un jarro de agua helada. “Está deprimido y tiene un poco de miedo”, declaró Milan Jovic, el padre del jugador del equipo blanco en el periódico Kurir.', '&quot;Jovic está deprimido&quot;', 'noticiaJovic.jpg');
+(14, 7, 1, 'Milan Jovic, padre del madridista, en \'Kurir\': \"Se estaba preparando en su casa de Belgrado y sintió un dolor\".<br />\r\nLuka Jovic está destrozado después de conocer que sufre una “fractura extraarticular en el hueso calcáneo del pie derecho” y que puede estar de baja hasta dos meses. El delantero serbio, de 21 años, regresó este lunes a Madrid desde Belgrado con el chip cambiado y decidido a ganarse un sitio en el equipo que no ha logrado tener, pero esta lesión ha sido un jarro de agua helada. “Está deprimido y tiene un poco de miedo”, declaró Milan Jovic, el padre del jugador del equipo blanco en el periódico Kurir.', '&quot;Jovic está deprimido&quot;', 'noticiaJovic.jpg'),
+(16, 3, 4, 'Stanislav Macek (42 años) es seleccionador Sub-18 de Eslovaquia y conoció al joven delantero en agosto, cuando estuvo una semana empapándose de los métodos del entrenador del conjunto austriaco, Jesse Marsch. Cuenta la siguiente anécdota cuando le preguntan por Haaland: \"Nada más verle me impresionó mucho. Era un niño trabajando como un profesional maduro. Tiene claro cuál es su objetivo en el fútbol. Trabaja muchísimo de forma individual para mejorar. Él me llegó a decir que en su casa hacía 1.000 abdominales y 300 flexiones prácticamente a diario, es una bestia parda.\"', 'Haaland hace 300 flexiones y 1.000 abdominales a diario, es una bestia parda', 'haaland.jpg'),
+(17, 3, 4, 'Jupp Heynckes, el entrenador del Real Madrid en la séptima, cumple 75 años, y el jugador con el que comparte un vínculo especial por haber formado parte tanto del Real Madrid como del Bayern Munich, Toni Kroos, ha querido felicitarle en una carta en la que le daba las gracias por haber sido tan buen entrenador, haciendo especial hincapié en que muchos entrenadores pueden aprender mucho de él, dado que confía mucho en los jugadores jóvenes, entre otras cosas.', 'La carta de felicitación de Kroos a Jupp Heynckes', 'kroos.jpg');
 
 -- --------------------------------------------------------
 
@@ -348,7 +373,30 @@ INSERT INTO `opcionesvotacion` (`IdOpcion`, `CodVotacion`, `CodJugador`, `NumVot
 (39, 5, 31, 9),
 (40, 7, 38, 46),
 (41, 7, 32, 20),
-(42, 7, 28, 665);
+(42, 7, 28, 665),
+(43, 8, 43, 34),
+(44, 8, 39, 38),
+(45, 8, 40, 37),
+(46, 8, 41, 38),
+(47, 8, 42, 25),
+(48, 8, 44, 20),
+(49, 8, 45, 28),
+(50, 8, 46, 14),
+(51, 8, 47, 12),
+(52, 8, 48, 7),
+(53, 8, 49, 26),
+(54, 11, 51, 35),
+(55, 11, 52, 37),
+(56, 11, 53, 34),
+(57, 11, 54, 26),
+(58, 11, 55, 23),
+(59, 11, 56, 27),
+(60, 11, 57, 14),
+(61, 11, 58, 7),
+(62, 11, 42, 14),
+(63, 11, 60, 11),
+(64, 11, 61, 5),
+(65, 11, 62, 26);
 
 -- --------------------------------------------------------
 
@@ -431,7 +479,12 @@ INSERT INTO `preguntas` (`IdPregunta`, `Pregunta`, `CodLiga`) VALUES
 (62, '¿Quien es el jugador con mas partidos jugados en la historia de la liga Santander?', 1),
 (63, '¿Quien es el portero con mas minutos imbatido en la historia de la liga Santander?', 1),
 (64, '¿Cual es el equipo con mas derrotas consecutivas en la historia de la liga Santander?', 1),
-(65, '¿Cual es el equipo que mas faltas ha cometido en la liga Santander durante la temporada 19/20?', 1);
+(65, '¿Cual es el equipo que mas faltas ha cometido en la liga Santander durante la temporada 19/20?', 1),
+(66, 'El duelo de la cuenca del Ruhr¿entre qué equipos es?', 4),
+(67, '¿Quién de los siguientes jugadores de la Bundesliga viene del filial del Real Madrid?', 4),
+(68, 'La Bundesliga está considerada una de las cinco grandes ligas europeas, ¿qué puesto ocupa?', 4),
+(69, '¿A qué ex-jugador de la Bundesliga apodaban \"Torpedo\"?', 4),
+(70, 'El ahora jugador del Borussia Dortmund, Erling Haaland, batió un récord con su selección, Noruega, marcando muchos goles a Honduras, ¿cuántos?', 4);
 
 -- --------------------------------------------------------
 
@@ -645,7 +698,27 @@ INSERT INTO `respuestas` (`IdRespuesta`, `CodPregunta`, `Respuesta`, `Correcta`)
 (192, 64, 'Sporting', 0),
 (193, 65, 'Leganes', 0),
 (194, 65, 'Getafe', 1),
-(195, 65, 'Atletico de Madrid', 0);
+(195, 65, 'Atletico de Madrid', 0),
+(196, 66, 'Bayern Munich - Schalke 04', 0),
+(197, 66, 'Borussia Dortmund - Schalke 04', 1),
+(198, 66, 'Borussia Dortmund - Borussia Mönchengladbach', 0),
+(199, 66, 'Bayern Munich - Borussia Monchengladbach', 0),
+(200, 67, 'Álvaro Odriozola', 0),
+(201, 67, 'Javi Martínez', 0),
+(202, 67, 'Omar Mascarell', 1),
+(203, 67, 'Thorgan Hazard', 0),
+(204, 68, 'Primero', 0),
+(205, 68, 'Segundo', 0),
+(206, 68, 'Tercero', 0),
+(207, 68, 'Cuarto', 1),
+(208, 69, 'Gerd Müller', 1),
+(209, 69, 'Uli Stielike', 0),
+(210, 69, 'Arjen Robben', 0),
+(211, 69, 'Philipp Lahm', 0),
+(212, 70, '8', 0),
+(213, 70, '14', 0),
+(214, 70, '13', 0),
+(215, 70, '9', 1);
 
 -- --------------------------------------------------------
 
@@ -705,7 +778,9 @@ INSERT INTO `votaciones` (`IdVotacion`, `CodLiga`, `Titulo`) VALUES
 (4, 2, '¿Quién está siendo el mejor delantero?'),
 (5, 6, '¿Quién es el mejor jugador ofensivo del mundo?'),
 (6, 6, '¿Quién es el defensa más completo de la Serie A?'),
-(7, 6, '¿Quién terminará la liga siendo pichichi?');
+(7, 6, '¿Quién terminará la liga siendo pichichi?'),
+(8, 4, '¿Quién es el mejor defensa?'),
+(11, 4, '¿Quién crees que es mejor delantero?');
 
 --
 -- Índices para tablas volcadas
@@ -802,7 +877,7 @@ ALTER TABLE `equipos`
 -- AUTO_INCREMENT de la tabla `jugadores`
 --
 ALTER TABLE `jugadores`
-  MODIFY `IdJugador` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `IdJugador` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT de la tabla `ligas`
@@ -814,25 +889,25 @@ ALTER TABLE `ligas`
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `opcionesvotacion`
 --
 ALTER TABLE `opcionesvotacion`
-  MODIFY `IdOpcion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `IdOpcion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
-  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT de la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=196;
+  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -844,7 +919,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `votaciones`
 --
 ALTER TABLE `votaciones`
-  MODIFY `IdVotacion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `IdVotacion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas
