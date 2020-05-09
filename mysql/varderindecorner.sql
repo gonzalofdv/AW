@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2020 a las 18:27:53
+-- Tiempo de generación: 09-05-2020 a las 21:09:01
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -732,22 +732,17 @@ INSERT INTO `respuestas` (`IdRespuesta`, `CodPregunta`, `Respuesta`, `Correcta`)
 (195, 65, 'Atletico de Madrid', 0),
 (196, 66, 'Bayern Munich - Schalke 04', 0),
 (197, 66, 'Borussia Dortmund - Schalke 04', 1),
-(198, 66, 'Borussia Dortmund - Borussia Mönchengladbach', 0),
 (199, 66, 'Bayern Munich - Borussia Monchengladbach', 0),
 (200, 67, 'Álvaro Odriozola', 0),
 (201, 67, 'Javi Martínez', 0),
 (202, 67, 'Omar Mascarell', 1),
-(203, 67, 'Thorgan Hazard', 0),
-(204, 68, 'Primero', 0),
 (205, 68, 'Segundo', 0),
 (206, 68, 'Tercero', 0),
 (207, 68, 'Cuarto', 1),
 (208, 69, 'Gerd Müller', 1),
-(209, 69, 'Uli Stielike', 0),
 (210, 69, 'Arjen Robben', 0),
 (211, 69, 'Philipp Lahm', 0),
 (212, 70, '8', 0),
-(213, 70, '14', 0),
 (214, 70, '13', 0),
 (215, 70, '9', 1);
 
