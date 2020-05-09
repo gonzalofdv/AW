@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2020 a las 14:47:24
+-- Tiempo de generación: 09-05-2020 a las 18:27:53
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -186,7 +186,7 @@ CREATE TABLE `jugadores` (
   `CodEquipo` int(6) NOT NULL,
   `Nombre` varchar(20) NOT NULL,
   `Apellido` varchar(20) NOT NULL,
-  `Apodo` varchar(15) NOT NULL
+  `Apodo` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -254,7 +254,22 @@ INSERT INTO `jugadores` (`IdJugador`, `CodEquipo`, `Nombre`, `Apellido`, `Apodo`
 (59, 23, 'Marcel', 'Sabitzer', 'Sabitzer'),
 (60, 24, 'Lars', 'Stindl', 'Stindl'),
 (61, 25, 'Kevin', 'Volland', 'Volland'),
-(62, 22, 'Thorgan', 'Hazard', 'T. Hazard');
+(62, 22, 'Thorgan', 'Hazard', 'T. Hazard'),
+(63, 68, 'Kevin', 'De Bruyne', 'De Bruyne'),
+(65, 66, 'Trent', 'Alexander-Arnold', 'Alexander-Arnold'),
+(66, 68, 'Riyad', 'Mahrez', 'Mahrez'),
+(67, 68, 'David', 'Silva', 'Silva'),
+(68, 74, 'Heung-Min', 'Son', 'Son'),
+(69, 66, 'Sadio', 'Mané', 'Mané'),
+(70, 72, 'Adama', 'Traoré', 'Adama'),
+(71, 66, 'Roberto', 'Firmino', 'Bobby Firmino'),
+(72, 69, 'Çağlar', 'Söyüncü', 'Söyüncü'),
+(74, 71, 'Daniel', 'James', 'D. James'),
+(75, 86, 'Teemu', 'Pukki', 'Pukki'),
+(76, 72, 'Matt', 'Doherty', 'Doherty'),
+(77, 85, 'John', 'McGinn', 'McGinn'),
+(78, 70, 'Tammy', 'Abraham', 'T. Abraham'),
+(79, 70, 'Mason', 'Mount', 'M. Mount');
 
 -- --------------------------------------------------------
 
@@ -396,7 +411,23 @@ INSERT INTO `opcionesvotacion` (`IdOpcion`, `CodVotacion`, `CodJugador`, `NumVot
 (62, 11, 42, 14),
 (63, 11, 60, 11),
 (64, 11, 61, 5),
-(65, 11, 62, 26);
+(65, 11, 62, 26),
+(66, 13, 63, 187),
+(67, 13, 65, 114),
+(68, 13, 66, 63),
+(69, 13, 67, 57),
+(70, 13, 68, 50),
+(71, 13, 69, 44),
+(72, 13, 70, 32),
+(73, 13, 71, 33),
+(74, 14, 72, 64),
+(75, 14, 79, 59),
+(76, 14, 74, 31),
+(77, 14, 75, 43),
+(78, 14, 76, 23),
+(79, 14, 77, 19),
+(80, 14, 78, 48),
+(81, 14, 70, 69);
 
 -- --------------------------------------------------------
 
@@ -780,7 +811,9 @@ INSERT INTO `votaciones` (`IdVotacion`, `CodLiga`, `Titulo`) VALUES
 (6, 6, '¿Quién es el defensa más completo de la Serie A?'),
 (7, 6, '¿Quién terminará la liga siendo pichichi?'),
 (8, 4, '¿Quién es el mejor defensa?'),
-(11, 4, '¿Quién crees que es mejor delantero?');
+(11, 4, '¿Quién crees que es mejor delantero?'),
+(13, 3, '¿Quién terminará como máximo asistente?'),
+(14, 3, '¿Quién está siendo el jugador revelación?');
 
 --
 -- Índices para tablas volcadas
@@ -877,7 +910,7 @@ ALTER TABLE `equipos`
 -- AUTO_INCREMENT de la tabla `jugadores`
 --
 ALTER TABLE `jugadores`
-  MODIFY `IdJugador` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `IdJugador` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT de la tabla `ligas`
@@ -895,7 +928,7 @@ ALTER TABLE `noticias`
 -- AUTO_INCREMENT de la tabla `opcionesvotacion`
 --
 ALTER TABLE `opcionesvotacion`
-  MODIFY `IdOpcion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `IdOpcion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT de la tabla `preguntas`
@@ -919,7 +952,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `votaciones`
 --
 ALTER TABLE `votaciones`
-  MODIFY `IdVotacion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `IdVotacion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas
