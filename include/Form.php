@@ -42,7 +42,11 @@ abstract class Form
             if ( is_array($result) ) {
                 echo $this->generaFormulario($result, $_POST);
             } else {
-                header('Location: '.$result);
+                //Solucion momentanea hasta poder solucionar location
+                echo 'Todo correcto, pulsa para volver al inicio';
+                echo '<br><br><br>';
+                echo '<button class="botGen" onclick=location.href="index.php">Volver al inicio</button>';
+                //header('Location:'.$result.'');
                 exit();
             }
         }  
