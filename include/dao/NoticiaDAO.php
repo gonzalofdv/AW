@@ -8,7 +8,7 @@ class NoticiaDAO extends DAO{
 		$db = $this->db;
 		$idNoticia= mysqli_real_escape_string($db,$idNoticia);
 
-		$sql = "SELECT * from Noticias where IdNoticia = '$idNoticia'";
+		$sql = "SELECT * from noticias where IdNoticia = '$idNoticia'";
 		$consulta = mysqli_query($db, $sql);
         if($consulta){
             $obj = $consulta->fetch_object();
