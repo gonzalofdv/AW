@@ -51,7 +51,7 @@ class NoticiaDAO extends DAO{
 		$db = $this->db;
 		$idNoticia= mysqli_real_escape_string($db,$idNoticia);
 		$codLiga= mysqli_real_escape_string($db,$codLiga);
-		$texto= mysqli_real_escape_string($db,$texto);
+		$texto= mysqli_real_escape_string($db,$cuerpo);
 		$titular= mysqli_real_escape_string($db,$titular);
 		$sql = "UPDATE noticias SET CodLiga = '$codLiga', Texto = '$texto', Titular = '$titular' WHERE IdNoticia LIKE '$idNoticia'"; 
 		$consulta = mysqli_query($db, $sql);

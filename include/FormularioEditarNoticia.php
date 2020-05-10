@@ -22,7 +22,8 @@ class FormularioEditarNoticia extends Form {
 
 		if((!empty($titular)) && (!empty($cuerpo)) && (!empty($condi))){
             $noticiaSA = new NoticiaSA();
-            $noticiaSA->updateNoticia($idNoticia, $titular, $cuerpo, $codLiga);
+            $noticiaSA->updateNoticia($this->idNoticia, $titular, $cuerpo, $codLiga);
+            echo $cuerpo;
             $result = 'mostrarAlertas.php?codAlerta=26';
 		}
 		else{
