@@ -43,11 +43,11 @@ class FormularioBorrarComentario extends Form{
 		while($res=mysqli_fetch_array($comentarios)){
 			$usu=$usuarioSA->obtenerNombreUsu($res[2]);
 			$usuario= $usu->NombreUsuario;
-			$html .= '<input type=radio name=comentario value='.$res[0].' />'.$usuario.' - '.$res[3].'<br>';
+			$html .= '<input type=radio name=comentario value='.$res[0].' /><label>'.$usuario.' - '.$res[3].'</label><br>';
 			$html .= '<br>';
 		}
 	
-		$html .= '<input type="submit" name="aceptar">	';
+		$html .= '<button type="submit" class="botonEnviar" name="aceptar">Enviar</button>	';
 		$html .= '</div>';
 		
 		return $html;
