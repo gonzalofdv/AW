@@ -15,7 +15,7 @@ class FormularioEditarNoticia extends Form {
         $result = array();
 
 		$titular = isset($datos['titular']) ? htmlspecialchars($datos['titular']) : null;
-		$cuerpo = isset($datos['cuerpo']) ? htmlspecialchars(nl2br($datos['cuerpo'])) : null;
+		$cuerpo = isset($datos['cuerpo']) ? nl2br($datos['cuerpo']) : null;
 		$condi = isset($datos['condi']) ? htmlspecialchars($datos['condi']) : null;
 		$codLiga = isset($datos['liga']) ? htmlspecialchars($datos['liga']) : null;
 		
@@ -46,9 +46,10 @@ class FormularioEditarNoticia extends Form {
         $nombreLiga = $ligasa->getNombreLiga($codLiga)->Nombre;
 
 		if($datosIniciales) {
-			$titular = isset($datosIniciales['titular']) ? $datosIniciales['titular'] : $titular;
-			$cuerpo = isset($datosIniciales['cuerpo']) ? $datosIniciales['cuerpo'] : $cuerpo;
-			$codLiga = isset($datosIniciales['liga']) ? $datosIniciales['liga'] : $codLiga;
+			$titular = isset($datos['titular']) ? htmlspecialchars($datos['titular']) : null;
+			$cuerpo = isset($datos['cuerpo']) ? nl2br($datos['cuerpo']) : null;
+			$condi = isset($datos['condi']) ? htmlspecialchars($datos['condi']) : null;
+			$codLiga = isset($datos['liga']) ? htmlspecialchars($datos['liga']) : null;
             $ligasa = new LigaSA();
             $nombreLiga = $ligasa->getNombreLiga($codLiga)->Nombre;
 		}
