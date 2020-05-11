@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2020 a las 23:32:53
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.3
+-- Tiempo de generación: 11-05-2020 a las 15:13:37
+-- Versión del servidor: 10.4.6-MariaDB
+-- Versión de PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -173,7 +173,27 @@ INSERT INTO `equipos` (`IdEquipo`, `nombreEquipo`, `CodLiga`, `Puntos`, `GolesAF
 (105, 'Genoa', 6, 25, 31, 47, 'Genoa.png'),
 (106, 'Lecce', 6, 25, 34, 56, 'Lecce.png'),
 (107, 'SPAL', 6, 18, 20, 44, 'SPAL.png'),
-(108, 'Brescia', 6, 16, 22, 49, 'Brescia.png');
+(108, 'Brescia', 6, 16, 22, 49, 'Brescia.png'),
+(109, 'Paris Saint-Germain FC', 5, 68, 75, 24, 'psg.png'),
+(110, 'Olympique de Marsella', 5, 56, 41, 29, 'marsella.png'),
+(111, 'Stade Rennais FC', 5, 50, 38, 24, 'staderen.png'),
+(112, 'LOSC Lille', 5, 49, 35, 27, 'lille.png'),
+(113, 'OGC Niza', 5, 41, 41, 38, 'niza.png'),
+(114, 'Stade Reims', 5, 41, 26, 21, 'reims.png'),
+(115, 'Olympique de Lyon', 5, 40, 42, 27, 'lyon.png'),
+(116, 'Montpellier SC', 5, 40, 35, 34, 'mont.png'),
+(117, 'AS Monaco', 5, 40, 44, 44, 'monaco.png'),
+(118, 'SCO Angers', 5, 39, 28, 33, 'angers.png'),
+(119, 'RC Estrasburgo', 5, 38, 32, 32, 'estras.png'),
+(120, 'Girondins Bordeaux', 5, 37, 40, 34, 'giron.png'),
+(121, 'FC Nantes', 5, 37, 28, 31, 'nantes.png'),
+(122, 'Stade Brestois', 5, 34, 34, 37, 'brest.png'),
+(123, 'FC Metz', 5, 34, 27, 35, 'metz.png'),
+(124, 'Dijon FCO', 5, 30, 27, 37, 'dijon.png'),
+(125, 'AS Saint-Ettiene', 5, 30, 29, 45, 'ettiene.png'),
+(126, 'Nimes Olympique', 5, 27, 29, 44, 'nimes.png'),
+(127, 'SC Amiens', 5, 23, 31, 50, 'amiens.png'),
+(128, 'Toulouse FC', 5, 13, 22, 58, 'toulouse.png');
 
 -- --------------------------------------------------------
 
@@ -269,7 +289,19 @@ INSERT INTO `jugadores` (`IdJugador`, `CodEquipo`, `Nombre`, `Apellido`, `Apodo`
 (76, 72, 'Matt', 'Doherty', 'Doherty'),
 (77, 85, 'John', 'McGinn', 'McGinn'),
 (78, 70, 'Tammy', 'Abraham', 'T. Abraham'),
-(79, 70, 'Mason', 'Mount', 'M. Mount');
+(79, 70, 'Mason', 'Mount', 'M. Mount'),
+(80, 112, 'Victor', 'Osimhen', 'Victor Osimhen'),
+(81, 123, 'Habib', 'Diallo', 'Habib Diallo'),
+(82, 110, 'Dario', 'Benedetto', 'Dario Benedetto'),
+(83, 116, 'Andy', 'Delort', 'Andy Delort'),
+(84, 115, 'Houssem', 'Aouar', 'Houssem Aouar'),
+(85, 109, 'Kylian', 'Mbappe', 'Mbappe'),
+(86, 117, 'Wissam', 'Ben Yedder', 'Ben Yedder'),
+(87, 115, 'Moussa', 'Dembele', 'M. Dembele'),
+(88, 109, 'Neymar', 'da Silva Santos', 'Neymar Jr.'),
+(89, 115, 'Jason', 'Denayer', 'Denayer'),
+(90, 110, 'Dimitri', 'Payet', 'Payet'),
+(91, 128, 'Mathieu', 'Dossevi', 'Dossevi');
 
 -- --------------------------------------------------------
 
@@ -331,7 +363,8 @@ INSERT INTO `noticias` (`IdNoticia`, `CodUsuario`, `CodLiga`, `Texto`, `Titular`
 (13, 7, 1, 'Cada equipo dispondrá de tres oportunidades para realizar las cinco sustituciones. Habrá una más añadida en la prórroga. Se permiten dos pausas para hidratación.<br />\r\n- Los dos equipos podrán utilizar un máximo de cinco suplentes.<br />\r\n<br />\r\n- Si ambos equipos realizaran una sustitución al mismo tiempo, se restará una oportunidad de sustitución a cada uno de ellos.<br />\r\n<br />\r\n- En el caso de que se dispute una prórroga, ambos equipos llegarán a ésta con el número de suplentes y oportunidades de sustitución que no hayan empleado.<br />\r\n<br />\r\n- Si el reglamento de la competición permitiera realizar una sustitución más durante la prórroga, los dos equipos dispondrán entonces de una nueva oportunidad, que podrá aprovecharse tanto antes del inicio de la prórroga como durante el periodo de descanso de la misma.', 'La FIFA autoriza 5+1 cambios y convocatoria de 23 jugadores', 'cincoCambiosNoticia.jpg'),
 (14, 7, 1, 'Milan Jovic, padre del madridista, en \'Kurir\': \"Se estaba preparando en su casa de Belgrado y sintió un dolor\".<br />\r\nLuka Jovic está destrozado después de conocer que sufre una “fractura extraarticular en el hueso calcáneo del pie derecho” y que puede estar de baja hasta dos meses. El delantero serbio, de 21 años, regresó este lunes a Madrid desde Belgrado con el chip cambiado y decidido a ganarse un sitio en el equipo que no ha logrado tener, pero esta lesión ha sido un jarro de agua helada. “Está deprimido y tiene un poco de miedo”, declaró Milan Jovic, el padre del jugador del equipo blanco en el periódico Kurir.', '&quot;Jovic está deprimido&quot;', 'noticiaJovic.jpg'),
 (16, 3, 4, 'Stanislav Macek (42 años) es seleccionador Sub-18 de Eslovaquia y conoció al joven delantero en agosto, cuando estuvo una semana empapándose de los métodos del entrenador del conjunto austriaco, Jesse Marsch. Cuenta la siguiente anécdota cuando le preguntan por Haaland: \"Nada más verle me impresionó mucho. Era un niño trabajando como un profesional maduro. Tiene claro cuál es su objetivo en el fútbol. Trabaja muchísimo de forma individual para mejorar. Él me llegó a decir que en su casa hacía 1.000 abdominales y 300 flexiones prácticamente a diario, es una bestia parda.\"', 'Haaland hace 300 flexiones y 1.000 abdominales a diario, es una bestia parda', 'haaland.jpg'),
-(17, 3, 4, 'Jupp Heynckes, el entrenador del Real Madrid en la séptima, cumple 75 años, y el jugador con el que comparte un vínculo especial por haber formado parte tanto del Real Madrid como del Bayern Munich, Toni Kroos, ha querido felicitarle en una carta en la que le daba las gracias por haber sido tan buen entrenador, haciendo especial hincapié en que muchos entrenadores pueden aprender mucho de él, dado que confía mucho en los jugadores jóvenes, entre otras cosas.', 'La carta de felicitación de Kroos a Jupp Heynckes', 'kroos.jpg');
+(17, 3, 4, 'Jupp Heynckes, el entrenador del Real Madrid en la séptima, cumple 75 años, y el jugador con el que comparte un vínculo especial por haber formado parte tanto del Real Madrid como del Bayern Munich, Toni Kroos, ha querido felicitarle en una carta en la que le daba las gracias por haber sido tan buen entrenador, haciendo especial hincapié en que muchos entrenadores pueden aprender mucho de él, dado que confía mucho en los jugadores jóvenes, entre otras cosas.', 'La carta de felicitación de Kroos a Jupp Heynckes', 'kroos.jpg'),
+(18, 2, 5, 'Lo avanzó ayer L’Equipe y va a misa. El primer ministro francés dio por finalizada la temporada oficial de los deportes de equipo y han respetado, en la Ligue 1, como estaba la clasificación. Gana el PSG, van dos más a la Champions (el Marsella de Zubizarreta y Rennes), descienden los dos últimos (Toulouse y Amiens), suben los dos primeros de la Ligue 2 (Lorient y Lens), se anula la promoción para una plaza y Mbappé y Ben Yedder quedan como pichichis con 18 goles. Leerán que PSG es campeón porque se ha elaborado una clasificación definitiva en base al ‘ratio’ de puntos logrados por partido. Eso es así porque el PSG ha disputado un encuentro menos que el resto de competidores. Al tener un partido pendiente (ante el Estrasburgo), en Francia no pueden decir, directamente, que el que tiene más puntos gana.<br />\r\n<br />\r\nEvidentemente, sin este prorrateos, el PSG también sería campeón en términos totales. Le saca 12 puntos al OM, segundo clasificado. Así pues, el PSG es campeón a 11 encuentros para el final.', 'El PSG, campeón a once jornadas del final, se termina la Ligue 1', 'notLigCamp.jpg');
 
 -- --------------------------------------------------------
 
@@ -427,7 +460,20 @@ INSERT INTO `opcionesvotacion` (`IdOpcion`, `CodVotacion`, `CodJugador`, `NumVot
 (78, 14, 76, 23),
 (79, 14, 77, 19),
 (80, 14, 78, 48),
-(81, 14, 70, 69);
+(81, 14, 70, 69),
+(82, 15, 83, 15),
+(83, 15, 82, 18),
+(84, 15, 81, 14),
+(85, 15, 84, 23),
+(86, 15, 80, 33),
+(87, 16, 87, 32),
+(88, 16, 80, 38),
+(89, 16, 90, 16),
+(90, 16, 91, 3),
+(91, 16, 85, 34),
+(92, 16, 86, 29),
+(93, 16, 88, 30),
+(94, 16, 89, 21);
 
 -- --------------------------------------------------------
 
@@ -520,7 +566,17 @@ INSERT INTO `preguntas` (`IdPregunta`, `Pregunta`, `CodLiga`) VALUES
 (72, '¿Quién es el máximo goleador del North London Derby (Arsenal - Tottenham)?', 3),
 (73, '¿Quién es el entrenador español con más partidos en la Premier League?', 3),
 (74, '¿Qué jugador del Manchester United ha disputado más partidos?', 3),
-(75, '¿En qué temporada Cristiano Ronaldo fue el Jugador del Año de la Premier League y fue máximo goleador de la competición?', 3);
+(75, '¿En qué temporada Cristiano Ronaldo fue el Jugador del Año de la Premier League y fue máximo goleador de la competición?', 3),
+(76, '¿Qué jugadores superaron la cifra de 80M en su fichaje?', 6),
+(77, '¿Qué equipo cambió su escudo a una letra que representa su nombre?', 6),
+(78, '¿Quién es el máximo goleador del Derby della Capitale?', 6),
+(79, '¿Quién es el máximo goleador histórico de la Copa Italiana?', 6),
+(80, '¿Qué futbolista ha sido caponnoneire dos o más veces?', 6),
+(81, '¿Quién es el portero con más paradas de la Ligue 1 la temporada 2019/20?', 5),
+(82, '¿Qué portero ha encajado más goles en la Ligue 1 2019/20?', 5),
+(83, '¿Cuál de los siguientes jugadores ha completado más regates la presente temporada en la Ligue 1?', 5),
+(84, '¿Qué jugador ha marcado más goles de penalti la presente temporada en la Ligue 1?', 5),
+(85, '¿Qué jugador ha recibido más tarjetas amarillas en la presente temporada en la Ligue 1?', 5);
 
 -- --------------------------------------------------------
 
@@ -764,7 +820,37 @@ INSERT INTO `respuestas` (`IdRespuesta`, `CodPregunta`, `Respuesta`, `Correcta`)
 (227, 74, 'Sir Bobby Charlton', 0),
 (228, 75, '2006/2007', 0),
 (229, 75, '2008/2009', 0),
-(230, 75, '2007/2008', 1);
+(230, 75, '2007/2008', 1),
+(231, 76, 'Cristiano Ronaldo y Gonzalo Higuaín', 1),
+(232, 76, 'Paul Pogba y Paulo Dybala', 0),
+(233, 76, 'Francesco Totti y Gianluigi Buffon', 0),
+(234, 77, 'Juventus', 1),
+(235, 77, 'Roma', 0),
+(236, 77, 'Inter de Milán', 0),
+(237, 78, 'Francesco Totti', 1),
+(238, 78, 'Vincenzo Morella', 0),
+(239, 78, 'Silvio Piola', 0),
+(240, 79, 'Giuseppe Savoldi', 0),
+(241, 79, 'Alessandro Altobelli', 1),
+(242, 79, 'Paolo Pulici', 0),
+(243, 80, 'Mauro Icardi', 0),
+(244, 80, 'Gunnar Nordahl', 1),
+(245, 80, 'Zlatan Ibrahimovic', 0),
+(246, 81, 'Gautier Larsonneur', 0),
+(247, 81, 'Walter Benitez', 0),
+(248, 81, 'Alexandre Oukidja', 1),
+(249, 82, 'Reynet', 0),
+(250, 82, 'Lecomte', 0),
+(251, 82, 'Régis Gurtner', 1),
+(252, 83, 'Houssem Aouar', 0),
+(253, 83, 'Nanitamo Ikone', 1),
+(254, 83, 'Mounir Chouiar', 0),
+(255, 84, 'Moussa Dembele', 0),
+(256, 84, 'Neymar Jr', 0),
+(257, 84, 'Wylan Cyprien', 1),
+(258, 85, 'Kimpembe', 1),
+(259, 85, 'Keita Baldé', 0),
+(260, 85, 'Draxler', 0);
 
 -- --------------------------------------------------------
 
@@ -793,11 +879,11 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`, `EquipoFavorito`, `NombreUsuario`, `Contrasena`, `Email`, `Administrador`, `SomosFamilia`, `Puntos`) VALUES
 (1, 'Administrador', 'Ad', 'Min', 'hombre', 'Atletico de Madrid', 'admin', '$2y$10$ZRVF3yPQBWAgTKhRrYjXJO.pGWvvJeVl2Zgb0IBxNYpOqIeWoA4oG', 'admin@ucm.es', 1, 0, 205),
-(2, 'Gonzalo', 'Figueroa', 'Del Val', 'hombre', 'Real Madrid', 'gfigue01', '$2y$10$ANx3ithfFe4l6ew3oZhW5uJ45yoyzqUj5SIYn3fuCl/XmtYEnqyeW', 'gfigue01@ucm.es', 0, 1, 297),
+(2, 'Gonzalo', 'Figueroa', 'Del Val', 'hombre', 'Real Madrid', 'gfigue01', '$2y$10$ANx3ithfFe4l6ew3oZhW5uJ45yoyzqUj5SIYn3fuCl/XmtYEnqyeW', 'gfigue01@ucm.es', 0, 1, 303),
 (3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 'Real Madrid', 'acernuda', '$2y$10$fuAnn.RfDk4iyTOIkcYlQ.gCWB1evtijABmOAF355GShObXjqWSGi', 'acernuda@ucm.es', 0, 1, 294),
 (4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '$2y$10$.GNAP.NVYpuAh6b5zmATgu1mr/4TVRMzckqd0UyP/vuaPIv87tKj2', 'fernag08@ucm.es', 0, 1, 314),
 (5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '$2y$10$9chuTLHd/cRIMM1XLSs3I.mLk4eNESPqBSg5yLMN0T5sNkFjTZdjy', 'jorborja@ucm.es', 0, 1, 332),
-(6, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '$2y$10$NiV1zfngh25e1BAlessipO6SZ0LnDzG2hvBcLfhTcfiqm3rOuxRoK', 'amouhib@ucm.es', 0, 1, 250),
+(6, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '$2y$10$NiV1zfngh25e1BAlessipO6SZ0LnDzG2hvBcLfhTcfiqm3rOuxRoK', 'amouhib@ucm.es', 0, 1, 251),
 (7, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '$2y$10$lvMSB1YxaNhoE7z5.SZl0.zcK.7joA2.uWeXkxQJ/VsJR9peW8klC', 'jurosado@ucm.es', 0, 1, 433),
 (8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '$2y$10$Zjeyq2P9kmANI94HOGgPEenA5XQ1X.sYVkefTmW1IXolIUd9YEA9K', 'usu@ucm.es', 0, 0, 202);
 
@@ -828,7 +914,9 @@ INSERT INTO `votaciones` (`IdVotacion`, `CodLiga`, `Titulo`) VALUES
 (8, 4, '¿Quién es el mejor defensa?'),
 (11, 4, '¿Quién crees que es mejor delantero?'),
 (13, 3, '¿Quién terminará como máximo asistente?'),
-(14, 3, '¿Quién está siendo el jugador revelación?');
+(14, 3, '¿Quién está siendo el jugador revelación?'),
+(15, 5, '¿Quién es el jugador revelación de la temporada?'),
+(16, 5, 'Mejor jugador de la temporada');
 
 --
 -- Índices para tablas volcadas
@@ -919,13 +1007,13 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT de la tabla `equipos`
 --
 ALTER TABLE `equipos`
-  MODIFY `IdEquipo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `IdEquipo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
 -- AUTO_INCREMENT de la tabla `jugadores`
 --
 ALTER TABLE `jugadores`
-  MODIFY `IdJugador` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `IdJugador` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT de la tabla `ligas`
@@ -937,25 +1025,25 @@ ALTER TABLE `ligas`
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `IdNoticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `opcionesvotacion`
 --
 ALTER TABLE `opcionesvotacion`
-  MODIFY `IdOpcion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `IdOpcion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 
 --
 -- AUTO_INCREMENT de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
-  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `IdPregunta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT de la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=231;
+  MODIFY `IdRespuesta` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=261;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -967,7 +1055,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `votaciones`
 --
 ALTER TABLE `votaciones`
-  MODIFY `IdVotacion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `IdVotacion` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Restricciones para tablas volcadas
