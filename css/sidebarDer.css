@@ -1,0 +1,120 @@
+div#sidebar-right { /* Zona de la derecha de la página */
+	padding: 10px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #939393;
+	float: right;
+	width: auto;
+	min-height: 600px;
+	background-color: #dddddd;
+	grid-area: sidebar;
+	display: flex;
+	flex-direction: column;
+}
+
+div#perfil { /* Botón de "Mi perfil" */
+	text-align: center;
+}
+
+.perfil{
+	margin: 20px auto;
+	border: none;
+	padding: 10px 44px;
+	font-size: 36px;
+	position: relative;
+}
+
+.perfil::before{
+	transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	content: '';
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+	
+.rounded{
+	border-radius:50px;
+}
+
+.text-green{
+	mix-blend-mode: multiply;
+}
+
+.rounded::before{
+	border-radius: 50px;
+	width: 25%;
+	background: #41CF19;
+}
+
+.rounded:hover::before{
+	background: #41CF19;
+	width: 100%;
+}
+
+div#miPerfil h1{ /* Página de mi perfil */
+	padding: 5px;
+	background-color:#41CF19; 
+	text-align: center;
+  	font-size: 35px;
+  	color:white;
+  	border: 2px solid black;
+}
+
+div#miPerfil p{
+	color: #41CF19;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 25px;
+}
+
+div#miPerfil span{
+	color: black;
+	text-decoration: none;
+	font-size: 25px;
+}
+
+div#ranking { /* Tabla del ranking de usuarios */
+	text-align: center;
+	width: 100%;
+}
+
+div .tablas {
+	width: 100%;
+	border-collapse: collapse;
+	border: 2px solid;
+}
+
+.tablas caption {
+	padding: 10px;
+	font-family: 'Days One', sans-serif;
+	font-size: 120%;
+}
+
+.tablas tr {
+	background-color: #FCFF3D;
+}
+
+tr:hover {
+	background-color:#E5E800;
+}
+
+.tablas th {
+	background-color: black;
+	color: white;
+	padding: 5px;
+	font-family: 'Montserrat Alternates', sans-serif;
+	font-size: 120%;
+}
+
+.tablas td {
+	padding: 3px;
+	font-family: 'Neucha', cursive;
+	font-size: 120%;
+	font-weight: bold;
+}
+
+div .imagenes { /* Anuncios del final del sidebar */
+	width: 325px;
+}

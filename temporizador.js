@@ -32,7 +32,7 @@ const countdown = (deadline, elem, finalMessage) => {
 
 function contador() {
     var fecha = new Date();
-    var sumarsesion = 20;
+    var sumarsesion = 150;
     fecha.setSeconds(fecha.getSeconds()+sumarsesion);
     return fecha;
 }

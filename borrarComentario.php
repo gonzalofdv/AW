@@ -7,8 +7,10 @@ $idNoticia = $_GET['idN'];
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="estilo.css" />
-	<link rel="stylesheet" type="text/css" href="formularios.css" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+	<link rel="stylesheet" type="text/css" href="css/cabecera.css" />
+	<link rel="stylesheet" type="text/css" href="css/sidebarDer.css" />
+	<link rel="stylesheet" type="text/css" href="css/formularios.css" />
 	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 	<meta charset="utf-8">
 	<meta http-equiv="Expires" content="0">
