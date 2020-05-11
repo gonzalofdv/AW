@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-05-2020 a las 15:13:37
--- Versión del servidor: 10.4.6-MariaDB
--- Versión de PHP: 7.3.9
+-- Tiempo de generación: 11-05-2020 a las 17:16:45
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -97,7 +97,7 @@ INSERT INTO `equipos` (`IdEquipo`, `nombreEquipo`, `CodLiga`, `Puntos`, `GolesAF
 (21, 'Bayern Munich', 4, 55, 73, 26, 'BayernMunich.png'),
 (22, 'Borussia Dortmund', 4, 51, 68, 33, 'BorussiaDortmund.png'),
 (23, 'RB Leipzig', 4, 50, 62, 26, 'RBLeipzig.png'),
-(24, 'Borussia Mönchengladbach', 4, 49, 49, 30, 'BorussiaMönchengladbach.png'),
+(24, 'Borussia Mönchengladbach', 4, 49, 49, 30, 'BorussiaMonchengladbach.png'),
 (25, 'Bayer 04 Leverkusen', 4, 47, 45, 30, 'Bayer04Leverkusen.png'),
 (26, 'Schalke 04', 4, 37, 33, 36, 'Schalke04.png'),
 (27, 'Wolfsburgo', 4, 36, 34, 30, 'Wolfsburgo.png'),
@@ -109,7 +109,7 @@ INSERT INTO `equipos` (`IdEquipo`, `nombreEquipo`, `CodLiga`, `Puntos`, `GolesAF
 (33, 'Hertha Berlin', 4, 28, 32, 48, 'HerthaBerlin.png'),
 (34, 'FC Augsburgo', 4, 27, 36, 52, 'FCAugsburgo.png'),
 (40, '1. FSV Mainz 05', 4, 26, 34, 53, '1.FSVMainz05.png'),
-(41, 'Fortuna Düsseldorf', 4, 22, 27, 50, 'FortunaDüsseldorf.png'),
+(41, 'Fortuna Düsseldorf', 4, 22, 27, 50, 'FortunaDusseldorf.png'),
 (42, 'SV Werder Bremen', 4, 18, 27, 55, 'SVWerderBremen.png'),
 (43, 'SC Paderborn 07', 4, 16, 30, 54, 'SCPaderborn07.png'),
 (44, 'Cádiz', 2, 56, 41, 29, 'cadiz.png'),
@@ -154,7 +154,7 @@ INSERT INTO `equipos` (`IdEquipo`, `nombreEquipo`, `CodLiga`, `Puntos`, `GolesAF
 (84, 'Bournemouth', 3, 27, 29, 47, 'Bournemouth.png'),
 (85, 'Aston Villa', 3, 25, 34, 56, 'AstonVilla.png'),
 (86, 'Norwich', 3, 21, 25, 52, 'Norwich.png'),
-(89, 'Juventus', 6, 63, 50, 24, 'juventus.png'),
+(89, 'Juventus', 6, 63, 50, 24, 'Juventus.png'),
 (90, 'Lazio', 6, 62, 60, 23, 'Lazio.png'),
 (91, 'Inter', 6, 54, 49, 24, 'InterDeMilan.png'),
 (92, 'Atalanta', 6, 48, 70, 34, 'Atalanta.png'),
@@ -885,7 +885,7 @@ INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`,
 (5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '$2y$10$9chuTLHd/cRIMM1XLSs3I.mLk4eNESPqBSg5yLMN0T5sNkFjTZdjy', 'jorborja@ucm.es', 0, 1, 332),
 (6, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '$2y$10$NiV1zfngh25e1BAlessipO6SZ0LnDzG2hvBcLfhTcfiqm3rOuxRoK', 'amouhib@ucm.es', 0, 1, 251),
 (7, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '$2y$10$lvMSB1YxaNhoE7z5.SZl0.zcK.7joA2.uWeXkxQJ/VsJR9peW8klC', 'jurosado@ucm.es', 0, 1, 433),
-(8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '$2y$10$Zjeyq2P9kmANI94HOGgPEenA5XQ1X.sYVkefTmW1IXolIUd9YEA9K', 'usu@ucm.es', 0, 0, 202);
+(8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '$2y$10$Zjeyq2P9kmANI94HOGgPEenA5XQ1X.sYVkefTmW1IXolIUd9YEA9K', 'usu@ucm.es', 0, 0, 190);
 
 -- --------------------------------------------------------
 
