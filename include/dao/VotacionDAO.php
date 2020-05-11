@@ -11,7 +11,7 @@ class VotacionDAO extends DAO{
 	public function getVotacion($codLiga){
 		$db=$this->db;
 		$cod=mysqli_real_escape_string($db, $codLiga);
-		$sql = "SELECT * FROM Votaciones WHERE CodLiga = '$cod'";
+		$sql = "SELECT * FROM votaciones WHERE CodLiga = '$cod'";
 		$consulta = mysqli_query($db, $sql);
 		return $consulta;
 	}

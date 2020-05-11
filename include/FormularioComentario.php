@@ -29,7 +29,8 @@ class FormularioComentario extends Form {
 				$result = 'mostrarAlertas.php?codAlerta=16';
 			}
 			else{
-				$result = 'mostrarAlertas.php?codAlerta=13';
+				//$result = 'mostrarAlertas.php?codAlerta=13';
+				$result=1;
 			}
 		}
 		else{
