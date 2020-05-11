@@ -69,7 +69,8 @@ class FormularioRegistro extends Form {
 					$result = 'mostrarAlertas.php?codAlerta=8';
 				}
 				else{
-					$result = 'mostrarAlertas.php?codAlerta=9';
+					//$result = 'mostrarAlertas.php?codAlerta=9';
+					$result=0;
 				}
 			}
 			else{

@@ -38,7 +38,8 @@ class FormularioNoticia extends Form {
 				}
 				else{
 					
-					$result = 'mostrarAlertas.php?codAlerta=13';
+					//$result = 'mostrarAlertas.php?codAlerta=13';
+					$result=1;
 				}
 			}
 		}

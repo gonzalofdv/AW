@@ -43,6 +43,18 @@ abstract class Form
                 echo $this->generaFormulario($result, $_POST);
             } else {
                 //Solucion momentanea hasta poder solucionar location
+                //echo para depurar qué contiene $result
+                //echo $result;
+                if($result=='0'){
+                    echo 'El usuario introducido ya existe, vuelve a intentarlo con otro distinto';
+                    echo '<br><br>';
+                    echo '<button class="botGen" onclick=location.href="registro.php">Volver al registro</button>';
+                }
+                else if($result=='1'){
+                    echo 'Algo no ha ido bien, pulsa para volver al inicio';
+                    echo '<br><br>';
+                    echo '<button class="botGen" onclick=location.href="index.php">Volver al inicio</button>';
+                }
                 echo 'Todo correcto, pulsa para volver al inicio';
                 echo '<br><br><br>';
                 echo '<button class="botGen" onclick=location.href="index.php">Volver al inicio</button>';
