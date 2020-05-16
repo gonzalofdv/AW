@@ -37,6 +37,14 @@ class EquipoSA {
 		return $aux->devuelveEquipos($codLiga);
 	}
 
+	public function getEquipo($idEquipo){
+		if(!$this->equipoDAO){
+			$this->equipoDAO = new EquipoDAO();
+		}
+		$aux = $this->equipoDAO;
+		return $aux->getEquipo($idEquipo);	
+	}
+
 	
 }
 

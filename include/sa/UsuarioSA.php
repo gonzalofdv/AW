@@ -137,6 +137,14 @@ class UsuarioSA {
 		return $aux->compruebaPassword();
 	}
 
+	public function updateEquipo($codEquipo){
+		if(!$this->usuarioDAO){
+			$this->usuarioDAO = new UsuarioDAO();
+		}
+		$aux = $this->usuarioDAO;
+		return $aux->updateEquipo($codEquipo);
+	}
+
 }
 	
 ?>

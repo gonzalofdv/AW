@@ -1,6 +1,8 @@
 <?php session_start(); 
 $usuario=$_SESSION['nombre'];
 require_once('include/sa/UsuarioSA.php');
+require_once('include/sa/EquipoSA.php');
+require_once('include/transfer/EquipoTransfer.php')
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +32,15 @@ require_once('include/sa/UsuarioSA.php');
 			echo "<p>Usuario: <span>" . $perfil->NombreUsuario . "</span></p>";
 			echo "<p>Nombre: <span>" .$perfil->Nombre ." ".$perfil->Apellido1 ." ". $perfil->Apellido2 . "</span></p>";
 			echo "<p>Sexo: <span>" . $perfil->Sexo . "</span></p>";
-			echo "<p>Tu equipo: <span>" . $perfil->EquipoFavorito . "</span></p>";
+			//hacer una consulta con el dato $perfil->EquipoFavorito extraer el nombre del equipo y la url de la foto para mostrarlo a continuación
+			$equiposa = new EquipoSA();
+			$eq = $equiposa->getEquipo($perfil->EquipoFavorito);
+			echo "<p>Tu equipo: <span>" . $eq->getNombreEquipo() . "</span></p>";
+
+			$folder_path = './img/equipos/';
+			$file_path = $folder_path.$eq->getEscudo();
+			echo "<img src='".$file_path."'>";
+			
 			echo "<p>Mail: <span>" . $perfil->Email . "</span></p>";
 			if($perfil->SomosFamilia){
 				echo"<p>Usuario SomosFamilia: <span>SI </span> </p>";

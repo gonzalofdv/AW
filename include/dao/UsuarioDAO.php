@@ -182,6 +182,13 @@ class UsuarioDAO extends DAO{
     	$consulta = mysqli_query($db, $sql);
     	return $consulta;
     }
+
+    public function updateEquipo($codEquipo){
+    	$db = $this->db;
+    	$sql = "UPDATE usuarios SET EquipoFavorito = '$codEquipo'";
+    	$consulta = mysqli_query($db, $sql);
+    	return $consulta;
+    }
 }
 
 ?>

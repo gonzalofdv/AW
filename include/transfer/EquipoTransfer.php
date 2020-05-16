@@ -2,6 +2,7 @@
 class EquipoTransfer{
 	//Atributos de la clase Equipo
 	private $idEquipo;
+	private $nombreEquipo;
 	private $codLiga;
 	private $puntos;
 	private $golesAFavor;
@@ -9,8 +10,9 @@ class EquipoTransfer{
 	private $escudo;
 	
 	//Constructor
-	public function __construct($codLiga, $puntos, $golesAFavor, $golesEnContra, $escudo) {
+	public function __construct($codLiga, $nombreEquipo, $puntos, $golesAFavor, $golesEnContra, $escudo) {
 		$this->codLiga = $codLiga;
+		$this->nombreEquipo = $nombreEquipo;
 		$this->puntos = $puntos;
 		$this->golesAFavor = $golesAFavor;
 		$this->golesEnContra = $golesEnContra;
@@ -23,6 +25,14 @@ class EquipoTransfer{
 
 	public function setIdEquipo($idEquipo){
 		$this->idEquipo = $idEquipo;
+	}
+
+	public function getNombreEquipo(){
+		return $this->nombreEquipo;
+	}
+
+	public function setNombreEquipo($nombreEquipo){
+		$this->nombreEquipo = $nombreEquipo;
 	}
 
 	public function getCodLiga(){

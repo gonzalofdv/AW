@@ -20,7 +20,7 @@ class EquipoDAO extends DAO{
             $obj = $consulta->fetch_object();
         }
 		
-		$e = new EquipoTransfer($obj->CodLiga, $obj->Puntos, $obj->GolesAFavor, $obj->GolesEnContra, $obj->Escudo);
+		$e = new EquipoTransfer($obj->CodLiga, $obj->nombreEquipo, $obj->Puntos, $obj->GolesAFavor, $obj->GolesEnContra, $obj->Escudo);
 		
 		return $e;
 	}
