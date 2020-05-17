@@ -76,6 +76,14 @@ class ComentarioDAO extends DAO{
 		$sql = "DELETE FROM comentarios WHERE IdComentario = '$idComentario'"; 
 		$consulta = mysqli_query($db, $sql);
 	}
+
+	public function borrarComentariosUsuario($idUsu){ //borra los comentarios de un usuario
+		$db = $this->db;
+		$idUsu = mysqli_real_escape_string($db, $idUsu);
+		
+		$sql = "DELETE FROM comentarios WHERE CodUsuario = '$idUsu'"; 
+		$consulta = mysqli_query($db, $sql);
+	}
 	
 }
 	

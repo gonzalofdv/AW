@@ -145,6 +145,14 @@ class UsuarioSA {
 		return $aux->updateEquipo($codEquipo);
 	}
 
+	public function borrarUsuario($codUsu){
+		if(!$this->usuarioDAO){
+			$this->usuarioDAO = new UsuarioDAO();
+		}
+		$aux = $this->usuarioDAO;
+		$aux->borrarUsuario($codUsu);
+	}
+
 }
 	
 ?>

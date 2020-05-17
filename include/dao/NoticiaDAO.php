@@ -86,6 +86,14 @@ class NoticiaDAO extends DAO{
         }
 
     }
+
+    public function borrarNoticiasUsuario($idUsu){ //borra las noticias de un usuario
+		$db = $this->db;
+		$idUsu = mysqli_real_escape_string($db, $idUsu);
+		
+		$sql = "DELETE FROM noticias WHERE CodUsuario = '$idUsu'"; 
+		$consulta = mysqli_query($db, $sql);
+	}
 	
 }
 	

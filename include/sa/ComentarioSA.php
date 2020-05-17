@@ -57,6 +57,15 @@ class ComentarioSA {
 		$aux = $this->comentarioDAO;
 		$res= $aux->borrarComentarioConcreto($idComentario);
 	}
+
+	public function borrarComentariosUsuario($idUsu){ //borra los comentarios de un usuario
+		if(!$this->comentarioDAO){
+			$this->comentarioDAO = new ComentarioDAO();
+		}
+		$aux = $this->comentarioDAO;
+		$aux->borrarComentariosUsuario($idUsu);
+	}
+
 	
 }
 

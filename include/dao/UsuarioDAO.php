@@ -185,10 +185,18 @@ class UsuarioDAO extends DAO{
 
     public function updateEquipo($codEquipo){
     	$db = $this->db;
+    	$codEquipo = mysqli_real_escape_string($db,$codEquipo);
     	$sql = "UPDATE usuarios SET EquipoFavorito = '$codEquipo'";
     	$consulta = mysqli_query($db, $sql);
     	return $consulta;
     }
+
+    public function borrarUsuario($codUsu){
+		$db = $this->db;
+		$codUsu = mysqli_real_escape_string($db,$codUsu);
+    	$sql = "DELETE FROM usuarios WHERE IdUsuario = '$codUsu'";
+    	$consulta = mysqli_query($db, $sql);
+	}
 }
 
 ?>

@@ -144,6 +144,12 @@ $codigo = $_GET['codAlerta'];
 					echo "<p>Te redireccionamos a la página de inicio.</p>";
 					//header("refresh:5; url=index.php");
 					echo '<button class="botGen" onclick=location.href="index.php">Volver al inicio</button>';
+				case 29:
+					echo "<h1>Sentimos tu marcha. Puedes volver cuando quieras</h1>";
+					echo "<p>Te redireccionamos a la página de inicio.</p>";
+					echo '<img src="./img/CuentaEliminada.gif"><br>';
+					//header("refresh:5; url=index.php");
+					echo '<button class="botGen" onclick=location.href="index.php">Volver al inicio</button>';
 			}	
 
 		?>
