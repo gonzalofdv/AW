@@ -95,6 +95,14 @@ class NoticiaDAO extends DAO{
 		$consulta = mysqli_query($db, $sql);
 	}
 	
+	public function getNoticiasUsuario($idUsu) {
+		$db = $this->db;
+		$idUsu= mysqli_real_escape_string($db,$idUsu);
+
+		$sql = "SELECT IdNoticia from noticias where CodUsuario = '$idUsu'";
+		$consulta = mysqli_query($db, $sql);
+        return $consulta;
+	}
 }
 	
 ?>

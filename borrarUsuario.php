@@ -12,9 +12,14 @@ $idUsu = $_GET['idUsu'];
 	$comentarioSA->borrarComentariosUsuario($idUsu);
 	
 	$noticiaSA = new NoticiaSA();
+	$array=$noticiaSA->getNoticiasUsuario($idUsu);
+	while($res=mysqli_fetch_array($array)){
+		echo $res[0];
+		$comentarioSA->deleteComentario($res[0]);
+	}
 	$noticiaSA->borrarNoticiasUsuario($idUsu);
 
-	$usuarioSA =new UsuarioSA();
+	$usuarioSA = new UsuarioSA();
 	$usuarioSA->borrarUsuario($idUsu);
 	unset($_SESSION); 
 	session_destroy(); 

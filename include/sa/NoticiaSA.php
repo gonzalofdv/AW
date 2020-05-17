@@ -55,6 +55,15 @@ class NoticiaSA {
 		$aux = $this->noticiaDAO;
 		$aux->borrarNoticiasUsuario($idUsu);
 	}
+
+	public function getNoticiasUsuario($idUsu){ //borra los noticias de un usuario
+		if(!$this->noticiaDAO){
+			$this->noticiaDAO = new NoticiaDAO();
+		}
+		$aux = $this->noticiaDAO;
+		return $aux->getNoticiasUsuario($idUsu);
+	}
+
 }
 
 ?>
