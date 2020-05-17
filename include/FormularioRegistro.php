@@ -30,10 +30,10 @@ class FormularioRegistro extends Form {
 			$result[] = "El sexo no puede estar vacío";
 		}
 
-		$equipo = isset($datos['equipo']) ? htmlspecialchars($datos['equipo']) : null;
-		if(empty($equipo)){
-			$result[] = "El equipo no puede estar vacío";
-		}
+		//$equipo = isset($datos['equipo']) ? htmlspecialchars($datos['equipo']) : null;
+		//if(empty($equipo)){
+		//	$result[] = "El equipo no puede estar vacío";
+		//}
 
 		$nombreUsuario = isset($datos['usu']) ? htmlspecialchars($datos['usu']) : null;
 		if(empty($nombreUsuario)){
@@ -62,10 +62,21 @@ class FormularioRegistro extends Form {
 
 		if(count($result) === 0){
 			if($contrasena==$contrasenaRep){
-				$p = new UsuarioTransfer($nombre, $apellido1, $apellido2, $sexo, $equipo, $nombreUsuario, $contrasena, $mail, 0, 0, 0);
+				$p = new UsuarioTransfer($nombre, $apellido1, $apellido2, $sexo, 0, $nombreUsuario, $contrasena, $mail, 0, 0, 0);
 				$usuarioSA = new UsuarioSA();
 				$anadido = $usuarioSA ->newUsuario($p);
 				if($anadido){
+
+					$_SESSION['login'] = true;
+					$_SESSION['nombre'] = $nombreUsuario;
+					$_SESSION['votos'] = 0;
+					$_SESSION['esAdmin']=false;
+					$_SESSION['esFamilia']=false;
+
+					$consulta = $usuarioSA->obtenerId($nombreUsuario);
+					$idUsuario = $consulta->IdUsuario;
+					$usuarioSA->sumarPuntos($idUsuario,1);
+
 					$result = 'mostrarAlertas.php?codAlerta=8';
 				}
 				else{
@@ -89,7 +100,7 @@ class FormularioRegistro extends Form {
 		$apellido1 = '';
 		$apellido2 = '';
 		$sexo = '';
-		$equipo = '';
+		//$equipo = '';
 		$usu = '';
 		$mail = '';
 		$condi = '';
@@ -99,7 +110,7 @@ class FormularioRegistro extends Form {
 			$apellido1 = isset($datosIniciales['apellido1']) ? $datosIniciales['apellido1'] : $apellido1;
 			$apellido2 = isset($datosIniciales['apellido2']) ? $datosIniciales['apellido2'] : $apellido2;
 			$sexo = isset($datosIniciales['sexo']) ? $datosIniciales['sexo'] : $sexo;
-			$equipo = isset($datosIniciales['equipo']) ? $datosIniciales['equipo'] : $equipo;
+			//$equipo = isset($datosIniciales['equipo']) ? $datosIniciales['equipo'] : $equipo;
 			$usu = isset($datosIniciales['usu']) ? $datosIniciales['usu'] : $usu;
 			$mail = isset($datosIniciales['mail']) ? $datosIniciales['mail'] : $mail;
 			$condi = isset($datosIniciales['condi']) ? $datosIniciales['condi'] : $condi;
@@ -121,7 +132,6 @@ class FormularioRegistro extends Form {
 		<input type="password" name="contrasena" placeholder="Contraseña:" value="" /><br>
 		<input type="password" name="rContrasena" placeholder="Repetir contraseña:" value="" /><br> 
 		<input type="text" name="usu" placeholder="Nombre de usuario:" value="$usu"><br>
-		<input type="text" name="equipo" placeholder="Equipo favorito:" value="$equipo"><br>
 		<input type="checkbox" name="condi" value="ok"><label>Acepto las condiciones del servicio</label><br>
 		<button type="submit" class="botonEnviar" name="aceptar" />Enviar</button>
 		</div>
