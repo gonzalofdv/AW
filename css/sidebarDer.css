@@ -75,6 +75,21 @@ div#miPerfil span{
 	font-size: 25px;
 }
 
+div#botMiPerfil{
+	float:right;
+	margin-right: 20%;
+	width: 250px;
+	padding-top: 30px;
+	padding-bottom: 70px;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+}
+
+.imgEscudoPerfil{
+	width: 220px;
+}
+
 div#ranking { /* Tabla del ranking de usuarios */
 	text-align: center;
 	width: 100%;

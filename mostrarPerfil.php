@@ -29,19 +29,24 @@ require_once('include/transfer/EquipoTransfer.php')
 		<?php
 			$usuarioSA = new UsuarioSA();
 			$perfil = $usuarioSA->getUsuario($usuario);
+
+			$equiposa = new EquipoSA();
+			$eq = $equiposa->getEquipo($perfil->EquipoFavorito);
+
+			$folder_path = './img/equipos/';
+			$file_path = $folder_path.$eq->getEscudo();
+
+			echo '<div id="botMiPerfil">';
+				echo "<img class='imgEscudoPerfil' src='".$file_path."'>";
+				echo '<p><button class="botGen" onclick=location.href="cambioEquipo.php">Cambiar equipo favorito</button></p>';
+			echo '</div>';
 			echo "<p>Usuario: <span>" . $perfil->NombreUsuario . "</span></p>";
 			echo "<p>Nombre: <span>" .$perfil->Nombre ." ".$perfil->Apellido1 ." ". $perfil->Apellido2 . "</span></p>";
 			echo "<p>Sexo: <span>" . $perfil->Sexo . "</span></p>";
 			//hacer una consulta con el dato $perfil->EquipoFavorito extraer el nombre del equipo y la url de la foto para mostrarlo a continuación
-			$equiposa = new EquipoSA();
-			$eq = $equiposa->getEquipo($perfil->EquipoFavorito);
-			echo "<p>Tu equipo: <span>" . $eq->getNombreEquipo() . "</span></p>";
-			echo '<p><button class="botGen" onclick=location.href="cambioEquipo.php">Cambiar equipo favorito</button></p>';
-
-			$folder_path = './img/equipos/';
-			$file_path = $folder_path.$eq->getEscudo();
-			echo "<img src='".$file_path."'>";
 			
+			echo "<p>Tu equipo: <span>" . $eq->getNombreEquipo() . "</span></p>";
+						
 			echo "<p>Mail: <span>" . $perfil->Email . "</span></p>";
 			if($perfil->SomosFamilia){
 				echo"<p>Usuario SomosFamilia: <span>SI </span> </p>";
@@ -50,6 +55,8 @@ require_once('include/transfer/EquipoTransfer.php')
 			}  
 			echo "<p>Puntos conseguidos: <span>" . $perfil->Puntos . "</span></p>";
 			echo '<button class="botGen" onclick=location.href="borrarUsuario.php?idUsu='.$perfil->IdUsuario.'">Eliminar cuenta de usuario</button>';
+			
+			
 		?>
 
 
