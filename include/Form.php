@@ -55,10 +55,19 @@ abstract class Form
                     echo '<br><br>';
                     echo '<button class="botGen" onclick=location.href="index.php">Volver al inicio</button>';
                 }
+                else if($result=='2'){
+                    echo "Usuario registrado correctamente. A continuación, te llevaremos al apartado de elegir equipo para que puedas seleccionar tu equipo favorito que además completará tu imagen de perfil.";
+                    echo "<p>Te redireccionamos con el siguiente botón.</p>";
+                    //header("refresh:5; url=index.php");
+                    echo '<button class="botGen" onclick=location.href="cambioEquipo.php">Elegir equipo</button>';
+                }
+                else{
+
                 echo 'Todo correcto, pulsa para volver al inicio';
                 echo '<br><br><br>';
                 echo '<button class="botGen" onclick=location.href="index.php">Volver al inicio</button>';
                 //header('Location:'.$result.'');
+                }
                 exit();
             }
         }  

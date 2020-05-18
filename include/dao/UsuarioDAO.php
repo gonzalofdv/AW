@@ -183,10 +183,11 @@ class UsuarioDAO extends DAO{
     	return $consulta;
     }
 
-    public function updateEquipo($codEquipo){
+    public function updateEquipo($codEquipo, $usuario){
     	$db = $this->db;
     	$codEquipo = mysqli_real_escape_string($db,$codEquipo);
-    	$sql = "UPDATE usuarios SET EquipoFavorito = '$codEquipo'";
+    	$usuario = mysqli_real_escape_string($db, $usuario);
+    	$sql = "UPDATE usuarios SET EquipoFavorito = '$codEquipo' WHERE NombreUsuario LIKE '$usuario'";
     	$consulta = mysqli_query($db, $sql);
     	return $consulta;
     }

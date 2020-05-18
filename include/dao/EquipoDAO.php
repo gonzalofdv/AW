@@ -14,7 +14,7 @@ class EquipoDAO extends DAO{
 		
 		$idEquipo = mysqli_real_escape_string($db, $idEquipo);
 		
-		$sql = "SELECT * from Equipos where IdEquipo = '$idEquipo'";
+		$sql = "SELECT * from equipos where IdEquipo = '$idEquipo'";
 		$consulta = mysqli_query($db, $sql);
         if($consulta){
             $obj = $consulta->fetch_object();
@@ -40,7 +40,7 @@ class EquipoDAO extends DAO{
 		$golesEnContra = mysqli_real_escape_string($db, $golesEnContra);
 		$escudo = mysqli_real_escape_string($db, $escudo);
 		
-		$sql = "INSERT into Equipos (CodLiga, Puntos, GolesAFavor, GolesEnContra, Escudo) values ('$codLiga', '$puntos', '$golesAFavor', '$golesEnContra', '$escudo')";
+		$sql = "INSERT into equipos (CodLiga, Puntos, GolesAFavor, GolesEnContra, Escudo) values ('$codLiga', '$puntos', '$golesAFavor', '$golesEnContra', '$escudo')";
 		$consulta = mysqli_query($db, $sql);
 	}
 	
@@ -61,7 +61,7 @@ class EquipoDAO extends DAO{
 		$golesEnContra = mysqli_real_escape_string($db, $golesEnContra);
 		$escudo = mysqli_real_escape_string($db, $escudo);
 		
-		$sql = "UPDATE Equipos SET CodLiga = '$codLiga', Puntos = '$puntos', GolesAFavor = '$golesAFavor', GolesEnContra = '$golesEnContra',
+		$sql = "UPDATE equipos SET CodLiga = '$codLiga', Puntos = '$puntos', GolesAFavor = '$golesAFavor', GolesEnContra = '$golesEnContra',
 		Escudo = '$escudo' WHERE IdEquipo LIKE '$idEquipo'";
 		$consulta = mysqli_query($db, $sql);
 	}
@@ -72,7 +72,7 @@ class EquipoDAO extends DAO{
 		$idEquipo = $e->getIdEquipo();
 		$idEquipo = mysqli_real_escape_string($db, $idEquipo);
 		
-		$sql = "DELETE Equipos where IdEquipo = '$idEquipo'"; 
+		$sql = "DELETE equipos where IdEquipo = '$idEquipo'"; 
 		mysqli_query($this->db, $sql);
 		$consulta = mysqli_query($db, $sql);
 	}
@@ -83,8 +83,6 @@ class EquipoDAO extends DAO{
         $sql = "SELECT * FROM equipos WHERE CodLiga = '$codLiga' ORDER BY Puntos DESC";
         $res = mysqli_query($db, $sql);
         return $res;
-        
-
     }
 	
 }

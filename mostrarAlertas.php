@@ -75,10 +75,10 @@ $codigo = $_GET['codAlerta'];
 					echo '<button class="botGen" onclick=location.href="index.php">Volver al inicio</button>';
 					break;
 				case 8:
-					echo "Usuario registrado correctamente.";
-					echo "<p>Te redireccionamos a la página de inicio.</p>";
+					echo "Usuario registrado correctamente. A continuación, te llevaremos al apartado de elegir equipo para que puedas seleccionar tu equipo favorito que además completará tu imagen de perfil.";
+					echo "<p>Te redireccionamos con el siguiente botón.</p>";
 					//header("refresh:5; url=index.php");
-					echo '<button class="botGen" onclick=location.href="index.php">Volver al inicio</button>';
+					echo '<button class="botGen" onclick=location.href="cambioEquipo.php">Elegir equipo</button>';
 					break;
 				case 9:
 					echo "El usuario introducido ya existe";

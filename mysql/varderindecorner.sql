@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-05-2020 a las 17:16:45
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.3
+-- Tiempo de generación: 18-05-2020 a las 17:03:25
+-- Versión del servidor: 10.4.6-MariaDB
+-- Versión de PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -74,6 +74,7 @@ CREATE TABLE `equipos` (
 --
 
 INSERT INTO `equipos` (`IdEquipo`, `nombreEquipo`, `CodLiga`, `Puntos`, `GolesAFavor`, `GolesEnContra`, `Escudo`) VALUES
+(0, 'Ninguno', 0, 0, 0, 0, 'nadie.png'),
 (1, 'Barcelona', 1, 58, 63, 31, 'barcelona.png'),
 (2, 'Real Madrid', 1, 56, 49, 19, 'madrid.png'),
 (3, 'Sevilla', 1, 47, 39, 29, 'sevilla.png'),
@@ -321,6 +322,7 @@ CREATE TABLE `ligas` (
 --
 
 INSERT INTO `ligas` (`IdLiga`, `Nombre`, `Pais`, `NEquipos`) VALUES
+(0, 'Ninguna', 'Ninguno', 0),
 (1, 'Liga Santander', 'España', 20),
 (2, 'Liga Smartbank', 'España', 22),
 (3, 'Premier League', 'Inglaterra', 20),
@@ -864,7 +866,7 @@ CREATE TABLE `usuarios` (
   `Apellido1` varchar(30) CHARACTER SET utf8 NOT NULL,
   `Apellido2` varchar(30) CHARACTER SET utf8 NOT NULL,
   `Sexo` varchar(10) CHARACTER SET utf8 NOT NULL,
-  `EquipoFavorito` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `EquipoFavorito` int(4) NOT NULL,
   `NombreUsuario` varchar(50) CHARACTER SET utf8 NOT NULL,
   `Contrasena` varchar(100) CHARACTER SET utf8 NOT NULL,
   `Email` varchar(100) CHARACTER SET utf8 NOT NULL,
@@ -878,14 +880,15 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`, `EquipoFavorito`, `NombreUsuario`, `Contrasena`, `Email`, `Administrador`, `SomosFamilia`, `Puntos`) VALUES
-(1, 'Administrador', 'Ad', 'Min', 'hombre', 'Atletico de Madrid', 'admin', '$2y$10$ZRVF3yPQBWAgTKhRrYjXJO.pGWvvJeVl2Zgb0IBxNYpOqIeWoA4oG', 'admin@ucm.es', 1, 0, 205),
-(2, 'Gonzalo', 'Figueroa', 'Del Val', 'hombre', 'Real Madrid', 'gfigue01', '$2y$10$ANx3ithfFe4l6ew3oZhW5uJ45yoyzqUj5SIYn3fuCl/XmtYEnqyeW', 'gfigue01@ucm.es', 0, 1, 303),
-(3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 'Real Madrid', 'acernuda', '$2y$10$fuAnn.RfDk4iyTOIkcYlQ.gCWB1evtijABmOAF355GShObXjqWSGi', 'acernuda@ucm.es', 0, 1, 294),
-(4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 'Rayo Vallecano', 'fernag08', '$2y$10$.GNAP.NVYpuAh6b5zmATgu1mr/4TVRMzckqd0UyP/vuaPIv87tKj2', 'fernag08@ucm.es', 0, 1, 314),
-(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 'Real Madrid', 'jorborja', '$2y$10$9chuTLHd/cRIMM1XLSs3I.mLk4eNESPqBSg5yLMN0T5sNkFjTZdjy', 'jorborja@ucm.es', 0, 1, 332),
-(6, 'Alae', 'Edine', 'Mouhib', 'hombre', 'Real Madrid', 'amouhib', '$2y$10$NiV1zfngh25e1BAlessipO6SZ0LnDzG2hvBcLfhTcfiqm3rOuxRoK', 'amouhib@ucm.es', 0, 1, 251),
-(7, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 'Atletico de Madrid', 'jurosado', '$2y$10$lvMSB1YxaNhoE7z5.SZl0.zcK.7joA2.uWeXkxQJ/VsJR9peW8klC', 'jurosado@ucm.es', 0, 1, 433),
-(8, 'Usuario', 'Normal', 'Corriente', 'hombre', 'Getafe', 'usu', '$2y$10$Zjeyq2P9kmANI94HOGgPEenA5XQ1X.sYVkefTmW1IXolIUd9YEA9K', 'usu@ucm.es', 0, 0, 190);
+(1, 'Administrador', 'Ad', 'Min', 'hombre', 2, 'admin', '$2y$10$ZRVF3yPQBWAgTKhRrYjXJO.pGWvvJeVl2Zgb0IBxNYpOqIeWoA4oG', 'admin@ucm.es', 1, 0, 205),
+(2, 'Gonzalo', 'Figueroa', 'Del Val', 'hombre', 2, 'gfigue01', '$2y$10$ANx3ithfFe4l6ew3oZhW5uJ45yoyzqUj5SIYn3fuCl/XmtYEnqyeW', 'gfigue01@ucm.es', 0, 1, 303),
+(3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 2, 'acernuda', '$2y$10$fuAnn.RfDk4iyTOIkcYlQ.gCWB1evtijABmOAF355GShObXjqWSGi', 'acernuda@ucm.es', 0, 1, 294),
+(4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 2, 'fernag08', '$2y$10$.GNAP.NVYpuAh6b5zmATgu1mr/4TVRMzckqd0UyP/vuaPIv87tKj2', 'fernag08@ucm.es', 0, 1, 314),
+(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 2, 'jorborja', '$2y$10$9chuTLHd/cRIMM1XLSs3I.mLk4eNESPqBSg5yLMN0T5sNkFjTZdjy', 'jorborja@ucm.es', 0, 1, 332),
+(6, 'Alae', 'Edine', 'Mouhib', 'hombre', 2, 'amouhib', '$2y$10$NiV1zfngh25e1BAlessipO6SZ0LnDzG2hvBcLfhTcfiqm3rOuxRoK', 'amouhib@ucm.es', 0, 1, 251),
+(7, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 2, 'jurosado', '$2y$10$lvMSB1YxaNhoE7z5.SZl0.zcK.7joA2.uWeXkxQJ/VsJR9peW8klC', 'jurosado@ucm.es', 0, 1, 433),
+(8, 'Usuario', 'Normal', 'Corriente', 'hombre', 2, 'usu', '$2y$10$Zjeyq2P9kmANI94HOGgPEenA5XQ1X.sYVkefTmW1IXolIUd9YEA9K', 'usu@ucm.es', 0, 0, 202),
+(10, 'a', 'a', 'a', 'mujer', 2, 'holahola', '$2y$10$XO9sWqPaGE6VvODVYYEbHOpytn2mS/6GERosRTwiXD7D.pDEAKVQS', 'a', 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -984,7 +987,8 @@ ALTER TABLE `respuestas`
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`IdUsuario`);
+  ADD PRIMARY KEY (`IdUsuario`),
+  ADD KEY `EquipoFavorito` (`EquipoFavorito`);
 
 --
 -- Indices de la tabla `votaciones`
@@ -1007,7 +1011,7 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT de la tabla `equipos`
 --
 ALTER TABLE `equipos`
-  MODIFY `IdEquipo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `IdEquipo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
 
 --
 -- AUTO_INCREMENT de la tabla `jugadores`
@@ -1019,7 +1023,7 @@ ALTER TABLE `jugadores`
 -- AUTO_INCREMENT de la tabla `ligas`
 --
 ALTER TABLE `ligas`
-  MODIFY `IdLiga` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `IdLiga` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `noticias`
@@ -1049,7 +1053,7 @@ ALTER TABLE `respuestas`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `IdUsuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `IdUsuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `votaciones`
@@ -1105,6 +1109,12 @@ ALTER TABLE `preguntas`
 --
 ALTER TABLE `respuestas`
   ADD CONSTRAINT `respuestas_ibfk_1` FOREIGN KEY (`CodPregunta`) REFERENCES `preguntas` (`IdPregunta`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`EquipoFavorito`) REFERENCES `equipos` (`IdEquipo`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `votaciones`

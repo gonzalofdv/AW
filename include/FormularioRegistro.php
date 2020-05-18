@@ -76,8 +76,9 @@ class FormularioRegistro extends Form {
 					$consulta = $usuarioSA->obtenerId($nombreUsuario);
 					$idUsuario = $consulta->IdUsuario;
 					$usuarioSA->sumarPuntos($idUsuario,1);
-
-					$result = 'mostrarAlertas.php?codAlerta=8';
+					
+					$result = 2;
+					//$result = 'mostrarAlertas.php?codAlerta=8';
 				}
 				else{
 					//$result = 'mostrarAlertas.php?codAlerta=9';

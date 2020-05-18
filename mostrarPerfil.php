@@ -36,6 +36,7 @@ require_once('include/transfer/EquipoTransfer.php')
 			$equiposa = new EquipoSA();
 			$eq = $equiposa->getEquipo($perfil->EquipoFavorito);
 			echo "<p>Tu equipo: <span>" . $eq->getNombreEquipo() . "</span></p>";
+			echo '<p><button class="botGen" onclick=location.href="cambioEquipo.php">Cambiar equipo favorito</button></p>';
 
 			$folder_path = './img/equipos/';
 			$file_path = $folder_path.$eq->getEscudo();

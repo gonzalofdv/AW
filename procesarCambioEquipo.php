@@ -3,9 +3,10 @@ session_start();
 require_once('include/sa/UsuarioSA.php');
 
 $codEquipo = $_POST['lista2'];
+$usuario = $_SESSION['nombre'];
 
 $usuariosa = new UsuarioSA();
-$usuariosa->updateEquipo($codEquipo);
+$usuariosa->updateEquipo($codEquipo, $usuario);
 
 header("Location: mostrarPerfil.php");
 

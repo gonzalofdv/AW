@@ -11,6 +11,7 @@ require_once('include/sa/LigaSA.php');
 	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
 	<link rel="stylesheet" type="text/css" href="css/cabecera.css" />
 	<link rel="stylesheet" type="text/css" href="css/sidebarDer.css" />
+	<link rel="stylesheet" type="text/css" href="css/formularios.css" />
 	<meta charset="utf-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"> </script>
 	<title>Perfil</title>
@@ -40,9 +41,11 @@ require_once('include/sa/LigaSA.php');
          ?>
         </select>
 
-        <div id="dependiente"></div>
+        <select id="lista2" name="lista2"></select>
 
-	<input type="submit" value="Guardar">
+        <div id="dependiente2"></div>
+
+	<button class="botGen" type="submit" value="Guardar">Guardar elección</button>
 </form>
 
 	</div>
@@ -63,6 +66,10 @@ require_once('include/sa/LigaSA.php');
 			recargarLista();
 		});
 
+		$('#lista2').change(function(){
+			recargarEscudo();	
+		});
+
 	})
 </script>
 <script type="text/javascript">
@@ -72,7 +79,18 @@ require_once('include/sa/LigaSA.php');
 			url:"selectEquipos.php",
 			data:"liga=" + $('#lista1').val(),
 			success:function(r){
-				$('#dependiente').html(r);
+				$('#lista2').html(r);
+			}
+		});
+	}
+
+	function recargarEscudo(){
+		$.ajax({
+			type:"POST",
+			url:"muestraEscudo.php",
+			data:"escudo="+$('#lista2').val(),
+			success:function(r){
+				$('#dependiente2').html(r);
 			}
 		});
 	}
