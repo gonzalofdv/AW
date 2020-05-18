@@ -4,7 +4,9 @@ require_once('include/sa/LigaSA.php');
 require_once('include/sa/UsuarioSA.php');
 require_once('include/sa/ComentarioSA.php');
 require_once('include/sa/NoticiaSA.php');
+require_once('include/sa/EquipoSA.php');
 require_once('include/transfer/NoticiaTransfer.php');
+require_once('include/transfer/EquipoTransfer.php');
 
 $idNoticia = $_GET['idN'];
 
@@ -56,6 +58,8 @@ $idNoticia = $_GET['idN'];
 
 			$usuarioSA = new UsuarioSA();
 			$usuario = $usuarioSA->obtenerNombreUsu($codUsu);
+
+
 		?>
 		<div class="centraTitulosImagen">
 			<h1><?php echo $titular; ?></h1>
@@ -80,7 +84,8 @@ $idNoticia = $_GET['idN'];
 			}
 		
 		    $comentarioSA=new ComentarioSA();
-		    $comentarios=$comentarioSA->devuelveComentarios($idNoticia);
+			$comentarios=$comentarioSA->devuelveComentarios($idNoticia);
+			
 		?>
 			  
 		<?php 
@@ -109,6 +114,7 @@ $idNoticia = $_GET['idN'];
 		
 			<table class="tablaComent">
 					<tr id="trComent">
+						<th id="thComent"></th>
 						<th id="thComent"><b>Usuario</b></th>
 						<th id="thComent"><b>Comentario</b></th>
 					</tr>
@@ -117,9 +123,16 @@ $idNoticia = $_GET['idN'];
 					$usuarioSA=new UsuarioSA();
 					$usuario=$usuarioSA->obtenerNombreUsu($mostrar->CodUsuario);
 					$usu=$usuario->NombreUsuario;
+					
+					$equipo=$usuarioSA->getUsuario($usu);
+					$codEquipo=$equipo->EquipoFavorito;
+					$equipoSA=new EquipoSA();
+					$escudo=$equipoSA->getEquipo($codEquipo)->getEscudo();
+					
 					?>
 					<tr id="trComent">
-						<td id="comentarios"><?php echo $usu ?></td>
+						<td id="comentarios"><?php echo '<img class="imgClasificacion" src="./img/equipos/'.$escudo.'">'?>
+						<td id="comentarios"><?php echo $usu ?></>
 						<td id="comentarios"><?php echo $mostrar->Comentario ?></td>
 					</tr>
 		
