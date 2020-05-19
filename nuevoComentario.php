@@ -24,7 +24,8 @@ $idN= $_GET['idN'];
 	<div class="contenido" id="formus">
 		<?php
 			$form = new FormularioComentario($idN);
-			$form->gestiona();
+			$html = $form->gestiona();
+			echo $html;
 		?>
 	</div>
 	<?php

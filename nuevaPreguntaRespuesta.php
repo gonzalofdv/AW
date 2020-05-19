@@ -33,7 +33,8 @@ require_once ('include/FormularioPreguntaRespuesta.php');
 				else{
 
 					$form = new FormularioPreguntaRespuesta();
-					$form->gestiona();
+					$html = $form->gestiona();
+					echo $html;
 
 				}
 			}

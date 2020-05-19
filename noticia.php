@@ -23,7 +23,8 @@ require_once ('include/FormularioNoticia.php');
 	<div class="contenido" id="formus">
 		<?php
 			$form = new FormularioNoticia();
-			$form->gestiona();
+			$html = $form->gestiona();
+			echo $html;
 		?>
 	</div>
 	<?php

@@ -27,7 +27,8 @@ $idN= $_GET['idN'];
 	<div class="contenido" id="formus">
 	<?php
 		$form = new FormularioEditarNoticia($idN);
-		$form->gestiona();
+		$html = $form->gestiona();
+		echo $html;
 	?>
 	</div>
 	<?php

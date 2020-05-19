@@ -30,7 +30,8 @@ $idNoticia = $_GET['idN'];
 
 		<?php
 			$form = new FormularioBorrarComentario($idNoticia);
-			$form->gestiona();
+			$html = $form->gestiona();
+			echo $html;
 		?>
 		
 	</div>

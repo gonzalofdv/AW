@@ -28,7 +28,8 @@ require_once ('include/FormularioLogin.php');
 
 		<?php
 			$form = new FormularioLogin();
-			$form->gestiona();
+			$html = $form->gestiona();
+			echo $html;	
 		?>
 		
 	</div>

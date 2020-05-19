@@ -23,7 +23,8 @@ require_once ('include/FormularioRegistro.php');
 	<div class="contenido" id="formus">
 		<?php
 			$form = new FormularioRegistro();
-			$form->gestiona();
+			$html = $form->gestiona();
+			echo $html;
 		?>
 	</div>
 	<?php
