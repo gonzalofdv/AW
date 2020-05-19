@@ -17,6 +17,7 @@ else{
 	$control = $usuarioSA->canjearFamilia($nombreUsu);
 
 	if($control){
+		$_SESSION['esFamilia'] = true;
 		header('Location: mostrarAlertas.php?codAlerta=4');
 	}
 	else{
