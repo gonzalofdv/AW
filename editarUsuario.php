@@ -27,7 +27,8 @@ $idU= $_GET['idUsu'];
 	<div class="contenido" id="formus">
 	<?php
 		$form = new FormularioEditarUsuario($idU);
-		$form->gestiona();
+		$html=$form->gestiona();
+		echo $html;
 	?>
 	</div>
 	<?php
