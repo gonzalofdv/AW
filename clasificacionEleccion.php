@@ -8,7 +8,7 @@
 	$ligasa = new LigaSA();
 	$nombreLiga = $ligasa->getNombreLiga($codLiga)->Nombre;
 
-	echo'<h1 class="hclasificacion">Clasificacion '.$nombreLiga.'</h1>';
+	echo'<h3 class="hclasificacion">Clasificacion '.$nombreLiga.'</h3>';
 ?>
 	<p><table class="tablaClasificacion">
 	<tr>
