@@ -198,6 +198,22 @@ class UsuarioDAO extends DAO{
     	$sql = "DELETE FROM usuarios WHERE IdUsuario = '$codUsu'";
     	$consulta = mysqli_query($db, $sql);
 	}
+
+	public function update($idUsuario, $nombre, $apellido1, $apellido2,$sexo,$contrasena,$mail){
+    	$db = $this->db;
+    	$idUsuario = mysqli_real_escape_string($db,$idUsuario);
+    	$nombre = mysqli_real_escape_string($db, $nombre);
+		$apellido1 = mysqli_real_escape_string($db, $apellido1);
+		$apellido2 = mysqli_real_escape_string($db, $apellido2);
+		$sexo = mysqli_real_escape_string($db, $sexo);
+		$mail = mysqli_real_escape_string($db, $mail);
+		$contrasena = mysqli_real_escape_string($db, $contrasena);
+		$contrasena = self::hashPassword($contrasena);
+    	$sql = "UPDATE usuarios SET Nombre = '$nombre', Apellido1 = '$apellido1',Apellido2 = '$apellido2',Sexo = '$sexo',Email = '$mail',
+    	Contrasena = '$contrasena'WHERE IdUsuario LIKE '$idUsuario'";
+    	$consulta = mysqli_query($db, $sql);
+    }
+
 }
 
 ?>

@@ -60,11 +60,12 @@ class UsuarioSA {
 		}
 	}
 
-	public function updateUsuario(){
+	public function updateUsuario($idUsuario, $nombre, $apellido1, $apellido2,$sexo,$contrasena,$mail){
 		if(!$this->usuarioDAO){
 			$this->usuarioDAO = new UsuarioDAO();
 		}
-		$usuarioDAO->update($usuario);
+		$aux = $this->usuarioDAO;
+		$aux->update($idUsuario, $nombre, $apellido1, $apellido2,$sexo,$contrasena,$mail);
 	}
 	
 	public function deleteUsuario(){
