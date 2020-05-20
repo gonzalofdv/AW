@@ -6,7 +6,7 @@
 body {
 	display: grid;
 	grid-template-columns: 74% 26%;
-	grid-template-rows: 15% 75% 5%;
+	grid-template-rows: 14% 80% 5%;
 	grid-template-areas:
 		"header header"
 		"contenido sidebar"
@@ -20,10 +20,9 @@ div.contenido { /* Todo el contenido de la página */
 	padding: 10px;
 	float: left;
 	max-height: 1050px;
-	width: auto;
-	background-color: white;
 	grid-area: contenido;
 	overflow: auto;
+	background-color: white;
 }
 
 div#contenidoIni {
@@ -174,7 +173,7 @@ tr:nth-child(even) {
 .hclasificacion{
 	background-color:#41CF19; 
 	color: white;
-	padding: 20px;
+	padding: 10px;
 	text-align: center;
 	border: 2px solid black;
 }
@@ -305,10 +304,11 @@ div.saludo {
 }
 
 .iconoOp{
-	padding-top: 20px;
+	padding-top: 10px;
 	padding-bottom:20px;
 	padding-right: 40px;
 	padding-left: 40px;
+	width: 75px;
 }
 
 .centraTitulosImagen{

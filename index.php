@@ -28,6 +28,7 @@ $codLiga = isset($_POST['liga']) ? $_POST['liga'] : 0;
 
 	<div class="contenido" id="contenidoIni">
 		<?php
+			echo '<div id="filtro">';
 			echo '<form method="POST" action="index.php">';
 
 				if($codLiga != 0){
@@ -51,6 +52,7 @@ $codLiga = isset($_POST['liga']) ? $_POST['liga'] : 0;
 				echo '<input class="botGen" type="submit" value="Aplicar filtro">';
 
 			echo '</form>';
+			echo '</div>';
 			echo '<br><br>';
 
 			echo '<div class="divnoticias">';
@@ -69,12 +71,14 @@ $codLiga = isset($_POST['liga']) ? $_POST['liga'] : 0;
 					
 			echo '</div>';
 			echo '<br>';
+			echo '<div id="agregaNoticia">';
 			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false || ($_SESSION["esAdmin"] == false && $_SESSION["esFamilia"] == false)){
 				echo '<button class="botGenOff" onclick=location.href="noticia.php" disabled>Agregar nueva noticia</button>';
 			}
 			else{
 				echo '<button class="botGen" onclick=location.href="noticia.php">Agregar nueva noticia</button>';
 			}
+			echo '</div>';
 		?>
 	</div>
 

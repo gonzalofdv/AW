@@ -1,13 +1,14 @@
 <div id="cabecera">
 	<input type="image" onclick="location.href='index.php'" src="./img/ElVARderinDeCornerr.jpg" class="imagenPrincipal">
+		
 	<div id="ligas">
 		<div id="ligasSeparadas">
-			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=1'" value="Liga Santander" src="img/ligas/LaLigaSantander3.png" class="botonLiga" />
-			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=2'" value="Liga Smartbank" src="img/ligas/LaLigaSmartbank3.png" class="botonLiga" />
-			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=3'" value="Premier League" src="img/ligas/PremierLeague3.png" class="botonLiga" />
-			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=4'" value="Bundesliga" src="img/ligas/Bundesliga3.png" class="botonLiga" />
-			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=5'" value="Ligue 1" src="img/ligas/Ligue13.png" class="botonLiga" />
-			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=6'" value="Serie A" src="img/ligas/SerieA3.png" class="botonLiga" />
+			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=1'" value="Liga Santander" src="img/ligas/LaLigaSantander6.png" class="botonLiga" />
+			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=2'" value="Liga Smartbank" src="img/ligas/LaLigaSmartbank5.png" class="botonLiga" />
+			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=3'" value="Premier League" src="img/ligas/PremierLeague5.png" class="botonLiga" />
+			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=4'" value="Bundesliga" src="img/ligas/Bundesliga5.png" class="botonLiga" />
+			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=5'" value="Ligue 1" src="img/ligas/Ligue15.png" class="botonLiga" />
+			<input type="image" onclick="location.href='eleccionLigas.php?codLiga=6'" value="Serie A" src="img/ligas/SerieA5.png" class="botonLiga" />
 		</div>
 		<div id="menu">
 			<button onclick="location.href='index.php'" class="botonMenu"><span>Inicio</span></button>
@@ -16,7 +17,6 @@
 		</div>
 
 	</div>
-	
 	<div id="registroYlogin">
 		<?php
 			if (isset($_SESSION["login"]) && ($_SESSION["login"]==true)) {
@@ -41,5 +41,4 @@
 			}
 		?>
 	</div>
-		
 </div>
