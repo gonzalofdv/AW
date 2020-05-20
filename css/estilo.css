@@ -6,7 +6,7 @@
 body {
 	display: grid;
 	grid-template-columns: 74% 26%;
-	grid-template-rows: 20% 75% 5%;
+	grid-template-rows: 15% 75% 5%;
 	grid-template-areas:
 		"header header"
 		"contenido sidebar"
