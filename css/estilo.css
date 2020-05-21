@@ -320,3 +320,10 @@ div.saludo {
 	margin:auto;
 	
 }
+
+#filtro{
+	padding : 5px 5px;
+	max-height: 28px;
+	font-size: 14px;
+	width: 140px;
+}

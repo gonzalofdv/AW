@@ -28,7 +28,7 @@ $codLiga = isset($_POST['liga']) ? $_POST['liga'] : 0;
 
 	<div class="contenido" id="contenidoIni">
 		<?php
-			echo '<div id="filtro">';
+			echo '<div>';
 			echo '<form method="POST" action="index.php">';
 
 				if($codLiga != 0){
@@ -41,7 +41,7 @@ $codLiga = isset($_POST['liga']) ? $_POST['liga'] : 0;
 
 				//echo '<h2>Visualizando noticias de ' . $valueLiga .'</h2><br>';
 
-				echo '<select name="liga" class="selectTam">';
+				echo '<select name="liga" class="selectTam" id="filtro">';
 					echo '<option value="0">Todas</option>';
 					$ligasa = new LigaSA();
 					$res=$ligasa->devuelveLigaSA();
@@ -49,7 +49,7 @@ $codLiga = isset($_POST['liga']) ? $_POST['liga'] : 0;
 						echo '<option value=' . $valores[0] . '> ' . $valores[1] . '</option>';
 					}
 				echo '</select>';
-				echo '<input class="botGen" type="submit" value="Aplicar filtro">';
+				echo '<input class="botGen" id="filtro" type="submit" value="Aplicar filtro">';
 
 			echo '</form>';
 			echo '</div>';
