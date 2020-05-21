@@ -12,17 +12,20 @@ class FormularioNoticia extends Form {
 
 	protected function procesaFormulario($datos){
 		$result = array();
+		$directorio = './img/noticias/';  
 
 		$titular = isset($datos['titular']) ? htmlspecialchars($datos['titular']) : null;
 		$cuerpo = isset($datos['cuerpo']) ? nl2br($datos['cuerpo']) : null;
 		$condi = isset($datos['condi']) ? htmlspecialchars($datos['condi']) : null;
 		$codLiga = isset($datos['liga']) ? htmlspecialchars($datos['liga']) : null;
 		$nombreUsu = isset($_SESSION['nombre']) ? $_SESSION['nombre'] : null;
-		$foto = isset($datos['foto']) ? htmlspecialchars($datos['foto']) : null;
+		$foto = isset($_FILES['imagen']['name']) ? htmlspecialchars($_FILES['imagen']['name']) : null; 
+		move_uploaded_file($_FILES['imagen']['tmp_name'],$directorio.$foto);
 
 		if((!empty($titular)) && (!empty($cuerpo)) && (!empty($condi)) && (!empty($foto))){
 			if($codLiga != 0){
 				
+
 				$usuarioSA = new UsuarioSA();
 				$consulta = $usuarioSA->obtenerId($nombreUsu); 	
 				$codUsuario = $consulta->IdUsuario;
@@ -87,7 +90,7 @@ class FormularioNoticia extends Form {
         $html .='</select>';
 		$html .= '</div>';
         $html .='<br>';
-        $html .='<input type="file" name="foto" /><br>';
+        $html .='<input id="imagen" type="file" name="imagen" /><br>';
         $html .='<input type="checkbox" name="condi" value="ok"><label>Confirmar enviar noticia.</label><br>';
         $html .='<button type="submit" class="botonEnviar" name="aceptar">Enviar</button>';
         $html .='</div>';
