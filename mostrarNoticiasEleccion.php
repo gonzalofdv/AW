@@ -1,7 +1,13 @@
 <?php
 	require('include/sa/NoticiaSA.php');
+	require('include/sa/LigaSA.php');
 
 	$codLiga = $_POST['codLiga'];
+
+	$ligasa = new LigaSA();
+	$nombreLiga = $ligasa->getNombreLiga($codLiga)->Nombre;
+
+	echo'<h2 class="hclasificacion">Noticias '.$nombreLiga.'</h2>';
 
 	$noticiaSA = new NoticiaSA();
 	$res = $noticiaSA->devuelveNoticias($codLiga);

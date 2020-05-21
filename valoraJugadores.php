@@ -22,8 +22,8 @@ $codLiga = $_POST['codLiga'];
 </head>
 
 <body>
-	<h1>¡Vota y participa!</h1>
-	<h2>Cada vez que inicies sesión tendrás 6 votos a repartir entre todas las ligas disponibles</h2>
+	<h2 class="hclasificacion">¡Vota y participa!</h1>
+	<h3>Cada vez que inicies sesión tendrás 6 votos a repartir entre todas las ligas disponibles</h3>
 	<?php 
 		if(isset($_SESSION["login"]) && $_SESSION["login"] == true){
 			echo '<h3>Votos restantes: ';
