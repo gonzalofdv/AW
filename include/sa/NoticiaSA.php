@@ -64,6 +64,22 @@ class NoticiaSA {
 		return $aux->getNoticiasUsuario($idUsu);
 	}
 
+	public function getNotaAndVotos($idNoticia){ //recoge la nota media y el numero de votos
+		if(!$this->noticiaDAO){
+			$this->noticiaDAO = new NoticiaDAO();
+		}
+		$aux = $this->noticiaDAO;
+		return $aux->getNotaAndVotos($idNoticia);
+	}
+
+	public function insertarNuevaNota($idNoticia, $nuevaNota, $votos){
+		if(!$this->noticiaDAO){
+			$this->noticiaDAO = new NoticiaDAO();
+		}
+		$aux = $this->noticiaDAO;
+		$aux->insertarNuevaNota($idNoticia, $nuevaNota, $votos);
+	}
+
 }
 
 ?>

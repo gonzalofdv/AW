@@ -7,6 +7,7 @@ require_once('include/sa/NoticiaSA.php');
 require_once('include/sa/EquipoSA.php');
 require_once('include/transfer/NoticiaTransfer.php');
 require_once('include/transfer/EquipoTransfer.php');
+require_once('include/sa/RespuestaComentarioSA.php');
 
 $idNoticia = $_GET['idN'];
 
@@ -18,11 +19,15 @@ $idNoticia = $_GET['idN'];
 	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
 	<link rel="stylesheet" type="text/css" href="css/cabecera.css" />
 	<link rel="stylesheet" type="text/css" href="css/sidebarDer.css" />
+	<link rel="stylesheet" type="text/css" href="css/votar.css" />
 	<meta charset="utf-8">
 	<meta http-equiv="Expires" content="0">
 	<meta http-equiv="Last-Modified" content="0">
 	<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
 	<meta http-equiv="Pragma" content="no-cache">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"> </script>
+	<script type="text/javascript" src="votarNoticia.js"></script>
+	<script type="text/javascript" src="respuestas.js"></script>
 	<title>Noticia</title>
 </head>
 
@@ -61,7 +66,7 @@ $idNoticia = $_GET['idN'];
 
 
 		?>
-		<div class="centraTitulosImagen">
+		<div class="centraTitulosImagen" id="prueba">
 			<h1><?php echo $titular; ?></h1>
 			
 			<?php
@@ -75,16 +80,45 @@ $idNoticia = $_GET['idN'];
 		</div>
 		<p><?php echo $cuerpo; ?></p>
 		<p>Noticia escrita por el usuario <?php echo $usuario->NombreUsuario; ?></p>
+
+
+		<!-- VALORACION DE NOTICIAS CON ESTRELLAS -->
+
+				
+				<form action="javascript:void(0);" id="valorar">
+				  <p class="clasificacion">
+				  	<?php echo '<input type="checkbox" id="idN" name="idN" value="'.$idNoticia.'"><label>Confirmar enviar comentario.</label>'; ?>
+					<input id="radio1" type="radio" name="estrellas" value="5">
+						<label for="radio1">★</label>
+						<input id="radio2" type="radio" name="estrellas" value="4">
+						<label for="radio2">★</label>
+						<input id="radio3" type="radio" name="estrellas" value="3">
+						<label for="radio3">★</label>
+						<input id="radio4" type="radio" name="estrellas" value="2">
+						<label for="radio4">★</label>
+						<input id="radio5" type="radio" name="estrellas" value="1">
+						<label for="radio5">★</label>
+						<br>
+						<input id="enviarVal" type="submit" value="Enviar" name="submit">
+				  </p>
+				</form>
+				<div id="probando"><p>La nota hasta ahora es <?php echo $noticia->getNota(); ?></p></div>	
+
+		<!-- ---------------------------------------- -->
+
+
+
 		<?php
+
+			$comentarioSA=new ComentarioSA();
+			$comentarios=$comentarioSA->devuelveComentarios($idNoticia);
+
 			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
 				echo '<button class="botGenOff" onclick=location.href="nuevoComentario.php?idN='.$idNoticia.'" disabled>Agregar comentario</button>';
 			}
 			else{
 				echo '<button class="botGen" onclick=location.href="nuevoComentario.php?idN='.$idNoticia.'">Agregar comentario</button>';
 			}
-		
-		    $comentarioSA=new ComentarioSA();
-			$comentarios=$comentarioSA->devuelveComentarios($idNoticia);
 			
 		?>
 			  
@@ -117,9 +151,13 @@ $idNoticia = $_GET['idN'];
 						<th id="thComent"></th>
 						<th id="thComent"><b>Usuario</b></th>
 						<th id="thComent"><b>Comentario</b></th>
+						<th id="thComent"></th>
+						<th id="thComent"><b>Respuestas</b></th>
 					</tr>
 		<?php 
+			$i=0;
 			while($mostrar=mysqli_fetch_object($comentarios)){
+					$i=$i+1;
 					$usuarioSA=new UsuarioSA();
 					$usuario=$usuarioSA->obtenerNombreUsu($mostrar->CodUsuario);
 					$usu=$usuario->NombreUsuario;
@@ -131,9 +169,33 @@ $idNoticia = $_GET['idN'];
 					
 					?>
 					<tr id="trComent">
-						<td id="comentarios"><?php echo '<img class="imgClasificacion" src="./img/equipos/'.$escudo.'">'?>
-						<td id="comentarios"><?php echo $usu ?></>
+						<td id="comentarios"><?php echo '<img class="imgClasificacion" src="./img/equipos/'.$escudo.'">'?></td>
+						<td id="comentarios"><?php echo $usu ?></td>
 						<td id="comentarios"><?php echo $mostrar->Comentario ?></td>
+						<?php echo '<td id="comentarios"><button class="responderComent" id="responderComent'.$i.'" value="'.$mostrar->IdComentario.'">💬</button></td>';  ?>
+						<?php echo '<td id="respuestas'.$i.'">';
+
+						$respcomentSA = new RespuestaComentarioSA();
+						$todos = $respcomentSA->recoger($mostrar->IdComentario);
+						echo "<table class='tablaComent'>";
+						echo  "<tr id='trComent'>";
+						echo  "<th id='thComent'><b>Usuario</b></th>";
+						echo  "<th id='thComent'><b>Comentario</b></th>";
+						echo  "</tr>";
+
+						while($aux = mysqli_fetch_array($todos)){
+							$usuarioAux = $usuarioSA->obtenerNombreUsu($aux[2]);
+
+							echo  '<tr id="trComent">';
+							echo  '<td id="comentarios">'.$usuarioAux->NombreUsuario.'</td>';
+							echo  '<td id="comentarios">'.$aux[3].'</td>';
+							echo  '</tr>';
+
+						}
+
+						echo  '</table>';
+
+						echo '</td>';?>
 					</tr>
 		
 		<?php
@@ -150,6 +212,7 @@ $idNoticia = $_GET['idN'];
 		require("include/comun/pie.php");
 	?>
 <!-- Fin del contenedor -->
+
 
 </body>
 </html>

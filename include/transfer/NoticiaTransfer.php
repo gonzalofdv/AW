@@ -7,12 +7,14 @@ class noticiaTransfer{
 	private $codLiga;
 	private $foto;
 
-	public function __construct($codUsuario, $codLiga, $titular, $texto, $foto) {
+	public function __construct($codUsuario, $codLiga, $titular, $texto, $foto, $nota, $votos) {
         $this->codUsuario = $codUsuario;
         $this->codLiga = $codLiga;
         $this->texto = $texto;
 		$this->titular = $titular;
 		$this->foto = $foto;
+		$this->nota = $nota;
+		$this->votos = $votos;
     }
 	
 	public function getTitular(){
@@ -61,6 +63,22 @@ class noticiaTransfer{
 
 	public function setFoto($foto){
 		$this->foto = $foto;
+	}
+
+	public function getNota(){
+		return $this->nota;
+	}
+
+	public function setNota($nota){
+		$this->nota = $nota;
+	}
+
+	public function getVotos(){
+		return $this->votos;
+	}
+
+	public function setVotos($votos){
+		$this->votos = $votos;
 	}
 }
 ?>

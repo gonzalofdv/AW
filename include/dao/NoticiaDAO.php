@@ -18,7 +18,7 @@ class NoticiaDAO extends DAO{
         	return $n;
         }
 		else{
-			$n = new NoticiaTransfer($obj->CodUsuario, $obj->CodLiga, $obj->Titular, $obj->Texto, $obj->Foto);
+			$n = new NoticiaTransfer($obj->CodUsuario, $obj->CodLiga, $obj->Titular, $obj->Texto, $obj->Foto, $obj->NotaNoticia, $obj->NumVotos);
 			return $n;
 		}
 	}
@@ -102,6 +102,25 @@ class NoticiaDAO extends DAO{
 		$sql = "SELECT IdNoticia from noticias where CodUsuario = '$idUsu'";
 		$consulta = mysqli_query($db, $sql);
         return $consulta;
+	}
+
+	public function getNotaAndVotos($idNoticia){
+		$db = $this->db;
+		$idUsu = mysqli_real_escape_string($db, $idNoticia);
+		
+		$sql = "SELECT NotaNoticia, NumVotos FROM noticias WHERE IdNoticia = '$idNoticia'"; 
+		$consulta = mysqli_query($db, $sql);
+		$aux = mysqli_fetch_array($consulta);
+		return $aux;
+	}
+
+	public function insertarNuevaNota($idNoticia, $nuevaNota, $votos){
+		$db = $this->db;
+		$idNoticia= mysqli_real_escape_string($db,$idNoticia);
+		$nuevaNota= mysqli_real_escape_string($db,$nuevaNota);
+		$votos= mysqli_real_escape_string($db,$votos);
+		$sql = "UPDATE noticias SET NotaNoticia = '$nuevaNota', NumVotos = '$votos' WHERE IdNoticia LIKE '$idNoticia'"; 
+		$consulta = mysqli_query($db, $sql);	
 	}
 }
 	
