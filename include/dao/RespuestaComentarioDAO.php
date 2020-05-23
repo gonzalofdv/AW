@@ -24,7 +24,7 @@ class RespuestaComentarioDAO extends DAO{
 		return $consulta = mysqli_query($db, $sql);
 	}
 
-	public function borrarComentarios($idComentario){
+	public function borrarRespuestas($idComentario){
 		$db = $this->db;
 
 		$idComentario = mysqli_real_escape_string($db, $idComentario);
@@ -34,7 +34,7 @@ class RespuestaComentarioDAO extends DAO{
 		$consulta = mysqli_query($db, $sql);
 	}
 
-	public function borrarComentariosUsu($idUsu){
+	public function borrarRespuestasUsu($idUsu){
 		$db = $this->db;
 
 		$idUsu = mysqli_real_escape_string($db, $idUsu);
