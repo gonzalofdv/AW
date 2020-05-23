@@ -45,34 +45,35 @@ div#perfil { /* Botón de "Mi perfil" */
 .rounded::before{
 	border-radius: 50px;
 	width: 25%;
-	background: #41CF19;
+	background: #0042ff;
 }
 
 .rounded:hover::before{
-	background: #41CF19;
+	background: #0042ff;
 	width: 100%;
 }
 
 div#miPerfil h1{ /* Página de mi perfil */
 	padding: 5px;
-	background-color:#41CF19; 
+	background-color:#0042ff; 
 	text-align: center;
-  	font-size: 35px;
+  	font-size: 25px;
   	color:white;
-  	border: 2px solid black;
+	border: 2px solid #091066;
+	font-family:"segoe UI";
 }
 
 div#miPerfil p{
-	color: #41CF19;
+	color: BLACK;
 	font-weight: bold;
 	text-decoration: none;
-	font-size: 25px;
+	font-size: 20px;
 }
 
 div#miPerfil span{
-	color: black;
+	color: #5c5e64;
 	text-decoration: none;
-	font-size: 25px;
+	font-size: 20px;
 }
 
 div#botMiPerfil{

@@ -29,6 +29,12 @@ div#ligas { /* Iconos de las seis ligas */
 	justify-content: space-around;
 }
 div#ligasSeparadas{
+	padding: 7px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #939393;
+	border-radius: 6px;
+	background: #dddddd;
 	display:flex;
 	justify-content:space-between;
 }
@@ -77,13 +83,15 @@ div#registroYlogin a:hover {
     padding: 8px;
 	font-family: candara;
     font-size: 18px;
-    background-color: #1883ba;
+    background-color: #5d89e6;
     border-radius: 6px;
     border: 2px solid #0016b0;
 }
 
 div#infoStart { /* Saludo al usuario e información de sus privilegios */
 	text-decoration: none;
+	text-align: center;
+	display: inline-block;
 	padding-top: 4px;
 	padding-right: 10px;
 	padding-left: 10px;

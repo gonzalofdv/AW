@@ -30,12 +30,12 @@ div#contenidoIni {
 }
 
 h1#tituloBienvenida{
-	color:black; 
+	color:white; 
 	text-align: center;
-	background-color: #41CF19;
+	background-color: #0042FF;
 	padding: 10px;
-	border: 6px solid black;
-	font-size: 50px;
+	border: 2px solid #091066;
+	font-size: 25px;
 	font-family:"segoe UI";
 }
 
@@ -67,12 +67,12 @@ div#opcionesLiga{
 }
 
 #trComent:hover {
-	background-color:#5fcf80;
+	background-color:#a7bff3;
 }
 #thComent{
 	padding: 0.7em;
 	border:black 2px solid;
-	background-color:#42A15E;
+	background-color:#5d89e6;
 }
 
 
@@ -106,7 +106,7 @@ h2#somosFam{
 	box-shadow:inset 0 0 0 1px rgba(0,0,0,0.1);
 	text-decoration: none;
 	transition: all ease 0.5s;
-	background:#10B87B;
+	background:#5d89e6;
 }
 
 .botGen:after,
@@ -130,7 +130,7 @@ h2#somosFam{
 
 .botGen:hover{
 	text-shadow: 0 1px 1px rgba(0,0,0,0.5);
-	background:#12C987
+	background:#0042ff
 }
 
 .botGen:hover:after,
@@ -171,11 +171,12 @@ tr:nth-child(even) {
     background-color:#fbfbfb;
 }
 .hclasificacion{
-	background-color:#41CF19; 
-	color: white;
+	background-color:#0042FF; 
+	color: WHITE;
+	font-family:"segoe UI";
 	padding: 10px;
 	text-align: center;
-	border: 2px solid black;
+	border: 2px solid #091066;
 }
 
 /*----------------------------------------------------------------*/
