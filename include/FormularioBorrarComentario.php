@@ -1,5 +1,6 @@
 <?php
 require_once('include/sa/ComentarioSA.php');
+require_once('include/sa/RespuestaComentarioSA.php');
 require_once('include/sa/UsuarioSA.php');
 require_once('Form.php');
 
@@ -15,6 +16,9 @@ class FormularioBorrarComentario extends Form{
 		$idComentario = isset($datos['comentario']) ? htmlspecialchars($datos['comentario']) : null;
 		
 		if(!empty($idComentario)){
+
+			$respcomentSA = new RespuestaComentarioSA();
+			$respcomentSA->borrarRespuestas($idComentario);
 
 			$comentarioSA = new ComentarioSA();
 			$res = $comentarioSA->borrarComentarioConcreto($idComentario);

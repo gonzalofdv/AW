@@ -3,10 +3,13 @@
 require_once('include/sa/UsuarioSA.php');
 require_once('include/sa/NoticiaSA.php');
 require_once('include/sa/ComentarioSA.php');
+require_once('include/sa/RespuestaComentarioSA.php');
 
 
 $idUsu = $_GET['idUsu'];
 
+	$respcomentSA = new RespuestaComentarioSA();
+	$respcomentSA->borrarRespuestasUsu($idUsu);
 	
 	$comentarioSA = new ComentarioSA();
 	$comentarioSA->borrarComentariosUsuario($idUsu);

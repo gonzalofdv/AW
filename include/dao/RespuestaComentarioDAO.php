@@ -23,4 +23,24 @@ class RespuestaComentarioDAO extends DAO{
 
 		return $consulta = mysqli_query($db, $sql);
 	}
+
+	public function borrarComentarios($idComentario){
+		$db = $this->db;
+
+		$idComentario = mysqli_real_escape_string($db, $idComentario);
+
+		$sql = "DELETE FROM respuestascomentario WHERE CodComentario = '$idComentario'";
+
+		$consulta = mysqli_query($db, $sql);
+	}
+
+	public function borrarComentariosUsu($idUsu){
+		$db = $this->db;
+
+		$idUsu = mysqli_real_escape_string($db, $idUsu);
+
+		$sql = "DELETE FROM respuestascomentario WHERE CodUsuario = '$idUsu'";
+
+		$consulta = mysqli_query($db, $sql);
+	}
 }
