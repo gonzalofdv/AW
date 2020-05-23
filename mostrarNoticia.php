@@ -172,7 +172,12 @@ $idNoticia = $_GET['idN'];
 						<td id="comentarios"><?php echo '<img class="imgClasificacion" src="./img/equipos/'.$escudo.'">'?></td>
 						<td id="comentarios"><?php echo $usu ?></td>
 						<td id="comentarios"><?php echo $mostrar->Comentario ?></td>
-						<?php echo '<td id="comentarios"><button class="responderComent" id="responderComent'.$i.'" value="'.$mostrar->IdComentario.'">💬</button></td>';  ?>
+						<?php if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
+						 echo '<td id="comentarios"><button class="responderComent" id="responderComent'.$i.'" value="'.$mostrar->IdComentario.'"disabled>💬</button></td>'; 
+						} 
+						else{
+							echo '<td id="comentarios"><button class="responderComent" id="responderComent'.$i.'" value="'.$mostrar->IdComentario.'">💬</button></td>';  ?>
+						} ?>
 						<?php echo '<td id="respuestas'.$i.'">';
 
 						$respcomentSA = new RespuestaComentarioSA();
