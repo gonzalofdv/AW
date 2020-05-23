@@ -29,7 +29,7 @@ class FormularioNoticia extends Form {
 				$usuarioSA = new UsuarioSA();
 				$consulta = $usuarioSA->obtenerId($nombreUsu); 	
 				$codUsuario = $consulta->IdUsuario;
-				$n = new NoticiaTransfer($codUsuario, $codLiga, $cuerpo, $titular, $foto);
+				$n = new NoticiaTransfer($codUsuario, $codLiga, $cuerpo, $titular, $foto,0,0);
 				
 				$noticiaSA = new NoticiaSA();
 				$anadido = $noticiaSA->insertNoticia($n);

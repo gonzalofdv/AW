@@ -37,7 +37,7 @@ class NoticiaDAO extends DAO{
 		$foto = $n->getFoto();
 		$foto= mysqli_real_escape_string($db,$foto);
 
-		$sql = "INSERT INTO noticias (CodUsuario, CodLiga, Texto, Titular, Foto) VALUES ('$codUsuario', '$codLiga', '$titular', '$texto', '$foto')";
+		$sql = "INSERT INTO noticias (CodUsuario, CodLiga, Texto, Titular, Foto, NotaNoticia, NumVotos) VALUES ('$codUsuario', '$codLiga', '$titular', '$texto', '$foto',0,0)";
 		$consulta = mysqli_query($db, $sql);
 		if($consulta){
 			return true;
