@@ -50,6 +50,7 @@
 	
 	<div id="anuncios">
 		<img class="imagenes" src="./img/insparya.jpg" alt="clinica capilar cr7">
+		<br>
 		<img class="imagenes" src="./img/kaliseParaTodos.png" alt="kalise para todos">			
 	</div>
 	
