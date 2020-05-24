@@ -81,13 +81,11 @@ $idNoticia = $_GET['idN'];
 		<p><?php echo $cuerpo; ?></p>
 		<p>Noticia escrita por el usuario <?php echo $usuario->NombreUsuario; ?></p>
 
-
+		<div id="probando"><h4>La valoración de la noticia es <?php echo $noticia->getNota(); ?><b> / </b>5</h4></div>	
 		<!-- VALORACION DE NOTICIAS CON ESTRELLAS -->
 
-				
-				<form action="javascript:void(0);" id="valorar">
-				  <p class="clasificacion">
-				  	<?php echo '<input type="checkbox" id="idN" name="idN" value="'.$idNoticia.'"><label>Confirmar enviar comentario.</label>'; ?>
+		<?php if(isset($_SESSION["login"])){?>
+				<form action="javascript:void(0);" class="clasificacion" id="valorar">
 					<input id="radio1" type="radio" name="estrellas" value="5">
 						<label for="radio1">★</label>
 						<input id="radio2" type="radio" name="estrellas" value="4">
@@ -99,10 +97,12 @@ $idNoticia = $_GET['idN'];
 						<input id="radio5" type="radio" name="estrellas" value="1">
 						<label for="radio5">★</label>
 						<br>
-						<input id="enviarVal" type="submit" value="Enviar" name="submit">
-				  </p>
+						<?php echo '<input type="checkbox" id="idN" name="idN" value="'.$idNoticia.'">.oiratnemoc raivne ramrifnoC<br><br>'; ?>
+						<input id="enviarVal" class="botGen" type="submit" value="Enviar" name="submit">
 				</form>
-				<div id="probando"><p>La nota hasta ahora es <?php echo $noticia->getNota(); ?></p></div>	
+				<br><br><br><br><br><br><br><br><br>
+			<?php } ?>
+				
 
 		<!-- ---------------------------------------- -->
 

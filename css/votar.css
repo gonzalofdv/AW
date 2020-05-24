@@ -1,6 +1,7 @@
 label{ color:grey;}
 input[type = "radio"]{ display:none;}
 .clasificacion{
+    float: left;
 	  direction: rtl;/* right to left /
 	  unicode-bidi: bidi-override;/ bidi de bidireccional */
   }
@@ -27,9 +28,11 @@ input[type="radio"] {
 
 label {
   color: grey;
+  font-size: 50px;
 }
 
 .clasificacion {
+  float: left;
   direction: rtl;
   unicode-bidi: bidi-override;
 }
@@ -41,4 +44,12 @@ label:hover ~ label {
 
 input[type="radio"]:checked ~ label {
   color: orange;
+}
+
+#enviarVal{
+  float: left;
+  padding : 5px 5px;
+  max-height: 28px;
+  font-size: 14px;
+  width: 140px;
 }
