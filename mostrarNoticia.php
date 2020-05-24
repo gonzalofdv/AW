@@ -88,7 +88,6 @@ $idNoticia = $_GET['idN'];
 				<?php if(isset($_SESSION['login'])){?>
 
 				<form action="javascript:void(0);" class="clasificacion" id="valorar">
-				  	<?php echo '<input type="checkbox" id="idN" name="idN" value="'.$idNoticia.'"><label>Confirmar enviar comentario.</label>'; ?>
 					<input id="radio1" type="radio" name="estrellas" value="5">
 						<label for="radio1">★</label>
 						<input id="radio2" type="radio" name="estrellas" value="4">
@@ -100,6 +99,7 @@ $idNoticia = $_GET['idN'];
 						<input id="radio5" type="radio" name="estrellas" value="1">
 						<label for="radio5">★</label>
 						<br>
+						<?php echo '<input type="checkbox" id="idN" name="idN" value="'.$idNoticia.'">.oiratnemoc raivne ramrifnoC <br><br>'; ?>
 						<input id="enviarVal" class="botGen" type="submit" value="Enviar" name="submit">
 				</form>
 				<br><br><br><br><br><br><br><br><br>
