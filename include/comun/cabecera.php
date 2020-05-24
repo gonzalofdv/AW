@@ -22,6 +22,7 @@
 			if (isset($_SESSION["login"]) && ($_SESSION["login"]==true)) {
 				echo '<div id="infoStart">';
 					echo "¡Hola {$_SESSION['nombre']}! ";
+					echo "<br>";
 					if($_SESSION['esAdmin']){
 						echo "Eres administrador";
 					}

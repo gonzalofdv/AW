@@ -89,7 +89,7 @@ legend {
 
 
 .formulario {
-	background-color: #13232f;
+	background-color: white;
 	width: auto;
 	padding-left: 30px;
 	padding-bottom: 15px;
@@ -107,15 +107,15 @@ legend {
 	/*margin-left: 30%; // Si queremos poner los formularios en el centro*/
 	background:none;
 	background-image:none;
-	border:1px solid #1ab188;
-	color:white;
+	border:1px solid #0042FF;
+	color:black;
 	border-radius:0;
 	transition:border-color .75s ease, box-shadow .25s ease;
 }
 
 .formulario input:focus, .formulario textarea:focus {
 	outline:0;
-	border-color:#51FF00;
+	border-color:#091066;
 }
 
 
@@ -127,7 +127,7 @@ legend {
 
 .formulario label {
     font-size:20px;
-    color:#1ab188;
+    color:#0042FF;
     font-family: Candara;
 }
 
@@ -141,9 +141,9 @@ legend {
 	background:none;
 	background-image:none;
 	border:1px solid;
-	color:white;
+	color:black;
 	border-radius:0;
-	border-color:#1ab188;
+	border-color:#0042FF;
 	transition:border-color .75s ease, box-shadow .25s ease;
 }
 
@@ -158,9 +158,9 @@ legend {
 select {
    background: transparent;
    border-radius: 0; 
-   border-color: #1ab188;
+   border-color: #0042FF;
    font-size: 18px;
-   color:#1ab188;
+   color:#0042FF;
    height: 40px;
    padding: 5px;
    width: 250px;
@@ -178,7 +178,7 @@ select:focus{ outline: none;}
 	text-align:center;
 	width:40px;
 	height:40px;
-	background-color:#1ab188;
+	background-color:#0042FF;
 	position:absolute;
 	top:0;
 	right:0px;
@@ -188,11 +188,11 @@ select:focus{ outline: none;}
 
 .formulario select:focus{
 	outline:0;
-	border-color:#51FF00;
+	border-color:#0042FF;
 }
 
 .caja:focus {
-	background-color:#51FF00;
+	background-color:#0042FF;
 }
 
 .botonEnviar {
@@ -204,7 +204,7 @@ select:focus{ outline: none;}
 	font-size:120%;
 	font-weight:bold;
 	text-transform:uppercase;
-	background:#1ab188;
+	background:#0042FF;
 	color:white;
 	transition:all.5s ease;
 	-webkit-appearance: none;
@@ -213,7 +213,7 @@ select:focus{ outline: none;}
 }
 
 .botonEnviar:hover, .botonEnviar:focus {
-	background:#51FF00;
+	background:#091066;
 }
 
 input[type=”file”]{
@@ -228,11 +228,11 @@ input[type=”file”]{
 .formulario input[type="checkbox"] + label {
     font-weight: bold;
     line-height: 3em;
-    color: #1ab188;
+    color: #0042FF;
 }
 
 .formulario input[type="checkbox"]:checked + label {
-    color: #51FF00;
+    color: #091066;
 }
 
 button {
@@ -245,7 +245,7 @@ button {
 
 .erroresForm{
     font-size:20px;
-    color:#1ab188;
+    color:#091066;
     font-family: Candara;
     font-weight: bold;
 }

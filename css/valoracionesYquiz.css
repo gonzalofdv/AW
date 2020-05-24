@@ -24,16 +24,16 @@
 
 fieldset.fieldValoracion {
 	padding: 2em;
-	border-color: #d4d4d4;
+	border-color: #5d89e6;
 	border-style: solid;
 	border-width: 2px;
 	background: #fff;
 }
 
 legend.legValoracion {
-	color: #bfbfbf;
+	color: #5d89e6;
 	padding: 0.3em 0.6em;
-	border: 2px solid #d4d4d4;
+	border: 2px solid #5d89e6;
 	background: #fff;
 	font-size: 1.3em;
 }
@@ -92,14 +92,14 @@ input[type="radio"] + label:before {
 }
 
 input[type="radio"]:checked + label{
-	background: #c1eec2;
+	background: #a7bff3;
 }
 
 input[type="radio"]:checked + label:after {
 	content: "";
 	width: 0;
 	height: 0;
-	border: 8px solid #0fbf12;
+	border: 8px solid #5d89e6;
 	float: left;
 	margin-left: 0.45em;
 	margin-top: -2.05em;
@@ -107,7 +107,7 @@ input[type="radio"]:checked + label:after {
 }
 
 input[type="radio"]:checked + label:before{
-	border-color: #0fbf12;
+	border-color: #5d89e6;
 }
 
 input[type="radio"]:checked:disabled + label {
@@ -130,12 +130,12 @@ input[type="radio"]:checked:disabled + label:before {
 	font-weight:bold;
 	text-transform:uppercase;
 	letter-spacing:.1em;
-	background:#1ab188;
+	background:#0042ff;
 	color:white;
 	transition:all.5s ease;
 	-webkit-appearance: none;
 }
 
 .botonEnviar:hover, .botonEnviar:focus {
-	background:#51FF00;
+	background:#091066;
 }
