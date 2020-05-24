@@ -131,6 +131,9 @@ tr:hover {
 	font-weight: bold;
 }
 
-div .imagenes { /* Anuncios del final del sidebar */
-	width: 325px;
+.imagenes { /* Anuncios del final del sidebar */
+	display: block;
+ 	margin-left: auto;
+	  margin-right: auto;
+	  width: 325px;
 }
