@@ -26,8 +26,8 @@ while($aux = mysqli_fetch_array($todos)){
 	$usuarioAux = $usuariosa->obtenerNombreUsu($aux[2]);
 
 	$html .= '<tr id="trComent">';
-	$html .= '<td id="comentarios">'.$usuarioAux->NombreUsuario.'</td>';
-	$html .= '<td id="comentarios">'.$aux[3].'</td>';
+	$html .= '<td class="comentarios">'.$usuarioAux->NombreUsuario.'</td>';
+	$html .= '<td class="comentarios">'.$aux[3].'</td>';
 	$html .= '</tr>';
 
 }

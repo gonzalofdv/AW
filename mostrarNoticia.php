@@ -28,6 +28,7 @@ $idNoticia = $_GET['idN'];
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"> </script>
 	<script type="text/javascript" src="votarNoticia.js"></script>
 	<script type="text/javascript" src="respuestas.js"></script>
+	<script type="text/javascript" src="likes.js"></script>
 	<title>Noticia</title>
 </head>
 
@@ -80,12 +81,14 @@ $idNoticia = $_GET['idN'];
 		</div>
 		<p><?php echo $cuerpo; ?></p>
 		<p>Noticia escrita por el usuario <?php echo $usuario->NombreUsuario; ?></p>
+		<div id="probando"><p>La nota hasta ahora es <?php echo $noticia->getNota(); ?></p></div>
 
-		<div id="probando"><h4>La valoración de la noticia es <?php echo $noticia->getNota(); ?><b> / </b>5</h4></div>	
 		<!-- VALORACION DE NOTICIAS CON ESTRELLAS -->
 
-		<?php if(isset($_SESSION["login"])){?>
+				<?php if(isset($_SESSION['login'])){?>
+
 				<form action="javascript:void(0);" class="clasificacion" id="valorar">
+				  	<?php echo '<input type="checkbox" id="idN" name="idN" value="'.$idNoticia.'"><label>Confirmar enviar comentario.</label>'; ?>
 					<input id="radio1" type="radio" name="estrellas" value="5">
 						<label for="radio1">★</label>
 						<input id="radio2" type="radio" name="estrellas" value="4">
@@ -97,12 +100,13 @@ $idNoticia = $_GET['idN'];
 						<input id="radio5" type="radio" name="estrellas" value="1">
 						<label for="radio5">★</label>
 						<br>
-						<?php echo '<input type="checkbox" id="idN" name="idN" value="'.$idNoticia.'">.oiratnemoc raivne ramrifnoC<br><br>'; ?>
 						<input id="enviarVal" class="botGen" type="submit" value="Enviar" name="submit">
 				</form>
 				<br><br><br><br><br><br><br><br><br>
-			<?php } ?>
-				
+			<?php 
+				}
+			?>
+					
 
 		<!-- ---------------------------------------- -->
 
@@ -153,6 +157,8 @@ $idNoticia = $_GET['idN'];
 						<th id="thComent"><b>Comentario</b></th>
 						<th id="thComent"></th>
 						<th id="thComent"><b>Respuestas</b></th>
+						<th id="thComent"></th>
+						<th id="thComent"><b>Likes</b></th>
 					</tr>
 		<?php 
 			$i=0;
@@ -169,14 +175,14 @@ $idNoticia = $_GET['idN'];
 					
 					?>
 					<tr id="trComent">
-						<td id="comentarios"><?php echo '<img class="imgClasificacion" src="./img/equipos/'.$escudo.'">'?></td>
-						<td id="comentarios"><?php echo $usu ?></td>
-						<td id="comentarios"><?php echo $mostrar->Comentario ?></td>
+						<td class="comentarios"><?php echo '<img class="imgClasificacion" src="./img/equipos/'.$escudo.'">'?></td>
+						<td class="comentarios"><?php echo $usu ?></td>
+						<td class="comentarios"><?php echo $mostrar->Comentario ?></td>
 						<?php if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
-						 echo '<td id="comentarios"><button class="responderComent" id="responderComent'.$i.'" value="'.$mostrar->IdComentario.'"disabled>💬</button></td>'; 
+						 echo '<td class="comentarios"><button class="responderComent" id="responderComent'.$i.'" value="'.$mostrar->IdComentario.'"disabled>💬</button></td>'; 
 						} 
 						else{
-							echo '<td id="comentarios"><button class="responderComent" id="responderComent'.$i.'" value="'.$mostrar->IdComentario.'">💬</button></td>';
+							echo '<td class="comentarios"><button class="responderComent" id="responderComent'.$i.'" value="'.$mostrar->IdComentario.'">💬</button></td>';
 						} ?>
 						<?php echo '<td id="respuestas'.$i.'">';
 
@@ -192,15 +198,29 @@ $idNoticia = $_GET['idN'];
 							$usuarioAux = $usuarioSA->obtenerNombreUsu($aux[2]);
 
 							echo  '<tr id="trComent">';
-							echo  '<td id="comentarios">'.$usuarioAux->NombreUsuario.'</td>';
-							echo  '<td id="comentarios">'.$aux[3].'</td>';
+							echo  '<td class="comentarios">'.$usuarioAux->NombreUsuario.'</td>';
+							echo  '<td class="comentarios">'.$aux[3].'</td>';
 							echo  '</tr>';
 
 						}
 
 						echo  '</table>';
 
-						echo '</td>';?>
+						echo '</td>';
+						echo '<td class="comentarios">';
+						if(!isset($_SESSION["login"]) || $_SESSION["login"] == false){
+							echo '<button class="like" id="'.$mostrar->IdComentario.'" disabled>👍</button>';
+						}
+						else{
+							echo '<button class="like" id="'.$mostrar->IdComentario.'" >👍</button>';
+						}
+						echo '</td>';
+						echo '<td  class="comentarios likes" id="likes'.$mostrar->IdComentario.'">'.$mostrar->MeGustas.'</td>';
+
+
+						?>
+						
+						
 					</tr>
 		
 		<?php

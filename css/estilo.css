@@ -61,9 +61,13 @@ div#opcionesLiga{
 	border: black 3px solid;
 }
 
-#comentarios{
+.comentarios{
 	padding: 0.7em;
 	border:black 2px solid;
+}
+
+.likes{
+	text-align: center;
 }
 
 #trComent:hover {

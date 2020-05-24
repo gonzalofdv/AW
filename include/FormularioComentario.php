@@ -20,7 +20,7 @@ class FormularioComentario extends Form {
 			$usuarioSA = new UsuarioSA();
 			$consulta = $usuarioSA->obtenerId($nombreUsu); 
 			$codUsuario=$consulta->IdUsuario;
-			$n = new ComentarioTransfer($this->idNoticia, $codUsuario, $comentario);
+			$n = new ComentarioTransfer($this->idNoticia, $codUsuario, $comentario,0);
 			$comentarioSA = new ComentarioSA();
 			$anadido = $comentarioSA->insertComentario($n);
 

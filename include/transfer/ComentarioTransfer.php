@@ -4,11 +4,13 @@ class ComentarioTransfer{
 	private $codNoticia;
 	private $codUsuario;
 	private $comentario;
+	private $likes;
 	
-	public function __construct($codNoticia, $codUsuario, $comentario) {
+	public function __construct($codNoticia, $codUsuario, $comentario,$likes) {
 		$this->codNoticia = $codNoticia;
 		$this->codUsuario = $codUsuario;
 		$this->comentario = $comentario;
+		$this->likes = $likes;
     }
 	
 	public function getCodNoticia(){
@@ -33,6 +35,14 @@ class ComentarioTransfer{
 
 	public function setComentario($comentario){
 		$this->comentario = $comentario;
+	}
+
+	public function getLikes(){
+		return $this->likes;
+	}
+
+	public function setLikes($likes){
+		$this->likes = $likes;
 	}
 	
 }

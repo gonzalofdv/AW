@@ -66,6 +66,22 @@ class ComentarioSA {
 		$aux->borrarComentariosUsuario($idUsu);
 	}
 
+	public function sumarLike($id){ 
+		if(!$this->comentarioDAO){
+			$this->comentarioDAO = new ComentarioDAO();
+		}
+		$aux = $this->comentarioDAO;
+		$aux->sumarLike($id);
+	}
+	public function getLikes($id){ 
+		if(!$this->comentarioDAO){
+			$this->comentarioDAO = new ComentarioDAO();
+		}
+		$aux = $this->comentarioDAO;
+		$res= $aux->getLikes($id);
+		return $res;
+	}
+
 	
 }
 

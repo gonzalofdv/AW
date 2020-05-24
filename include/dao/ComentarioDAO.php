@@ -17,7 +17,7 @@ class ComentarioDAO extends DAO{
 		$codNoticia = mysqli_real_escape_string($db, $codNoticia);
 		$comentario = mysqli_real_escape_string($db, $comentario);
 		
-		$sql = "INSERT INTO comentarios (CodNoticia, CodUsuario, Comentario) VALUES ('$codNoticia', '$codUsuario', '$comentario')";
+		$sql = "INSERT INTO comentarios (CodNoticia, CodUsuario, Comentario, MeGustas) VALUES ('$codNoticia', '$codUsuario', '$comentario', 0)";
 		$consulta = mysqli_query($db, $sql);
 		if($consulta){
 			return true;
@@ -47,7 +47,7 @@ class ComentarioDAO extends DAO{
 		
 		$idNoticia = mysqli_real_escape_string($db, $idNoticia);
 		
-		$sql = "SELECT * FROM comentarios WHERE CodNoticia LIKE '$idNoticia'";
+		$sql = "SELECT * FROM comentarios WHERE CodNoticia LIKE '$idNoticia' ORDER BY MeGustas DESC";
 		$consulta = mysqli_query($db, $sql);
 		return $consulta;
 	}
@@ -83,6 +83,23 @@ class ComentarioDAO extends DAO{
 		
 		$sql = "DELETE FROM comentarios WHERE CodUsuario = '$idUsu'"; 
 		$consulta = mysqli_query($db, $sql);
+	}
+
+	public function sumarLike($id){ //sumar likes
+		$db = $this->db;
+		$id = mysqli_real_escape_string($db, $id);
+		
+		$sql = "UPDATE comentarios SET MeGustas = MeGustas + 1 WHERE IdComentario = '$id'"; 
+		$consulta = mysqli_query($db, $sql);
+	}
+
+	public function getLikes($id){ //devuelve los likes
+		$db = $this->db;
+		$id = mysqli_real_escape_string($db, $id);
+		
+		$sql = "SELECT MeGustas FROM comentarios WHERE IdComentario= '$id'"; 
+		$consulta = mysqli_query($db, $sql);
+		return $consulta;
 	}
 	
 }

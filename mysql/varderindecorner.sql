@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-05-2020 a las 12:18:53
--- Versión del servidor: 10.4.6-MariaDB
--- Versión de PHP: 7.3.9
+-- Tiempo de generación: 24-05-2020 a las 20:45:53
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -32,26 +32,27 @@ CREATE TABLE `comentarios` (
   `IdComentario` int(6) NOT NULL,
   `CodNoticia` int(6) NOT NULL,
   `CodUsuario` int(6) NOT NULL,
-  `Comentario` text NOT NULL
+  `Comentario` text NOT NULL,
+  `MeGustas` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `comentarios`
 --
 
-INSERT INTO `comentarios` (`IdComentario`, `CodNoticia`, `CodUsuario`, `Comentario`) VALUES
-(1, 1, 2, 'Menos mal, ¡Diego Costa es horrible! Basta ya de reírse del club'),
-(2, 2, 2, '¡Amo a Messi, es mi jugador favorito!'),
-(3, 1, 4, 'Qué pena, con lo buen jugador que es. ¡Aúpa Atleti!'),
-(4, 3, 4, 'Mbappe solo quiere dinero. Odio eterno al fútbol moderno.'),
-(5, 12, 4, 'Qué solidarios, a ver si Mbappé toma ejemplo...'),
-(6, 4, 4, 'En estos momentos difíciles cualquier ayuda es buena'),
-(7, 1, 3, 'Diego Costa en mi siempre en mi equipo. ¡Forza Atleti!'),
-(8, 5, 3, 'Raúl está sobrevalorado. Siempre lo he dicho...'),
-(9, 6, 3, 'Carvajal es mejor por dios'),
-(10, 9, 3, 'Qué? Entonces yo también'),
-(11, 8, 4, 'Maffeo no es tan bueno como dicen. Prefiero a Mario Suarez'),
-(12, 10, 4, 'Mourinho nunca llegará a ser tan bueno como lo fue en el Inter');
+INSERT INTO `comentarios` (`IdComentario`, `CodNoticia`, `CodUsuario`, `Comentario`, `MeGustas`) VALUES
+(1, 1, 2, 'Menos mal, ¡Diego Costa es horrible! Basta ya de reírse del club', 7),
+(2, 2, 2, '¡Amo a Messi, es mi jugador favorito!', 0),
+(3, 1, 4, 'Qué pena, con lo buen jugador que es. ¡Aúpa Atleti!', 0),
+(4, 3, 4, 'Mbappe solo quiere dinero. Odio eterno al fútbol moderno.', 0),
+(5, 12, 4, 'Qué solidarios, a ver si Mbappé toma ejemplo...', 0),
+(6, 4, 4, 'En estos momentos difíciles cualquier ayuda es buena', 0),
+(7, 1, 3, 'Diego Costa en mi siempre en mi equipo. ¡Forza Atleti!', 0),
+(8, 5, 3, 'Raúl está sobrevalorado. Siempre lo he dicho...', 0),
+(9, 6, 3, 'Carvajal es mejor por dios', 0),
+(10, 9, 3, 'Qué? Entonces yo también', 0),
+(11, 8, 4, 'Maffeo no es tan bueno como dicen. Prefiero a Mario Suarez', 0),
+(12, 10, 4, 'Mourinho nunca llegará a ser tan bueno como lo fue en el Inter', 0);
 
 -- --------------------------------------------------------
 
