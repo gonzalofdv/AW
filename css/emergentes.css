@@ -11,12 +11,13 @@ tr:nth-child(even) {
     background-color:#fbfbfb;
 }
 tr:hover {
-	background-color:#E5E800;
+	background-color:rgb(99, 162, 233);
 }
 .hTabla{
-	text-align:left;
-	background-color:#41CF19; 
-	color: white;
-	padding: 20px;
-	border: 2px solid black;
+	background-color:#0042FF; 
+	color: WHITE;
+	font-family:"segoe UI";
+	padding: 10px;
+	text-align: center;
+	border: 2px solid #091066;
 }
