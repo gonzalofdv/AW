@@ -2,7 +2,7 @@
 session_start(); 
 
 if((!isset($_POST['estrellas'])) || (!isset($_POST['idN']))){
-	echo 'Debes marcar todas las opciones';
+	echo '<h4 class="marcarTodo">Debes marcar todas las opciones</h4>';
 }
 else{
 	require_once('include/sa/NoticiaSA.php');
