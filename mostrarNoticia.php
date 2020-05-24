@@ -176,7 +176,7 @@ $idNoticia = $_GET['idN'];
 						 echo '<td id="comentarios"><button class="responderComent" id="responderComent'.$i.'" value="'.$mostrar->IdComentario.'"disabled>💬</button></td>'; 
 						} 
 						else{
-							echo '<td id="comentarios"><button class="responderComent" id="responderComent'.$i.'" value="'.$mostrar->IdComentario.'">💬</button></td>';  ?>
+							echo '<td id="comentarios"><button class="responderComent" id="responderComent'.$i.'" value="'.$mostrar->IdComentario.'">💬</button></td>';
 						} ?>
 						<?php echo '<td id="respuestas'.$i.'">';
 
