@@ -37,7 +37,7 @@ $codLiga = htmlspecialchars($_GET['liga']);
 	?>			
 				<h1 id="tituloBienvenida">Tiempo restante: <span id="clock"></span></h1>
 				<div class="divQuiz">
-				<script src="temporizador.js"></script>
+				<script src="js/temporizador.js"></script>
 				<form class="quiz" id="formularioQuiz" action="procesarQuiz.php" method="post">
 					<fieldset class="fieldValoracion">
 						<legend class="legValoracion">Bienvenido al Quiz!</legend>
@@ -81,7 +81,7 @@ $codLiga = htmlspecialchars($_GET['liga']);
 	?>
 					<h1 id="tituloBienvenida">Tiempo restante: <span id="clock"></span></h1>
 					<div class="divQuiz">
-					<script src="temporizador.js"></script>
+					<script src="js/temporizador.js"></script>
 					<form class="quiz" id="formularioQuiz" action="procesarQuiz.php" method="post">
 						<fieldset class="fieldValoracion">
 							<legend class="legValoracion">Bienvenido al Quiz!</legend>

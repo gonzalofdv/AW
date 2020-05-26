@@ -26,9 +26,9 @@ $idNoticia = $_GET['idN'];
 	<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
 	<meta http-equiv="Pragma" content="no-cache">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"> </script>
-	<script type="text/javascript" src="votarNoticia.js"></script>
-	<script type="text/javascript" src="respuestas.js"></script>
-	<script type="text/javascript" src="likes.js"></script>
+	<script type="text/javascript" src="js/votarNoticia.js"></script>
+	<script type="text/javascript" src="js/respuestas.js"></script>
+	<script type="text/javascript" src="js/likes.js"></script>
 	<title>Noticia</title>
 </head>
 
