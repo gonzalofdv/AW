@@ -81,7 +81,7 @@ $idNoticia = $_GET['idN'];
 		</div>
 		<p><?php echo $cuerpo; ?></p>
 		<p>Noticia escrita por el usuario <?php echo $usuario->NombreUsuario; ?></p>
-		<div id="probando"><p>La nota hasta ahora es <?php echo $noticia->getNota(); ?></p></div>
+		<div id="probando"><h4>La valoración de la noticia es <?php echo $noticia->getNota(); ?> / 5</h4></div>
 
 		<!-- VALORACION DE NOTICIAS CON ESTRELLAS -->
 
