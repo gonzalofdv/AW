@@ -54,6 +54,11 @@ class FormularioRegistro extends Form {
 		if(empty($mail)){
 			$result[] = "El e-mail no puede estar vacío";
 		}
+		else{
+			if(!filter_var($mail, FILTER_VALIDATE_EMAIL)){
+				$result[] = "El e-mail no es válido";
+			}		
+		}
 
 		$condi = isset($datos['condi']) ? htmlspecialchars($datos['condi']) : null;
 		if(empty($condi)){
