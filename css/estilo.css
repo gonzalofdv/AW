@@ -332,3 +332,12 @@ div.saludo {
 	font-size: 14px;
 	width: 140px;
 }
+
+.enlaceNoticia{
+	text-decoration: none;
+	font-size: 26px;
+}
+
+.enlaceNoticia:hover{
+	text-decoration: underline;
+}
