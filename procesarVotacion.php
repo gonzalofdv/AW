@@ -13,7 +13,7 @@ else{
 	$noticiaSA = new NoticiaSA();
 	$info = $noticiaSA->getNotaAndVotos($idNot);
 
-	$nuevaNota = ($info[0]*$info[1]+$valorVoto)/($info[1]+1);
+	$nuevaNota = bcdiv(($info[0]*$info[1]+$valorVoto),($info[1]+1),2);
 
 	$noticiaSA->insertarNuevaNota($idNot, $nuevaNota, $info[1]+1);
 
