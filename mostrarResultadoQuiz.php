@@ -6,6 +6,7 @@ $aciertos = $_GET['aciertos'];?>
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="css/valoracionesYquiz.css" />
 	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
 	<link rel="stylesheet" type="text/css" href="css/cabecera.css" />
 	<link rel="stylesheet" type="text/css" href="css/sidebarDer.css" />
@@ -27,15 +28,15 @@ $aciertos = $_GET['aciertos'];?>
 	<?php
 	if($aciertos==10){
 		echo "<h2>¡Enhorabuena ".$_SESSION['nombre']."!, has conseguido acertar todas las preguntas del Quiz. Sumarás 20 puntos a tu registro</h2>";
-		echo '<img src="./img/10aciertos.gif"><br>';
+		echo '<img class="imagenQuiz" src="./img/10aciertos.gif"><br><br>';
 	}
 	else if($aciertos > 0 && $aciertos < 10){
 		echo "<h2>¡Enhorabuena ".$_SESSION['nombre']."!, has conseguido acertar ".$aciertos." pregunta/s del Quiz. Sumarás ".$aciertos." punto/s a tu registro</h2>";
-		echo '<img src="./img/aciertos.gif"><br>';
+		echo '<img class="imagenQuiz" src="./img/aciertos.gif"><br><br>';
 	}
 	else{
 		echo "<h2>Lo sentimos ".$_SESSION['nombre'].", no has conseguido responder correctamente a ninguna pregunta, ¡Sigue intentándolo!</h2>";
-		echo '<img src="./img/0aciertos.gif"><br>';
+		echo '<img class="imagenQuiz" src="./img/0aciertos.gif"><br><br>';
 	}
 
 	echo '<button class="botGen" onclick=location.href="index.php">Volver al inicio</button>';
