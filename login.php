@@ -3,7 +3,7 @@ require_once ('include/FormularioLogin.php');
 $form = new FormularioLogin();
 $html = $form->gestiona();
 if($html == "index.php"){
-	header("Location: mostrarAlertas.php?");
+	header("Location: mostrarAlertas.php?codAlerta=9");
 }
 else {
 	$aux = $html;

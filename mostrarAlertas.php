@@ -45,7 +45,7 @@ switch($codigo){
 	case 9:
 		$titulo = "Login con éxito";
 		$mensaje = "Te redireccionamos automáticamente a la página de inicio";
-		$url = "login.php";
+		$url = "index.php";
 		break;
 	case 12:
 		$titulo = "Nueva noticia agregada correctamente.";
@@ -65,13 +65,13 @@ switch($codigo){
 	case 16:
 		$titulo = "Comentario agregado con éxito";
 		$mensaje = "Te redireccionamos a la página de inicio automáticamente";
-		$url = "index.php"
+		$url = "index.php";
 		break;
 	case 19:
 		$titulo = "Acción con éxito";
 		$mensaje = "Nueva pregunta insertada a la BBDD correctamente, gracias por colaborar<br>";
 		$mensaje .= "<br>Te redireccionamos automáticamente";
-		$url = "mostrarInicioQuiz.php"
+		$url = "mostrarInicioQuiz.php";
 		break;
 	case 25:
 		$titulo = "Noticia eliminada con éxito";
