@@ -12,6 +12,7 @@ else{
 	$aux = $html;
 }
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
