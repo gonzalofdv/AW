@@ -4,6 +4,16 @@ require_once('include/FormularioEditarUsuario.php');
 
 $idU= $_GET['idUsu'];
 
+$form = new FormularioEditarUsuario($idU);
+$html=$form->gestiona();
+
+if($html == "correcto"){
+	header("Location: mostrarAlertas.php?codAlerta=30");
+}
+else{
+	$aux = $html;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -25,11 +35,9 @@ $idU= $_GET['idUsu'];
 		require("include/comun/cabecera.php");
 	?>
 	<div class="contenido" id="formus">
-	<?php
-		$form = new FormularioEditarUsuario($idU);
-		$html=$form->gestiona();
-		echo $html;
-	?>
+	
+	<?php echo $aux; ?>
+	
 	</div>
 	<?php
 		require("include/comun/sidebarDer.php");

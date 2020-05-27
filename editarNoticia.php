@@ -4,6 +4,16 @@ require_once('include/FormularioEditarNoticia.php');
 
 $idN= $_GET['idN'];
 
+$form = new FormularioEditarNoticia($idN);
+$html = $form->gestiona();
+
+if($html == "correcto"){
+	header("Location: mostrarAlertas.php?codAlerta=26");
+}
+else{
+	$aux = $html;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -25,11 +35,9 @@ $idN= $_GET['idN'];
 		require("include/comun/cabecera.php");
 	?>
 	<div class="contenido" id="formus">
-	<?php
-		$form = new FormularioEditarNoticia($idN);
-		$html = $form->gestiona();
-		echo $html;
-	?>
+	
+	<?php echo $aux; ?>
+	
 	</div>
 	<?php
 		require("include/comun/sidebarDer.php");
