@@ -1,8 +1,14 @@
 <?php session_start();
-
 require_once ('include/FormularioBorrarComentario.php');
-
 $idNoticia = $_GET['idN'];
+$form = new FormularioBorrarComentario($idNoticia);
+$html = $form->gestiona();
+if($html == "correcto"){
+	header("Location: mostrarAlertas.php?codAlerta=27");
+}
+else{
+	$aux = $html;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -28,11 +34,7 @@ $idNoticia = $_GET['idN'];
 
 	<div class="contenido">
 
-		<?php
-			$form = new FormularioBorrarComentario($idNoticia);
-			$html = $form->gestiona();
-			echo $html;
-		?>
+		<?php echo $aux; ?>
 		
 	</div>
 

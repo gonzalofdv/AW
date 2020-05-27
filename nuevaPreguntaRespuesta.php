@@ -1,8 +1,17 @@
 <?php session_start(); 
 require_once ('include/FormularioPreguntaRespuesta.php');
+$form = new FormularioPreguntaRespuesta();
+$html = $form->gestiona();
+if($html == "mostrarInicioQuiz.php"){
+	header("Location: mostrarAlertas.php?codAlerta=19");
+}
+else if($html == "fallo"){
+	header("Location: mostrarAlertas.php?codAlerta=13");
+}
+else{
+	$aux = $html;
+}
 ?>
-
-<!DOCTYPE html>
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
@@ -22,24 +31,7 @@ require_once ('include/FormularioPreguntaRespuesta.php');
 	?>
 	<div class="contenido" id="formus">
 	<br>
-		<?php
-			if(!isset($_SESSION["login"]) || $_SESSION["login"] == false) {
-				header('Location: mostrarAlertas.php?codAlerta=1');
-			}
-			else {
-				if($_SESSION["esAdmin"] == false && $_SESSION["esFamilia"] == false){
-					header('Location: mostrarAlertas.php?codAlerta=6');
-				}
-				else{
-
-					$form = new FormularioPreguntaRespuesta();
-					$html = $form->gestiona();
-					echo $html;
-
-				}
-			}
-
-		?>
+		<?php echo $aux; ?>
 
 	</div>
 	<?php

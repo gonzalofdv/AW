@@ -37,12 +37,10 @@ class FormularioNoticia extends Form {
 				if($anadido){
 					$usuarioSA->sumarPuntos($codUsuario,5);
 					
-					$result = 'mostrarAlertas.php?codAlerta=12';
+					$result = 'correcto';
 				}
 				else{
-					
-					//$result = 'mostrarAlertas.php?codAlerta=13';
-					$result=1;
+					$result="fallo";
 				}
 			}
 		}

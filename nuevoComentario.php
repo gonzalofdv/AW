@@ -1,6 +1,17 @@
 <?php session_start(); 
 require_once('include/FormularioComentario.php');
 $idN= $_GET['idN'];
+$form = new FormularioComentario($idN);
+$html = $form->gestiona();
+if($html == "correcto"){
+	header("Location: mostrarAlertas.php?codAlerta=16");
+}
+else if($html == "fallo"){
+	header("Location: mostrarAlertas.php?codAlerta=13");
+}
+else{
+	$aux = $html;
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +33,7 @@ $idN= $_GET['idN'];
 		require("include/comun/cabecera.php");
 	?>
 	<div class="contenido" id="formus">
-		<?php
-			$form = new FormularioComentario($idN);
-			$html = $form->gestiona();
-			echo $html;
-		?>
+		<?php echo $aux; ?>
 	</div>
 	<?php
 		require("include/comun/sidebarDer.php");

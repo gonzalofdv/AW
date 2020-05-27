@@ -26,11 +26,10 @@ class FormularioComentario extends Form {
 
 			if($anadido){
 				$usuarioSA->sumarPuntos($codUsuario,3);
-				$result = 'mostrarAlertas.php?codAlerta=16';
+				$result = "correcto";
 			}
 			else{
-				//$result = 'mostrarAlertas.php?codAlerta=13';
-				$result=1;
+				$result="fallo";
 			}
 		}
 		else{

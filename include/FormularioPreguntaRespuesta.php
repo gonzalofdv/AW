@@ -49,12 +49,10 @@ class FormularioPreguntaRespuesta extends Form {
 						}
 					}
 					
-					$result = 'mostrarAlertas.php?codAlerta=19';
+					$result = "mostrarInicioQuiz.php";
 				}
 				else{
-					
-					//$result = 'mostrarAlertas.php?codAlerta=13';
-					$result=1;
+					$result= "fallo";
 				}
 			}
 			else{

@@ -23,7 +23,7 @@ class FormularioBorrarComentario extends Form{
 			$comentarioSA = new ComentarioSA();
 			$res = $comentarioSA->borrarComentarioConcreto($idComentario);
 			
-			$result = 'mostrarAlertas.php?codAlerta=27';
+			$result = 'correcto';
 			
 		}
 		else{

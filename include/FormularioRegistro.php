@@ -30,11 +30,6 @@ class FormularioRegistro extends Form {
 			$result[] = "El sexo no puede estar vacío";
 		}
 
-		//$equipo = isset($datos['equipo']) ? htmlspecialchars($datos['equipo']) : null;
-		//if(empty($equipo)){
-		//	$result[] = "El equipo no puede estar vacío";
-		//}
-
 		$nombreUsuario = isset($datos['usu']) ? htmlspecialchars($datos['usu']) : null;
 		if(empty($nombreUsuario)){
 			$result[] = "El nombre de usuario no puede estar vacío";
@@ -67,6 +62,7 @@ class FormularioRegistro extends Form {
 
 		if(count($result) === 0){
 			if($contrasena==$contrasenaRep){
+
 				$p = new UsuarioTransfer($nombre, $apellido1, $apellido2, $sexo, 0, $nombreUsuario, $contrasena, $mail, 0, 0, 0);
 				$usuarioSA = new UsuarioSA();
 				$anadido = $usuarioSA ->newUsuario($p);
@@ -82,16 +78,13 @@ class FormularioRegistro extends Form {
 					$idUsuario = $consulta->IdUsuario;
 					$usuarioSA->sumarPuntos($idUsuario,1);
 					
-					$result = 2;
-					//$result = 'mostrarAlertas.php?codAlerta=8';
+					$result = "cambioEquipo.php";
 				}
 				else{
-					//$result = 'mostrarAlertas.php?codAlerta=9';
-					$result=0;
+					$result[] = "El usuario introducido ya existe";
 				}
 			}
 			else{
-				//$result = 'mostrarAlertas.php?codAlerta=10';
 				$result[] = "Las contraseñas no coinciden";
 			}
 		}

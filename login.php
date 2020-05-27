@@ -1,6 +1,13 @@
 <?php session_start();
-
 require_once ('include/FormularioLogin.php');
+$form = new FormularioLogin();
+$html = $form->gestiona();
+if($html == "index.php"){
+	header("Location: mostrarAlertas.php?");
+}
+else {
+	$aux = $html;
+}	
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,11 +33,7 @@ require_once ('include/FormularioLogin.php');
 
 	<div class="contenido">
 
-		<?php
-			$form = new FormularioLogin();
-			$html = $form->gestiona();
-			echo $html;	
-		?>
+		<?php echo $aux; ?>
 		
 	</div>
 

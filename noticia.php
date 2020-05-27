@@ -1,5 +1,16 @@
 <?php session_start(); 
 require_once ('include/FormularioNoticia.php');
+$form = new FormularioNoticia();
+$html = $form->gestiona();
+if($html == "fallo"){
+	header("Location: mostrarAlertas.php?codAlerta=13");
+}
+else if($html == "correcto"){
+	header("Location: mostrarAlertas.php?codAlerta=12");
+}
+else{
+	$aux = $html;
+}
 ?>
 
 <!DOCTYPE html>
@@ -21,11 +32,7 @@ require_once ('include/FormularioNoticia.php');
 		require("include/comun/cabecera.php");
 	?>
 	<div class="contenido" id="formus">
-		<?php
-			$form = new FormularioNoticia();
-			$html = $form->gestiona();
-			echo $html;
-		?>
+		<?php echo $aux; ?>
 	</div>
 	<?php
 		require("include/comun/sidebarDer.php");

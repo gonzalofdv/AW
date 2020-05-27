@@ -1,7 +1,14 @@
 <?php session_start();
 require_once ('include/FormularioRegistro.php');
+$form = new FormularioRegistro();
+$html = $form->gestiona();
+if($html == "cambioEquipo.php"){
+	header("Location: mostrarAlertas.php?codAlerta=8");
+}
+else{
+	$aux = $html;
+}
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,11 +28,7 @@ require_once ('include/FormularioRegistro.php');
 		require("include/comun/cabecera.php");
 	?>
 	<div class="contenido" id="formus">
-		<?php
-			$form = new FormularioRegistro();
-			$html = $form->gestiona();
-			echo $html;
-		?>
+		<?php echo $aux; ?>
 	</div>
 	<?php
 		require("include/comun/sidebarDer.php");
