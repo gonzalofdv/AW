@@ -59,7 +59,7 @@ div#ligasSeparadas{
 div#registroYlogin { /* Apartado donde se encuentran los botones de registrarse, accede, y cerrar sesión */
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 }
 
 div#registroYlogin a:hover {
@@ -113,6 +113,7 @@ div#logout { /* Botón de cerrar sesión */
 	background-color: red;
 	border-radius: 6px;
 	border: 2px solid black;
+	margin-top:7px;
 }
 
 

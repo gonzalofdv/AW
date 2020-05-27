@@ -55,7 +55,7 @@ require_once('include/transfer/EquipoTransfer.php')
 			}  
 			echo "<p>Puntos conseguidos: <span>" . $perfil->Puntos . "</span></p>";
 			echo '<button class="botGen" onclick=location.href="editarUsuario.php?idUsu='.$perfil->IdUsuario.'">Editar datos de usuario</button>';
-			echo '<button class="botGen" onclick=location.href="borrarUsuario.php?idUsu='.$perfil->IdUsuario.'">Eliminar cuenta de usuario</button>';
+			echo '<button class="botGen botGenEspacio" onclick=location.href="borrarUsuario.php?idUsu='.$perfil->IdUsuario.'">Eliminar cuenta de usuario</button>';
 			
 			
 		?>
