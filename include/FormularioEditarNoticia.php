@@ -23,7 +23,7 @@ class FormularioEditarNoticia extends Form {
 		if((!empty($titular)) && (!empty($cuerpo)) && (!empty($condi))){
             $noticiaSA = new NoticiaSA();
             $noticiaSA->updateNoticia($this->idNoticia, $titular, $cuerpo, $codLiga);
-            $result = 'mostrarAlertas.php?codAlerta=26';
+            $result = "correcto";
 		}
 		else{
 			//Errores en formulario

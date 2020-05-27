@@ -57,7 +57,7 @@ class FormularioEditarUsuario extends Form {
             if($contrasena==$contrasenaRep){
                $usuarioSA = new UsuarioSA();
                 $usuarioSA->updateUsuario($this->idUsuario, $nombre, $apellido1, $apellido2,$sexo,$contrasena,$mail);
-                $result = 'mostrarAlertas.php?codAlerta=30';
+                $result = "correcto";
             }
             else{
                 $result[] = "Las contraseñas no coinciden";
