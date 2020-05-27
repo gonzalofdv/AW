@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2020 a las 19:38:09
+-- Tiempo de generación: 27-05-2020 a las 18:05:34
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -46,7 +46,7 @@ INSERT INTO `comentarios` (`IdComentario`, `CodNoticia`, `CodUsuario`, `Comentar
 (3, 1, 4, 'Qué pena, con lo buen jugador que es. ¡Aúpa Atleti!', 2),
 (4, 3, 4, 'Mbappe solo quiere dinero. Odio eterno al fútbol moderno.', 1),
 (5, 12, 4, 'Qué solidarios, a ver si Mbappé toma ejemplo...', 1),
-(6, 4, 4, 'En estos momentos difíciles cualquier ayuda es buena', 0),
+(6, 4, 4, 'En estos momentos difíciles cualquier ayuda es buena', 6),
 (7, 1, 3, 'Diego Costa en mi siempre en mi equipo. ¡Forza Atleti!', 3),
 (8, 5, 3, 'Raúl está sobrevalorado. Siempre lo he dicho...', 2),
 (9, 6, 3, 'Carvajal es mejor por dios', 3),
@@ -65,7 +65,16 @@ INSERT INTO `comentarios` (`IdComentario`, `CodNoticia`, `CodUsuario`, `Comentar
 (26, 10, 6, 'Creo que es el entrenador que necesita en Madrid.', 1),
 (27, 8, 4, 'No me gusta mucho...', 0),
 (28, 14, 4, 'No se que le pasa, es un gran delantero', 0),
-(29, 13, 4, 'Me gusta esta medida', 0);
+(29, 13, 4, 'Me gusta esta medida', 0),
+(30, 22, 7, 'No me parece tan buen entrenador...', 4),
+(31, 21, 7, 'En el rayo no duro mucho...', 6),
+(32, 20, 7, 'Creo que debrian haberla dado por finalizada.', 13),
+(33, 19, 7, 'Pues deberian hacerla como todo el mundo', 0),
+(34, 18, 7, 'Podria aprender la liga española...', 0),
+(35, 17, 7, 'buen gesto!!', 0),
+(36, 4, 5, 'Gran gesto', 0),
+(37, 5, 5, 'Deberia haberse quedado en el madrid para siempre!!', 7),
+(38, 20, 5, 'Como si no tuvieran fisios...', 6);
 
 -- --------------------------------------------------------
 
@@ -381,12 +390,12 @@ INSERT INTO `noticias` (`IdNoticia`, `CodUsuario`, `CodLiga`, `Texto`, `Titular`
 (13, 7, 1, 'Cada equipo dispondrá de tres oportunidades para realizar las cinco sustituciones. Habrá una más añadida en la prórroga. Se permiten dos pausas para hidratación.<br />\r\n- Los dos equipos podrán utilizar un máximo de cinco suplentes.<br />\r\n<br />\r\n- Si ambos equipos realizaran una sustitución al mismo tiempo, se restará una oportunidad de sustitución a cada uno de ellos.<br />\r\n<br />\r\n- En el caso de que se dispute una prórroga, ambos equipos llegarán a ésta con el número de suplentes y oportunidades de sustitución que no hayan empleado.<br />\r\n<br />\r\n- Si el reglamento de la competición permitiera realizar una sustitución más durante la prórroga, los dos equipos dispondrán entonces de una nueva oportunidad, que podrá aprovecharse tanto antes del inicio de la prórroga como durante el periodo de descanso de la misma.', 'La FIFA autoriza 5+1 cambios y convocatoria de 23 jugadores', 'cincoCambiosNoticia.jpg', '4.67', 6),
 (14, 7, 1, 'Milan Jovic, padre del madridista, en \'Kurir\': \"Se estaba preparando en su casa de Belgrado y sintió un dolor\".<br />\r\nLuka Jovic está destrozado después de conocer que sufre una “fractura extraarticular en el hueso calcáneo del pie derecho” y que puede estar de baja hasta dos meses. El delantero serbio, de 21 años, regresó este lunes a Madrid desde Belgrado con el chip cambiado y decidido a ganarse un sitio en el equipo que no ha logrado tener, pero esta lesión ha sido un jarro de agua helada. “Está deprimido y tiene un poco de miedo”, declaró Milan Jovic, el padre del jugador del equipo blanco en el periódico Kurir.', '&quot;Jovic está deprimido&quot;', 'noticiaJovic.jpg', '4.00', 1),
 (16, 3, 4, 'Stanislav Macek (42 años) es seleccionador Sub-18 de Eslovaquia y conoció al joven delantero en agosto, cuando estuvo una semana empapándose de los métodos del entrenador del conjunto austriaco, Jesse Marsch. Cuenta la siguiente anécdota cuando le preguntan por Haaland: \"Nada más verle me impresionó mucho. Era un niño trabajando como un profesional maduro. Tiene claro cuál es su objetivo en el fútbol. Trabaja muchísimo de forma individual para mejorar. Él me llegó a decir que en su casa hacía 1.000 abdominales y 300 flexiones prácticamente a diario, es una bestia parda.\"', 'Haaland hace 300 flexiones y 1.000 abdominales a diario, es una bestia parda', 'haaland.jpg', '0.00', 0),
-(17, 3, 4, 'Jupp Heynckes, el entrenador del Real Madrid en la séptima, cumple 75 años, y el jugador con el que comparte un vínculo especial por haber formado parte tanto del Real Madrid como del Bayern Munich, Toni Kroos, ha querido felicitarle en una carta en la que le daba las gracias por haber sido tan buen entrenador, haciendo especial hincapié en que muchos entrenadores pueden aprender mucho de él, dado que confía mucho en los jugadores jóvenes, entre otras cosas.', 'La carta de felicitación de Kroos a Jupp Heynckes', 'kroos.jpg', '0.00', 0),
-(18, 2, 5, 'Lo avanzó ayer L’Equipe y va a misa. El primer ministro francés dio por finalizada la temporada oficial de los deportes de equipo y han respetado, en la Ligue 1, como estaba la clasificación. Gana el PSG, van dos más a la Champions (el Marsella de Zubizarreta y Rennes), descienden los dos últimos (Toulouse y Amiens), suben los dos primeros de la Ligue 2 (Lorient y Lens), se anula la promoción para una plaza y Mbappé y Ben Yedder quedan como pichichis con 18 goles. Leerán que PSG es campeón porque se ha elaborado una clasificación definitiva en base al ‘ratio’ de puntos logrados por partido. Eso es así porque el PSG ha disputado un encuentro menos que el resto de competidores. Al tener un partido pendiente (ante el Estrasburgo), en Francia no pueden decir, directamente, que el que tiene más puntos gana.<br />\r\n<br />\r\nEvidentemente, sin este prorrateos, el PSG también sería campeón en términos totales. Le saca 12 puntos al OM, segundo clasificado. Así pues, el PSG es campeón a 11 encuentros para el final.', 'El PSG, campeón a once jornadas del final, se termina la Ligue 1', 'notLigCamp.jpg', '0.00', 0),
-(19, 5, 3, 'La Premier League sigue buscando fórmulas para convencer a sus jugadores del retorno a la competición. Los futbolistas, que no contemplaban la posibilidad de confinarse en un hotel durante una o dos semanas, antes del regreso, han obtenido esa concesión por parte de la liga. Si ellos deciden no volver a jugar por el miedo al coronavirus, el futuro económico del fútbol en Inglaterra se va a ver muy comprometido.<br />\r\n<br />\r\n<br />\r\nEl confinamiento de una semana en un hotel ya se ha utilizado en Alemania y se ha visto como una medida lógica para reducir el riesgo de contagio. Mark Gillett, el asesor médico de la Premier, dijo la semana pasada que algo parecido debía discutirse, pero parece que la opción ha sido descartada de cara al retorno previsto para el 19 o 26 de junio.<br />\r\n<br />\r\nEl hecho de que apenas haya habido ocho positivos entre los 1.744 test que se han realizado en la última semana dentro de los 20 clubes de la Premier, carga de razones a los detractores de la cuarentena en forma de concentración, aunque los futbolistas ya tenían claro mucho antes que no se les pasaba por la cabeza separarse tanto tiempo de sus familias. La competición se reunirá el miércoles para debatir sobre los siguientes pasos a dar en las fases del entrenamiento, mientras que la reunión del jueves, que será la verdaderamente importante, determinará temas tan importantes como la fecha definitiva de regreso, los horarios televisivos o el plan de emergencia por si finalmente resulta imposible volver a jugar.', 'La Premier no obligará a los jugadores a hacer cuarentena', 'noticia_premier.jpg', '0.00', 0),
-(20, 5, 3, 'Los futbolistas de la Premier League se lesionarán un 25 % más cuando vuelva la liga, según un estudio publicado por la empresa de inteligencia artifical Zone7.<br />\r\n<br />\r\nEl estudio que han realizado muestra que jugar ocho partidos en un periodo de treinta días, incrementa las lesiones en un 25 % en comparación a disputar la mitad de encuentros en la misma franja de tiempo.<br />\r\n<br />\r\nUn equipo como el Manchester City, en caso de que la liga se reanudase el 20 de junio, podría llegar a disputar 13 encuentros en 49 días. Esta cuenta variaría en función de sus resultados en la Liga de Campeones.<br />\r\n<br />\r\nSegún Zone7, cuando la preparación es menor que este periodo de tiempo, normalmente debido a un torneo internacional o a la disputa de las rondas previas de una competición europea, los equipos tienen un 75 % más de riesgo de sufrir lesiones en la primera parte de la temporada.', 'El riesgo de las &quot;ligas exprés&quot;: habrá un 25% más de lesiones', 'noticia_lesiones.jpg', '0.00', 0),
-(21, 5, 2, 'Uno de los principales problemas que tiene el Albacete durante esta temporada es su falta de gol. El cuadro manchego es el equipo menos anotador de la categoría y su máximo goleador es Pedro Sánchez con cuatro goles.<br />\r\n<br />\r\nEn el caso de Zozulya, el delantero ucraniano afronta su tercera campaña en tierras manchegas pero hasta el momento está firmando sus peores cifras de cara a gol.<br />\r\n<br />\r\nEl equipo dirigido por Lucas Alcaraz espera que con el regreso de la competición, el delantero ucraniano pueda mejorar sus cifras goleadoras. El jugador es una pieza fundamental en la plantilla manchega y la afición del Albacete espera que Zozulia pueda recuperar su mejor versión y mejorar sus cifras goleadoras para que su equipo pueda conseguir el objetivo de lograr la permanencia un año más en el fútbol profesional.', 'Objetivo: recuperar la mejor versión de Zozulia', 'noticia_zozulya.jpg', '0.00', 0),
-(22, 5, 6, 'José Mourinho logró la Champions League en 2010 ante el Bayern Munich en el Santiago Bernabéu. El entrenador portugués conquistó el Triplete con un equipo formado en gran parte por futbolistas rechazados en sus anteriores clubes.<br />\r\n<br />\r\nSegún Marco Branca en una entrevista a TMW, ese fue precisamente el secreto del éxito del técnico portugués: \"Hubo una gran renovación. La clave de aquella época es simple. Contratamos jugadores furiosos porque fueron descartados en sus clubes. Querían mostrar calidad y Mourinho estaba preparado\".<br />\r\n<br />\r\nEn ese equipo había cracks que provenían de diferentes equipos, entre los que se encontraba por ejemplo Samuel Eto\'o. También estaba Wesley Sneijder, que no terminó de cuajar en el Real Madrid, aunque a ellos hay que añadir las contrataciones de Diego Milito (Génova), Thiago Motta (Génova), Mariga (Parma), Lúcio (Bayern Munique), Goran Pandev (Lazio) y Emiliano Viviano (Brescia).', 'Desvelan la clave del Inter de Mou: &quot;Fichamos a jugadores furiosos&quot;', 'noticia_interMou.jpg', '0.00', 0);
+(17, 3, 4, 'Jupp Heynckes, el entrenador del Real Madrid en la séptima, cumple 75 años, y el jugador con el que comparte un vínculo especial por haber formado parte tanto del Real Madrid como del Bayern Munich, Toni Kroos, ha querido felicitarle en una carta en la que le daba las gracias por haber sido tan buen entrenador, haciendo especial hincapié en que muchos entrenadores pueden aprender mucho de él, dado que confía mucho en los jugadores jóvenes, entre otras cosas.', 'La carta de felicitación de Kroos a Jupp Heynckes', 'kroos.jpg', '5.00', 1),
+(18, 2, 5, 'Lo avanzó ayer L’Equipe y va a misa. El primer ministro francés dio por finalizada la temporada oficial de los deportes de equipo y han respetado, en la Ligue 1, como estaba la clasificación. Gana el PSG, van dos más a la Champions (el Marsella de Zubizarreta y Rennes), descienden los dos últimos (Toulouse y Amiens), suben los dos primeros de la Ligue 2 (Lorient y Lens), se anula la promoción para una plaza y Mbappé y Ben Yedder quedan como pichichis con 18 goles. Leerán que PSG es campeón porque se ha elaborado una clasificación definitiva en base al ‘ratio’ de puntos logrados por partido. Eso es así porque el PSG ha disputado un encuentro menos que el resto de competidores. Al tener un partido pendiente (ante el Estrasburgo), en Francia no pueden decir, directamente, que el que tiene más puntos gana.<br />\r\n<br />\r\nEvidentemente, sin este prorrateos, el PSG también sería campeón en términos totales. Le saca 12 puntos al OM, segundo clasificado. Así pues, el PSG es campeón a 11 encuentros para el final.', 'El PSG, campeón a once jornadas del final, se termina la Ligue 1', 'notLigCamp.jpg', '3.00', 2),
+(19, 5, 3, 'La Premier League sigue buscando fórmulas para convencer a sus jugadores del retorno a la competición. Los futbolistas, que no contemplaban la posibilidad de confinarse en un hotel durante una o dos semanas, antes del regreso, han obtenido esa concesión por parte de la liga. Si ellos deciden no volver a jugar por el miedo al coronavirus, el futuro económico del fútbol en Inglaterra se va a ver muy comprometido.<br />\r\n<br />\r\n<br />\r\nEl confinamiento de una semana en un hotel ya se ha utilizado en Alemania y se ha visto como una medida lógica para reducir el riesgo de contagio. Mark Gillett, el asesor médico de la Premier, dijo la semana pasada que algo parecido debía discutirse, pero parece que la opción ha sido descartada de cara al retorno previsto para el 19 o 26 de junio.<br />\r\n<br />\r\nEl hecho de que apenas haya habido ocho positivos entre los 1.744 test que se han realizado en la última semana dentro de los 20 clubes de la Premier, carga de razones a los detractores de la cuarentena en forma de concentración, aunque los futbolistas ya tenían claro mucho antes que no se les pasaba por la cabeza separarse tanto tiempo de sus familias. La competición se reunirá el miércoles para debatir sobre los siguientes pasos a dar en las fases del entrenamiento, mientras que la reunión del jueves, que será la verdaderamente importante, determinará temas tan importantes como la fecha definitiva de regreso, los horarios televisivos o el plan de emergencia por si finalmente resulta imposible volver a jugar.', 'La Premier no obligará a los jugadores a hacer cuarentena', 'noticia_premier.jpg', '2.15', 6),
+(20, 5, 3, 'Los futbolistas de la Premier League se lesionarán un 25 % más cuando vuelva la liga, según un estudio publicado por la empresa de inteligencia artifical Zone7.<br />\r\n<br />\r\nEl estudio que han realizado muestra que jugar ocho partidos en un periodo de treinta días, incrementa las lesiones en un 25 % en comparación a disputar la mitad de encuentros en la misma franja de tiempo.<br />\r\n<br />\r\nUn equipo como el Manchester City, en caso de que la liga se reanudase el 20 de junio, podría llegar a disputar 13 encuentros en 49 días. Esta cuenta variaría en función de sus resultados en la Liga de Campeones.<br />\r\n<br />\r\nSegún Zone7, cuando la preparación es menor que este periodo de tiempo, normalmente debido a un torneo internacional o a la disputa de las rondas previas de una competición europea, los equipos tienen un 75 % más de riesgo de sufrir lesiones en la primera parte de la temporada.', 'El riesgo de las &quot;ligas exprés&quot;: habrá un 25% más de lesiones', 'noticia_lesiones.jpg', '5.00', 1),
+(21, 5, 2, 'Uno de los principales problemas que tiene el Albacete durante esta temporada es su falta de gol. El cuadro manchego es el equipo menos anotador de la categoría y su máximo goleador es Pedro Sánchez con cuatro goles.<br />\r\n<br />\r\nEn el caso de Zozulya, el delantero ucraniano afronta su tercera campaña en tierras manchegas pero hasta el momento está firmando sus peores cifras de cara a gol.<br />\r\n<br />\r\nEl equipo dirigido por Lucas Alcaraz espera que con el regreso de la competición, el delantero ucraniano pueda mejorar sus cifras goleadoras. El jugador es una pieza fundamental en la plantilla manchega y la afición del Albacete espera que Zozulia pueda recuperar su mejor versión y mejorar sus cifras goleadoras para que su equipo pueda conseguir el objetivo de lograr la permanencia un año más en el fútbol profesional.', 'Objetivo: recuperar la mejor versión de Zozulia', 'noticia_zozulya.jpg', '3.24', 4),
+(22, 5, 6, 'José Mourinho logró la Champions League en 2010 ante el Bayern Munich en el Santiago Bernabéu. El entrenador portugués conquistó el Triplete con un equipo formado en gran parte por futbolistas rechazados en sus anteriores clubes.<br />\r\n<br />\r\nSegún Marco Branca en una entrevista a TMW, ese fue precisamente el secreto del éxito del técnico portugués: \"Hubo una gran renovación. La clave de aquella época es simple. Contratamos jugadores furiosos porque fueron descartados en sus clubes. Querían mostrar calidad y Mourinho estaba preparado\".<br />\r\n<br />\r\nEn ese equipo había cracks que provenían de diferentes equipos, entre los que se encontraba por ejemplo Samuel Eto\'o. También estaba Wesley Sneijder, que no terminó de cuajar en el Real Madrid, aunque a ellos hay que añadir las contrataciones de Diego Milito (Génova), Thiago Motta (Génova), Mariga (Parma), Lúcio (Bayern Munique), Goran Pandev (Lazio) y Emiliano Viviano (Brescia).', 'Desvelan la clave del Inter de Mou: &quot;Fichamos a jugadores furiosos&quot;', 'noticia_interMou.jpg', '3.00', 1);
 
 -- --------------------------------------------------------
 
@@ -897,7 +906,20 @@ INSERT INTO `respuestascomentario` (`IdRespuestaComentario`, `CodComentario`, `C
 (3, 2, 5, 'No me extraña'),
 (4, 18, 6, 'No tengo dudas'),
 (5, 9, 6, 'Estoy de acuerdo'),
-(6, 12, 6, 'Fue su mejor etapa, muy dificil de igualar');
+(6, 12, 6, 'Fue su mejor etapa, muy dificil de igualar'),
+(7, 20, 7, 'eso es!'),
+(8, 6, 7, 'estoy de acuerdo'),
+(9, 27, 7, 'pues a mi me parece un buen jugador'),
+(10, 10, 7, 'deberias.'),
+(11, 3, 8, 'le queda poco...'),
+(12, 31, 5, 'ellos se lo pierden'),
+(13, 12, 5, 'o si...'),
+(14, 30, 5, 'en el madrid nos dio muchas alegrias'),
+(15, 19, 2, 'que venga al madrid!'),
+(16, 18, 2, 'D10S'),
+(17, 37, 2, 'ya ves...'),
+(18, 8, 2, 'lo que hay que leer.'),
+(19, 38, 2, 'total...');
 
 -- --------------------------------------------------------
 
@@ -925,16 +947,14 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`IdUsuario`, `Nombre`, `Apellido1`, `Apellido2`, `Sexo`, `EquipoFavorito`, `NombreUsuario`, `Contrasena`, `Email`, `Administrador`, `SomosFamilia`, `Puntos`) VALUES
-(1, 'Administrador', 'Ad', 'Min', 'hombre', 0, 'admin', '$2y$10$ZRVF3yPQBWAgTKhRrYjXJO.pGWvvJeVl2Zgb0IBxNYpOqIeWoA4oG', 'admin@ucm.es', 1, 0, 206),
-(2, 'Gonzalo', 'Figueroa', 'Del Val', 'hombre', 0, 'gfigue01', '$2y$10$ANx3ithfFe4l6ew3oZhW5uJ45yoyzqUj5SIYn3fuCl/XmtYEnqyeW', 'gfigue01@ucm.es', 0, 1, 310),
-(3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 0, 'acernuda', '$2y$10$fuAnn.RfDk4iyTOIkcYlQ.gCWB1evtijABmOAF355GShObXjqWSGi', 'acernuda@ucm.es', 0, 1, 301),
-(4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 0, 'fernag08', '$2y$10$.GNAP.NVYpuAh6b5zmATgu1mr/4TVRMzckqd0UyP/vuaPIv87tKj2', 'fernag08@ucm.es', 0, 1, 324),
-(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 0, 'jorborja', '$2y$10$9chuTLHd/cRIMM1XLSs3I.mLk4eNESPqBSg5yLMN0T5sNkFjTZdjy', 'jorborja@ucm.es', 0, 1, 356),
-(6, 'Alae', 'Edine', 'Mouhib', 'hombre', 0, 'amouhib', '$2y$10$NiV1zfngh25e1BAlessipO6SZ0LnDzG2hvBcLfhTcfiqm3rOuxRoK', 'amouhib@ucm.es', 0, 1, 264),
-(7, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 0, 'jurosado', '$2y$10$lvMSB1YxaNhoE7z5.SZl0.zcK.7joA2.uWeXkxQJ/VsJR9peW8klC', 'jurosado@ucm.es', 0, 1, 438),
-(8, 'Usuario', 'Normal', 'Corriente', 'hombre', 0, 'usu', '$2y$10$Zjeyq2P9kmANI94HOGgPEenA5XQ1X.sYVkefTmW1IXolIUd9YEA9K', 'usu@ucm.es', 0, 0, 202),
-(13, 'ultima', 'prueba', 'de esto', 'hombre', 0, 'prueba', '$2y$10$f5ReOBMOZDf7.x8LHyrexOuXoUU22wJeXfE8QL3UfeZ1L8xXGzFw6', 'holahola', 0, 0, 5),
-(14, 'a', 'a', 'a', 'hombre', 2, 'prueba2', '$2y$10$UkP8kh.6KsIhdLcw5k.Bluh1v5yqBYFhlLDUgS0T/wx7eZZZiMPsG', 'a', 0, 0, 15);
+(1, 'Administrador', 'Ad', 'Min', 'hombre', 0, 'admin', '$2y$10$ZRVF3yPQBWAgTKhRrYjXJO.pGWvvJeVl2Zgb0IBxNYpOqIeWoA4oG', 'admin@ucm.es', 1, 0, 207),
+(2, 'Gonzalo', 'Figueroa', 'Del Val', 'hombre', 2, 'gfigue01', '$2y$10$ANx3ithfFe4l6ew3oZhW5uJ45yoyzqUj5SIYn3fuCl/XmtYEnqyeW', 'gfigue01@ucm.es', 0, 1, 311),
+(3, 'Alvaro', 'Cernuda', 'Vega', 'hombre', 2, 'acernuda', '$2y$10$fuAnn.RfDk4iyTOIkcYlQ.gCWB1evtijABmOAF355GShObXjqWSGi', 'acernuda@ucm.es', 0, 1, 301),
+(4, 'Fernando', 'Gonzalez', 'Zamorano', 'hombre', 54, 'fernag08', '$2y$10$.GNAP.NVYpuAh6b5zmATgu1mr/4TVRMzckqd0UyP/vuaPIv87tKj2', 'fernag08@ucm.es', 0, 1, 324),
+(5, 'Jorge', 'Borja', 'Garcia', 'hombre', 2, 'jorborja', '$2y$10$9chuTLHd/cRIMM1XLSs3I.mLk4eNESPqBSg5yLMN0T5sNkFjTZdjy', 'jorborja@ucm.es', 0, 1, 366),
+(6, 'Alae', 'Edine', 'Mouhib', 'hombre', 2, 'amouhib', '$2y$10$NiV1zfngh25e1BAlessipO6SZ0LnDzG2hvBcLfhTcfiqm3rOuxRoK', 'amouhib@ucm.es', 0, 1, 264),
+(7, 'Juan Carlos', 'Rosado', 'Zamorano', 'hombre', 6, 'jurosado', '$2y$10$lvMSB1YxaNhoE7z5.SZl0.zcK.7joA2.uWeXkxQJ/VsJR9peW8klC', 'jurosado@ucm.es', 0, 1, 457),
+(8, 'Usuario', 'Normal', 'Corriente', 'hombre', 0, 'usu', '$2y$10$Zjeyq2P9kmANI94HOGgPEenA5XQ1X.sYVkefTmW1IXolIUd9YEA9K', 'usu@ucm.es', 0, 0, 203);
 
 -- --------------------------------------------------------
 
@@ -1059,13 +1079,13 @@ ALTER TABLE `votaciones`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `IdComentario` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `IdComentario` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `equipos`
 --
 ALTER TABLE `equipos`
-  MODIFY `IdEquipo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
+  MODIFY `IdEquipo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
 -- AUTO_INCREMENT de la tabla `jugadores`
@@ -1107,13 +1127,13 @@ ALTER TABLE `respuestas`
 -- AUTO_INCREMENT de la tabla `respuestascomentario`
 --
 ALTER TABLE `respuestascomentario`
-  MODIFY `IdRespuestaComentario` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `IdRespuestaComentario` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `IdUsuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `IdUsuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `votaciones`
