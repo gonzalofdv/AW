@@ -42,35 +42,7 @@ abstract class Form
             if ( is_array($result) ) {
                 return $this->generaFormulario($result, $_POST);
             } else {
-                //Solucion momentanea hasta poder solucionar location
-                //echo para depurar qué contiene $result
-                //echo $result;
-				$html = "";
-				
-                if($result=='0'){
-                    $html .= 'El usuario introducido ya existe, vuelve a intentarlo con otro distinto';
-                    $html .= '<br><br>';
-                    $html .= '<button class="botGen" onclick=location.href="registro.php">Volver al registro</button>';
-                }
-                else if($result=='1'){
-                    $html .= 'Algo no ha ido bien, pulsa para volver al inicio';
-                    $html .= '<br><br>';
-                    $html .= '<button class="botGen" onclick=location.href="index.php">Volver al inicio</button>';
-                }
-                else if($result=='2'){
-                    $html .= "Usuario registrado correctamente. A continuación, te llevaremos al apartado de elegir equipo para que puedas seleccionar tu equipo favorito que además completará tu imagen de perfil.";
-                    $html .= "<p>Te redireccionamos con el siguiente botón.</p>";
-                    //header("refresh:5; url=index.php");
-                    $html .= '<button class="botGen" onclick=location.href="cambioEquipo.php">Elegir equipo</button>';
-                }
-                else{
-
-					$html .= 'Todo correcto, pulsa para volver al inicio';
-					$html .= '<br><br><br>';
-					$html .= '<button class="botGen" onclick=location.href="index.php">Volver al inicio</button>';
-					//header('Location:'.$result.'');
-                }
-				return $html;
+                return $result;
             }
         }  
     }
