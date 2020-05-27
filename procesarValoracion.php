@@ -22,7 +22,7 @@ if(!empty($idOp)){
 	$usuarioSA->sumarPuntos($idUsuario,3);
 	$_SESSION['votos']+=1;
 	
-	header("Location:index.php");
+	header("Location:mostrarAlertas.php?codAlerta=6");
 }else{
 	header("Location:mostrarAlertas.php?codAlerta=7");
 }

@@ -31,6 +31,11 @@ switch($codigo){
 		$mensaje .= "Te redireccionamos a la página de inicio.";
 		$url = "somosFamilia.php";
 		break;
+	case 6:
+		$titulo = "Valoración exitosa";
+		$mensaje = "Te redirigimos a la página de inicio...";
+		$url = "index.php";
+		break;
 	case 7:
 		$titulo = "¡Asegúrate de que estás votando correctamente!";
 		$mensaje = "Te redireccionamos a la página de inicio.";
