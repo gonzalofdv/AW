@@ -201,23 +201,6 @@ div#pie { /* Pie de la página */
 }
 /*----------------------------------------------------------------*/
 
-
-div#contenedor {
-	width: 1134px;
-	margin: auto;
-	border: 1px solid black;
-	background-color: #aaaaaa;
-	margin-top: 30px;
-}
-/*<<<<<< ESTO CREO QUE SOBRA >>>>>>>>*/
-
-
-div.saludo {
-	width: 100%;
-	text-align: right;
-}
-/*<<<<<< ESTO CREO QUE SOBRA >>>>>>>>*/
-
 .divnoticias div{
 	
 	margin-top:-10px;
