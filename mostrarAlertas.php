@@ -132,8 +132,10 @@ switch($codigo){
 	?>
 
 	<div class="contenido">
-		<h2><?php echo $titulo;	?></h2>
-		<h3><?php echo $mensaje; ?></h3>
+		<div class="alertas">
+			<h2><?php echo $titulo;	?></h2>
+			<h3><?php echo $mensaje; ?></h3>
+		</div>
 	</div>
 
 	<?php

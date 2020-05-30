@@ -134,7 +134,7 @@ h2#somosFam{
 
 .botGen:hover{
 	text-shadow: 0 1px 1px rgba(0,0,0,0.5);
-	background:#0042ff
+	background:#0042ff;
 }
 
 .botGen:hover:after,
@@ -327,4 +327,13 @@ div#pie { /* Pie de la página */
 
 .enlaceNoticia:hover{
 	text-decoration: underline;
+}
+
+
+.alertas{
+	border: 5px solid #0042ff;
+	text-align:center;
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
 }
