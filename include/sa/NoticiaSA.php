@@ -80,6 +80,22 @@ class NoticiaSA {
 		$aux->insertarNuevaNota($idNoticia, $nuevaNota, $votos);
 	}
 
+	public function noticiaVotada($idNoticia){
+		if(!$this->noticiaDAO){
+			$this->noticiaDAO = new NoticiaDAO();
+		}
+		$aux = $this->noticiaDAO;
+		$aux->noticiaVotada($idNoticia);
+	}
+
+	public function activaVotaciones(){
+		if(!$this->noticiaDAO){
+			$this->noticiaDAO = new NoticiaDAO();
+		}
+		$aux = $this->noticiaDAO;
+		$aux->activaVotaciones();
+	}
+
 }
 
 ?>

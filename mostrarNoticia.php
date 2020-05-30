@@ -58,6 +58,7 @@ $idNoticia = $_GET['idN'];
 			$codLiga = $noticia->getCodLiga();
 			$codUsu = $noticia->getCodUsuario();
 			$foto = $noticia->getFoto();
+			$votada = $noticia->getVotada();
 
 			$ligaSA = new LigaSA();
 			$liga = $ligaSA->getNombreLiga($codLiga);
@@ -85,7 +86,7 @@ $idNoticia = $_GET['idN'];
 
 		<!-- VALORACION DE NOTICIAS CON ESTRELLAS -->
 
-				<?php if(isset($_SESSION['login'])){?>
+			<?php if(isset($_SESSION['login'])){?>
 
 				<form action="javascript:void(0);" class="clasificacion" id="valorar">
 					<input id="radio1" type="radio" name="estrellas" value="5">
@@ -99,8 +100,15 @@ $idNoticia = $_GET['idN'];
 						<input id="radio5" type="radio" name="estrellas" value="1">
 						<label for="radio5">★</label>
 						<br>
-						<?php echo '<input type="checkbox" id="idN" name="idN" value="'.$idNoticia.'">.oiratnemoc raivne ramrifnoC <br><br>'; ?>
-						<input id="enviarVal" class="botGen" type="submit" value="Enviar" name="submit">
+						<?php echo '<input type="checkbox" id="idN" name="idN" value="'.$idNoticia.'">.oiratnemoc raivne ramrifnoC <br><br>'; 
+						if($votada==1){
+							echo '<input id="enviarVal" class="botGenOff" type="submit" value="Enviar" name="submit" disabled>';
+							//echo '<p>YA HAS VOTADO ESTA NOTICIA</p>';
+						}
+						else{
+							echo '<input id="enviarVal" class="botGen" type="submit" value="Enviar" name="submit">';
+						}
+						?>
 				</form>
 				<br><br><br><br><br><br><br><br><br>
 			<?php 

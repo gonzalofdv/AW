@@ -17,6 +17,8 @@ else{
 
 	$noticiaSA->insertarNuevaNota($idNot, $nuevaNota, $info[1]+1);
 
+	$noticiaSA->noticiaVotada($idNot);
+
 	echo '<h4>La valoración de la noticia es ' .$nuevaNota. ' / 5</h4>';
 }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-05-2020 a las 11:16:47
+-- Tiempo de generación: 30-05-2020 a las 17:46:23
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.9
 
@@ -94,8 +94,9 @@ CREATE TABLE `noticias` (
   `Texto` text CHARACTER SET utf8 NOT NULL,
   `Titular` varchar(100) CHARACTER SET utf8 NOT NULL,
   `Foto` varchar(1000) CHARACTER SET utf8 NOT NULL,
-  `NotaNoticia` float NOT NULL,
-  `NumVotos` int(4) NOT NULL
+  `NotaNoticia` decimal(5,2) NOT NULL,
+  `NumVotos` int(4) NOT NULL,
+  `Votada` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
